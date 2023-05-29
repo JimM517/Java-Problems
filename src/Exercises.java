@@ -1,5 +1,7 @@
 public class Exercises {
 
+    // TODO: 5/28/2023 Add testing for all solutions
+
     /*
         Exercise 1: SwapEnds
         Create an integer array method called SwapEnds that takes in an integer array "nums". Given an array of ints,
@@ -132,6 +134,18 @@ public class Exercises {
         noTriples([1, 1, 2, 2, 2, 1]) → false
         noTriples([1, 1, 1, 2, 2, 2, 1]) → false
     */
+
+    public boolean noTriples(int[] nums) {
+        boolean hasTriples = false;
+       for (int i = 0; i < nums.length - 1; i++) {
+           if (i + 2 <= nums.length - 2) {
+               if (nums[i] == nums[i + 1] && nums[i] == nums[i + 2]) {
+                   hasTriples = true;
+               }
+           }
+       }
+       return hasTriples;
+    }
 
     /*
         Exercise 8: No23
