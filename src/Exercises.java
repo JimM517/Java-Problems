@@ -156,6 +156,13 @@ public class Exercises {
         no23([3, 5]) → false
     */
 
+    public boolean no23(int[] nums) {
+        if ((nums[0] != 2 && nums[0] != 3) && (nums[1] != 2 && nums[1] != 3)) {
+            return true;
+        }
+        return false;
+    }
+
     /*
         Exercise 9: No14
         Create a boolean method called No14 that takes in an integer array “nums”. Given an array of ints, return true

@@ -11,9 +11,14 @@ public class Main {
 
         int[] triples = {1, 4, 5, 6, 7, 8, 9, 9, 9, 10};
 
+        int[] numberTwoThree = {1, 5};
+        int[] numbers = {2, 4};
+
 //        System.out.println(Arrays.toString(exercises.fizzArrayThree(5, 10)));
 
-        System.out.println(exercises.noTriples(triples));
+//        System.out.println(exercises.noTriples(triples));
+
+        System.out.println(exercises.no23(numberTwoThree));
 
     }
 }
