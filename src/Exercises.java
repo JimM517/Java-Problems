@@ -172,6 +172,23 @@ public class Exercises {
         no14([2, 3, 4]) → false
     */
 
+        public boolean no14(int[] nums) {
+           boolean hasOne = false;
+           boolean hasFour = false;
+           for (int i = 0; i < nums.length; i++) {
+               if (nums[i] == 1) {
+                   hasOne = true;
+               }
+               if (nums[i] == 4) {
+                   hasFour = true;
+               }
+               if (hasOne && hasFour) {
+                   return false;
+               }
+           }
+           return true;
+        }
+
     /*
         Exercise 10: More14
         Create a boolean method called More14 that takes in an array of type integer “nums”. Given an array of ints,
@@ -180,6 +197,19 @@ public class Exercises {
         more14([1, 4, 1, 4]) → false
         more14([1, 1]) → true
     */
+        public boolean more14(int[] nums) {
+            int count1 = 0;
+            int count4 = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == 1) {
+                    count1++;
+                }
+                if (nums[i] == 4) {
+                    count4++;
+                }
+            }
+            return count1 > count4;
+        }
 
     /*
         Exercise 11: MakeMiddle

@@ -14,11 +14,16 @@ public class Main {
         int[] numberTwoThree = {1, 5};
         int[] numbers = {2, 4};
 
+        int[] numberFourteen = {2, 3, 8, 9, 10, 22, 44, 72};
+
+        int[] more14 = {1, 1, 1, 1, 4, 5, 6, 4, 7, 8};
+        int[] forFourMore = {1, 1, 3, 5, 4, 4, 4, 4, 4, 7};
+
 //        System.out.println(Arrays.toString(exercises.fizzArrayThree(5, 10)));
 
 //        System.out.println(exercises.noTriples(triples));
 
-        System.out.println(exercises.no23(numberTwoThree));
+        System.out.println(exercises.more14(forFourMore));
 
     }
 }
