@@ -262,6 +262,9 @@ public class Exercises {
         lessBy10(1, 7, 10) → false
         lessBy10(11, 1, 7) → true
     */
+    public boolean lessBy10(int a, int b, int c) {
+        return Math.abs(a - b) >= 10 || Math.abs(a - c) >= 10 || Math.abs(b - c) >= 10;
+    }
 
     /*
         Exercise 15: Has23
@@ -271,6 +274,13 @@ public class Exercises {
         has23([4, 3]) → true
         has23([4, 5]) → false
     */
+
+        public boolean has23(int[] nums) {
+            if (nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[1] == 3) {
+                return true;
+            }
+            return false;
+        }
 
     /*
         Exercise 16: FizzArray

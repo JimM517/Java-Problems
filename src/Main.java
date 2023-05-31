@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -29,13 +27,19 @@ public class Main {
         int[] last = {4, 5, 6};
         int[] anotherLast = {1, 2};
 
+        int a = 20;
+        int b = 45;
+        int c = 55;
+
 //        System.out.println(Arrays.toString(exercises.fizzArrayThree(5, 10)));
 
 //        System.out.println(exercises.noTriples(triples));
 
 //        System.out.println(exercises.more14(forFourMore));
 
-        System.out.println(Arrays.toString(exercises.makeLast(anotherLast)));
+//        System.out.println(Arrays.toString(exercises.makeLast(anotherLast)));
+
+        System.out.println(exercises.lessBy10(a, b, c));
 
     }
 }
