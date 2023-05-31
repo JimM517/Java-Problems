@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,6 +33,8 @@ public class Main {
         int b = 45;
         int c = 55;
 
+        int[] fizzArray = {1, 2, 3,};
+
 //        System.out.println(Arrays.toString(exercises.fizzArrayThree(5, 10)));
 
 //        System.out.println(exercises.noTriples(triples));
@@ -39,7 +43,9 @@ public class Main {
 
 //        System.out.println(Arrays.toString(exercises.makeLast(anotherLast)));
 
-        System.out.println(exercises.lessBy10(a, b, c));
+//        System.out.println(exercises.lessBy10(a, b, c));
+
+        System.out.println(Arrays.toString(exercises.fizzArray(10)));
 
     }
 }
