@@ -35,6 +35,12 @@ public class Main {
 
         int[] fizzArray = {1, 2, 3,};
 
+        int[] fix23 = {1, 2, 3};
+
+        int[] twoThreeFive = {2, 3, 5};
+
+        int[] oneTwoOne = {1, 2, 1};
+
 //        System.out.println(Arrays.toString(exercises.fizzArrayThree(5, 10)));
 
 //        System.out.println(exercises.noTriples(triples));
@@ -45,7 +51,7 @@ public class Main {
 
 //        System.out.println(exercises.lessBy10(a, b, c));
 
-        System.out.println(Arrays.toString(exercises.fizzArray(10)));
+        System.out.println(Arrays.toString(exercises.fix23(oneTwoOne)));
 
     }
 }

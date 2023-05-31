@@ -308,6 +308,16 @@ public class Exercises {
         fix23([2, 3, 5]) → [2, 0, 5]
         fix23([1, 2, 1]) → [1, 2, 1]
     */
+    public int[] fix23(int[] nums) {
+        int[] result = new int[3];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 2 && nums[i + 1] == 3) {
+                nums[i + 1] = 0;
+            }
+            result[i] = nums[i];
+        }
+        return result;
+    }
 
     /*
         Exercise 18: EvenlySpaced
@@ -318,6 +328,41 @@ public class Exercises {
         evenlySpaced(4, 6, 2) → true
         evenlySpaced(4, 6, 3) → false
     */
+
+
+    //need to check this solution
+    public boolean evenlySpaced(int a, int b, int c) {
+        int differenceOne = 0;
+        int differenceTwo = 0;
+        int differenceThree = 0;
+
+        if (a == b && a == c) {
+            return true;
+        }
+
+        if (a == b || b == c || a == c) {
+            return true;
+        }
+
+        differenceOne = Math.abs(a - b);
+        differenceTwo = Math.abs(a - c);
+        differenceThree = Math.abs(b - c);
+
+        if (differenceOne == differenceTwo) {
+            return true;
+        }
+
+        if (differenceOne == differenceThree) {
+            return true;
+        }
+
+        if (differenceTwo == differenceThree) {
+            return true;
+        }
+        return false;
+
+
+    }
 
     /*
         Exercise 19: Double23
