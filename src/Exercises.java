@@ -220,6 +220,10 @@ public class Exercises {
         makeMiddle([7, 1, 2, 3, 4, 9]) → [2, 3]
         makeMiddle([1, 2]) → [1, 2]
     */
+    public int[] makeMiddle(int[] nums) {
+       return new int[] {nums[nums.length / 2 - 1], nums[nums.length / 2]};
+    }
+
 
     /*
         Exercise 12: MakeLast
@@ -230,6 +234,11 @@ public class Exercises {
         makeLast([1, 2]) → [0, 0, 0, 2]
         makeLast([3]) → [0, 3]
     */
+        public int[] makeLast(int[] nums) {
+            int[] result = new int[nums.length * 2];
+            result[result.length - 1] = nums[nums.length - 1];
+            return result;
+        }
 
     /*
         Exercise 13: MakeEnds
@@ -240,6 +249,10 @@ public class Exercises {
         makeEnds([1, 2, 3, 4]) → [1, 4]
         makeEnds([7, 4, 6, 2]) → [7, 2]
     */
+    public int[] makeEnds(int[] nums) {
+        return new int[] {nums[0], nums[nums.length - 1]};
+    }
+
 
     /*
         Exercise 14: LessBy10

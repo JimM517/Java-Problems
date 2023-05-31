@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,11 +21,21 @@ public class Main {
         int[] more14 = {1, 1, 1, 1, 4, 5, 6, 4, 7, 8};
         int[] forFourMore = {1, 1, 3, 5, 4, 4, 4, 4, 4, 7};
 
+
+        int[] middle ={1, 2, 3, 4}; //2, 3
+        int[] anotherMakeMiddle = {7, 1, 2, 3, 4, 9};  //2, 3
+        int[] newMakeMiddle = {1, 2}; // 1, 2
+
+        int[] last = {4, 5, 6};
+        int[] anotherLast = {1, 2};
+
 //        System.out.println(Arrays.toString(exercises.fizzArrayThree(5, 10)));
 
 //        System.out.println(exercises.noTriples(triples));
 
-        System.out.println(exercises.more14(forFourMore));
+//        System.out.println(exercises.more14(forFourMore));
+
+        System.out.println(Arrays.toString(exercises.makeLast(anotherLast)));
 
     }
 }
