@@ -393,6 +393,13 @@ public class Exercises {
         biggerTwo([1, 1], [1, 2]) → [1, 2]
     */
 
+        public int[] biggerTwo(int[] a, int[] b) {
+           if (b[0] + b[1] > a[0] + a[1]) {
+               return b;
+           }
+            return a;
+        }
+
     /*
         Exercise 21: Blackjack
         Create an integer method called Blackjack that takes in two integers, “a” and “b”. Given 2 int values greater
