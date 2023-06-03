@@ -409,6 +409,25 @@ public class Exercises {
         blackjack(19, 22) → 19
     */
 
+        public int blackJack(int a, int b) {
+           if (a > 21 && b > 21) {
+               return 0;
+           } else if (a > 21) {
+               return b;
+           } else if (b > 21) {
+               return a;
+           }
+
+           int sumA = 21 - a;
+           int sumB = 21 - b;
+           if (sumA > sumB) {
+               return b;
+           } else {
+               return a;
+           }
+
+        }
+
     /*
         Exercise 22: ArrayFront9
         Create a boolean method called ArrayFront9 that takes in an integer array “nums”. Given an array of ints, return
