@@ -436,6 +436,17 @@ public class Exercises {
         arrayFront9([1, 2, 3, 4, 9]) → false
         arrayFront9([1, 2, 3, 4, 5]) → false
     */
+        public boolean arrayFront9(int[] nums) {
+            int i = 0;
+
+            while(i < nums.length && i < 4) {
+                if (nums[i] == 9) {
+                    return true;
+                }
+                i++;
+            }
+            return false;
+        }
 
     /*
         Exercise 23: ArrayCount9

@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -41,6 +39,9 @@ public class Main {
 
         int[] oneTwoOne = {1, 2, 1};
 
+        int[] testNine = {1, 9, 10, 4, 5};
+        int[] noNine = {1, 4, 6, 7, 33, 22};
+
 //        System.out.println(Arrays.toString(exercises.fizzArrayThree(5, 10)));
 
 //        System.out.println(exercises.noTriples(triples));
@@ -51,7 +52,10 @@ public class Main {
 
 //        System.out.println(exercises.lessBy10(a, b, c));
 
-        System.out.println(Arrays.toString(exercises.fix23(oneTwoOne)));
+//        System.out.println(Arrays.toString(exercises.fix23(oneTwoOne)));
+
+        System.out.println(exercises.arrayFront9(testNine));
+        System.out.println(exercises.arrayFront9(noNine));
 
     }
 }
