@@ -254,6 +254,41 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 }
 
 
+ // 27. REMOVE ELEMENT
+// Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
+// The order of the elements may be changed.
+// Then return the number of elements in nums which are not equal to val.
+
+    public int removeElement(int[] nums, int val) {
+        if (nums.length == 0) return 0;
+
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            //check if element is not want we want to remove
+            if (nums[i] != val) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+
+    // 26. REMOVE ELEMENT FROM SORTED ARRAY
+    public int removeDuplicates(int[] nums) {
+        int count = 0; //array length
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i < nums.length - 1 && nums[i] == nums[i + 1]) {
+                continue;
+            }
+            //update array in place
+            nums[count] = nums[i];
+            count++;
+        }
+        return count;
+    }
+
+
 
 
 
