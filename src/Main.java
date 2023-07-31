@@ -54,8 +54,25 @@ public class Main {
 
 //        System.out.println(Arrays.toString(exercises.fix23(oneTwoOne)));
 
-        System.out.println(exercises.arrayFront9(testNine));
-        System.out.println(exercises.arrayFront9(noNine));
+//        System.out.println(exercises.arrayFront9(testNine));
+//        System.out.println(exercises.arrayFront9(noNine));
+//
+//        List<Integer> classifyNum = new ArrayList<>();
+//        classifyNum.add(1);
+//        classifyNum.add(-3);
+//        classifyNum.add(4);
+//        classifyNum.add(8);
+//        classifyNum.add(-2);
+//        classifyNum.add(7);
+//        classifyNum.add(-4);
+//        classifyNum.add(-9);
+
+        RandomPractice random = new RandomPractice();
+
+//        System.out.println(random.numberClassification(classifyNum));
+
+        System.out.println(random.isStrongPassword("Abcd1234@"));
+        System.out.println(random.isStrongPassword("helloWorld"));
 
     }
 }
