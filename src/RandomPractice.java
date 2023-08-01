@@ -104,6 +104,9 @@ public class RandomPractice {
         // upper, lower, digit, special flags -> set to false
         // loop through string and check flags
 
+        // create string for special
+        String special = "!@#$%&*";
+
         // return false is length < 8
         if (password.length() < 8) {
             return false;
@@ -129,7 +132,12 @@ public class RandomPractice {
             }
 
             // how to know if special character?
-            if (!Character.isWhitespace(index)) {
+            // this method may cause errors
+//            if (!Character.isWhitespace(index)) {
+//                hasSpecial = true;
+//            }
+
+            if (special.contains(Character.toString(index))) {
                 hasSpecial = true;
             }
 
@@ -138,6 +146,65 @@ public class RandomPractice {
         return hasUpper && hasLower && hasDigit && hasSpecial;
 
     }
+
+
+
+    /*
+
+    Problem Description:
+
+        Write a Java function called diamondPattern that takes an odd integer n as input and prints a diamond pattern made of asterisks ('*') with a width of n characters.
+
+        Example:
+        diamond(5) =>
+             *
+            ***
+           *****
+            ***
+             *
+
+*/
+
+    public void diamondPattern(int num) {
+
+        // loop for the top half
+        // print n *s in the middle
+        // loop for the bottom half
+
+
+        int midway = num / 2;
+        int spaces = midway;
+        int stars = 1;
+        for (int i = 0; i < midway; i++) {
+            for (int j = 0; j < spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < stars; k++) {
+                System.out.println("*");
+            }
+            spaces--;
+            stars++;
+        }
+        for (int i = 0; i < num; i++) {
+            System.out.println("*");
+        }
+        System.out.println();
+        stars-= 2;
+        spaces = 1;
+        for (int i = 0; i < midway; i++) {
+            for (int j = 0; j < spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < stars; k++) {
+                System.out.println("*");
+            }
+            spaces++;
+            stars-= 2;
+            System.out.println();
+        }
+
+    }
+
 
 
 }
