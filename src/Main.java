@@ -75,4 +75,13 @@ public class Main {
         System.out.println(random.isStrongPassword("helloWorld"));
 
     }
+
+
+
+
+
+
+
+
+
 }

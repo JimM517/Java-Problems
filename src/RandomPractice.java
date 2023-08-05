@@ -205,6 +205,21 @@ public class RandomPractice {
 
     }
 
+    //square every digit in nums
+    // ex -> 765 should return 493625
+    public int squareDigits(int n) {
+        String s = n + "";
+        String[] digits = s.split("");
+        String output = "";
+
+        for (String str : digits) {
+            int i = Integer.parseInt(str);
+            output +=  i * i;
+        }
+
+        return Integer.parseInt(output);
+    }
+
 
 
 }
