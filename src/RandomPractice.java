@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -221,5 +222,46 @@ public class RandomPractice {
     }
 
 
+//    There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have.
+//    Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, they will have the greatest number of candies among all the kids, or false otherwise.
+//    Note that multiple kids can have the greatest number of candies.
+
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        List<Boolean> result = new ArrayList<>();
+        int len = candies.length;
+        int maxCandy = 0;
+        for (int i = 0; i < len; i++) {
+            maxCandy = Math.max(maxCandy, candies[i]);
+        }
+        for (int j = 0; j < len; j++) {
+            if ((candies[j] + extraCandies) >= maxCandy) {
+                result.add(true);
+            } else {
+                result.add(false);
+            }
+        }
+        return result;
+    }
+
+//    You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.
+//    Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.
+
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        int count = 0;
+        int i = 0;
+
+        while(i < flowerbed.length) {
+            if (flowerbed[i] == 0) {
+                //Check if the current position is empty and its adjacent positions are also empty.
+                boolean canPlant = ((i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.length - 1 || flowerbed[i + 1] == 0));
+                if (canPlant) {
+                    flowerbed[i] = 1; // plant flower at current position
+                    count++; // increment the count
+                }
+            }
+            i++;
+        }
+        return count >= n;
+    }
 
 }
