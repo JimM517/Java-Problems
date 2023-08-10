@@ -34,7 +34,6 @@ public class RandomPractice {
         int zero = 0;
 
 
-
         for (int i = 0; i < numbers.size(); i++) {
             // create temp variable to always compare
             int temp = numbers.get(i);
@@ -96,7 +95,6 @@ public class RandomPractice {
         System.out.println(isStrongPassword("Abc1234"))
 
 */
-
 
 
     public boolean isStrongPassword(String password) {
@@ -190,7 +188,7 @@ public class RandomPractice {
             System.out.println("*");
         }
         System.out.println();
-        stars-= 2;
+        stars -= 2;
         spaces = 1;
         for (int i = 0; i < midway; i++) {
             for (int j = 0; j < spaces; j++) {
@@ -200,7 +198,7 @@ public class RandomPractice {
                 System.out.println("*");
             }
             spaces++;
-            stars-= 2;
+            stars -= 2;
             System.out.println();
         }
 
@@ -215,7 +213,7 @@ public class RandomPractice {
 
         for (String str : digits) {
             int i = Integer.parseInt(str);
-            output +=  i * i;
+            output += i * i;
         }
 
         return Integer.parseInt(output);
@@ -250,7 +248,7 @@ public class RandomPractice {
         int count = 0;
         int i = 0;
 
-        while(i < flowerbed.length) {
+        while (i < flowerbed.length) {
             if (flowerbed[i] == 0) {
                 //Check if the current position is empty and its adjacent positions are also empty.
                 boolean canPlant = ((i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.length - 1 || flowerbed[i + 1] == 0));
@@ -263,5 +261,31 @@ public class RandomPractice {
         }
         return count >= n;
     }
+
+
+//        Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+//        A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters
+//        without disturbing the relative positions of the remaining characters.
+//        (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+    public boolean isSubsequence(String s, String t) {
+        int sIndex = 0;
+        int tIndex = 0;
+
+        while (sIndex < s.length() && tIndex < t.length()) {
+            if (s.charAt(sIndex) == t.charAt(tIndex)) {
+                sIndex++;
+            }
+            tIndex++;
+        }
+
+          return s.length() == sIndex;
+
+    }
+
+
+
+
+
 
 }
