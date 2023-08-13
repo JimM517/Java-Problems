@@ -334,6 +334,43 @@ public class RandomPractice {
 
 
 
+    // create an array and return true if there is a 1 followed by a 2 somewhere in the array
+    public boolean hasTwelve(int[] nums) {
+        boolean hasOne = false;
+        for (int i = 0; i < nums.length; i++) {
+          if (nums[i] == 1) {
+              // keep track that a 1 was found
+              hasOne = true;
+          }
+          if (nums[i] == 2 && hasOne) {
+              return true;
+          }
+        }
+        return false;
+    }
+
+
+    // write method findAgeByName - takes in a Map of <String, Integer> search for age corresponding to the name
+    // if the name is found return the name
+    public int findAgeByName(Map<String, Integer> nums, String name) {
+
+        for (Map.Entry<String, Integer> entry : nums.entrySet()) {
+            if (entry.getKey().equalsIgnoreCase(name)) {
+                return entry.getValue();
+            }
+        }
+        // another possible solution??
+//       if (nums.containsKey(name)) {
+//            return nums.get(name);
+//        }
+        return -1;
+    }
+
+
+
+
+
+
 
 
 
