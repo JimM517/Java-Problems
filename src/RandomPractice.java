@@ -308,13 +308,31 @@ public class RandomPractice {
         boolean[] results = new boolean[nums.length];
 
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] % 2 == 0) {
-                results[i] = true;
-            }
-            results[i] = false;
+            // solution one
+//            if (nums[i] % 2 == 0) {
+//                results[i] = true;
+//            } else {
+//                results[i] = false;
+//            }
+            results[i] = (nums[i] % 2 == 0);
         }
         return results;
     }
+
+
+    // get middle character
+    // given a word, return the middle character
+    // if the word's length is odd return the middle character
+    // if the word's length is even return the middle two character
+
+    public String getMiddle(String word) {
+        if (word.length() % 2 == 0) {
+            return word.substring(word.length() / 2 - 1, word.length() / 2 + 1);
+        }
+        return word.substring(word.length() / 2, word.length() / 2 + 1);
+    }
+
+
 
 
 
