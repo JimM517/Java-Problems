@@ -284,6 +284,39 @@ public class RandomPractice {
     }
 
 
+    // Determine if an integer is even or odd
+    // write a method called evenOdd that takes in an integer
+    // return true if the integer is even
+    // Otherwise return false
+    public boolean evenOdd(int n) {
+        // solution one
+//        if (n % 2 == 0) {
+//            return true;
+//        }
+//        return false;
+
+        // better solution
+        return n % 2 == 0;
+    }
+
+
+
+    // given an array of integers, determine if each value is even or odd
+    // write a method called evenOddArray that take in an integer array.
+    // return an array of boolean values where true if n is even otherwise false
+    public boolean[] evenOddArray(int[] nums) {
+        boolean[] results = new boolean[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                results[i] = true;
+            }
+            results[i] = false;
+        }
+        return results;
+    }
+
+
 
 
 
