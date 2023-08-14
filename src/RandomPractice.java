@@ -454,5 +454,26 @@ public class RandomPractice {
     }
 
 
+    // what is a palimdrome?
+    // palindrome is the same both forwards and backwards ie "racecar"
+    public boolean palindrome(String str) {
+
+        // compare first char with last with two pointers;
+        int front = 0;
+        int back = str.length() - 1;
+
+        while(front < back) {
+            if (str.charAt(front) != str.charAt(back)) {
+                return false;
+            }
+            front++;
+            back--;
+        }
+        return true;
+
+
+    }
+
+
 
 }
