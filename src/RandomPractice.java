@@ -367,12 +367,91 @@ public class RandomPractice {
     }
 
 
+    // calculate average from a list of ints
+    public double calculateAverage(List<Integer> nums) {
+        int total = 0;
+        for (int num : nums) {
+            total += num;
+        }
+        return (double) total / nums.size();
+    }
 
 
 
+    // write method that modifies a map if "a" and "b" keys are present
+    // add key "ab" and their values together
+    // else return the original map
+    public Map<String, String> mapAB(Map<String, String> map) {
+        String ab = "";
+
+        if (map.containsKey("a") && map.containsKey("b")) {
+            ab = map.get("a") + map.get("b");
+            map.put("ab", ab);
+        }
 
 
+        return map;
+    }
 
+
+    // remove duplicates
+
+    public List<Integer> removeDuplicates(List<Integer> nums) {
+        List<Integer> results = new ArrayList<>();
+        // loop through the list and check is num is already in the list
+        // if not add it
+        for (Integer index : nums) {
+            if (!results.contains(index)) {
+                results.add(index);
+            }
+        }
+        return results;
+    }
+
+
+    // reverse vowels in sentence
+    // "hello" should return "holle"
+
+    public String reverseVowels(String s) {
+
+        char[] vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+
+        StringBuilder vowelChars = new StringBuilder();
+
+        // extract all vowels from the input String
+        for (char c : s.toCharArray()) {
+            if (isVowel(c, vowels)) {
+                vowelChars.append(c);
+            }
+        }
+
+
+        // reverse the vowel characters
+        vowelChars.reverse();
+
+        // replace the original vowels in the string with the reversed vowels
+        StringBuilder result = new StringBuilder();
+        int index = 0;
+
+        for (char c : s.toCharArray()) {
+            if (isVowel(c, vowels)) {
+                result.append(vowelChars.charAt(index));
+                index++;
+            } else {
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+
+    private boolean isVowel(char c, char[] vowels) {
+        for (char vowel : vowels) {
+            if (c == vowel) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
