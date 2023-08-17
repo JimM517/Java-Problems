@@ -71,8 +71,10 @@ public class Main {
 
 //        System.out.println(random.numberClassification(classifyNum));
 
-        System.out.println(random.isStrongPassword("Abcd1234@"));
-        System.out.println(random.isStrongPassword("helloWorld"));
+//        System.out.println(random.isStrongPassword("Abcd1234@"));
+//        System.out.println(random.isStrongPassword("helloWorld"));
+
+        System.out.println(random.countVowels("boolean"));
 
     }
 

@@ -475,5 +475,24 @@ public class RandomPractice {
     }
 
 
+    // count vowels
+
+    public int countVowels(String str) {
+        // want to make account for lower and upper
+        String total = "aeiouAEIOU";
+        // our return total
+        int count = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (total.contains(String.valueOf(str.charAt(i)))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+
+
 
 }
