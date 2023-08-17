@@ -483,12 +483,46 @@ public class RandomPractice {
         // our return total
         int count = 0;
 
+        // instead of two loops just compare total string to str at i
         for (int i = 0; i < str.length(); i++) {
             if (total.contains(String.valueOf(str.charAt(i)))) {
                 count++;
             }
         }
         return count;
+    }
+
+
+    // reverse a String
+    public String reverseString(String str) {
+
+        String result = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            result += str.charAt(i);
+        }
+
+        return result;
+
+    }
+
+
+    // title case -> capitalize first letter of every word
+    public String titleCase(String str) {
+
+        String[] words = str.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (String word : words) {
+            // skip empty words
+            if (!word.isEmpty()) {
+                String cappedWord = word.substring(0, 1).toUpperCase() + word.substring(1);
+                result.append(cappedWord).append(" ");
+            }
+        }
+        // trim trailing white space
+        return result.toString().trim();
+
     }
 
 

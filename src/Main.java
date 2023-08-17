@@ -74,7 +74,14 @@ public class Main {
 //        System.out.println(random.isStrongPassword("Abcd1234@"));
 //        System.out.println(random.isStrongPassword("helloWorld"));
 
-        System.out.println(random.countVowels("boolean"));
+//        System.out.println(random.countVowels("boolean"));
+
+//        System.out.println(random.reverseString("Hello"));
+
+//        String hello = "Hello I am jim!";
+//
+//        String[] words = hello.split(" ");
+//        System.out.println(Arrays.toString(words));
 
     }
 
