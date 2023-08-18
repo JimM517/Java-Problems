@@ -289,6 +289,28 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
+    // Reversed Words in a string
+    // Given an input string s, reverse the order of the words
+    // "the sky is blue" should return "blue is sky the"
+
+    public String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+
+        String[] splitStr = s.trim().split(" ");
+
+        for (int i = splitStr.length - 1; i >= 0; i--) {
+            if (!splitStr[i].isEmpty()) {
+                sb.append(splitStr[i]);
+                if (i > 0) {
+                    sb.append(" ");
+                }
+            }
+        }
+        return sb.toString();
+
+    }
+
+
 
 
 
