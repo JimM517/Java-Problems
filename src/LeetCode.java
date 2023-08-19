@@ -444,5 +444,31 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
+    // VALID ANAGRAM
+    public boolean isAnagram(String s, String t) {
+
+        // if lengths are not the same, can't be anagram
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+
+        Map<Character, Integer> checkS = new HashMap<>();
+        Map<Character, Integer> checkT = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            checkS.put(s.charAt(i), checkS.getOrDefault(s.charAt(i), 0) + 1);
+            checkT.put(t.charAt(i), checkT.getOrDefault(t.charAt(i), 0) + 1);
+        }
+
+        return checkS.equals(checkT);
+    }
+
+
+
+
+
+
+
 
 }
