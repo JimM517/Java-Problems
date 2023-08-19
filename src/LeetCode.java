@@ -423,4 +423,26 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // CHECK DUPLICATES
+    // Given an int array nums, return true if any value appears at least twice
+    // and return false is every element is distinct
+    public boolean containsDuplicate(int[] nums) {
+
+        // create set as all values must be distinct
+        Set<Integer> checkDups = new HashSet<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (checkDups.contains(nums[i])) {
+                return true;
+            } else {
+                checkDups.add(nums[i]);
+            }
+        }
+        return false;
+
+
+    }
+
+
+
 }
