@@ -388,5 +388,39 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
+    // String compression
+    // #443
+
+    public int compress(char[] chars) {
+
+        // pointer for our compressed
+        int pointer = 0;
+        // iterator for input
+        int i = 0;
+
+
+        while (i < chars.length) {
+            char currentChar = chars[i];
+
+            //count consecutive characters
+            int count = 0;
+
+            while (i < chars.length && chars[i] == currentChar) {
+                i++;
+                count++;
+            }
+
+            chars[pointer++] = currentChar;
+            if (count > 1) {
+                for (char c : Integer.toString(count).toCharArray()) {
+                    chars[pointer++] = c;
+                }
+            }
+        }
+        return pointer;
+
+    }
+
+
 
 }
