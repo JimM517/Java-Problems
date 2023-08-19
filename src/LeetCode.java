@@ -466,6 +466,24 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // TWO SUM better solution with O(n) time
+    public int[] twoSumTwo(int[] nums, int target) {
+
+        Map<Integer, Integer> sums = new HashMap<>();
+
+
+        for (int i = 0; i < nums.length; i++) {
+            int diff = target - nums[i];
+
+            if (sums.containsKey(diff)) {
+                return new int[]{sums.get(diff), i};
+            }
+            sums.put(nums[i], i);
+
+        }
+        return new int[]{-1, -1};
+    }
+
 
 
 
