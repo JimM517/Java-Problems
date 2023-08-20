@@ -486,6 +486,65 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 347 Top K Frequent Elements
+    // Given an integer array nums and an integer k, return
+    // the k most frequent elements.
+    // You may return the answer in any order
+    public int[] topKFrequent(int[] nums, int k) {
+
+        // create hashmap to count the frequency of numbers
+        Map<Integer, Integer> countNums = new HashMap<>();
+
+        // count frequency
+        for (int num : nums) {
+            countNums.put(num, countNums.getOrDefault(num, 0) + 1);
+        }
+
+        // keep track of k most frequent
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>((num1, num2) -> countNums.get(num1) - countNums.get(num2));
+
+
+        for (int num : countNums.keySet()) {
+            minHeap.offer(num);
+            if (minHeap.size() > k) {
+                minHeap.poll();
+            }
+        }
+
+        // now return the array
+        int[] result = new int[k];
+        for (int i = k - 1; i >= 0; i--) {
+            result[i] = minHeap.poll();
+        }
+
+        return result;
+
+    }
+
+
+    // 36 Valid sudoku
+    public boolean isValidSudoku(char[][] board) {
+
+        for(int i = 0; i < 9; i++) {
+            Set<Character> rows = new HashSet<>();
+            Set<Character> cols = new HashSet<>();
+            Set<Character> cubes = new HashSet<>();
+            for (int j = 0; j < 9; j++) {
+                if (board[i][j] != '.' && !rows.add(board[i][j])) return false;
+                if (board[j][i] != '.' && !cols.add(board[j][i])) return false;
+                int colOffset = j % 3, rowOffset = j / 3;
+                int colStart = 3 * (i % 3), rowStart = 3 * (i / 3);
+                int row = rowStart + rowOffset, col = colStart + colOffset;
+                if (board[row][col] != '.' && !cubes.add(board[row][col]) )return false;
+            }
+        }
+        return true;
+
+    }
+
+
+
+
 
 
 
