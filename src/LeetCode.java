@@ -543,6 +543,38 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
+    // 128 Longest Consecutive Sequence
+    // Given an unsorted array of integers nums,
+    // return the length of the longest consecutive elements sequence.
+    // You must write an algorithm that runs in O(n) time
+
+    public int longestConsecutive(int[] nums) {
+
+        Set<Integer> numSet = new HashSet<>();
+
+        for (int num : nums) {
+            numSet.add(num);
+        }
+
+        int longestStreak = 0;
+
+        for (int num : numSet) {
+            if (!numSet.contains(num - 1)) {
+                int currentNum = num;
+                int currentStreak = 1;
+
+
+                while(numSet.contains(currentNum + 1)) {
+                    currentNum++;
+                    currentStreak++;
+                }
+
+                longestStreak = Math.max(longestStreak, currentStreak);
+            }
+        }
+        return longestStreak;
+    }
+
 
 
 
