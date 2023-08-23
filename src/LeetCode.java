@@ -577,6 +577,31 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 167 Two Sum II -> medium
+    public int[] sumTwo(int[] nums, int target) {
+
+        int left = 0;
+        int right = nums.length - 1;
+
+
+        while (left < right) {
+            int tempSum = nums[left] + nums[right];
+
+            if (tempSum > target) {
+                right--;
+            } else if (tempSum < target) {
+                left++;
+            } else {
+                return new int[]{left + 1, right + 1};
+            }
+
+        }
+
+        return new int[]{-1, -1};
+    }
+
+
+
 
 
 
