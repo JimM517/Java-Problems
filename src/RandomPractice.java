@@ -458,6 +458,8 @@ public class RandomPractice {
     // palindrome is the same both forwards and backwards ie "racecar"
     public boolean palindrome(String str) {
 
+//         str.equals(new StringBuffer(str).reverse().toString()) ? "Yes" : "No");
+
         // compare first char with last with two pointers;
         int front = 0;
         int back = str.length() - 1;
