@@ -737,9 +737,6 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
         }
 
         return stack.isEmpty() ? true : false;
-
-
-
     }
 
 
