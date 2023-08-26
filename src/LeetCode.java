@@ -654,15 +654,62 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     // Find two lines that together with the x-axis form a container, contains the most water
 
     public int maxArea(int[] height) {
-        int result = 0;
 
-        for (int i = 0; i < height.length; i++) {
-            for (int j = i + 1; j < height.length; j++) {
-                int area = (j - i) * Math.min(height[i], height[j]);
-                result = Math.max(result, area);
+        // two pointers
+        int left = 0;
+        int right = height.length - 1;
+
+        int max = 0;
+        while(left < right) {
+            int width = right - left;
+            int hi = Math.min(height[left], height[right]);
+            int area = width * hi;
+            max = Math.max(max, area);
+            if (height[left] < height[right]) left++;
+            else if (height[left] > height[right]) right--;
+            else {
+                left++;
+                right--;
             }
         }
-    return result;
+        return max;
+    }
+
+
+
+    // 42 Trapping Rain Water
+
+    public int trap(int[] height) {
+        int[] leftMax = new int[height.length];
+        int[] rightMax = new int[height.length];
+
+        int max = Integer.MIN_VALUE;
+
+        // find left max
+        for (int i = 0; i < height.length; i++) {
+            if (max < height[i]) {
+                max = height[i];
+            }
+            leftMax[i] = max;
+        }
+
+        max = Integer.MIN_VALUE;
+        // Find right max
+        for (int i = height.length - 1; i >= 0; i--) {
+            if (max < height[i]) {
+                max = height[i];
+            }
+            rightMax[i] = max;
+        }
+
+        // Find how many units of rain water is trapped
+        int count = 0;
+        for (int j = 0; j < height.length; j++) {
+            count += (Math.min(leftMax[j], rightMax[j] - height[j]));
+        }
+
+        return count;
+
 
     }
 
