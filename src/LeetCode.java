@@ -648,6 +648,26 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 11. Container with most water
+    // given an array height of length n. There are n vertical lines drawn such that
+    // the two endpoints of ith line are (i, 0) and (i, height[i]).
+    // Find two lines that together with the x-axis form a container, contains the most water
+
+    public int maxArea(int[] height) {
+        int result = 0;
+
+        for (int i = 0; i < height.length; i++) {
+            for (int j = i + 1; j < height.length; j++) {
+                int area = (j - i) * Math.min(height[i], height[j]);
+                result = Math.max(result, area);
+            }
+        }
+    return result;
+
+    }
+
+
+
 
 
 
