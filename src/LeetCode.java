@@ -780,6 +780,47 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
+    // 155 Min Stack
+
+    Stack<Integer> stack = new Stack<>();
+    Stack<Integer> minStack = new Stack<>();
+    public void Minstack() {
+        stack = new Stack<>();
+        minStack = new Stack<>();
+    }
+
+    public void push(int val) {
+        stack.push(val);
+
+        if (minStack.isEmpty() || val <= minStack.peek()) {
+            minStack.push(val);
+        }
+    }
+
+    public void pop() {
+        if (!stack.isEmpty()) {
+            if (stack.peek().equals(minStack.peek())) {
+                minStack.pop();
+            }
+            stack.pop();
+        }
+    }
+
+    public int top() {
+        if (!stack.isEmpty()) {
+            return stack.peek();
+        }
+        throw new IllegalArgumentException("Stack empty");
+    }
+
+    public int getMin() {
+        if (!minStack.isEmpty()) {
+            return minStack.peek();
+        }
+        throw new IllegalArgumentException("Minstack is empty");
+    }
+
+
 
 
 
