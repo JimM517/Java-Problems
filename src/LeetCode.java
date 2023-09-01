@@ -869,6 +869,63 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 567 Permutation in String
+
+    public boolean checkInclusion(String s1, String s2) {
+        if (s1.length() > s2.length()) {
+            return false;
+        }
+
+        Map<Character, Integer> stringOne = new HashMap<>();
+        Map<Character, Integer> stringTwo = new HashMap<>();
+
+        // Initialize stringOne hash map with character frequencies from s1
+        for (char c : s1.toCharArray()) {
+            stringOne.put(c, stringOne.getOrDefault(c, 0) + 1);
+        }
+
+        int matches = 0;
+
+        // Initialize the sliding window with the length of s1
+        for (int i = 0; i < s1.length(); i++) {
+            char c = s2.charAt(i);
+            stringTwo.put(c, stringTwo.getOrDefault(c, 0) + 1);
+
+            // Compare the current window of characters
+            if (stringTwo.get(c).equals(stringOne.get(c))) {
+                matches++;
+            }
+        }
+
+        // Slide the window across s2
+        for (int i = s1.length(); i < s2.length(); i++) {
+            // Check if the current window has the same character frequencies
+            // as the stringOne hash map
+            if (matches == stringOne.size()) {
+                return true;
+            }
+
+            char addChar = s2.charAt(i);
+            char removeChar = s2.charAt(i - s1.length());
+
+            // Update stringTwo hash map for the sliding window
+            stringTwo.put(addChar, stringTwo.getOrDefault(addChar, 0) + 1);
+            if (stringTwo.get(addChar).equals(stringOne.get(addChar))) {
+                matches++;
+            }
+
+            stringTwo.put(removeChar, stringTwo.get(removeChar) - 1);
+            if (stringTwo.get(removeChar).equals(stringOne.get(removeChar))) {
+                matches--;
+            }
+        }
+
+        // Check for the last window
+        return matches == stringOne.size();
+    }
+
+
+
 
 
 
