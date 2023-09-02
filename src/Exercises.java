@@ -457,6 +457,17 @@ public class Exercises {
         arrayCount9([1, 9, 9, 3, 9]) → 3
     */
 
+        public int ArrayCount9(int[] nums) {
+            int totalNines = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == 9) {
+                    totalNines++;
+                }
+            }
+            return totalNines;
+        }
+
+
     /*
         Exercise 24: Array123
         Create a boolean method called Array123 that takes in an integer array “nums”. Given an array of ints, return
@@ -465,6 +476,18 @@ public class Exercises {
         array123([1, 1, 2, 4, 3]) → false
         array123([1, 1, 2, 1, 2, 3]) → true
     */
+        public boolean Array123(int[] nums) {
+            if (nums.length < 3) {
+                return false;
+            }
+
+            for (int i = 0; i < nums.length - 2; i++) {
+                if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
     /*
         Exercise 25: IsStrictlyIncreasing
@@ -474,6 +497,18 @@ public class Exercises {
         isStrictlyIncreasing([5,7,7,10]) → false
         isStrictlyIncreasing([-5,-3,0,17]) → true
     */
+
+        public boolean isStrictlyIncreasing(int[] nums) {
+
+            boolean isIncreasing = false;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i + 1] > nums[i]) {
+                    isIncreasing = true;
+                }
+            }
+            return isIncreasing;
+
+        }
 
     /*
         Exercise 26: SumOdds
