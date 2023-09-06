@@ -958,6 +958,42 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 22. Generate Parentheses
+    public List<String> generateParenthesis(int n) {
+        // only add open parentheses if open < n
+        // only add a closing parentheses if closed < open
+        // valid if open == closed == n
+        List<String> validCombos = new ArrayList<>();
+        backTrack("", 0, 0, n, validCombos);
+        return validCombos;
+    }
+
+
+    public void backTrack(String current, int open, int closed, int n, List<String> validCombos) {
+        if (current.length() < 2 * n) {
+            validCombos.add(current);
+            return;
+        }
+
+        if (open < n) {
+            backTrack(current + "(", open + 1, closed, n, validCombos);
+        }
+
+        if (closed < open) {
+            backTrack(current + ")", open, closed + 1, n, validCombos);
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 }
