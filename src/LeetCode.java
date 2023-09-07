@@ -987,6 +987,30 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
+    // 739 Given an array of integers temperatures represents the daily temperatures,
+    // return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature.
+    // If there is no future day for which this is possible, keep answer[i] == 0 instead.
+
+    public int[] dailyTemperatures(int[] temperatures) {
+            int[] results = new int[temperatures.length];
+
+            int n = temperatures.length;
+
+            // monotonic decreasing order -> stack problem
+            Stack<Integer> temps = new Stack<>();
+
+            for (int i = n - 1; i >= 0; i--) {
+                while(!stack.isEmpty() && temperatures[i] > temperatures[temps.peek()]) {
+                    int stackIndex = stack.pop();
+                    results[stackIndex] = i - stackIndex;
+                }
+                stack.push(i);
+            }
+        return results;
+
+    }
+
+
 
 
 
