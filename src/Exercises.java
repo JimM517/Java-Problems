@@ -554,6 +554,24 @@ public class Exercises {
         fizzBuss() → ([1,2,Fizz,4,Buzz, Fizz,7,8,Fizz,Buzz,11,...])
     */
 
+        public String[] fizzBuzz() {
+
+            String[] result = new String[101];
+
+            for (int i = 1; i <= 100; i++) {
+                if ((i % 3 == 0) && (i % 5 == 0)) {
+                    result[i] = "FizzBuzz";
+                } else if (i % 5 == 0) {
+                    result[i] = "Buzz";
+                } else if (i % 3 == 0) {
+                    result[i] = "Fizz";
+                } else {
+                    result[i] = Integer.toString(i);
+                }
+            }
+            return result;
+
+        }
     /*
         Exercise 29: Fibonacci  (new for V3)
         Create an integer array method called Fibonacci that takes in no arguments or parameters. In a Fibonacci  sequence,
