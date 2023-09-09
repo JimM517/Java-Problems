@@ -534,6 +534,16 @@ public class Exercises {
         sumOddsBetweenValues(28,30) → 29
         sumOddsBetweenValues(18, 18) → 0
     */
+        public int sumOddsBetweenValues(int start, int end) {
+
+            int total = 0;
+            for (int i = start; i <= end; i++) {
+                if (i % 2 == 1) {
+                    total += i;
+                }
+            }
+            return total;
+        }
 
     /*
         Exercise 28: FizzBuzz
