@@ -83,6 +83,8 @@ public class Main {
 //        String[] words = hello.split(" ");
 //        System.out.println(Arrays.toString(words));
 
+        System.out.println(exercises.sumOdds());
+
     }
 
 

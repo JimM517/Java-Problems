@@ -516,6 +516,15 @@ public class Exercises {
         1 and 100 inclusive.
         sumOdds() →  2500
     */
+        public int sumOdds() {
+            int subtotal = 0;
+            for (int i = 1; i <= 100; i++) {
+                if (i % 2 == 1) {
+                    subtotal += i;
+                }
+            }
+            return subtotal;
+        }
 
     /*
         Exercise 27: SumOddsBetweenValues
