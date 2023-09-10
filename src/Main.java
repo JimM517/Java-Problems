@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -85,7 +83,10 @@ public class Main {
 //        String[] words = hello.split(" ");
 //        System.out.println(Arrays.toString(words));
 
-        System.out.println(Arrays.toString(exercises.fibbonacci()));
+//        System.out.println(Arrays.toString(exercises.fibbonacci()));
+
+
+        System.out.println(exercises.reverseString("Kata"));
 
     }
 

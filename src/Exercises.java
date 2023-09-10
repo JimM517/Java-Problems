@@ -608,6 +608,25 @@ public class Exercises {
         reverseString(“Kata”) → (“ataK”)
         reverseString(“”) → (“”)
     */
+        public String reverseString(String str) {
+
+            // Solution 1
+//            String reversed = "";
+//
+//            if (str.equals("")) {
+//                return "";
+//            }
+//
+//            for (int i = str.length() - 1; i >= 0; i--) {
+//                reversed += str.charAt(i);
+//            }
+//            return reversed;
+
+            // Solution 2
+            StringBuilder reversed = new StringBuilder(str);
+            return reversed.reverse().toString();
+
+        }
 
     /*
         Exercise 31: PrimeFactors (new for V3)
