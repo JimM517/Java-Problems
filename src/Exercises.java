@@ -579,6 +579,26 @@ public class Exercises {
         sequence that begins 0,1,1,2,3,.... for the values less than 2000.
         fibonacci () → ([1,1,2,3,5,8,13,....,987,1597])
     */
+        public int[] fibbonacci() {
+            int[] results = new int[2000];
+
+            int first = 0;
+            int second = 1;
+
+            int counter = 0;
+            while(counter < 2000) {
+
+                results[counter] = first;
+
+                int temp = first + second;
+                first = second;
+                second = temp;
+
+
+                counter++;
+            }
+        return results;
+        }
 
     /*
         Exercise 30: ReverseString (new for V3)
