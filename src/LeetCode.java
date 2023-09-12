@@ -1013,6 +1013,45 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 853 Car Fleet
+    public int carFleet(int target, int[] position, int[] speed) {
+
+        // O(n log n) solution
+        // calculate what time each car going to reach the destination????
+        // (target - position) / speed ???
+
+       int n = position.length;
+       int[][] cars = new int[n][2];
+
+       for (int i = 0; i < n; i++) {
+
+           cars[i][0] = position[i];
+           cars[i][1] = (target - position[i]) / speed[i];
+       }
+
+
+       Arrays.sort(cars, (a, b) -> Integer.compare(b[0], a[0]));
+
+       int count = 0;
+       double prevTime = -1;
+
+
+       for (int i = 0; i < n; i++) {
+
+           double currentTime = cars[i][1];
+
+           if (currentTime > prevTime) {
+               count++;
+               prevTime = currentTime;
+           }
+       }
+
+        return count;
+    }
+
+
+
+
 
 
 
@@ -1021,4 +1060,3 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 }
-;
