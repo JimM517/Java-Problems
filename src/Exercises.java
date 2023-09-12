@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Exercises {
 
     // TODO: 5/28/2023 Add testing for all solutions
@@ -636,6 +639,36 @@ public class Exercises {
         primeFactors(28) → ([2,2,7])
         primeFactors(667) → ([23, 29])
     */
+
+        public int[] primeFactors(int n) {
+
+            // prime numbers are greater than one and only divisible by itself and one
+
+            List<Integer> factors = new ArrayList<>();
+
+            int divisor = 2;
+
+            while (n > 1) {
+                if (n % divisor == 0) {
+                    factors.add(divisor);
+
+                    n /= divisor;
+                } else {
+                    divisor++;
+                }
+            }
+
+            int[] result = new int[factors.size()];
+
+            for (int i = 0; i < factors.size(); i++) {
+                result[i] = factors.get(i);
+            }
+
+            return result;
+
+        }
+
+
 
     /*
         Exercise 32: Factorial (new for V3)
