@@ -95,7 +95,11 @@ public class Main {
 
 //        System.out.println(exercises.combostring("Hello", "hi"));
 
-        System.out.println(exercises.helloName("Alice"));
+//        System.out.println(exercises.helloName("Alice"));
+
+        System.out.println(exercises.hasBad("badxx"));
+        System.out.println(exercises.hasBad("xbadxx"));
+        System.out.println(exercises.hasBad("xxbadxx"));
 
     }
 
