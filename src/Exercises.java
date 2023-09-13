@@ -698,6 +698,16 @@ public class Exercises {
         combostring("aaa", "b") → "baaab"
     */
 
+        public String combostring(String a, String b) {
+
+            if (a.length() < b.length()) {
+                return a + b + a;
+            }
+
+            return b + a + b;
+
+        }
+
     /*
         Exercise 34: HelloName (new for V4)
         Create a string method called HelloName that takes in a string “name”.

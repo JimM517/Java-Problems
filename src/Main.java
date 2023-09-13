@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -91,9 +89,11 @@ public class Main {
 //        System.out.println(exercises.reverseString("Kata"));
 
 
-        System.out.println(Arrays.toString(exercises.primeFactors(667)));
+//        System.out.println(Arrays.toString(exercises.primeFactors(667)));
 
-        System.out.println(exercises.factorial(5));
+//        System.out.println(exercises.factorial(5));
+
+        System.out.println(exercises.combostring("Hello", "hi"));
 
     }
 
