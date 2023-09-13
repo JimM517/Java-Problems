@@ -679,6 +679,13 @@ public class Exercises {
         factorial(4) → (24)
         factorial(10) → (3628800)
     */
+    public int factorial(int n) {
+
+        // base case 9,
+        if (n == 1) return 1;
+
+        return n * factorial(n - 1);
+    }
 
     /*
         Exercise 33: ComboString (new for V4)

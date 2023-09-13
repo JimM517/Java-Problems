@@ -93,6 +93,8 @@ public class Main {
 
         System.out.println(Arrays.toString(exercises.primeFactors(667)));
 
+        System.out.println(exercises.factorial(5));
+
     }
 
 
