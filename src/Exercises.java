@@ -717,6 +717,10 @@ public class Exercises {
         helloName("X") → "Hello X!"
     */
 
+    public String helloName(String name) {
+        return "Hello, " + name + "!";
+    }
+
     /*
         Exercise 35: HasBad (new for V4)
         Create a boolean method called HasBad that takes in a string “str”.  Given a string, return true if "bad"

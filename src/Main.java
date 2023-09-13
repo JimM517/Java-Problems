@@ -93,7 +93,9 @@ public class Main {
 
 //        System.out.println(exercises.factorial(5));
 
-        System.out.println(exercises.combostring("Hello", "hi"));
+//        System.out.println(exercises.combostring("Hello", "hi"));
+
+        System.out.println(exercises.helloName("Alice"));
 
     }
 
