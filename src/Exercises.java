@@ -730,6 +730,21 @@ public class Exercises {
         hasBad("xbadxx") → true
         hasBad("xxbadxx") → false
     */
+
+    public boolean hasBad(String str) {
+
+        boolean badFound = false;
+
+        if (str.length() >= 3) {
+
+            if (str.substring(0, 3).equals("bad") || (str.length() > 3 && str.substring(1, 4).equals("bad"))) {
+                badFound = true;
+
+            }
+        }
+        return badFound;
+    }
+
     /*
         Exercise 36: FrontTimes (new for V4)
         Create a string method called FrontTimes that takes in a string “str” and an integer “n”. Given a string and a
