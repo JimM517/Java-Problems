@@ -1051,6 +1051,48 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 875 Koko Eating Bananas
+
+    public int minEatingSpeed(int[] piles, int h) {
+
+        // binary search solution?
+        // h must be greater than or equal to the piles.length
+
+        int left = 1;
+
+        int right = piles[0];
+        for (int pile : piles) {
+            if (pile > right) {
+                right = pile;
+            }
+        }
+
+        int result = right;
+
+        while (left <= right) {
+            int k = (left + right) / 2;
+            int hours = 0;
+
+            for (int p : piles) {
+                hours += Math.ceil(((double) p / k));
+            }
+
+            if (hours <= h) {
+                result = Math.min(result, k);
+                right = k - 1;
+            } else {
+                left = k + 1;
+            }
+
+
+
+
+        }
+        return result;
+    }
+
+
+
 
 
 
