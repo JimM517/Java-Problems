@@ -101,6 +101,9 @@ public class Main {
         System.out.println(exercises.hasBad("xbadxx"));
         System.out.println(exercises.hasBad("xxbadxx"));
 
+
+        System.out.println(exercises.frontTimes("Chocolate", 3));
+
     }
 
 

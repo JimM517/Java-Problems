@@ -755,6 +755,17 @@ public class Exercises {
         frontTimes("Abc", 3) → "AbcAbcAbc"
     */
 
+        public String frontTimes(String str, int n) {
+            String result = "";
+
+            if (str.length() >= 3) {
+                for (int i = 0; i < n; i++) {
+                    result += str.substring(0, 3);
+                }
+            }
+            return result;
+        }
+
     /*
         Exercise 37: FirstTwo (new for V4)
         Create a string method called FirstTwo that takes in a string “str”. Given a string, return the string made of
