@@ -756,14 +756,33 @@ public class Exercises {
     */
 
         public String frontTimes(String str, int n) {
-            String result = "";
+//            SOLUTION ONE
 
+//            String result = "";
+//
+//            if (str.length() >= 3) {
+//                for (int i = 0; i < n; i++) {
+//                    result += str.substring(0, 3);
+//                }
+//            }
+//            return result;
+
+            // SOLUTION TWO
             if (str.length() >= 3) {
+                StringBuilder result = new StringBuilder();
+                String front = str.substring(0, 3);
                 for (int i = 0; i < n; i++) {
-                    result += str.substring(0, 3);
+                    result.append(front);
                 }
+                return result.toString();
+            } else {
+                StringBuilder result = new StringBuilder();
+                for (int i = 0; i < n; i++) {
+                    result.append(str);
+                }
+                return result.toString();
             }
-            return result;
+
         }
 
     /*
