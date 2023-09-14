@@ -97,12 +97,15 @@ public class Main {
 
 //        System.out.println(exercises.helloName("Alice"));
 
-        System.out.println(exercises.hasBad("badxx"));
-        System.out.println(exercises.hasBad("xbadxx"));
-        System.out.println(exercises.hasBad("xxbadxx"));
+//        System.out.println(exercises.hasBad("badxx"));
+//        System.out.println(exercises.hasBad("xbadxx"));
+//        System.out.println(exercises.hasBad("xxbadxx"));
+//
+//
+//        System.out.println(exercises.frontTimes("Chocolate", 3));
 
-
-        System.out.println(exercises.frontTimes("Chocolate", 3));
+        System.out.println(exercises.firstTwo("Hello"));
+        System.out.println(exercises.firstTwo("ab"));
 
     }
 

@@ -795,6 +795,15 @@ public class Exercises {
         firstTwo("ab") → "ab"
     */
 
+        public String firstTwo(String str) {
+
+            if (str.length() < 2) {
+                return str;
+            }
+
+            return str.substring(0, 2);
+        }
+
     /*
         Exercise 38: FirstHalf (new for V4)
         Create a string method called FirstHalf that takes in a string “str”. Given a string of even length, return the
