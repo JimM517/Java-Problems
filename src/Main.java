@@ -104,8 +104,11 @@ public class Main {
 //
 //        System.out.println(exercises.frontTimes("Chocolate", 3));
 
-        System.out.println(exercises.firstTwo("Hello"));
-        System.out.println(exercises.firstTwo("ab"));
+//        System.out.println(exercises.firstTwo("Hello"));
+//        System.out.println(exercises.firstTwo("ab"));
+
+        System.out.println(exercises.firstHalf("HelloThere"));
+        System.out.println(exercises.firstHalf("WooHoo"));
 
     }
 

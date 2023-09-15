@@ -813,6 +813,10 @@ public class Exercises {
         firstHalf("abcdef") → "abc
     */
 
+        public String firstHalf(String str) {
+            return str.substring(0, str.length() / 2);
+        }
+
     /*
         Exercise 39: ExtraEnd (new for V4)
         Create a string method called ExtraEnd that takes in a string “str”. Given a string, return a new string made of
