@@ -124,9 +124,13 @@ public class Main {
 //        System.out.println(exercises.countXX("abcxx"));
 
 
-//        int[] large = {11, 200, 43, 84, 9917, 4321, 1, 33333, 8997};
+        int[] large = {11, 200, 43, 84, 9917, 4321, 1, 33333, 8997};
 //
-//        System.out.println(exercises.findLargest(large));
+        System.out.println(exercises.findLargest(large));
+
+        System.out.println(exercises.doubleX("axxbb"));
+        System.out.println(exercises.doubleX("axaxax"));
+
 
     }
 

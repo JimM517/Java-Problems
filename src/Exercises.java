@@ -883,6 +883,16 @@ public class Exercises {
         doubleX("axaxax") → false
         doubleX("xxxxx") → true
     */
+    public boolean doubleX(String str) {
+         boolean hasTwoX = false;
+
+         for (int i = 0; i < str.length() - 1; i++) {
+             if (str.charAt(i) == 'x' && str.charAt(i + 1) == 'x') {
+                 hasTwoX = true;
+             }
+         }
+        return hasTwoX;
+    }
 
     /*
         Exercise 43: ReverseList
