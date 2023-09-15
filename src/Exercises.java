@@ -861,6 +861,20 @@ public class Exercises {
         countXX("xxxx") → 3
     */
 
+    public int countXX(String str) {
+
+        int count = 0;
+
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == 'x' && str.charAt(i + 1) == 'x') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+
     /*
         Exercise 42: DoubleX (new for V4)
         Create a boolean method called DoubleX that takes in a string “str”. Given a string, return true if the first

@@ -120,6 +120,9 @@ public class Main {
 
         System.out.println(exercises.endsLy("oddy"));
 
+
+        System.out.println(exercises.countXX("abcxx"));
+
     }
 
 
