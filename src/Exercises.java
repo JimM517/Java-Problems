@@ -826,6 +826,17 @@ public class Exercises {
         extraEnd("Hi") → "HiHiHi"
     */
 
+        public String extraEnd(String str) {
+
+            StringBuilder result = new StringBuilder();
+            String last = str.substring(str.length() - 2);
+            for (int i = 0; i < 3; i++) {
+                result.append(last);
+            }
+            return result.toString();
+        }
+
+
     /*
         Exercise 40: EndsLy (new for V4)
         Create a boolean method called EndsLy that takes in a string “str”. Given a string, return true if it ends in "ly".
