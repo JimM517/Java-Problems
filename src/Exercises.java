@@ -938,6 +938,18 @@ public class Exercises {
         findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) →  64362
     */
 
+        public int findLargest(int[] nums) {
+
+            int max = nums[0];
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] > max) {
+                    max = nums[i];
+                }
+            }
+            return max;
+        }
+
+
     /*
         Exercise 49: DistinctValues (new for V4)
         Create a list of type string method called DistinctValues that takes in a list of type string “strings”. Given a
