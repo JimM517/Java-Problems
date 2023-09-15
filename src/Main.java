@@ -111,9 +111,14 @@ public class Main {
 //        System.out.println(exercises.firstHalf("WooHoo"));
 
 
-        System.out.println(exercises.extraEnd("Hello"));
+//        System.out.println(exercises.extraEnd("Hello"));
+//
+//        System.out.println(exercises.extraEnd("ab"));
 
-        System.out.println(exercises.extraEnd("ab"));
+
+        System.out.println(exercises.endsLy("oddly"));
+
+        System.out.println(exercises.endsLy("oddy"));
 
     }
 

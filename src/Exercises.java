@@ -845,6 +845,13 @@ public class Exercises {
         endsLy("oddy") → false
     */
 
+        public boolean endsLy(String str) {
+
+            return str.substring(str.length() - 2).equalsIgnoreCase("ly");
+
+        }
+
+
     /*
         Exercise 41: CountXX (new for V4)
         Create an integer method called CountXX that takes in a string “str”. Count the number of "xx" in the given string.
