@@ -926,6 +926,17 @@ public class Exercises {
         oddOnly( {1143, 555, 7, 1772, 9953, 643} ) →  [1143, 555, 7, 9953, 643]
         oddOnly( {734, 233, 782, 811, 3, 9999} ) →  [233, 811, 3, 9999]
     */
+    public List<Integer> oddOnly(int[] nums) {
+
+        List<Integer> results = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 1) {
+                results.add(nums[i]);
+            }
+        }
+        return results;
+    }
 
     /*
         Exercise 45: No4LetterWords (new for V4)
