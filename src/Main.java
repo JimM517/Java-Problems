@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -130,6 +133,17 @@ public class Main {
 
         System.out.println(exercises.doubleX("axxbb"));
         System.out.println(exercises.doubleX("axaxax"));
+
+
+        List<String> tryAndReverse = new ArrayList<>();
+        tryAndReverse.add("purple");
+        tryAndReverse.add("green");
+        tryAndReverse.add("blue");
+        tryAndReverse.add("yellow");
+        tryAndReverse.add("green");
+
+
+        System.out.println(exercises.reverseList(tryAndReverse));
 
 
     }

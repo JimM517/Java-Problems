@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Exercises {
 
@@ -902,6 +903,20 @@ public class Exercises {
         reverseList( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"} )
         →  ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
     */
+    public List<String> reverseList(List<String> original) {
+
+        Stack<String> reversed = new Stack<>();
+        List<String> results = new ArrayList<>();
+
+        for (String index : original) {
+            reversed.push(index);
+        }
+
+        while(!reversed.isEmpty()) {
+            results.add(reversed.pop());
+        }
+        return results;
+    }
 
     /*
         Exercise 44: OddOnly (new for V4)
