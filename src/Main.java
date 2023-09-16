@@ -156,6 +156,16 @@ public class Main {
         System.out.println(Arrays.toString(exercises.listTwoArray(testStrings)));
 
 
+        List<Integer> testingNumsList = new ArrayList<>();
+        testingNumsList.add(5);
+        testingNumsList.add(7);
+        testingNumsList.add(9);
+        testingNumsList.add(5);
+        testingNumsList.add(11);
+
+        System.out.println(exercises.foundIntTwice(testingNumsList, 5));
+
+
     }
 
 

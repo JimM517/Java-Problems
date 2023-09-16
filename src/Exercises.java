@@ -987,6 +987,23 @@ public class Exercises {
         foundIntTwice( [6, 8, 10, 11, 13], 8→  false
         foundIntTwice( [9, 23, 44, 2, 88, 44], 44)→  true
     */
+        public boolean foundIntTwice(List<Integer> nums, int target) {
+
+            boolean foundTwice = false;
+            int count = 0;
+
+            for (Integer index : nums) {
+                if (index == target) {
+                    count++;
+                }
+            }
+
+            if (count >= 2) {
+                foundTwice = true;
+            }
+
+            return foundTwice;
+        }
 
     /*
         Exercise 48: FindLargest (new for V4)
