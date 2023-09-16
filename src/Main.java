@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -136,8 +135,8 @@ public class Main {
         int[] odds = {112, 201, 774, 92, 9, 83, 41872};
         int[] moreOdds = {1143, 555, 7, 1772, 9953, 643};
 
-        System.out.println(exercises.oddOnly(odds));
-        System.out.println(exercises.oddOnly(moreOdds));
+//        System.out.println(exercises.oddOnly(odds));
+//        System.out.println(exercises.oddOnly(moreOdds));
 
 
 
@@ -149,11 +148,11 @@ public class Main {
         testStrings.add("ab");
         testStrings.add("ac");
 
-        System.out.println(exercises.noFourLetterWords(stringOne));
-        System.out.println(exercises.noFourLetterWords(stringTwo));
+//        System.out.println(exercises.noFourLetterWords(stringOne));
+//        System.out.println(exercises.noFourLetterWords(stringTwo));
 
 
-        System.out.println(Arrays.toString(exercises.listTwoArray(testStrings)));
+//        System.out.println(Arrays.toString(exercises.listTwoArray(testStrings)));
 
 
         List<Integer> testingNumsList = new ArrayList<>();
@@ -163,7 +162,7 @@ public class Main {
         testingNumsList.add(5);
         testingNumsList.add(11);
 
-        System.out.println(exercises.foundIntTwice(testingNumsList, 5));
+//        System.out.println(exercises.foundIntTwice(testingNumsList, 5));
 
 
 
@@ -177,7 +176,7 @@ public class Main {
         setStrings.add("purple");
 
 
-        System.out.println(exercises.distinctValues(setStrings));
+//        System.out.println(exercises.distinctValues(setStrings));
 
     }
 
