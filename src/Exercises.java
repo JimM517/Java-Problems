@@ -968,6 +968,17 @@ public class Exercises {
         list2Array( ["aaa", "bbb", "ccc", "ddd"] ) →   {"aaa", "bbb", "ccc", "ddd"}
     */
 
+        public String[] listTwoArray(List<String> strings) {
+
+            String[] result = new String[strings.size()];
+            for (int i = 0; i < strings.size(); i++) {
+                result[i] = strings.get(i);
+            }
+            return result;
+
+        }
+
+
     /*
         Exercise 47: FoundIntTwice (new for V4)
         Create a boolean method called FoundIntTwice that takes in a list of type integer “nums” and an integer “value”.

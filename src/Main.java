@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -140,8 +144,16 @@ public class Main {
         String[] stringOne = {"Train", "Boat", "Car"};
         String[] stringTwo = {"Red", "White", "Blue"};
 
+        List<String> testStrings = new ArrayList<>();
+        testStrings.add("aa");
+        testStrings.add("ab");
+        testStrings.add("ac");
+
         System.out.println(exercises.noFourLetterWords(stringOne));
         System.out.println(exercises.noFourLetterWords(stringTwo));
+
+
+        System.out.println(Arrays.toString(exercises.listTwoArray(testStrings)));
 
 
     }
