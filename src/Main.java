@@ -136,6 +136,14 @@ public class Main {
         System.out.println(exercises.oddOnly(moreOdds));
 
 
+
+        String[] stringOne = {"Train", "Boat", "Car"};
+        String[] stringTwo = {"Red", "White", "Blue"};
+
+        System.out.println(exercises.noFourLetterWords(stringOne));
+        System.out.println(exercises.noFourLetterWords(stringTwo));
+
+
     }
 
 

@@ -946,6 +946,18 @@ public class Exercises {
         no4LetterWords( {"Train", "Boat", "Car"} ) →   ["Train", "Car"]
         no4LetterWords( {"Red", "White", "Blue"} ) →   ["Red", "White"]
     */
+    public List<String> noFourLetterWords(String[] strings) {
+        List<String> results = new ArrayList<>();
+
+        for (String str : strings) {
+            if (str.length() == 4) {
+                continue;
+            } else {
+                results.add(str);
+            }
+        }
+        return results;
+    }
 
     /*
         Exercise 46: List2Array (new for V4)
