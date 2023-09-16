@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Exercises {
 
@@ -1033,6 +1031,23 @@ public class Exercises {
         distinctValues( ["red", "yellow", "green", "yellow", "blue", "green", "purple"] ) →  ["red", "yellow", "green", "blue", "purple"]
         distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) →  ["jingle", "bells", "all", "the", "way"]
     */
+
+        public List<String> distinctValues(List<String> strings) {
+
+            List<String> results = new ArrayList<>();
+
+            Set<String> tests = new HashSet<>();
+
+            for (String str : strings) {
+                tests.add(str);
+            }
+
+           results.addAll(tests);
+
+            return  results;
+
+
+        }
 
     /*
         Exercise 50: Array2List (new for V4)

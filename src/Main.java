@@ -166,6 +166,19 @@ public class Main {
         System.out.println(exercises.foundIntTwice(testingNumsList, 5));
 
 
+
+        List<String> setStrings = new ArrayList<>();
+        setStrings.add("red");
+        setStrings.add("yellow");
+        setStrings.add("green");
+        setStrings.add("yellow");
+        setStrings.add("blue");
+        setStrings.add("green");
+        setStrings.add("purple");
+
+
+        System.out.println(exercises.distinctValues(setStrings));
+
     }
 
 
