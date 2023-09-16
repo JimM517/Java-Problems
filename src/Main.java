@@ -146,6 +146,13 @@ public class Main {
         System.out.println(exercises.reverseList(tryAndReverse));
 
 
+        int[] odds = {112, 201, 774, 92, 9, 83, 41872};
+        int[] moreOdds = {1143, 555, 7, 1772, 9953, 643};
+
+        System.out.println(exercises.oddOnly(odds));
+        System.out.println(exercises.oddOnly(moreOdds));
+
+
     }
 
 
