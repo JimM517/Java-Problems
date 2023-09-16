@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -129,21 +126,7 @@ public class Main {
 
         int[] large = {11, 200, 43, 84, 9917, 4321, 1, 33333, 8997};
 //
-        System.out.println(exercises.findLargest(large));
-
-        System.out.println(exercises.doubleX("axxbb"));
-        System.out.println(exercises.doubleX("axaxax"));
-
-
-        List<String> tryAndReverse = new ArrayList<>();
-        tryAndReverse.add("purple");
-        tryAndReverse.add("green");
-        tryAndReverse.add("blue");
-        tryAndReverse.add("yellow");
-        tryAndReverse.add("green");
-
-
-        System.out.println(exercises.reverseList(tryAndReverse));
+//
 
 
         int[] odds = {112, 201, 774, 92, 9, 83, 41872};
