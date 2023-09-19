@@ -167,16 +167,25 @@ public class Main {
 
 
         List<String> setStrings = new ArrayList<>();
-        setStrings.add("red");
-        setStrings.add("yellow");
-        setStrings.add("green");
-        setStrings.add("yellow");
-        setStrings.add("blue");
-        setStrings.add("green");
-        setStrings.add("purple");
+
+//        setStrings.add("red");
+//        setStrings.add("yellow");
+//        setStrings.add("green");
+//        setStrings.add("yellow");
+//        setStrings.add("blue");
+//        setStrings.add("green");
+//        setStrings.add("purple");
+
+        setStrings.add("Apple");
+        setStrings.add("Orange");
+        setStrings.add("Banana");
+
+        String[] stringsArr = {"Apple", "Orange", "Banana"};
 
 
 //        System.out.println(exercises.distinctValues(setStrings));
+
+        System.out.println(exercises.arrayTwoList(stringsArr));
 
     }
 

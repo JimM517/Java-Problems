@@ -1058,6 +1058,15 @@ public class Exercises {
         array2List( {"Left", "Right", "Forward", "Back"} ) →   ["Left", "Right", "Forward", "Back"]
     */
 
+        public List<String> arrayTwoList(String[] strings) {
+            List<String> results = new ArrayList<>();
+
+            for (String str : strings) {
+                results.add(str);
+            }
+            return results;
+        }
+
     /*
         Exercise 51: ArrayInt2ListDouble (new for V4)
         Create a list of type double method called ArrayInt2ListDouble that takes in an integer array “ints”. Given an
