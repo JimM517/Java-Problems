@@ -1093,6 +1093,23 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
 
+    // 1523 Count Odd Numbers in an interval range
+    // Given two non-negative integers low and high.
+    // Return the count of odd numbers between low and high (inclusive).
+
+    public int countOdds(int low, int high) {
+
+        // check for even
+        if (low % 2 == 0 && high % 2 == 0) {
+            return (high - low) / 2;
+        } else {
+            return (high - low) / 2 + 1;
+        }
+
+    }
+
+
+
 
 
 
