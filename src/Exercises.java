@@ -1076,6 +1076,17 @@ public class Exercises {
         arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) →  [42, 49.5, 1642.5, 6.5, 438.5]
     */
 
+        public List<Double> arrayIntTwoListDouble(int[] numbers) {
+
+            List<Double> results = new ArrayList<>();
+
+            for (Integer index : numbers) {
+                results.add((double) index / 2);
+            }
+            return results;
+
+        }
+
     /*
         Exercise 52: MakeOutWord (new for V4)
         Create a string method called MakeOutWord that takes in two strings, “outword” and “word”. Given an "outword"

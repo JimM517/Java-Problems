@@ -187,6 +187,12 @@ public class Main {
 
         System.out.println(exercises.arrayTwoList(stringsArr));
 
+
+
+        int[] changeToDubs = {5, 8, 11, 200, 97};
+
+        System.out.println(exercises.arrayIntTwoListDouble(changeToDubs));
+
     }
 
 
