@@ -1097,5 +1097,15 @@ public class Exercises {
         makeOutWord("[[]]", "word") → "[[word]]"
     */
 
+        public String makeOutWord(String outWord, String word) {
+
+            String fHalf = outWord.substring(0, 2);
+            String sHalf = outWord.substring(outWord.length() - 2);
+
+            return fHalf + word + sHalf;
+
+
+        }
+
 
 }

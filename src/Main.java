@@ -193,6 +193,9 @@ public class Main {
 
         System.out.println(exercises.arrayIntTwoListDouble(changeToDubs));
 
+
+        System.out.println(exercises.makeOutWord("<<>>", "Yay"));
+
     }
 
 
