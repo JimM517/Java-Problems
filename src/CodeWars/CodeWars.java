@@ -26,5 +26,32 @@ public class CodeWars {
 
 
 
+    // Find the stray number
+    // [1, 1, 2] ==> 2
+
+    // ***** THIS SOLUTION DOESN'T WORK YET *****
+    public int stray(int[] numbers) {
+        int start = 0;
+        int end = numbers.length - 1;
+
+        int stray = 0;
+        while(start <= end) {
+            if (numbers[start] != numbers[end]) {
+                stray = (numbers[start] == numbers[start + 1]) ? numbers[end] : numbers[start];
+                break;
+            }
+            start++;
+            end--;
+        }
+        return stray;
+    }
+
+
+
+
+
+
+
+
 
 }
