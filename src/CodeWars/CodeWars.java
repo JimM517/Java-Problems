@@ -1,5 +1,6 @@
 package CodeWars;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -53,6 +54,22 @@ public class CodeWars {
     }
 
 
+    // Minimum steps
+    public int minimumSteps(int[] numbers, int k) {
+
+        Arrays.sort(numbers);
+        int sum = 0;
+        int i = 0;
+
+        while (sum < k) {
+            sum += numbers[i];
+            i++;
+        }
+
+        return i - 1;
+
+
+    }
 
 
 
