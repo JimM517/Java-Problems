@@ -63,4 +63,27 @@ public class InterviewPrep {
 
 
 
+    // 1304 Find N unique integers sum up to zero
+    public int[] sumZero(int n) {
+
+        int d = -(n / 2);
+
+        int[] result = new int[n];
+
+        if (n % 2 == 0) {
+            for (int i = 0; i < n; i++) {
+                result[i] = d;
+                d = d + 1;
+            }
+        } else {
+            for (int i = 0; i < n; i++) {
+                result[i] = d;
+                d = d + 1;
+            }
+        }
+        return result;
+    }
+
+
+
 }
