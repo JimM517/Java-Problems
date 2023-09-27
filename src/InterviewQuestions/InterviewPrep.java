@@ -85,5 +85,32 @@ public class InterviewPrep {
     }
 
 
+    // 53 Maximum Subarray
+    // find maximum subarray with the largest sum, return the sum
+    public int maxSubArray(int[] nums) {
+
+        // Kadane's algorithm
+
+        int startTotal = Integer.MIN_VALUE;
+        int endTotal = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            endTotal += nums[i];
+            if (startTotal < endTotal) {
+                startTotal = endTotal;
+            }
+            if (endTotal < 0) {
+                endTotal = 0;
+            }
+            return startTotal;
+
+        }
+
+
+
+        return 0;
+    }
+
+
 
 }
