@@ -565,7 +565,33 @@ public class RandomPractice {
     }
 
 
+    // largest prime factor of 600851475143
+    public long largestPrimeFactor(long number) {
 
+        long largestPrime = 0;
+
+        // check for evens
+        while (number % 2 == 0) {
+            largestPrime = 2;
+            number /= 2;
+        }
+
+
+        // check for odd
+        for (long i = 3; i <= Math.sqrt(number); i+=2) {
+            while(number % i == 0) {
+                largestPrime = i;
+                number /= i;
+            }
+        }
+
+        if (number > 1) {
+            largestPrime = number;
+        }
+
+        return largestPrime;
+
+    }
 
 
 
