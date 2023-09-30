@@ -544,6 +544,26 @@ public class RandomPractice {
     }
 
 
+    // Even fibonacci numbers
+    public long evenFibonacci() {
+
+        long total = 0;
+        long a = 1;
+        long b = 1;
+
+        while (a <= 4000000) {
+            if (a % 2 == 0) {
+                total += a;
+            }
+
+            long temp = a + b;
+            a = b;
+            b = temp;
+
+        }
+        return total;
+    }
+
 
 
 
