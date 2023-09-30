@@ -198,6 +198,9 @@ public class Main {
 //
 //        System.out.println(exercises.makeOutWord("[[]]", "word"));
 
+
+        System.out.println(random.multiplesOfThreeOrFive());
+
     }
 
 
