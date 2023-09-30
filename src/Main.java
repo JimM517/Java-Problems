@@ -199,7 +199,7 @@ public class Main {
 //        System.out.println(exercises.makeOutWord("[[]]", "word"));
 
 
-        System.out.println(random.evenFibonacci());
+        System.out.println(random.largestPrimeFactor(600851475143L));
 
     }
 
