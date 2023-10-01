@@ -594,6 +594,50 @@ public class RandomPractice {
     }
 
 
+    // largest palindrome product from two three digit numbers
+    public int largestPalindromeProduct() {
+
+        int largestPalindrome = 0;
+
+        for (int i = 999; i >= 100; i--) {
+            for (int j = i; j >= 100; j--) {
+                int product = i * j;
+                if (isPalindrome(product) && product > largestPalindrome) {
+                    largestPalindrome = product;
+                }
+            }
+        }
+    return largestPalindrome;
+
+    }
+
+
+    public static boolean isPalindrome(int number) {
+        int reversed = 0;
+        int original = number;
+
+        while(number > 0) {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number /= 10;
+        }
+        return original == reversed;
+    }
+
+
+    // smallest multiple
+    public int smallestMultiple() {
+
+
+
+
+
+        return 0;
+    }
+
+
+
+
 
 
 

@@ -201,6 +201,9 @@ public class Main {
 
         System.out.println(random.largestPrimeFactor(600851475143L));
 
+
+        System.out.println(random.largestPalindromeProduct());
+
     }
 
 
