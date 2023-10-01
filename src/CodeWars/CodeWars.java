@@ -71,6 +71,33 @@ public class CodeWars {
 
     }
 
+    // Even or Odd
+    public String evenOrOdd(int number) {
+        return number % 2 == 0 ? "Even" : "Odd";
+    }
+
+
+    // Number star ladder
+    // *** THIS DOESN"T WORK YET ***
+    public String pattern(int n) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i <= n; i++) {
+            sb.append("1");
+            for (int j = 1; j <= i; j++) {
+                sb.append("*");
+            }
+            sb.append(i);
+            if (i != n) {
+                sb.append("\n");
+            }
+        }
+
+        return sb.toString();
+
+    }
+
 
 
 
