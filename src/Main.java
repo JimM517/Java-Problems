@@ -1,3 +1,5 @@
+import Medium.MediumLeetQues;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -203,6 +205,11 @@ public class Main {
 
 
         System.out.println(random.largestPalindromeProduct());
+
+
+        MediumLeetQues med = new MediumLeetQues();
+
+
 
     }
 
