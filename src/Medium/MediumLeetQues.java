@@ -59,4 +59,22 @@ public class MediumLeetQues {
 
 
 
+    // 392 Is subsequence
+    public boolean isSubsequence(String s, String t) {
+
+        int sPointer = 0;
+
+        for (int tPointer = 0; tPointer < t.length() && sPointer < s.length(); tPointer++) {
+            if (s.charAt(sPointer) == t.charAt(tPointer)) {
+                sPointer++;
+            }
+        }
+
+        return sPointer == s.length();
+
+
+    }
+
+
+
 }
