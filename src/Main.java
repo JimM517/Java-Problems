@@ -201,10 +201,10 @@ public class Main {
 //        System.out.println(exercises.makeOutWord("[[]]", "word"));
 
 
-        System.out.println(random.largestPrimeFactor(600851475143L));
-
-
-        System.out.println(random.largestPalindromeProduct());
+//        System.out.println(random.largestPrimeFactor(600851475143L));
+//
+//
+//        System.out.println(random.largestPalindromeProduct());
 
 
         MediumLeetQues med = new MediumLeetQues();
