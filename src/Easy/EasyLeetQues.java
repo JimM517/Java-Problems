@@ -61,6 +61,29 @@ public class EasyLeetQues {
     }
 
 
+    // 1827 Minimum operations to make the array increasing
+
+    public int minOperations(int[] nums) {
+
+       int n = nums.length;
+
+       int[] numMoves = new int[n];
+
+       for (int i = 1; i < n; i++) {
+
+           numMoves[i] = Math.max(0, nums[i - 1] + 1 - nums[i]);
+           nums[i] += Math.max(0, nums[i - 1] + 1 - nums[i]);
+           numMoves[i] += numMoves[i - 1];
+
+
+       }
+       return numMoves[n - 1];
+
+
+
+    }
+
+
 
 
 
