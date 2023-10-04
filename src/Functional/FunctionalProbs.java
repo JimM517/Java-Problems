@@ -36,6 +36,17 @@ public class FunctionalProbs {
     }
 
 
+    // copies3
+    public List<String> copies3(List<String> strings) {
+        return strings.stream()
+                .map(str -> str + str + str)
+                .collect(Collectors.toList());
+    }
+
+
+
+
+
 
 
 
