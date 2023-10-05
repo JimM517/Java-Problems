@@ -74,7 +74,15 @@ public class FunctionalProbs {
 
 
 
+    // lower
+    public List<String> lower(List<String> strings) {
 
+        return strings.stream()
+                .map(word -> word.toLowerCase())
+                .collect(Collectors.toList());
+
+
+    }
 
 
 
