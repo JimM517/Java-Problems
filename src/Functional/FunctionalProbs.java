@@ -86,6 +86,17 @@ public class FunctionalProbs {
 
 
 
+    // noX
+    public List<String> noX(List<String> strings) {
+
+        return strings.stream()
+                .map(str -> str.replaceAll("x", ""))
+                .collect(Collectors.toList());
+
+    }
+
+
+
 
 
 }
