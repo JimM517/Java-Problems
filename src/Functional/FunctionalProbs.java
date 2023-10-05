@@ -64,7 +64,17 @@ public class FunctionalProbs {
     }
 
 
-    //
+    // rightDigit
+    public List<Integer> rightDigit(List<Integer> nums) {
+
+        return nums.stream()
+                .map(num -> num % 10)
+                .collect(Collectors.toList());
+    }
+
+
+
+
 
 
 
