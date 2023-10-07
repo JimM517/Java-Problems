@@ -121,7 +121,33 @@ public class CodingBat {
 
 
 
+    // mapAB4 -> NEED TO DOUBLE CHECK THIS
+    public Map<String, String> mapAB4(Map<String, String> map) {
 
+        String aVal = map.get("a");
+        String bVal = map.get("b");
+
+        if (aVal != null && bVal != null) {
+            if (aVal.length() > bVal.length()) {
+                map.put("c", aVal);
+            } else if (bVal.length() > aVal.length()) {
+                map.put("c", bVal);
+            } else {
+                map.put("a", "");
+                map.put("b", "");
+            }
+        } else if (aVal != null) {
+            map.put("c", aVal);
+        } else if (bVal != null) {
+            map.put("c", bVal);
+        }
+
+
+
+
+
+        return map;
+    }
 
 
 
