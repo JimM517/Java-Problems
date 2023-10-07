@@ -99,6 +99,25 @@ public class CodeWars {
     }
 
 
+    // nickname generator
+    public String nickname(String name) {
+
+        String vowels = "aeiouAEIOU";
+
+        if (name.length() < 4) {
+            return "Error: Name too short";
+        }
+
+        char thirdLetter = name.charAt(2);
+
+        if (vowels.contains(String.valueOf(thirdLetter))) {
+            return name.substring(0, 4);
+        } else {
+            return name.substring(0, 3);
+        }
+    }
+
+
 
 
 
