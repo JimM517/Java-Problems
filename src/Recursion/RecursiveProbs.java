@@ -11,6 +11,15 @@ public class RecursiveProbs {
     }
 
 
+    // bunnyEars
+    public int bunnyEars(int bunnies) {
+        if (bunnies == 0) {
+            return 0;
+        }
+        return 2 + bunnyEars(bunnies - 1);
+    }
+
+
     // Bunny Ears
     public int bunnyEars2(int bunnies) {
         // base case
@@ -39,11 +48,14 @@ public class RecursiveProbs {
         if (n % 10 == 7) {
             return 1 + count7(n / 10);
         } else {
-            return count7(n / 10);
+            return count7(n / 10);if
         }
 
 
     }
+
+
+
 
 
 
