@@ -132,6 +132,41 @@ public class CodeWars {
     }
 
 
+    // Dead Ants
+
+    public int deadAntCount(String ants) {
+
+            if (ants == null) {
+                return 0;
+            }
+
+            String temp = ants.replaceAll("ant", "---");
+
+            char[] chars = temp.toCharArray();
+
+            int countA = 0;
+            int countN = 0;
+            int countT = 0;
+
+            for (char c : chars) {
+                if (c == 'a') countA++;
+                if (c == 'n') countN++;
+                if (c == 't') countT++;
+            }
+
+            int highestValue = Integer.max(countA, countN);
+            highestValue = Integer.max(highestValue, countT);
+
+            return highestValue;
+    }
+
+
+
+
+
+
+
+
 
 
 
