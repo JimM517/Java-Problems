@@ -103,6 +103,15 @@ public class FunctionalProbs {
     }
 
 
+    // no9
+    public List<Integer> no9(List<Integer> nums) {
+
+        nums.removeIf(num -> num % 10 == 9);
+        return nums;
+
+    }
+
+
 
 
 
