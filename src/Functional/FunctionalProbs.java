@@ -96,6 +96,16 @@ public class FunctionalProbs {
     }
 
 
+    // noNeg
+    public List<Integer> noNeg(List<Integer> nums) {
+        nums.removeIf(num -> num < 0);
+        return nums;
+    }
+
+
+
+
+
 
 
 
