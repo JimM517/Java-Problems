@@ -163,6 +163,16 @@ public class FunctionalProbs {
 
     }
 
+    // two2
+    public List<Integer> two2(List<Integer> nums) {
+
+        return nums.stream()
+                .map(num -> num * 2)
+                .filter(num -> num % 10 != 2)
+                .collect(Collectors.toList());
+
+    }
+
 
 
 
