@@ -140,6 +140,24 @@ public class EasyLeetQues {
     }
 
 
+    // 1470 shuffle the array
+    public int[] shuffle(int[] nums, int n) {
+
+        int[] results = new int[2 * n];
+
+
+        for (int i = 0; i < n; i++) {
+
+        results[2 * i] = nums[i];
+        results[2 * i + 1] = nums[i + n];
+
+
+        }
+        return results;
+
+    }
+
+
 
 
 
