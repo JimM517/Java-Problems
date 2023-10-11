@@ -173,6 +173,16 @@ public class FunctionalProbs {
 
     }
 
+    // square56
+    public List<Integer> square56(List<Integer> nums) {
+
+        return nums.stream()
+                .map(num -> (num * num ) + 10)
+                .filter(num -> num % 10 != 5 && num % 10 != 6)
+                .collect(Collectors.toList());
+
+    }
+
 
 
 
