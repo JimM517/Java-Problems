@@ -202,6 +202,46 @@ public class EasyLeetQues {
     }
 
 
+    // 1603 Design Parking System
+
+//    private int numBigSlots;
+//    private int numMediumSlots;
+//    private int numSmallSlots;
+//
+//    public ParkingSystem(int big, int medium, int small) {
+//        this.numBigSlots = big;
+//        this.numMediumSlots = medium;
+//        this.numSmallSlots = small;
+//    }
+
+//    public boolean addCar(int carType) {
+//
+//        if (carType == 1) {
+//            if (this.numBigSlots > 0) {
+//                this.numBigSlots -= 1;
+//                return true;
+//            }
+//        }
+//        if (carType == 2) {
+//            if (this.numMedSlots > 0) {
+//                this.numMedSlots -= 1;
+//                return true;
+//            }
+//        }
+//        if (carType == 3) {
+//            if (this.numSmallSlots > 0) {
+//                this.numSmallSlots -= 1;
+//                return true;
+//            }
+//        }
+//        return false;
+//
+//    }
+
+
+
+
+
 
 
 
