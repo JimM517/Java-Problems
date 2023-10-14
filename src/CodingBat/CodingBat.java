@@ -1,5 +1,6 @@
 package CodingBat;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class CodingBat {
@@ -136,11 +137,23 @@ public class CodingBat {
             }
         }
         return map;
+    }
 
 
+    // word0
+    public Map<String, Integer> word0(String[] strings) {
 
+        Map<String, Integer> results = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+            results.put(strings[i], 0);
+        }
+        return results;
 
     }
+
+
+
 
 
 
