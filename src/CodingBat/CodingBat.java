@@ -153,7 +153,21 @@ public class CodingBat {
     }
 
 
+    // wordLen
+    public Map<String, Integer> wordLen(String[] strings) {
 
+        Map<String, Integer> results = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+            if (results.containsKey(strings[i])) {
+                continue;
+            } else {
+                results.put(strings[i], strings[i].length());
+            }
+        }
+        return results;
+
+    }
 
 
 
