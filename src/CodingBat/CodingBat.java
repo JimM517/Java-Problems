@@ -262,7 +262,32 @@ public class CodingBat {
     }
 
 
+    // allSwap
+    public String[] allSwap(String[] strings) {
 
+        Map<String, Integer> results = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+
+            String key = String.valueOf(strings[i].charAt(0));
+
+            if (results.containsKey(key)) {
+
+                int curr = results.get(key);
+                String temp = strings[curr];
+                strings[curr] = strings[i];
+                strings[i] = temp;
+
+                results.remove(key);
+
+            } else {
+                results.put(key, i);
+            }
+
+
+        }
+        return strings;
+    }
 
 
 
