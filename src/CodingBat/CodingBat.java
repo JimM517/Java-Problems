@@ -290,6 +290,40 @@ public class CodingBat {
     }
 
 
+    // firstSwap
+    public String[] firstSwap(String[] strings) {
+
+        Map<String, Integer> results = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+
+            String key = String.valueOf(strings[i].charAt(0));
+
+            if (results.containsKey(key)) {
+                int index = results.get(key);
+
+
+                if (index != -1) {
+                    String temp = strings[i];
+                    strings[i] = strings[index];
+                    strings[index] = temp;
+
+
+
+                    results.put(key, -1);
+                }
+
+            } else {
+                results.put(key, i);
+            }
+
+        }
+
+        return strings;
+
+    }
+
+
 
 
 
