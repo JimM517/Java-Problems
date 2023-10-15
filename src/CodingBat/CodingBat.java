@@ -219,6 +219,30 @@ public class CodingBat {
     }
 
 
+    // wordAppend
+    public String wordAppend(String[] strings) {
+
+        Map<String, Integer> count = new HashMap<>();
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < strings.length; i++) {
+
+            count.put(strings[i], count.getOrDefault(strings[i], 0) + 1);
+
+            if (count.get(strings[i]) % 2 == 0) {
+                sb.append(strings[i]);
+            }
+
+
+        }
+
+        return sb.toString();
+    }
+
+
+
+
 
 
 
