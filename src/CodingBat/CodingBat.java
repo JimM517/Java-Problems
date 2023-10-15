@@ -183,6 +183,23 @@ public class CodingBat {
         return results;
     }
 
+    // wordCount
+    public Map<String, Integer> wordCount(String[] strings) {
+
+        Map<String, Integer> results = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+
+            results.put(strings[i], results.getOrDefault(strings[i], 0) + 1);
+
+        }
+
+        return results;
+    }
+
+
+
+
 
 
 
