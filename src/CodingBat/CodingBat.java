@@ -197,6 +197,29 @@ public class CodingBat {
         return results;
     }
 
+    // firstChar
+    public Map<String, String> firstChar(String[] strings) {
+
+        Map<String, String> results = new HashMap<>();
+
+
+        for (int i = 0; i < strings.length; i++) {
+
+            String firstChar = strings[i].substring(0, 1);
+
+            if (results.containsKey(firstChar)) {
+                results.put(firstChar, results.get(firstChar) + strings[i]);
+            } else {
+                results.put(firstChar, strings[i]);
+            }
+
+        }
+
+        return results;
+    }
+
+
+
 
 
 
