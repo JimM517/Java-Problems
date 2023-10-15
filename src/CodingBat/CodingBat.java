@@ -242,6 +242,26 @@ public class CodingBat {
 
 
 
+    // wordMultiple
+    public Map<String, Boolean> wordMultiple(String[] strings) {
+
+        Map<String, Boolean> results = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+
+            if (results.containsKey(strings[i])) {
+                results.put(strings[i], true);
+            } else {
+                results.put(strings[i], false);
+            }
+
+
+        }
+        return results;
+
+    }
+
+
 
 
 
