@@ -1,6 +1,8 @@
 package CodingBat;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CodingBat {
@@ -430,7 +432,22 @@ public class CodingBat {
 
 
 
+    // wordsWithoutList
+    public List wordsWithoutList(String[] words, int len) {
 
+        List<String> results = new ArrayList<>();
+
+        for (int i = 0; i < words.length; i++) {
+
+            if (words[i].length() == len) {
+                continue;
+            }
+            results.add(words[i]);
+        }
+
+        return results;
+
+    }
 
 
 
