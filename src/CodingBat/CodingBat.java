@@ -464,6 +464,29 @@ public class CodingBat {
     }
 
 
+    // dividesSelf
+    public boolean dividesSelf(int n) {
+
+        int original = n;
+
+
+        while(n > 0) {
+
+            int firstDiv = n % 10;
+
+            if (firstDiv == 0 || original % firstDiv != 0) {
+                return false;
+            }
+
+
+            n /= 10;
+        }
+
+        return true;
+
+    }
+
+
 
 
 
