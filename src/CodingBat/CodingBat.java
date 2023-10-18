@@ -487,6 +487,27 @@ public class CodingBat {
     }
 
 
+    // copyEvens
+    public int[] copyEvens(int[] nums, int count) {
+
+        int[] result = new int[count];
+        int evens = 0;
+
+        for (int i = 0; evens < count && i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                result[evens] = nums[i];
+                evens++;
+            }
+        }
+
+        return result;
+
+    }
+
+
+
+
+
 
 
 
