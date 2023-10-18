@@ -551,6 +551,28 @@ public class CodingBat {
 
     }
 
+    // scoreUp // TODO need to double check this one
+    public int scoreUp(String[] key, String[] answers) {
+
+        int total = 0;
+
+        for (int i = 0; i < key.length && i < answers.length; i++) {
+
+           if (key[i].equals("?")) {
+               continue;
+           }
+           if (key[i].equals(answers[i])) {
+               total += 4;
+           } else {
+               total -= 1;
+           }
+
+
+        }
+        return total;
+
+    }
+
 
 
 
