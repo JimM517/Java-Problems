@@ -532,6 +532,26 @@ public class CodingBat {
     }
 
 
+    // matchUp
+    public int matchUp(String[] a, String[] b) {
+
+        int matchCount = 0;
+
+        for (int i = 0; i < a.length && i < b.length; i++) {
+
+            if (!a[i].equals("") && !b[i].equals("")) {
+                if (a[i].charAt(0) == b[i].charAt(0)) {
+                    matchCount++;
+                }
+            }
+
+
+        }
+        return matchCount;
+
+    }
+
+
 
 
 
