@@ -602,6 +602,33 @@ public class CodingBat {
 
 
 
+    // scoresSpecial
+    public int scoresSpecial(int[] a, int[] b) {
+
+       int largestInA = largestSpecialScore(a);
+       int largestInB = largestSpecialScore(b);
+
+       return largestInA + largestInB;
+
+
+    }
+
+
+    private int largestSpecialScore(int[] nums) {
+
+        int largest = 0;
+
+        for (int num : nums) {
+            if (num % 10 == 0 && num > largest) {
+                largest = num;
+            }
+        }
+
+
+        return largest;
+
+    }
+
 
 
 
