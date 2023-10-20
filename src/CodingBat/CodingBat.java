@@ -687,7 +687,18 @@ public class CodingBat {
 
 
 
+    // countEvens
+    public int countEvens(int[] nums) {
 
+        int totalEvens = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                totalEvens++;
+            }
+        }
+        return totalEvens;
+
+    }
 
 
 
