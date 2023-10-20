@@ -662,6 +662,33 @@ public class CodingBat {
     }
 
 
+    // TODO bigHeights
+    public int bigHeights(int[] heights, int start, int end) {
+        return 0;
+    }
+
+
+    // TODO userCompare
+    public int userCompare(String aName, int aId, String bName, int bId) {
+        return 0;
+    }
+
+
+    // TODO mergeTwo
+    public String[] mergeTwo(String[] a, String[] b, int n) {
+        return null;
+    }
+
+
+    // TODO commonTwo
+    public int commonTwo(String[] a, String[] b) {
+        return 0;
+    }
+
+
+
+
+
 
 
 
