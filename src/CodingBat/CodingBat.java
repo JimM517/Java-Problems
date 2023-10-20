@@ -643,7 +643,26 @@ public class CodingBat {
     }
 
 
-    //
+    // sumHeights2
+    public int sumHeights2(int[] heights, int start, int end) {
+        int total = 0;
+
+        for (int i = start; i < end; i++) {
+
+            int heightChange = heights[i + 1] - heights[i];
+            if (heightChange > 0) {
+                total += heightChange * 2;
+            } else {
+                total += Math.abs(heightChange);
+            }
+
+
+        }
+        return total;
+    }
+
+
+
 
 
 
