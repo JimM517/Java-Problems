@@ -1,9 +1,6 @@
 package CodingBat;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CodingBat {
 
@@ -771,6 +768,25 @@ public class CodingBat {
             } else {
                 total += nums[i];
                 i++;
+            }
+        }
+        return total;
+    }
+
+
+    // sum67
+    public int sum67(int[] nums) {
+
+        boolean inRange = false;
+        int total = 0;
+
+        for (int num : nums) {
+            if (num == 6) {
+                inRange = true;
+            } else if (inRange && num == 7) {
+                inRange = false;
+            } else if (!inRange) {
+                total += num;
             }
         }
         return total;
