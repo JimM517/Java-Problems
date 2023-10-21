@@ -677,9 +677,22 @@ public class CodingBat {
     }
 
 
-    // TODO userCompare
+    // TODO userCompare -> correct for more than half, still failing two tests
     public int userCompare(String aName, int aId, String bName, int bId) {
-        return 0;
+         int nameCompare = aName.compareTo(bName);
+
+         if (nameCompare == 0) {
+             if (aId < bId) {
+                 return -1;
+             } else if (aId > bId) {
+                 return 1;
+             } else {
+                 return 0;
+             }
+         } else {
+             return nameCompare;
+         }
+
     }
 
 
@@ -722,6 +735,9 @@ public class CodingBat {
         return largest - smallest;
 
     }
+
+
+
 
 
 
