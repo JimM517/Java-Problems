@@ -662,9 +662,18 @@ public class CodingBat {
     }
 
 
-    // TODO bigHeights
+
     public int bigHeights(int[] heights, int start, int end) {
-        return 0;
+        int total = 0;
+
+       for (int i = start; i < end; i++) {
+           int heightDiff = heights[i + 1] - heights[i];
+           if (Math.abs(heightDiff) >= 5) {
+               total++;
+           }
+       }
+        return total;
+
     }
 
 
