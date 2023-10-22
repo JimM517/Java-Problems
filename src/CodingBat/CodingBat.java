@@ -807,7 +807,23 @@ public class CodingBat {
     }
 
 
+    // lucky13
+    public boolean lucky13(int[] nums) {
 
+        int count = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1 || nums[i] == 3) {
+                count++;
+            }
+        }
+
+        if (count > 0) {
+            return false;
+        }
+        return true;
+
+    }
 
 
 
