@@ -1007,7 +1007,21 @@ public class CodingBat {
      }
 
 
+    // has12
+    public boolean has12(int[] nums) {
 
+        boolean foundAOne = false;
+
+        for (int num : nums) {
+            if (num == 1) {
+                foundAOne = true;
+            }
+            if (foundAOne && num == 2) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
