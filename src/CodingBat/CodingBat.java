@@ -942,6 +942,33 @@ public class CodingBat {
 
 
 
+    // either24
+    public boolean either24(int[] nums) {
+
+        boolean found22 = false;
+        boolean found44 = false;
+
+
+        for (int i = 0; i < nums.length - 1; i++) {
+
+            if (nums[i] == 2 && nums[i + 1] == 2) {
+                found22 = true;
+            }
+
+            if (nums[i] == 4 && nums[i + 1] == 4) {
+                found44 = true;
+            }
+
+
+        }
+
+        return (found22 || found44) && !(found22 && found44);
+
+    }
+
+
+
+
 
 
 
