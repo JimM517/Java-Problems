@@ -827,6 +827,27 @@ public class CodingBat {
 
 
 
+    // sum28
+    public boolean sum28(int[] nums) {
+
+        int twentyEight = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 2) {
+                twentyEight += nums[i];
+            }
+        }
+        if (twentyEight == 8) {
+            return true;
+        }
+        return false;
+
+    }
+
+
+
+
+
 
 
 
