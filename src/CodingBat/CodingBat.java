@@ -1127,6 +1127,25 @@ public class CodingBat {
     }
 
 
+    // fizzArray3
+    public int[] fizzArray3(int start, int end) {
+
+        int len = end - start;
+        int[] result = new int[end - start];
+
+        int count = 0;
+
+        while(start < end) {
+            result[count] = start;
+            count++;
+            start++;
+        }
+
+        return result;
+
+    }
+
+
 
 
 
