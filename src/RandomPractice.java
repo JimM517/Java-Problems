@@ -646,7 +646,19 @@ public class RandomPractice {
 
 
 
+    // mapAb two
+    public Map<String, String> mapAbAgain(Map<String, String> map) {
 
+        String ab = "";
+
+        if (map.containsKey("a") && map.containsKey("b")) {
+            ab = map.get("a") + map.get("b");
+            map.put("ab", ab);
+        }
+        return map;
+
+
+    }
 
 
 
