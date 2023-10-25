@@ -1201,7 +1201,29 @@ public class CodingBat {
 
 
 
+    // pre4
+    public int[] pre4(int[] nums) {
 
+        int len = 0;
+
+
+        //first occurrence of 4 to determin length
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 4) {
+                len = i;
+                break;
+            }
+        }
+
+
+        int[] result = new int[len];
+
+        for (int i = 0; i < len; i++) {
+            result[i] = nums[i];
+        }
+
+        return result;
+    }
 
 
 
