@@ -704,6 +704,26 @@ public class RandomPractice {
 
 
 
+    // removeDuplicates
+    public List<Integer> removeDuplicatesTwo(List<Integer> nums) {
+
+        Set<Integer> unique = new HashSet<>();
+        List<Integer> result = new ArrayList<>();
+
+        for (Integer num : nums) {
+            if (unique.add(num)) {
+                result.add(num);
+            }
+        }
+
+        return result;
+    }
+
+
+
+
+
+
 
 
 
