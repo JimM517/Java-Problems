@@ -661,6 +661,32 @@ public class RandomPractice {
     }
 
 
+    // wordCount
+    public Map<String, Integer> wordCount(String[] strings) {
+
+        Map<String, Integer> results = new HashMap<>();
+
+        for (String str : strings) {
+
+            if (results.containsKey(str)) {
+                results.put(str, results.get(str) + 1);
+            } else {
+                results.put(str, 1);
+            }
+
+        }
+
+
+        return results;
+    }
+
+
+
+
+
+
+
+
 
 
 
