@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RandomPractice {
 
@@ -678,6 +675,31 @@ public class RandomPractice {
 
 
         return results;
+    }
+
+
+
+    // validParens
+    public boolean validParens(String string) {
+
+        Stack<Character> stack = new Stack<>();
+
+
+        for (int i = 0; i < string.length(); i++) {
+            char ch = string.charAt(i);
+
+            if (ch == '(') {
+                stack.push(ch);
+            } else if (ch == ')') {
+                if (stack.isEmpty() || stack.pop() != '(') {
+                    return false; // unmatched closing parenthesis
+                }
+            }
+
+
+
+        }
+        return stack.isEmpty();
     }
 
 
