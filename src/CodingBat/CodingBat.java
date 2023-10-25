@@ -1168,7 +1168,40 @@ public class CodingBat {
 
 
 
-    
+    // tenRun
+    public int[] tenRun(int[] nums) {
+
+        int[] result = new int[nums.length];
+
+        boolean isInRange = false;
+
+        int tenValue = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] % 10 == 0) {
+
+
+                isInRange = true;
+                tenValue = nums[i];
+            }
+
+            if (isInRange) {
+                result[i] = tenValue;
+            } else {
+                result[i] = nums[i];
+            }
+
+
+
+        }
+        return result;
+
+    }
+
+
+
+
 
 
 
