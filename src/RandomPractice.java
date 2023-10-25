@@ -627,13 +627,11 @@ public class RandomPractice {
 
     // smallest multiple
     public int smallestMultiple() {
-
-
-
-
-
         return 0;
     }
+
+
+
 
 
 
