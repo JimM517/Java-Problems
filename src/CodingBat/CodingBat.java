@@ -1245,6 +1245,32 @@ public class CodingBat {
         return null;
     }
 
+    // notAlone
+    public int[] notAlone(int[] nums, int val) {
+
+        int[] result = new int[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] == val) {
+
+
+                if (i > 0 && i < nums.length - 1 && nums[i - 1] != val && nums[i + 1] != val) {
+                    result[i] = Math.max(nums[i - 1], nums[i + 1]);
+                } else {
+                    result[i] = nums[i];
+                }
+
+            } else {
+                result[i] = nums[i];
+            }
+
+
+
+        }
+        return result;
+    }
+
 
 
 
