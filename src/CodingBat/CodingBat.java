@@ -1226,6 +1226,26 @@ public class CodingBat {
     }
 
 
+    // post4
+    public int[] post4(int[] nums) {
+
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] == 4) {
+                int[] res = new int[nums.length - i - 1];
+
+
+                for (int j = 0; j < res.length; j++) {
+                    res[j] = nums[i + j + 1];
+                }
+                return res;
+
+            }
+        }
+
+        return null;
+    }
+
+
 
 
 
