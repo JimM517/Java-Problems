@@ -1352,6 +1352,42 @@ public class CodingBat {
     }
 
 
+    // maxSpan
+    public int maxSpan(int[] nums) {
+
+        int maxSpan = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int value = nums[i];
+            int firstOccurrence = i;
+            int lastOccurence = i;
+
+
+
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] == value) {
+                    lastOccurence = j;
+                }
+            }
+
+
+            int span  = lastOccurence - firstOccurrence + 1;
+
+
+
+            if (span > maxSpan) {
+                maxSpan = span;
+            }
+
+
+        }
+
+        return maxSpan;
+
+    }
+
+
 
 
 
