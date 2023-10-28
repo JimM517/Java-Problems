@@ -1302,6 +1302,36 @@ public class CodingBat {
 
 
 
+    // withoutTen
+    public int[] withoutTen(int[] nums) {
+
+      int[] result = new int[nums.length];
+      int zeroIndex = 0;
+
+        // copying all elements that are not ten into result array
+      for (int num : nums) {
+
+          if (num != 10) {
+              result[zeroIndex] = num;
+              zeroIndex++;
+          }
+      }
+
+
+    // filling in the remaining space with zeros
+      while (zeroIndex < result.length) {
+          result[zeroIndex] = 0;
+          zeroIndex++;
+      }
+    return result;
+
+    }
+
+
+
+
+
+
 
 
 
