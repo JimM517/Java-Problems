@@ -1417,6 +1417,42 @@ public class CodingBat {
 
 
 
+    // fizzBuzz
+    public String[] fizzBuzz(int start, int end) {
+
+        int len = end - start;
+        String[] results = new String[len];
+
+
+        for (int i = start; i < end; i++) {
+
+            int index = i - start;
+
+            if (i % 5 == 0 && i % 3 == 0) {
+                results[index] = "FizzBuzz";
+            } else if (i % 5 == 0) {
+                results[index] = "Buzz";
+            } else if (i % 3 == 0) {
+                results[index] = "Fizz";
+            } else {
+                results[index] = String.valueOf(i);
+            }
+
+
+
+        }
+
+
+        return results;
+
+    }
+
+
+
+
+
+
+
 
 
 
