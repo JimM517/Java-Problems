@@ -1389,6 +1389,34 @@ public class CodingBat {
 
 
 
+    // evenOdd
+    public int[] evenOdd(int[] nums) {
+
+        int[] result = new int[nums.length];
+        int evenIndex = 0;
+
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                result[evenIndex] = num;
+                evenIndex++;
+            }
+        }
+
+
+
+        for (int num : nums) {
+            if (num % 2 == 1) {
+                result[evenIndex] = num;
+                evenIndex++;
+            }
+        }
+
+        return result;
+
+    }
+
+
+
 
 
 
