@@ -693,7 +693,38 @@ public class CodingBat {
 
     // TODO mergeTwo
     public String[] mergeTwo(String[] a, String[] b, int n) {
-        return null;
+
+        String[] result = new String[n];
+
+        int aIndex = 0;
+        int bIndex = 0;
+        int resultIndex = 0;
+
+
+        while (resultIndex < n) {
+
+            int compare = a[aIndex].compareTo(b[bIndex]);
+
+            if (compare <= 0) {
+
+                if (resultIndex == 0 || !a[aIndex].equals(result[resultIndex - 1])) {
+                    result[resultIndex] = a[aIndex];
+                    resultIndex++;
+                }
+                aIndex++;
+            } else {
+                if (resultIndex == 0 || !b[bIndex].equals(result[resultIndex - 1])) {
+                    result[resultIndex] = b[bIndex];
+                    resultIndex++;
+                }
+                bIndex++;
+            }
+
+
+
+
+        }
+        return result;
     }
 
 
