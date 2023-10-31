@@ -730,7 +730,28 @@ public class CodingBat {
 
     // TODO commonTwo
     public int commonTwo(String[] a, String[] b) {
-        return 0;
+
+      int common = 0;
+
+      int i = 0;
+      int j = 0;
+
+      while (i < a.length && j < b.length) {
+          int compare = a[i].compareTo(b[j]);
+
+          if (compare == 0) {
+              common++;
+
+              i++;
+              j++;
+          } else if (compare < 0) {
+              i++;
+          } else {
+              j++;
+          }
+      }
+      return common;
+
     }
 
 
