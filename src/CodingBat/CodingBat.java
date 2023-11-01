@@ -1498,6 +1498,26 @@ public class CodingBat {
     }
 
 
+    // doubleChar
+    public String doubleChar(String str) {
+
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+            result += String.valueOf(str.charAt(i)) + String.valueOf(str.charAt(i));
+        }
+        return result;
+    }
+
+
+
+
+
+
+
+
 
 
 
