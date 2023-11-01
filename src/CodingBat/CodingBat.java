@@ -1539,7 +1539,37 @@ public class CodingBat {
 
 
 
+    // catDog
+    public boolean catDog(String str) {
 
+        int catCount = 0;
+        int dogCount = 0;
+
+
+        String catSub = "cat";
+        String dogSub = "dog";
+
+        int index = 0;
+
+        while (index < str.length()) {
+
+            if (str.indexOf(catSub, index) == index) {
+                catCount++;
+                index += catSub.length();
+            } else if (str.indexOf(dogSub, index) == index) {
+                dogCount++;
+                index += dogSub.length();
+            } else {
+                index++;
+            }
+
+
+        }
+
+
+
+        return catCount == dogCount;
+    }
 
 
 
