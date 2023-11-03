@@ -1497,6 +1497,8 @@ public class CodingBat {
 
     }
 
+    /******* Medium and Harder string method problems below ********/
+
 
     // doubleChar
     public String doubleChar(String str) {
@@ -1669,6 +1671,13 @@ public class CodingBat {
 
         return str.substring(0, n) + str.substring(str.length() - n);
     }
+
+
+
+
+
+
+
 
 
 
