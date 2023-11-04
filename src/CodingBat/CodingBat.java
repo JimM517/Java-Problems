@@ -1748,6 +1748,27 @@ public class CodingBat {
     }
 
 
+    // lastTwo
+    public String lastTwo(String str) {
+
+        if (str.length() < 2) {
+            return str;
+        }
+
+        char first = str.charAt(str.length() - 1);
+        char second = str.charAt(str.length() - 2);
+
+        return str.substring(0, str.length() - 2) + first + second;
+    }
+
+
+
+
+
+
+
+
+
 
 
 
