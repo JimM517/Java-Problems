@@ -1849,6 +1849,25 @@ public class CodingBat {
     }
 
 
+    // startWord
+    public String startWord(String str, String word) {
+
+        if (str.length() >= 1 && word.length() >= 1) {
+            char strFirstChar = str.charAt(0);
+            char wordFirstChar = word.charAt(0);
+
+
+            if (str.substring(1).startsWith(word.substring(1))) {
+                return strFirstChar + word.substring(1);
+            }
+
+
+        }
+
+        return "";
+    }
+
+
 
 
 
