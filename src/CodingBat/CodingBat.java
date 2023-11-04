@@ -1788,6 +1788,24 @@ public class CodingBat {
     }
 
 
+    // minCat
+    public String minCat(String a, String b) {
+
+
+        int aLen = a.length();
+        int bLen = b.length();
+
+        if (a.length() > b.length()) {
+            return a.substring(aLen - bLen) + b;
+        } else if (b.length() > a.length()) {
+            return a + b.substring(bLen - aLen);
+        } else {
+            return a + b;
+        }
+
+    }
+
+
 
 
 
