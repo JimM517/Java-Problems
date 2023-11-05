@@ -1,6 +1,9 @@
 package CodingBat;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CodingBat {
 
@@ -1903,6 +1906,30 @@ public class CodingBat {
         return str;
     }
 
+
+
+    // countCode
+    public int countCode(String str) {
+
+//        String codePattern = "co[a-z]e";
+//        int count = 0;
+//
+//
+//        Matcher matcher = Pattern.compile(codePattern).matcher(str);
+//
+//        while(matcher.find()) {
+//            count++;
+//        }
+
+        int count = 0;
+        for (int i = 0; i < str.length() - 3; i++) {
+            if (str.charAt(i) == 'c' && str.charAt(i + 1) == 'o' && str.charAt(i + 3) == 'e' && Character.isLowerCase(str.charAt(i + 2))) {
+                count++;
+            }
+        }
+
+        return count;
+    }
 
 
 
