@@ -2069,6 +2069,25 @@ public class CodingBat {
     }
 
 
+    // prefixAgain
+    public boolean prefixAgain(String str, int n) {
+
+            for (int i = 1; i <= str.length() - n; i++) {
+
+                String pre = str.substring(0, n);
+                String sub = str.substring(i, i + n);
+
+                if (pre.equals(sub)) {
+                    return true;
+                }
+
+
+            }
+            return false;
+
+    }
+
+
 
 
 
