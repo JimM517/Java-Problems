@@ -2031,6 +2031,21 @@ public class CodingBat {
     }
 
 
+    // repeatFront
+    public String repeatFront(String str, int n) {
+
+        StringBuilder sb = new StringBuilder();
+
+        int len = 0;
+
+       while (n > 0) {
+           sb.append(str.substring(0, n));
+           n--;
+       }
+
+        return sb.toString();
+    }
+
 
 
 
