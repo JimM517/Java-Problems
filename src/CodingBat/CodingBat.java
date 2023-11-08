@@ -2047,6 +2047,28 @@ public class CodingBat {
     }
 
 
+    // repeatSeparator
+    public String repeatSeparator(String word, String sep, int count) {
+
+        if (count == 0) {
+            return "";
+        }
+
+
+        StringBuilder sb = new StringBuilder();
+
+
+        for (int i = 1; i < count; i++) {
+            sb.append(word).append(sep);
+        }
+
+        sb.append(word);
+
+        return sb.toString();
+
+    }
+
+
 
 
 
