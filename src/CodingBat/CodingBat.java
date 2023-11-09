@@ -2111,6 +2111,23 @@ public class CodingBat {
 
 
 
+    // getSandwich
+    public String getSandwich(String str) {
+
+        // find first instance of bread, get next word, stop at bread
+
+       int firstOcc = str.indexOf("bread");
+       int lastOcc = str.lastIndexOf("bread");
+
+
+       if (firstOcc != -1 && lastOcc != -1 && firstOcc != lastOcc) {
+           return str.substring(firstOcc + 5, lastOcc);
+       } else {
+           return "";
+       }
+
+
+    }
 
 
 
