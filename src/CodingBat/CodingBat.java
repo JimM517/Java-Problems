@@ -2145,6 +2145,28 @@ public class CodingBat {
 
 
 
+    // oneTwo
+
+    public String oneTwo(String str) {
+
+      StringBuilder sb = new StringBuilder();
+
+
+      for (int i = 0; i < str.length() - 2; i += 3) {
+
+          // Extract the current group of 3 characters
+          String group = str.substring(i, i + 3);
+
+          // Rearrange the characters and append to the result
+          sb.append(group.charAt(1)).append(group.charAt(2)).append(group.charAt(0));
+
+      }
+      return sb.toString();
+
+    }
+
+
+
 
 
 
