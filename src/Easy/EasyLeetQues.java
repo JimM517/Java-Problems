@@ -280,7 +280,20 @@ public class EasyLeetQues {
 
 
 
-
+    // 1290 Convert Binary Number in a Linked List to Integer
+//    public int getDecimalValue(LeetCode.ListNode head) {
+//        int decimalValue = 0;
+//
+//        LeetCode.ListNode current = head;
+//
+//        while (current != null) {
+            // left shift << is essentially multiplying by 2
+            // 101 = 5 but left shit becomes 1010 which is 10
+//            decimalValue = (decimalValue << 1) | current.val;
+//            current = current.next;
+//        }
+//        return decimalValue;
+//    }
 
 
 
