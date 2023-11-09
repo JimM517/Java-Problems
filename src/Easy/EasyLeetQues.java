@@ -297,7 +297,22 @@ public class EasyLeetQues {
 
 
 
+    // 557 Reverse Words in a String
+    public String reverseWords(String s) {
 
+        String[] words = s.split(" ");
+
+        StringBuilder sb = new StringBuilder();
+
+        for (String word : words) {
+
+            StringBuilder reversed = new StringBuilder(word);
+            sb.append(reversed.reverse()).append(" ");
+
+        }
+
+        return sb.toString().trim();
+    }
 
 
 
