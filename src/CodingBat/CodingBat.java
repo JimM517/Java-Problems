@@ -1,9 +1,6 @@
 package CodingBat;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CodingBat {
 
@@ -2164,6 +2161,53 @@ public class CodingBat {
       return sb.toString();
 
     }
+
+
+    // zipZap
+    public String zipZap(String str) {
+//     Couldn't get this solution to pass all of the tests
+
+//        if (str.length() < 3) {
+//            return str;
+//        }
+//
+//       StringBuilder sb = new StringBuilder();
+//
+//        for (int i = 0; i < str.length() - 2; i++) {
+//
+//                if (str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
+//                    sb.append("zp");
+//                    i += 2;
+//                } else {
+//                    sb.append(str.charAt(i));
+//                }
+//
+//        }
+//
+//        sb.append(str.substring(Math.max(0, str.length() - 2)));
+//
+//        return sb.toString();
+
+        int len = str.length();
+        String result = "";
+
+        for (int i = 0; i < len; i++) {
+            result += str.substring(i, i + 1);
+            if (i > 0 && i < len - 1) {
+                if (str.charAt(i - 1) == 'z' && str.charAt(i + 1) == 'p') {
+                    result = result.substring(0, result.length() - 1);
+                }
+            }
+        }
+
+
+        return result;
+
+    }
+
+
+
+    //
 
 
 
