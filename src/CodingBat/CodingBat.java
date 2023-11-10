@@ -2207,7 +2207,31 @@ public class CodingBat {
 
 
 
-    //
+    // starOut
+    public String starOut(String str) {
+
+        int len = str.length();
+        String result = "";
+
+
+        for (int i = 0; i < len; i++) {
+
+            if (i == 0 && str.charAt(i) != '*') {
+                result += str.charAt(i);
+            }
+
+            if (i > 0 && str.charAt(i) != '*' && str.charAt(i - 1) != '*') {
+                result += str.charAt(i);
+            }
+
+            if (i > 0 && str.charAt(i) == '*' && str.charAt(i - 1) != '*') {
+                result = result.substring(0, result.length() - 1);
+            }
+
+        }
+
+        return result;
+    }
 
 
 
