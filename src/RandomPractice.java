@@ -851,6 +851,24 @@ public class RandomPractice {
     }
 
 
+    // sum28
+    public boolean sum28(int[] nums) {
+
+        int twoEight = 0;
+
+        for (int num : nums) {
+            if (num == 2) {
+                twoEight += num;
+            }
+        }
+
+        return twoEight == 8;
+
+    }
+
+
+
+
 
 
 
