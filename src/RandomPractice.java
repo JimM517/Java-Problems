@@ -752,6 +752,30 @@ public class RandomPractice {
     }
 
 
+    // centeredAverage
+    public int centeredAverage(int[] nums) {
+
+        int max = nums[0];
+        int min = nums[0];
+
+        int sum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            // get sum first
+            sum += nums[i];
+
+            // find one instance of largest and smallest values
+            max = Math.max(max, nums[i]);
+            min = Math.min(min, nums[i]);
+        }
+
+        // return the sum excluding the one instance of largest and smallest values
+        // nums.length - 2 because we removed the two values of max and min
+        return (sum - max - min) / (nums.length - 2);
+
+    }
+
+
 
 
 
