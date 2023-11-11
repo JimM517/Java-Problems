@@ -867,7 +867,57 @@ public class RandomPractice {
     }
 
 
+    // more14
+    public boolean more14(int[] nums) {
 
+        int oneCount = 0;
+        int fourCount = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] == 1) {
+                oneCount++;
+            }
+
+            if (nums[i] == 4) {
+                fourCount++;
+            }
+
+
+        }
+
+        return oneCount > fourCount;
+
+
+    }
+
+
+
+    // fizzArray
+    public int[] fizzArray(int n) {
+
+        int[] result = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            result[i] = i;
+        }
+
+        return result;
+    }
+
+
+    // only14
+    public boolean only14(int[] nums) {
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 1 && nums[i] != 4) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
 
 
 
