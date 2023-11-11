@@ -797,7 +797,28 @@ public class RandomPractice {
     }
 
 
+    // sum67
+    public int sum67(int[] nums) {
 
+        int total = 0;
+
+        boolean inRange = false;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] == 6) {
+                inRange = true;
+            } else if (inRange && nums[i] == 7) {
+                inRange = false;
+            } else {
+                total += nums[i];
+            }
+
+        }
+
+        return total;
+
+    }
 
 
 
