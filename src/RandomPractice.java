@@ -776,7 +776,25 @@ public class RandomPractice {
     }
 
 
+    // sum13
+    public int sum13(int[] nums) {
 
+        int total = 0;
+        int index = 0;
+
+        while (index < nums.length) {
+            if (nums[index] == 13) {
+                // we are adding two to the index here because 13 and the number right after need to be skipped
+                index += 2;
+            } else {
+                total += nums[index];
+            }
+            index++;
+        }
+
+        return total;
+
+    }
 
 
 
