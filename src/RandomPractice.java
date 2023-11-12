@@ -933,6 +933,31 @@ public class RandomPractice {
     }
 
 
+    // no14
+    public boolean no14(int[] nums) {
+        boolean hasOne = false;
+        boolean hasFour = false;
+
+        for (int num : nums) {
+            if (num == 1) {
+                hasOne = true;
+            }
+            if (num == 4) {
+                hasFour = true;
+            }
+        }
+
+
+        return !(hasOne && hasFour);
+
+    }
+
+
+
+
+
+
+
 
 
 
