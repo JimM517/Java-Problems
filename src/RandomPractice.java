@@ -1097,6 +1097,33 @@ public class RandomPractice {
 
 
 
+    // twoTwo
+    public boolean twoTwo(int[] nums) {
+        // return true if every 2 that appears is next to another 2
+
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] == 2) {
+                if (i > 0 && nums[i - 1] == 2) {
+                    continue;
+                }
+                if (i < nums.length - 1 && nums[i + 1] == 2) {
+                    continue;
+                }
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+
+
+
+
+
+
 
 
 
