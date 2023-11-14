@@ -1027,6 +1027,24 @@ public class RandomPractice {
     }
 
 
+    // has12
+    public boolean has12(int[] nums) {
+
+        boolean hasOne = false;
+
+        for (int num : nums) {
+            if (num == 1) {
+                hasOne = true;
+            }
+            if (hasOne && num == 2) {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
 
 
 
