@@ -1208,6 +1208,26 @@ public class RandomPractice {
 
 
 
+    //fizzArray3
+    public int[] fizArray3(int start, int end) {
+
+        int len = end - start;
+
+        int[] result = new int[len];
+
+        int count = 0;
+
+        while (start < end) {
+            result[count] = start;
+            count++;
+            start++;
+        }
+
+        return result;
+    }
+
+
+
 
 
 
