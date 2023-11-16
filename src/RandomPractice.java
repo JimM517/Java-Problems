@@ -1148,7 +1148,29 @@ public class RandomPractice {
     }
 
 
-    
+    // sameEnds
+    public boolean sameEnds(int[] nums, int len) {
+
+        int length = nums.length;
+
+        if (len < 0 || len > nums.length) {
+            return false;
+        }
+
+        for (int i = 0; i < len; i++) {
+            if (nums[i] != nums[length - len + i]) {
+                return false;
+            }
+        }
+
+
+        return true;
+
+    }
+
+
+
+
 
 
 
