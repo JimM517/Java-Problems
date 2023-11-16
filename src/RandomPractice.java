@@ -1209,7 +1209,7 @@ public class RandomPractice {
 
 
     //fizzArray3
-    public int[] fizArray3(int start, int end) {
+    public int[] fizzArray3(int start, int end) {
 
         int len = end - start;
 
@@ -1224,6 +1224,30 @@ public class RandomPractice {
         }
 
         return result;
+    }
+
+
+
+    // shiftLeft
+    public int[] shiftLeft(int[] nums) {
+        // check length
+        if (nums.length <= 1) {
+            return nums;
+        }
+
+        // capturing first element
+        int firstEl = nums[0];
+        for (int i = 0; i < nums.length - 1; i++) {
+
+            nums[i] = nums[i + 1];
+
+
+        }
+
+        // after everything is shifted, we add that first element now at the end
+        nums[nums.length - 1] = firstEl;
+
+        return nums;
     }
 
 
