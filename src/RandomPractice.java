@@ -1353,6 +1353,36 @@ public class RandomPractice {
     }
 
 
+    // scoresAverage
+    public int scoresAverage(int[] scores) {
+
+        int firstHalf = average(scores, 0, scores.length / 2);
+        int secondHalf = average(scores, scores.length / 2, scores.length);
+
+        if (firstHalf > secondHalf) {
+            return firstHalf;
+        } else {
+            return secondHalf;
+        }
+
+
+
+    }
+
+
+    // helper
+    private int average(int[] scores, int start, int end) {
+
+        int sum = 0;
+
+        for (int i = start; i < end; i++) {
+            sum += scores[i];
+        }
+        // get the number of elements counted to get average
+        int count = end - start;
+        return sum / count;
+
+    }
 
 
 
