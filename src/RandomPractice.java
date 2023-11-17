@@ -1384,6 +1384,23 @@ public class RandomPractice {
 
     }
 
+    // wordsCount
+
+    public int wordsCount(String[] words, int len) {
+
+        int total = 0;
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() == len) {
+                total++;
+            }
+        }
+
+        return total;
+
+    }
+
+
 
 
 
