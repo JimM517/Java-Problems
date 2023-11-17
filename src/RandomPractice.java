@@ -1267,6 +1267,42 @@ public class RandomPractice {
     }
 
 
+    // tenRun
+
+    public int[] tenRun(int[] nums) {
+
+        int[] result = new int[nums.length];
+
+        // keep track of 10 value
+        boolean inRange = false;
+        // store ten value to set later
+        int tenValue = 0;
+
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] % 10 == 0) {
+                inRange = true;
+                tenValue = nums[i];
+            }
+
+            if (inRange) {
+                result[i] = tenValue;
+            } else {
+                result[i] = nums[i];
+            }
+
+
+
+
+        }
+
+
+        return result;
+
+    }
+
+
 
 
 
