@@ -1331,7 +1331,26 @@ public class RandomPractice {
     }
 
 
+    // post4
+    public int[] post4(int[] nums) {
 
+
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] == 4) {
+                int[] result = new int[nums.length - i - 1];
+
+                for (int j = 0; j < result.length; j++) {
+                    result[j] = nums[i + j + 1];
+                }
+                return result;
+            }
+        }
+
+
+
+        return null;
+
+    }
 
 
 
