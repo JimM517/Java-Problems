@@ -1304,6 +1304,34 @@ public class RandomPractice {
 
 
 
+    // pre4
+
+    public int[] pre4(int[] nums) {
+
+
+        int length = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 4) {
+                length = i;
+                break;
+            }
+        }
+
+
+        int[] result = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            result[i] = nums[i];
+        }
+
+        return result;
+
+
+    }
+
+
+
 
 
 
