@@ -1,5 +1,8 @@
 package Medium;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class MediumLeetQues {
 
 
@@ -100,6 +103,49 @@ public class MediumLeetQues {
         return nums[left];
 
     }
+
+
+
+
+
+    // 3 Longest Substring without repeating characters
+    public int lengthOfLongestSubstring(String s) {
+
+        // sliding window
+        // O(n)
+
+        Set<Character> characterSet = new HashSet<>();
+
+        int left = 0;
+        int right = 0;
+
+        int count = 0;
+
+        while (right < s.length()) {
+
+            if (characterSet.contains(s.charAt(right))) {
+               characterSet.remove(s.charAt(left));
+               left++;
+            } else {
+                characterSet.add(s.charAt(right));
+                count = Math.max(count, right - left + 1);
+                right++;
+            }
+
+
+        }
+
+
+        return count;
+
+
+
+    }
+
+
+
+
+
 
 
 
