@@ -1434,6 +1434,40 @@ public class RandomPractice {
 
 
 
+    //withoutString
+    public String withoutString(String base, String remove) {
+
+        int baseLength = base.length();
+        int removeLength = remove.length();
+
+        String lowerBase = base.toLowerCase();
+        String lowerRemove = remove.toLowerCase();
+
+        String result = "";
+
+
+        for (int i = 0; i < baseLength; i++) {
+            if (i <= baseLength - removeLength) {
+                String temp = lowerBase.substring(i, i + removeLength);
+                if (!temp.equals(lowerRemove)) {
+                    result += base.substring(i, i + 1);
+                } else {
+                    i += removeLength - 1;
+                }
+            } else {
+                String tempTwo = lowerBase.substring(i, i + 1);
+                if (!tempTwo.equals(lowerRemove)) {
+                    result += base.substring(i, i + 1);
+                }
+            }
+        }
+
+        return result;
+
+    }
+
+
+
 
 
 
