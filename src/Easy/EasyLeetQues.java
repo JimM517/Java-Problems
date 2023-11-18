@@ -318,6 +318,36 @@ public class EasyLeetQues {
 
 
 
+    // 202. Happy Number
+    public boolean isHappy(int n) {
+
+        HashSet<Integer> seenNumbers = new HashSet<>();
+
+        while (n != 1 && !seenNumbers.contains(n)) {
+
+            seenNumbers.add(n);
+
+            String str = String.valueOf(n);
+            int sum = 0;
+
+            for (int i = 0; i < str.length(); i++) {
+
+                int digit = Character.getNumericValue(str.charAt(i));
+                sum += digit * digit;
+
+            }
+
+            n = sum;
+
+        }
+         return n == 1;
+
+    }
+
+
+
+
+
 
 
 
