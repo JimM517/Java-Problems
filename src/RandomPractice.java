@@ -1467,6 +1467,23 @@ public class RandomPractice {
     }
 
 
+    // equalIsNot
+    public boolean equalIsNot(String str) {
+
+        int countIs = 0;
+        int countNot = 0;
+
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.regionMatches(i, "is", 0, 2)) {
+                countIs++;
+            }
+            if (str.regionMatches(i, "not", 0, 3)) {
+                countNot++;
+            }
+        }
+        return countIs == countNot;
+    }
+
 
 
 
