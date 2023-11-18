@@ -1,6 +1,8 @@
 package Medium;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class MediumLeetQues {
@@ -144,7 +146,43 @@ public class MediumLeetQues {
 
 
 
+    // 424 longest repeating character replacement
+    public int characterReplacement(String s, int k) {
 
+        // O(n)
+        // sliding window
+        // the longest substring that contains a single character
+        // HashMap
+
+        int left = 0;
+        int right = 0;
+
+        int result = 0;
+        int maxCount = 0;
+
+        Map<Character, Integer> charMap = new HashMap<>();
+
+
+        while (right < s.length()) {
+
+            charMap.put(s.charAt(right), charMap.getOrDefault(s.charAt(right), 0) + 1);
+
+            maxCount = Math.max(maxCount, charMap.get(s.charAt(right)));
+
+
+            if ((right - left + 1) - maxCount > k) {
+                charMap.put(s.charAt(left), charMap.get(s.charAt(left) - 1));
+                left++;
+            }
+
+            result = Math.max(result, right - left + 1);
+            right++;
+
+
+        }
+
+        return result;
+    }
 
 
 
