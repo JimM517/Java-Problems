@@ -8,7 +8,7 @@ import java.util.Set;
 public class MediumLeetQues {
 
 
-    // 7 Reverse Integer
+    // 7. Reverse Integer
 
     public int reverse(int x) {
 
@@ -41,7 +41,7 @@ public class MediumLeetQues {
 
 
 
-    // 334 increasing triplet subsequence
+    // 334. increasing triplet subsequence
     public boolean increasingTriplet(int[] nums) {
 
         int first = Integer.MAX_VALUE;
@@ -64,7 +64,7 @@ public class MediumLeetQues {
 
 
 
-    // 392 Is subsequence
+    // 392. Is subsequence
     public boolean isSubsequence(String s, String t) {
 
         int sPointer = 0;
@@ -82,7 +82,7 @@ public class MediumLeetQues {
 
 
 
-    // 153 Find Minimum in Rotated Sorted Array
+    // 153. Find Minimum in Rotated Sorted Array
 
     public int findMin(int[] nums) {
         // need in O(log n)
@@ -110,7 +110,7 @@ public class MediumLeetQues {
 
 
 
-    // 3 Longest Substring without repeating characters
+    // 3. Longest Substring without repeating characters
     public int lengthOfLongestSubstring(String s) {
 
         // sliding window
@@ -146,7 +146,7 @@ public class MediumLeetQues {
 
 
 
-    // 424 longest repeating character replacement
+    // 424. longest repeating character replacement
     public int characterReplacement(String s, int k) {
 
         // O(n)
@@ -183,6 +183,50 @@ public class MediumLeetQues {
 
         return result;
     }
+
+
+
+    // 567. Permutation in String
+
+    public boolean checkInclusion(String s1, String s2) {
+
+        // sliding window
+
+        if (s1.length() > s2.length()) {
+            return false;
+        }
+
+        Map<Character, Integer> stringOne = new HashMap<>();
+        Map<Character, Integer> stringTwo = new HashMap<>();
+
+
+        for (char c : s1.toCharArray()) {
+            stringOne.put(c, stringOne.getOrDefault(c, 0) + 1);
+        }
+
+        for (int i = 0; i <= s2.length() - s1.length(); i++) {
+
+            String subString = s2.substring(i, i + s1.length());
+
+            for (char s : subString.toCharArray()) {
+                stringTwo.put(s, stringTwo.getOrDefault(s, 0) + 1);
+            }
+
+            if (stringOne.equals(stringTwo)) {
+                return true;
+            } else {
+                stringTwo.clear();
+            }
+
+
+
+        }
+        return false;
+    }
+
+
+
+
 
 
 
