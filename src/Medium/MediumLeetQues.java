@@ -192,6 +192,7 @@ public class MediumLeetQues {
 
         // sliding window
 
+        // check length because is s1 is greater it's impossible for s1 to be a permutation
         if (s1.length() > s2.length()) {
             return false;
         }
@@ -199,19 +200,22 @@ public class MediumLeetQues {
         Map<Character, Integer> stringOne = new HashMap<>();
         Map<Character, Integer> stringTwo = new HashMap<>();
 
-
+        // populate the s1 map
         for (char c : s1.toCharArray()) {
             stringOne.put(c, stringOne.getOrDefault(c, 0) + 1);
         }
 
+        // subtract length from s2 to ensure there are valid number of characters
         for (int i = 0; i <= s2.length() - s1.length(); i++) {
 
             String subString = s2.substring(i, i + s1.length());
 
+            // populate stringTwo map with the substring characters
             for (char s : subString.toCharArray()) {
                 stringTwo.put(s, stringTwo.getOrDefault(s, 0) + 1);
             }
 
+            // if maps are equal, true
             if (stringOne.equals(stringTwo)) {
                 return true;
             } else {
