@@ -290,7 +290,14 @@ public class MediumLeetQues {
     }
 
 
+    // top K frequent elements
+    public int[] topKFrequent(int[] nums, int k) {
 
+
+
+
+        return new int[]{-1, -1};
+    }
 
 
 
