@@ -257,7 +257,7 @@ public class MediumLeetQues {
 
     public List<List<String>> groupAnagrams(String[] strs) {
 
-        // create map to store strings and list
+        // map where key is the sorted word, and the list is all the words that are anagrams
         Map<String, List> testAnagram = new HashMap<>();
 
         // loop through strs array
@@ -277,16 +277,20 @@ public class MediumLeetQues {
                 testAnagram.put(sortedWord, new ArrayList<>());
             }
 
+            // add original word to the list associated with the sorted key
             testAnagram.get(sortedWord).add(word);
 
         }
 
 
-
+        // return list of all values
         return new ArrayList<>(testAnagram.values());
 
 
     }
+
+
+
 
 
 
