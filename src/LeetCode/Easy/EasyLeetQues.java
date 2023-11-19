@@ -365,6 +365,28 @@ public class EasyLeetQues {
 
 
 
+    // 242. Valid Anagram
+    public boolean isAnagram(String s, String t) {
+
+        Map<Character, Integer> result = new HashMap<>();
+
+        Map<Character, Integer> tMap = new HashMap<>();
+
+        // populate result with chars and count from s
+        for (int i = 0; i < s.length(); i++) {
+           result.put(s.charAt(i), result.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        // populate tMap with chars and count from t
+        for (int i = 0; i < t.length(); i++) {
+            tMap.put(t.charAt(i), tMap.getOrDefault(t.charAt(i), 0) + 1);
+
+        }
+
+        // if the two maps are equal they are anagrams
+        return result.equals(tMap);
+    }
+
+
 
 
 
