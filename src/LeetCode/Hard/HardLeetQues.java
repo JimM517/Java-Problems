@@ -1,4 +1,4 @@
-package Hard;
+package LeetCode.Hard;
 
 public class HardLeetQues {
 

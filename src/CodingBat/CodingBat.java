@@ -1497,7 +1497,7 @@ public class CodingBat {
 
     }
 
-    /******* Medium and Harder string method problems below ********/
+    /******* LeetCode.LeetCode.Medium and Harder string method problems below ********/
 
 
     // doubleChar

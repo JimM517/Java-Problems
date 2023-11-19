@@ -1,7 +1,8 @@
-package Easy;
+package LeetCode.Easy;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class EasyLeetQues {
@@ -281,10 +282,10 @@ public class EasyLeetQues {
 
 
     // 1290 Convert Binary Number in a Linked List to Integer
-//    public int getDecimalValue(LeetCode.ListNode head) {
+//    public int getDecimalValue(LeetCode.LeetCode.ListNode head) {
 //        int decimalValue = 0;
 //
-//        LeetCode.ListNode current = head;
+//        LeetCode.LeetCode.ListNode current = head;
 //
 //        while (current != null) {
             // left shift << is essentially multiplying by 2
@@ -343,6 +344,28 @@ public class EasyLeetQues {
          return n == 1;
 
     }
+
+
+    // 217. Contains duplicates
+    public boolean containsDuplicates(int[] nums) {
+
+        Map<Integer, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (result.containsKey(nums[i])) {
+                return true;
+            } else {
+                result.put(nums[i], 1);
+            }
+        }
+
+       return false;
+
+    }
+
+
+
+
 
 
 

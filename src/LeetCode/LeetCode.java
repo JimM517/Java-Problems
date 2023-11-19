@@ -1,3 +1,5 @@
+package LeetCode;
+
 import java.util.*;
 
 public class LeetCode {
@@ -740,7 +742,7 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
-    // 704 Binary Search -> Easy
+    // 704 Binary Search -> LeetCode.LeetCode.Easy
     public int search(int[] nums, int target) {
 
         int start = 0;

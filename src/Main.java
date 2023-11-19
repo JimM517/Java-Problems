@@ -1,4 +1,4 @@
-import Medium.MediumLeetQues;
+import LeetCode.Medium.MediumLeetQues;
 
 import java.util.ArrayList;
 import java.util.List;
