@@ -2,11 +2,9 @@ package LeetCode;
 
 import java.util.*;
 
-public class LeetCode {
+public class RandomLeet {
 
-
-
-//    1. Reconstruct Original Digits from English
+    //    1. Reconstruct Original Digits from English
     public String originalDigits(String s) {
         int[] count = new int[26];
         for(char c : s.toCharArray()) count[c-'a']++;
@@ -40,7 +38,7 @@ public class LeetCode {
 
 
 
-//    2. Group Anagrams
+    //    2. Group Anagrams
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String word : strs) {
@@ -75,18 +73,18 @@ public class LeetCode {
 //    4. Even odd tree
 
 
-             public class TreeNode {
-                int val;
-                TreeNode left;
-                TreeNode right;
-                TreeNode() {}
-                TreeNode(int val) { this.val = val; }
-                TreeNode(int val, TreeNode left, TreeNode right) {
-                    this.val = val;
-                    this.left = left;
-                    this.right = right;
-                }
-  }
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
 
     public Boolean isEvenOddTree(TreeNode root) {
@@ -118,7 +116,7 @@ public class LeetCode {
     }
 
 
-//    5. Best time to buy and sell stock
+    //    5. Best time to buy and sell stock
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
@@ -138,7 +136,7 @@ public class LeetCode {
 
 //    6. Add Two Numbers  LINKED LIST PROBLEM
 
-      public class ListNode {
+    public class ListNode {
         int val;
         ListNode next;
         ListNode() {}
@@ -174,7 +172,7 @@ public class LeetCode {
         return pre.next;
     }
 
-//    7. TwoSum
+    //    7. TwoSum
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -187,7 +185,7 @@ public class LeetCode {
         return new int[]{-1, -1};
     }
 
-//    8. Maximum units on a truck
+    //    8. Maximum units on a truck
     public int maximumUnits(int[][] boxTypes, int truckSize) {
         Arrays.sort(boxTypes, (a, b) -> b[1] - a[1]);
         int totalUnits = 0;
@@ -203,7 +201,7 @@ public class LeetCode {
         return totalUnits;
     }
 
-//    9. Minimum value to get positive number
+    //    9. Minimum value to get positive number
     public int minStartValues(int[] nums) {
         int min = Integer.MAX_VALUE;
         int sum = 0;
@@ -215,7 +213,7 @@ public class LeetCode {
     }
 
 
-//    10. Maxmium number of events that can be attended
+    //    10. Maxmium number of events that can be attended
     public int maxEvents(int[][] events) {
         Arrays.sort(events, (a, b) -> a[0] != b[0] ? a[0] - b[0] : a[1] - b[1]);
         PriorityQueue<Integer> heap = new PriorityQueue<>();
@@ -225,38 +223,38 @@ public class LeetCode {
             while (i < events.length && events[i][0] == day) {
                 heap.offer(events[i++][1]);
             }
-        while (heap.size() > 0 && heap.peek() < day) {
-            heap.poll();
+            while (heap.size() > 0 && heap.peek() < day) {
+                heap.poll();
+            }
+            if (heap.size() > 0) {
+                heap.poll();
+                maxEvents++;
+            }
         }
-        if (heap.size() > 0) {
-            heap.poll();
-            maxEvents++;
-        }
-    }
         return maxEvents;
     }
 
-//    11. Minimum absolute difference
-public List<List<Integer>> minimumAbsDifference(int[] arr) {
-    Arrays.sort(arr);
-    int minimumDiff = arr[1] - arr[0];
-    List result = new ArrayList();
-    result.add(Arrays.asList(arr[0], arr[1]));
-    for (int i = 1; i < arr.length - 1; i++) {
-        int diff = arr[i + 1] - arr[i];
-        if (minimumDiff == diff) {
-            result.add(Arrays.asList(arr[i], arr[i + 1]));
-        } else if (minimumDiff > diff) {
-            minimumDiff = diff;
-            result = new ArrayList();
-            result.add(Arrays.asList(arr[i], arr[i + 1]));
+    //    11. Minimum absolute difference
+    public List<List<Integer>> minimumAbsDifference(int[] arr) {
+        Arrays.sort(arr);
+        int minimumDiff = arr[1] - arr[0];
+        List result = new ArrayList();
+        result.add(Arrays.asList(arr[0], arr[1]));
+        for (int i = 1; i < arr.length - 1; i++) {
+            int diff = arr[i + 1] - arr[i];
+            if (minimumDiff == diff) {
+                result.add(Arrays.asList(arr[i], arr[i + 1]));
+            } else if (minimumDiff > diff) {
+                minimumDiff = diff;
+                result = new ArrayList();
+                result.add(Arrays.asList(arr[i], arr[i + 1]));
+            }
         }
+        return result;
     }
-    return result;
-}
 
 
- // 27. REMOVE ELEMENT
+    // 27. REMOVE ELEMENT
 // Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
 // The order of the elements may be changed.
 // Then return the number of elements in nums which are not equal to val.
@@ -344,7 +342,7 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     }
 
 
-                        // *** EASY BINARY SEARCH ***
+    // *** EASY BINARY SEARCH ***
 //    We are playing the Guess Game. The game is as follows:
 //    I pick a number from 1 to n. You have to guess which number I picked.
 //    Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.
@@ -766,19 +764,19 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
     // 206 Reverse a linked list
-   public ListNode reverseList(ListNode head) {
+    public ListNode reverseList(ListNode head) {
 
-       ListNode prev = null;
-       ListNode curr = head;
+        ListNode prev = null;
+        ListNode curr = head;
 
-       while(curr != null) {
-           ListNode next = curr.next;
-           curr.next = prev;
-           prev = curr;
-           curr = next;
-       }
+        while(curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
 
-       return prev;
+        return prev;
     }
 
 
@@ -994,20 +992,20 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
     // If there is no future day for which this is possible, keep answer[i] == 0 instead.
 
     public int[] dailyTemperatures(int[] temperatures) {
-            int[] results = new int[temperatures.length];
+        int[] results = new int[temperatures.length];
 
-            int n = temperatures.length;
+        int n = temperatures.length;
 
-            // monotonic decreasing order -> stack problem
-            Stack<Integer> temps = new Stack<>();
+        // monotonic decreasing order -> stack problem
+        Stack<Integer> temps = new Stack<>();
 
-            for (int i = n - 1; i >= 0; i--) {
-                while(!stack.isEmpty() && temperatures[i] > temperatures[temps.peek()]) {
-                    int stackIndex = stack.pop();
-                    results[stackIndex] = i - stackIndex;
-                }
-                stack.push(i);
+        for (int i = n - 1; i >= 0; i--) {
+            while(!stack.isEmpty() && temperatures[i] > temperatures[temps.peek()]) {
+                int stackIndex = stack.pop();
+                results[stackIndex] = i - stackIndex;
             }
+            stack.push(i);
+        }
         return results;
 
     }
@@ -1022,31 +1020,31 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
         // calculate what time each car going to reach the destination????
         // (target - position) / speed ???
 
-       int n = position.length;
-       int[][] cars = new int[n][2];
+        int n = position.length;
+        int[][] cars = new int[n][2];
 
-       for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
 
-           cars[i][0] = position[i];
-           cars[i][1] = (target - position[i]) / speed[i];
-       }
-
-
-       Arrays.sort(cars, (a, b) -> Integer.compare(b[0], a[0]));
-
-       int count = 0;
-       double prevTime = -1;
+            cars[i][0] = position[i];
+            cars[i][1] = (target - position[i]) / speed[i];
+        }
 
 
-       for (int i = 0; i < n; i++) {
+        Arrays.sort(cars, (a, b) -> Integer.compare(b[0], a[0]));
 
-           double currentTime = cars[i][1];
+        int count = 0;
+        double prevTime = -1;
 
-           if (currentTime > prevTime) {
-               count++;
-               prevTime = currentTime;
-           }
-       }
+
+        for (int i = 0; i < n; i++) {
+
+            double currentTime = cars[i][1];
+
+            if (currentTime > prevTime) {
+                count++;
+                prevTime = currentTime;
+            }
+        }
 
         return count;
     }
@@ -1118,34 +1116,34 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
     public int countPrimes(int n) {
 
-      if (n <= 2) {
-          return 0;
-      }
+        if (n <= 2) {
+            return 0;
+        }
 
-      boolean[] isPrime = new boolean[n];
-      Arrays.fill(isPrime, true);
-
-
-      isPrime[0] = false;
-      isPrime[1] = false;
-
-      for (int i = 2; i * i < n; i++) {
-          if (isPrime[i]) {
-              for (int j = i * i; j < n; j+=i) {
-                  isPrime[j] = false;
-              }
-          }
-      }
+        boolean[] isPrime = new boolean[n];
+        Arrays.fill(isPrime, true);
 
 
-      int count = 0;
-      for (boolean prime : isPrime) {
-          if (prime) {
-              count++;
-          }
-      }
+        isPrime[0] = false;
+        isPrime[1] = false;
 
-      return count;
+        for (int i = 2; i * i < n; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j < n; j+=i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+
+        int count = 0;
+        for (boolean prime : isPrime) {
+            if (prime) {
+                count++;
+            }
+        }
+
+        return count;
 
     }
 
@@ -1168,11 +1166,4 @@ public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
 
     }
-
-
-
-
-
-
-
 }
