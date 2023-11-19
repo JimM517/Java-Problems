@@ -1,9 +1,6 @@
 package LeetCode.Medium;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MediumLeetQues {
 
@@ -254,6 +251,45 @@ public class MediumLeetQues {
 
 
     }
+
+
+    // 49. Group Anagrams
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+
+        // create map to store strings and list
+        Map<String, List> testAnagram = new HashMap<>();
+
+        // loop through strs array
+        for (String word : strs) {
+
+            // split each word into char array
+            char[] chars = word.toCharArray();
+
+            // sort chars
+            Arrays.sort(chars);
+
+            // change word back to string
+            String sortedWord = new String(chars);
+
+            // if the map doesn't contain the sorted word, we add it
+            if (!testAnagram.containsKey(sortedWord)) {
+                testAnagram.put(sortedWord, new ArrayList<>());
+            }
+
+            testAnagram.get(sortedWord).add(word);
+
+        }
+
+
+
+        return new ArrayList<>(testAnagram.values());
+
+
+    }
+
+
+
 
 
 
