@@ -1670,6 +1670,25 @@ public class RandomPractice {
     }
 
 
+    // another solution for removeWords
+    public String removeWordsTwo(String input, String search) {
+
+        String[] inputArr = input.split(" ");
+        String[] searchArr = search.split(" ");
+
+
+        for (String word : searchArr) {
+            input = input.replaceFirst(word, "");
+        }
+        // replace double spaces with single space
+        input = input.replace("  ", " ");
+
+        return input;
+
+    }
+
+
+
 
 
 
