@@ -1633,6 +1633,43 @@ public class RandomPractice {
 
 
 
+    /** Random interview practice **/
+
+    // Given two words s and t, find subsequence t of s and remove words
+    // return s
+    public String removeWords(String input, String search) {
+
+        // split each string into arrays, one for input and one for search
+        String[] inputArr = input.split("");
+        String[] searchArr = search.split("");
+
+        // create string builder instead of concatenation
+        StringBuilder result = new StringBuilder();
+
+        // loop through input array
+        for (String inputWord : inputArr) {
+            // create boolean to keep track of found word
+            boolean found = false;
+            // loop through search array
+            for (String searchWord : searchArr) {
+                // if the word is found in input, change found to true break out of the loop
+                if (inputWord.equals(searchWord)) {
+                    found = true;
+                    break;
+                }
+
+            }
+            // if the word is not found, add the word
+            if (!found) {
+                result.append(inputWord);
+            }
+        }
+
+        return result.toString();
+
+    }
+
+
 
 
 
