@@ -1609,6 +1609,29 @@ public class RandomPractice {
     }
 
 
+    // mapAB4
+    public Map<String, String> mapAB4(Map<String, String> map) {
+
+        if (map.containsKey("a") && map.containsKey("b")) {
+            int aLen = map.get("a").length();
+            int bLen = map.get("b").length();
+
+            if (aLen > bLen) {
+                map.put("c", map.get("a"));
+            } else if (bLen > aLen) {
+                map.put("c", map.get("b"));
+            } else {
+                map.put("a", "");
+                map.put("b", "");
+            }
+        }
+
+        return map;
+
+
+    }
+
+
 
 
 
