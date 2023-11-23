@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class RandomPractice {
@@ -1688,8 +1690,46 @@ public class RandomPractice {
     }
 
 
+ /** Example File Reader problem  **/
+
+ public void readFile()  {
+
+     File inputFile = new File("input.txt");
+
+     List<Integer> result = new ArrayList<>();
+
+     try {
+         Scanner input = new Scanner(inputFile);
+         while(input.hasNext()) {
+             result.add(input.nextInt());
+         }
 
 
+         int num1 = 0;
+         int num2 = 0;
+
+         for (int i = 0; i < result.size(); i++) {
+             num1 = result.get(i);
+             for (int j = i + 1; j < result.size(); j++) {
+                 num2 = result.get(j);
+
+                 if (num1 + num2 == 2020) {
+                     int answer = num1 * num2;
+                     System.out.println(answer);
+                 }
+
+             }
+         }
+
+
+
+     } catch (FileNotFoundException e) {
+         throw new RuntimeException(e);
+     }
+
+
+
+ }
 
 
 
