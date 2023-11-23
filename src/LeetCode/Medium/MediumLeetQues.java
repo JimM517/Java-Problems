@@ -319,6 +319,31 @@ public class MediumLeetQues {
     }
 
 
+    // 238. product of array except self
+    public int[] productExceptSelf(int[] nums) {
+
+
+        int n = nums.length;
+
+        int[] result = new int[nums.length];
+
+        // calculate prefix products
+        int prefix = 1;
+        for (int i = 0; i < n; i++) {
+            result[i] = prefix;
+            prefix *= nums[i];
+        }
+
+        // calculate postfix products and multiply with prefix products
+        int postfix = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] *= postfix;
+            postfix *= nums[i];
+        }
+
+        return result;
+    }
+
 
 
 
