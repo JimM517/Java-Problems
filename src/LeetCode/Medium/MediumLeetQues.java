@@ -290,14 +290,44 @@ public class MediumLeetQues {
     }
 
 
-    // top K frequent elements
+    // 347. top K frequent elements
     public int[] topKFrequent(int[] nums, int k) {
 
+        Map<Integer, Integer> frequency = new HashMap<>();
+
+        // count frequency of each number
+        for (int num : nums) {
+            frequency.put(num, frequency.getOrDefault(num, 0) + 1);
+        }
+
+        // create a list from the entries of frequency map
+        List<Map.Entry<Integer, Integer>> entries = new ArrayList<>(frequency.entrySet());
+
+        // sort list of frequencies in descending order
+        entries.sort((a, b) -> Integer.compare(b.getValue(), a.getValue()));
 
 
+        // get the k most frequent elements
+        int[] result = new int[k];
+        for (int i = 0; i < k; i++) {
+            result[i] = entries.get(i).getKey();
+        }
 
-        return new int[]{-1, -1};
+        return result;
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
