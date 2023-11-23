@@ -1733,6 +1733,55 @@ public class RandomPractice {
 
 
 
+    /** Another solution using recursion **/
+
+    public void readAnotherFile() {
+
+        File inputFile = new File("input.txt");
+
+        List<Integer> list = new ArrayList<>();
+
+        try {
+            Scanner input = new Scanner(inputFile);
+            while(input.hasNext()) {
+                list.add(input.nextInt());
+            }
+            List<Integer> result = findNumbers(list, 2020, 0);
+            int num1 = result.get(0);
+            int num2 = result.get(1);
+            System.out.println(num1 + " " + num2);
+            System.out.println(num1 + num2);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+
+    private static List<Integer> findNumbers(List<Integer> arr, int target, int currentIndex) {
+        if (currentIndex >= arr.size()) {
+            return null;  // base case
+        }
+
+        int currentNumber = arr.get(currentIndex);
+        int complement = target - currentNumber;
+        for (int i = currentIndex + 1; i < arr.size(); i++) {
+
+            if (arr.get(i) == complement) {
+                return Arrays.asList(new Integer[] {currentNumber, complement});
+            }
+
+        }
+
+        return findNumbers(arr, target, currentIndex + 1); // call method moving out our index
+
+    }
+
+
+
 
 
 
