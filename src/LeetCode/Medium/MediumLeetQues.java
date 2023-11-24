@@ -374,6 +374,69 @@ public class MediumLeetQues {
 
     }
 
+    // 15. 3Sum
+
+    public List<List<Integer>> threeSum(int[] nums) {
+
+        List<List<Integer>> results = new ArrayList<>();
+
+        // Sort input array
+        Arrays.sort(nums);
+
+
+        for (int i = 0; i < nums.length - 2; i++) {
+
+            // skip duplicates
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            int j = i + 1;
+            int k = nums.length - 1;
+
+
+            while (j < k) {
+
+                int sum = nums[i] + nums[j] + nums[k];
+
+                if (sum == 0) {
+                    // found a triplet with zero sum, add to list
+                    results.add(Arrays.asList(nums[i], nums[j], nums[k]));
+
+                    // skip duplicates for j
+                    while(j < k && nums[j] == nums[j + 1]) {
+                        j++;
+                    }
+                    // skip duplicates for k
+                    while(j < k && nums[k] == nums[k - 1]) {
+                        k--;
+                    }
+                    // move pointers
+                    j++;
+                    k--;
+
+                } else if (sum < 0) {
+                    // sum is less than zero, increase j
+                    j++;
+                } else {
+                    // sum is greater than zero, decrease k
+                    k--;
+                }
+
+
+
+
+            }
+
+
+
+        }
+
+
+
+        return results;
+    }
+
 
 
 
