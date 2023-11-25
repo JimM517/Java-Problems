@@ -443,6 +443,9 @@ public class MediumLeetQues {
     // 5. Longest Palindromic Substring
     public String longestPalindrome(String s) {
 
+        // expand around center approach
+
+
         String result = "";
         int resultLen = 0;
 
@@ -483,7 +486,47 @@ public class MediumLeetQues {
     }
 
 
+    // 46. Permutations
+    public List<List<Integer>> permute(int[] nums) {
 
+        List<List<Integer>> answer = new ArrayList<>();
+
+        backTrack(nums, 0, answer);
+
+        return answer;
+
+    }
+
+
+
+    private void backTrack(int[] nums, int index, List<List<Integer>> answer) {
+
+        if (index == nums.length) {
+            List<Integer> rs = new ArrayList<>();
+
+            for (int i = 0; i < nums.length; i++) {
+                rs.add(nums[i]);
+            }
+            answer.add(rs);
+            return;
+        }
+
+        for (int i = index; i < nums.length; i++) {
+            int temp = nums[i];
+            nums[i] = nums[index];
+            nums[index] = temp;
+
+
+            backTrack(nums, index + 1, answer);
+
+            temp = nums[i];
+            nums[i] = nums[index];
+            nums[index] = temp;
+
+        }
+
+
+    }
 
 
 
