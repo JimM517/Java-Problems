@@ -1782,6 +1782,21 @@ public class RandomPractice {
 
 
 
+    // search for number
+    public boolean searchForNumber(int[] arr, int target) {
+
+        for (int num : arr) {
+            if (num == target) {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+
+
 
 
 
