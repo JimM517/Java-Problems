@@ -1796,6 +1796,24 @@ public class RandomPractice {
     }
 
 
+    // has one two
+    public boolean hasOneTwo(int[] arr) {
+        boolean foundOne = false;
+
+        for (int num : arr) {
+            if (num == 1) {
+                foundOne = true;
+            }
+            if (num == 2 && foundOne) {
+                return true;
+            }
+        }
+
+
+        return false;
+
+    }
+
 
 
 
