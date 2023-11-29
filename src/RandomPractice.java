@@ -1817,6 +1817,37 @@ public class RandomPractice {
 
 
 
+    // highest number
+    public int highestNum(int[] arr) {
+
+        Map<Integer, Integer> countMap = new HashMap<>();
+
+        for (int num : arr) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+        }
+
+        int highestCount = 0;
+        int highestNumber = 0;
+
+        Set<Integer> set = countMap.keySet();
+
+        for (int key : set) {
+            if (countMap.get(key) > highestNumber) {
+                highestCount = countMap.get(key);
+                highestNumber = key;
+            } else if (countMap.get(key) == highestCount && key > highestNumber) {
+                highestNumber = key;
+            }
+        }
+
+
+        return highestNumber;
+
+    }
+
+
+
+
 
 
 
