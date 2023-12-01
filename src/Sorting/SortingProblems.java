@@ -1,5 +1,7 @@
 package Sorting;
 
+import java.util.Map;
+
 public class SortingProblems {
 
 
@@ -33,6 +35,25 @@ public class SortingProblems {
         return -1;
 
     }
+
+
+
+
+
+
+    // simple search
+
+    public int findAgeByName(Map<String, Integer> map, String name) {
+
+            if (map.containsKey(name)) {
+                return map.get(name);
+            }
+
+
+
+            return -1;
+        }
+
 
 
 
