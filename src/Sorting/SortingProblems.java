@@ -3,8 +3,6 @@ package Sorting;
 public class SortingProblems {
 
 
-
-
     // binary search problem
 
     public int searchIndex(int[] nums, int target) {

@@ -284,9 +284,11 @@ public class MediumLeetQues {
 
 
         // return list of all values
-        return new ArrayList<>(testAnagram.values());
 
+       // ** HAD TO COMMENT THIS OUT TO RUN MAIN?? **
+       // return new ArrayList<>(testAnagram.values());
 
+        return null;
     }
 
 

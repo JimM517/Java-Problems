@@ -1,4 +1,5 @@
 import LeetCode.Medium.MediumLeetQues;
+import Sorting.SortingProblems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -208,6 +209,9 @@ public class Main {
 
 
         MediumLeetQues med = new MediumLeetQues();
+
+        SortingProblems sorting = new SortingProblems();
+
 
 
 
