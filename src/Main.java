@@ -26,7 +26,7 @@ public class Main {
         int[] forFourMore = {1, 1, 3, 5, 4, 4, 4, 4, 4, 7};
 
 
-        int[] middle ={1, 2, 3, 4}; //2, 3
+        int[] middle = {1, 2, 3, 4}; //2, 3
         int[] anotherMakeMiddle = {7, 1, 2, 3, 4, 9};  //2, 3
         int[] newMakeMiddle = {1, 2}; // 1, 2
 
@@ -142,7 +142,6 @@ public class Main {
 //        System.out.println(exercises.oddOnly(moreOdds));
 
 
-
         String[] stringOne = {"Train", "Boat", "Car"};
         String[] stringTwo = {"Red", "White", "Blue"};
 
@@ -168,7 +167,6 @@ public class Main {
 //        System.out.println(exercises.foundIntTwice(testingNumsList, 5));
 
 
-
         List<String> setStrings = new ArrayList<>();
 
 //        setStrings.add("red");
@@ -189,7 +187,6 @@ public class Main {
 //        System.out.println(exercises.distinctValues(setStrings));
 
 //        System.out.println(exercises.arrayTwoList(stringsArr));
-
 
 
         int[] changeToDubs = {5, 8, 11, 200, 97};
@@ -213,14 +210,7 @@ public class Main {
         SortingProblems sorting = new SortingProblems();
 
 
-
-
     }
-
-
-
-
-
 
 
 
