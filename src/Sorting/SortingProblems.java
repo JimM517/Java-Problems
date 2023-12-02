@@ -59,6 +59,7 @@ public class SortingProblems {
 
 
         // bubble sort
+        // in memory sort??
     public void bubbleSort(int[] nums) {
 
         int n = nums.length;
@@ -78,11 +79,6 @@ public class SortingProblems {
 
             }
         }
-
-
-
-
-
     }
 
 
