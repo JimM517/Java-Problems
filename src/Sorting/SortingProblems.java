@@ -45,14 +45,21 @@ public class SortingProblems {
 
     public int findAgeByName(Map<String, Integer> map, String name) {
 
-            if (map.containsKey(name)) {
-                return map.get(name);
-            }
+//        basic solution
+//            if (map.containsKey(name)) {
+//                return map.get(name);
+//            }
+//            return -1;
 
-
-
-            return -1;
+        // second solution
+            return map.containsKey(name) ? map.get(name) : -1;
         }
+
+
+
+
+
+
 
 
 
