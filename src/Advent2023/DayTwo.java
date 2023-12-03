@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class DayOnePTwo {
+public class DayTwo {
 
 
     public static void main(String[] args) {
