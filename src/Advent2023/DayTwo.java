@@ -13,23 +13,20 @@ public class DayTwo {
 
         File file = new File(fPath + "CubeInput.txt");
 
-        try {
+        try (Scanner sc = new Scanner(file)) {
 
+            int total = 0;
 
-            Scanner sc = new Scanner(file);
 
             while (sc.hasNext()) {
 
+                String line = sc.nextLine();
 
-
-
-
-
-
+                total += possibleGames(line);
 
             }
 
-
+            System.out.println(total);
 
 
         } catch (FileNotFoundException e) {
@@ -40,6 +37,27 @@ public class DayTwo {
 
 
 
+    }
+
+
+
+
+    public static int possibleGames(String line) {
+
+        // get the index of :
+        int colon = line.indexOf(": ");
+
+        // get game id
+        int gameId = Integer.parseInt(line.substring(5, colon));
+
+
+        String stripGame = line.substring(colon + 2);
+
+
+        System.out.println(stripGame);
+
+
+        return 1;
     }
 
 
