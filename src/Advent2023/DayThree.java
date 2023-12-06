@@ -38,6 +38,7 @@ public class DayThree {
             }
 
             int total = validParts();
+            System.out.println(total);
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -84,7 +85,6 @@ public class DayThree {
                         boolean symbolFound = checkForSymbol(numStart, numEnd, lineNum);
 
                         if (symbolFound) {
-                            System.out.println(num);
                             total += num;
                         }
                         numStr = "";
@@ -106,13 +106,110 @@ public class DayThree {
     private boolean checkForSymbol(int numStart, int numEnd, int lineNum) {
 
 
+            // if a character isn't in this expression, skip
+            String regex = "[^A-Za-z0-9. ]";
+
+            try {
+                String left = list.get(lineNum).charAt(numStart - 1) + "";
+
+                if (left.matches(regex)) {
+                    return true;
+                }
+            } catch (IndexOutOfBoundsException e) {
+
+                // don't need error handling as this will flow through
+            } try {
+
+                String right = list.get(lineNum).charAt(numEnd + 1) + "";
+
+                if (right.matches(regex)) {
+                    return true;
+                }
+
+            }  catch (IndexOutOfBoundsException e) {
+
+            // don't need error handling as this will flow through
+            } try {
+
+                String diagLeft = list.get(lineNum - 1).charAt(numStart - 1) + "";
+
+                if (diagLeft.matches(regex)) {
+                    return true;
+                }
+
+            }  catch (IndexOutOfBoundsException e) {
+
+            // don't need error handling as this will flow through
+            } try {
+
+                String diagRight = list.get(lineNum - 1).charAt(numEnd + 1) + "";
+
+                if (diagRight.matches(regex)) {
+                    return true;
+                }
+
+            }   catch (IndexOutOfBoundsException e) {
+
+            // don't need error handling as this will flow through
+            } try {
+
+                String diagUpLeft = list.get(lineNum + 1).charAt(numStart - 1) + "";
+
+                if (diagUpLeft.matches(regex)) {
+                    return true;
+                }
+
+            }  catch (IndexOutOfBoundsException e) {
+
+            // don't need error handling as this will flow through
+            } try {
+
+                String diagUpRight = list.get(lineNum + 1).charAt(numEnd + 1) + "";
+
+                if (diagUpRight.matches(regex)) {
+                    return true;
+                }
+
+            }   catch (IndexOutOfBoundsException e) {
+
+            // don't need error handling as this will flow through
+            }
+
+            // loop to check directly above each index and directly below
+
+            for (int i = numStart; i < numEnd + 1; i++) {
+                // check line above
+                try {
+
+                    String up = list.get(lineNum - 1).charAt(i) + "";
+                    if (up.matches(regex)) {
+                        return true;
+                    }
+
+
+                } catch (IndexOutOfBoundsException e) {
+
+                }
+                // check line below
+                try {
+
+                    String down = list.get(lineNum + 1).charAt(i) + "";
+                    if (down.matches(regex)) {
+                        return true;
+                    }
+
+
+                } catch (IndexOutOfBoundsException e) {
+
+                }
 
 
 
+            }
 
 
 
-
+        return false;
     }
 
 
