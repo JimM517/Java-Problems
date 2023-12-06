@@ -25,7 +25,7 @@ public class DayThree {
 
         String fPath = "src/InputFiles/";
 
-        File file = new File(fPath + "DayThreeSample.txt");
+        File file = new File(fPath + "DayThreeInput.txt");
 
 
         try {
@@ -91,6 +91,18 @@ public class DayThree {
                         numStart = -1;
                         numEnd = -1;
                     }
+                }
+            }
+            if (numStr != "") {
+                num = Integer.parseInt(numStr);
+
+                // ending index of the number
+                numEnd = line.length();
+
+                boolean symbolFound = checkForSymbol(numStart, numEnd, lineNum);
+
+                if (symbolFound) {
+                    total += num;
                 }
             }
 
