@@ -2,80 +2,153 @@ package Advent2023;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class DayThree {
 
+    private List<String> list = new ArrayList<>();
+
     public static void main(String[] args) {
+
+        DayThree app = new DayThree();
+
+        app.run();
+
+    }
+
+
+
+
+    private void run() {
 
         String fPath = "src/InputFiles/";
 
         File file = new File(fPath + "DayThreeSample.txt");
 
-        int total = 0;
 
         try {
             Scanner sc = new Scanner(file);
 
             while (sc.hasNext()) {
-                // get each line
 
-
-                String line = sc.nextLine();
-
-                int checkStr = parseSymbols(line);
-
-                System.out.println(checkStr);
-
-//                total += checkStr;
-
+                // get each line and add to list
+                list.add(sc.nextLine());
             }
-            System.out.println("The total is " + total);
+
+            int total = validParts();
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
 
+    private int validParts() {
 
+        // need to look at three lines at a time
 
+        int total = 0;
 
+        for (int lineNum = 0; lineNum < list.size(); lineNum++) {
 
-    public static int parseSymbols(String line) {
+            // we need to find a number, then look for symbol
+            String line = list.get(lineNum);
 
-        int result = 0;
+            String numStr = "";
 
-        char[] symbols = {'@', '*', '$', '#', '&', '%', '/', '+', '-', '='};
+            int num = 0;
 
+            int numStart = -1;
+            int numEnd = -1;
 
-        String patternString = "\\b\\d+\\s*[" + new String(symbols) + "]\\b";
-        Pattern pattern = Pattern.compile(patternString);
-        Matcher matcher = pattern.matcher(line);
+            // j is keeping track on index in each line
+            for (int j = 0; j < line.length(); j++) {
+                char ch = line.charAt(j);
 
+                // ASCII values for 0-9
+                if (ch > 47 && ch < 58) {
+                    numStr += ch;
+                    // will keep looping as long as there is a char
+                    if (numStart < 0) {
+                        numStart = j;
+                    }
+                } else {
+                    if (numStr != "") {
+                        num = Integer.parseInt(numStr);
 
-        while(matcher.find()) {
+                        // ending index of the number
+                        numEnd = j - 1;
 
-            int start = matcher.start();
-            int end = matcher.end();
+                        boolean symbolFound = checkForSymbol(numStart, numEnd, lineNum);
 
-
-            if ((start > 0 && isSymbol(line.charAt(start - 1))) || (end < line.length() && isSymbol(line.charAt(end)))) {
-                // Extract the number from the match and add to the total
-                String match = matcher.group();
-                result += Integer.parseInt(match.replaceAll("[^\\d]", ""));
+                        if (symbolFound) {
+                            System.out.println(num);
+                            total += num;
+                        }
+                        numStr = "";
+                        numStart = -1;
+                        numEnd = -1;
+                    }
+                }
             }
-
-
 
         }
 
-        return result;
+
+
+        return total;
     }
+
+
+
+    private boolean checkForSymbol(int numStart, int numEnd, int lineNum) {
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+//    public static int parseSymbols(String line) {
+//
+//        int result = 0;
+//
+//        char[] symbols = {'@', '*', '$', '#', '&', '%', '/', '+', '-', '='};
+//
+//
+//        String patternString = "\\b\\d+\\s*[" + new String(symbols) + "]\\b";
+//        Pattern pattern = Pattern.compile(patternString);
+//        Matcher matcher = pattern.matcher(line);
+//
+//
+//        while(matcher.find()) {
+//
+//            int start = matcher.start();
+//            int end = matcher.end();
+//
+//
+//            if ((start > 0 && isSymbol(line.charAt(start - 1))) || (end < line.length() && isSymbol(line.charAt(end)))) {
+//                // Extract the number from the match and add to the total
+//                String match = matcher.group();
+//                result += Integer.parseInt(match.replaceAll("[^\\d]", ""));
+//            }
+//
+//
+//
+//        }
+//
+//        return result;
+//    }
 
 
 
