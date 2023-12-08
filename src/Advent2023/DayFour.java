@@ -15,6 +15,8 @@ public class DayFour {
 
         File file = new File(fPath + "DayFourInput.txt");
 
+
+
         try {
 
             Scanner sc = new Scanner(file);
@@ -24,6 +26,8 @@ public class DayFour {
             while (sc.hasNext()) {
 
                 String line = sc.nextLine();
+
+
 
                 String[] cards = line.split("\\|");
 
