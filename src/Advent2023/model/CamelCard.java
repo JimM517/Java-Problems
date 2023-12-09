@@ -64,6 +64,9 @@ public class CamelCard implements Comparable<CamelCard> {
         int[] cardOneTypes = new int[6];  // 0 - 5, 1 - 4, 2 - fh, 3 - three of a kind, 4 - 2 2 of a kind, 5 - 1p
         int[] cardTwoTypes = new int[6];
 
+        String firstCard = this.getCard();
+        String secondCard = o.getCard();
+
         for (int i = 0; i < 13; i++) {
             card1Counts[i] = countCards(card1, cards[i]);
             card2Counts[i] = countCards(card2, cards[i]);
@@ -132,8 +135,6 @@ public class CamelCard implements Comparable<CamelCard> {
             }
 
             if (cardOneTypes[i] == cardTwoTypes[i] && cardOneTypes[i] != 0) {
-                String firstCard = this.getCard();
-                String secondCard = o.getCard();
 
 
                 return compareChars(firstCard, secondCard, cards);
@@ -147,7 +148,7 @@ public class CamelCard implements Comparable<CamelCard> {
 
 
 
-        return 0;
+        return compareChars(firstCard, secondCard, cards);
     }
 
 
