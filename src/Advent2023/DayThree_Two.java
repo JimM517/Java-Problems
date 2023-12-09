@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class DayThree_Two {
 
 
+    /** Not finished **/
+
     private List<String> list = new ArrayList<>();
 
     public static void main(String[] args) {
