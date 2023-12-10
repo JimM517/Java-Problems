@@ -486,6 +486,71 @@ public class EasyLeetQues {
 
 
 
+    // 724. Find Pivot Index
+    /** Doesn't work **/
+    public int pivotIndex(int[] nums) {
+
+        // start and end points
+        int start = 0;
+        int end = nums.length - 1;
+
+        // keep track of our sums
+        int sumLeft = 0;
+        int sumRight = 0;
+
+        // store final index
+        int pivot = -1;
+
+        while (start <= end) {
+            if (sumLeft == sumRight) {
+                pivot = start;
+            }
+
+            if (sumLeft <= sumRight) {
+                sumLeft += nums[start];
+                start++;
+            } else {
+                sumRight += nums[end];
+                end--;
+            }
+
+
+        }
+        return pivot;
+    }
+
+    /** This works **/
+    public int pivotPartTwo(int[] nums) {
+
+        if (nums.length == 0) {
+            return -1;
+        }
+
+        int leftSum = 0;
+        int rightSum = 0;
+
+        for (int num : nums) {
+            rightSum += num;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+
+            rightSum -= nums[i];
+
+            if (rightSum == leftSum) {
+                return i;
+            }
+            leftSum += nums[i];
+
+
+        }
+
+        return -1;
+    }
+
+
+
+
 
 
 
