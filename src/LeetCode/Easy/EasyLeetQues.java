@@ -553,24 +553,23 @@ public class EasyLeetQues {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
 
-        int len = m + n;
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int pMerge = m + n - 1;
 
-        int[] result = new int[len];
 
-        for (int i = 0; i < nums1.length; i++) {
 
-            result[i] = nums1[i];
+        while (p2 >= 0) {
 
-            for (int j = 1; j < nums2.length; j++) {
-
-                result[j] = nums2[j];
-
+            if (p1 > 0 && nums1[p1] > nums2[p2]) {
+                nums1[pMerge--] = nums1[p1--];
+            } else {
+                nums1[pMerge--] = nums2[p2--];
             }
 
 
 
         }
-
 
     }
 
