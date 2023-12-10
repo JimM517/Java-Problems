@@ -549,6 +549,30 @@ public class EasyLeetQues {
     }
 
 
+    // 88. Merge sorted array
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        int len = m + n;
+
+        int[] result = new int[len];
+
+        for (int i = 0; i < nums1.length; i++) {
+
+            result[i] = nums1[i];
+
+            for (int j = 1; j < nums2.length; j++) {
+
+                result[j] = nums2[j];
+
+            }
+
+
+
+        }
+
+
+    }
 
 
 
