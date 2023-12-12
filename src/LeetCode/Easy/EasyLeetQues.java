@@ -570,6 +570,39 @@ public class EasyLeetQues {
 
 
 
+    // 169. Majority Element
+
+    public int majorityElement(int[] nums) {
+
+        // majority element > n / 2?
+
+        int n = nums.length;
+
+        // majority element > n / 2?
+        int maj = 0;
+        int majorityCount = 0;
+
+        Map<Integer, Integer> result = new HashMap<>();
+
+        for (int num : nums) {
+            result.put(num, result.getOrDefault(num, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> res : result.entrySet()) {
+            int count = res.getValue();
+
+            if (count > majorityCount && count > n / 2) {
+                maj = res.getKey();
+                majorityCount = count;
+            }
+        }
+
+        return maj;
+
+    }
+
+
+
 
 
 
