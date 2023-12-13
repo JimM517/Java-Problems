@@ -643,6 +643,16 @@ public class EasyLeetQues {
     }
 
 
+    // 28. Find the index of the first occurrence in a string
+    public int strStr(String haystack, String needle) {
+
+
+        return haystack.indexOf(needle);
+
+
+    }
+
+
 
 
 
