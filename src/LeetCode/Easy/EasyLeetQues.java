@@ -602,6 +602,47 @@ public class EasyLeetQues {
     }
 
 
+    // 14. Longest Common Prefix
+
+    public String longestCommonPrefix(String[] strs) {
+
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+
+        int minLen = Integer.MAX_VALUE;
+
+        // find the minimum length of strings in the array
+        for (String str : strs) {
+            minLen = Math.min(minLen, str.length());
+        }
+
+
+        StringBuilder common = new StringBuilder();
+
+
+        for (int i = 0; i < minLen; i++) {
+
+            char currentChar = strs[0].charAt(i);
+
+            // check if the current character is common among all strings
+            for (int j = 1; j < strs.length; j++) {
+                if (currentChar != strs[j].charAt(i)) {
+                    // if not common, return the current common prefix
+                    return common.toString();
+                }
+            }
+            // if common, append the character to the result;
+            common.append(currentChar);
+
+        }
+
+        return common.toString();
+
+    }
+
+
 
 
 
