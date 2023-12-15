@@ -602,17 +602,15 @@ public class MediumLeetQues {
         int len = nums.length - 1;
         int firstIndex = nums[0];
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i <= firstIndex; i++) {
 
-            if (nums[i] < len) {
+            // first index will be changed to max jump with current position
+            firstIndex = Math.max(firstIndex, i + nums[i]);
+
+            // if this is greater than or equal to last index, return true
+            if (firstIndex >= len) {
                 return true;
             }
-
-
-
-
-
-
 
         }
 
