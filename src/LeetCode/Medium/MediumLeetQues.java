@@ -593,7 +593,33 @@ public class MediumLeetQues {
 
 
 
+    // 55. Jump Game
+    public boolean canJump(int[] nums) {
 
+        // get first index
+        // each index is how far you can jump
+
+        int len = nums.length - 1;
+        int firstIndex = nums[0];
+
+        for (int i = 0; i < len; i++) {
+
+            if (nums[i] < len) {
+                return true;
+            }
+
+
+
+
+
+
+
+        }
+
+
+        return false;
+
+    }
 
 
 
