@@ -660,6 +660,27 @@ public class MediumLeetQues {
 
 
 
+    // 1207 Unique Number of Occurrences
+    public boolean uniqueOccurrences(int[] arr) {
+
+        Map<Integer, Integer> results = new HashMap<>();
+
+        // count the occurences of each value
+        for (int num : arr) {
+
+            results.put(num, results.getOrDefault(num, 0) + 1);
+        }
+
+        // check if the counts are unique
+        Set<Integer> unique = new HashSet<>(results.values());
+
+        return unique.size() == results.size();
+
+    }
+
+
+
+
 
 
 
