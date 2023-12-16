@@ -711,6 +711,63 @@ public class EasyLeetQues {
     }
 
 
+    // 2215. Find the Difference of Two Arrays
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+
+        List<List<Integer>> result = new ArrayList<>();
+
+
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+
+
+        for (int num : nums1) {
+            set1.add(num);
+        }
+
+        for (int num : nums2) {
+            set2.add(num);
+        }
+
+
+        List<Integer> diffOne = new ArrayList<>(set1);
+        diffOne.removeAll(set2);
+
+
+        List<Integer> diffTwo = new ArrayList<>(set2);
+        diffTwo.removeAll(set1);
+
+
+        result.add(diffOne);
+        result.add(diffTwo);
+
+
+        return result;
+
+    }
+
+
+
+
+    // 1207 Unique Number of Occurrences
+    public boolean uniqueOccurrences(int[] arr) {
+
+        Map<Integer, Integer> results = new HashMap<>();
+
+        // count the occurences of each value
+        for (int num : arr) {
+
+            results.put(num, results.getOrDefault(num, 0) + 1);
+        }
+
+        // check if the counts are unique
+        Set<Integer> unique = new HashSet<>(results.values());
+
+        return unique.size() == results.size();
+
+    }
+
+
 
 
 
