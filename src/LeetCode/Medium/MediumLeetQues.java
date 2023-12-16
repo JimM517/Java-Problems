@@ -621,7 +621,40 @@ public class MediumLeetQues {
 
 
 
+    // 1328. Break a palindrome
+    public String breakPalindrome(String palindrome) {
 
+        int length = palindrome.length();
+
+        // handle edge case
+        if (length == 1) {
+            return "";
+        }
+
+        // break down palindrome to char array
+        char[] ch = palindrome.toCharArray();
+
+        // check first half of string excluding middle character
+        int testLen = (length / 2) - 1;
+
+        for (int i = 0; i <= testLen; i++) {
+
+            // character isn't a, replace with a to make ensure it is lexicographically smaller
+            if (ch[i] != 'a') {
+                ch[i] = 'a';
+                return String.valueOf(ch);
+            }
+
+
+
+        }
+
+        // replace ch with b in case all previous chars are a's
+        ch[length - 1] = 'b';
+        return String.valueOf(ch);
+
+
+    }
 
 
 
