@@ -658,6 +658,35 @@ public class MediumLeetQues {
 
 
 
+    // 45. Jump Game II
+    public int jump(int[] nums) {
+
+        int len = nums.length;
+
+        int end = 0;
+
+        int maxPosition = 0;
+
+        int steps = 0;
+
+
+        for (int i = 0; i < len - 1; i++) {
+
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+
+            if (i == end) {
+                end = maxPosition;
+                steps++;
+            }
+
+
+
+        }
+
+        return steps;
+
+    }
+
 
 
 
