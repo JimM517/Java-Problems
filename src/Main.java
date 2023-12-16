@@ -209,6 +209,19 @@ public class Main {
 
         SortingProblems sorting = new SortingProblems();
 
+        int z;
+        int y;
+
+        for (z = 1; z <= 12; z++) {
+
+            for (y = 1; y <= 12; y++) {
+                System.out.printf("%4d", z * y);
+            }
+            System.out.println(" ***");
+
+
+        }
+
 
     }
 
