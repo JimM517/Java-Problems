@@ -1915,7 +1915,12 @@ public class RandomPractice {
 
 
 
-
+//    private static List<Integer> sortBySetBits(List<Integer> numbers) {
+//        Collections.sort(numbers, Comparator
+//                .comparingInt(Integer::bitCount)
+//                .thenComparingInt(n -> n));
+//        return numbers;
+//    }
 
 
 
