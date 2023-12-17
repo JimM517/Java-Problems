@@ -1882,9 +1882,36 @@ public class RandomPractice {
     }
 
 
+    /** Just for practice **/
+    // 53. Maximum Sub-array
+
+    public int maxSubArray(int[] nums) {
+
+        // want to find subarray with the largest total
+
+        int start = Integer.MIN_VALUE;
+        int end = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            end += nums[i];
+
+            if (start < end) {
+                start = end;
+            }
+            if (end < 0) {
+                end = 0;
+            }
+
+
+        }
+
+
+        return start;
 
 
 
+    }
 
 
 
