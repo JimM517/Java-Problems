@@ -1929,23 +1929,53 @@ public class RandomPractice {
    // sort list of integers by the number of 1s in their binary representation
 
     public List<Integer> sortBinary(List<Integer> elements) {
-        List<Integer> results = sortBySetBits(elements);
 
-        return results;
+        return sortBySetBits(elements);
     }
 
 
     private static List<Integer> sortBySetBits(List<Integer> numbers) {
 
         Collections.sort(numbers, Comparator
+                // first compare numbers based on count of set bits
                 .comparingInt(Integer::bitCount)
+                // in case of the same number of 1s, compare based on int value
                 .thenComparingInt(n -> n));
         return numbers;
     }
 
 
 
+    // calculate subarray sums
+    public long calculateSubarraySums(List<Integer> numbers) {
 
+        int n = numbers.size();
+        long totalSum = 0;
+
+        // calculate prefix sums
+        long[] prefixSums = new long[n + 1];
+
+        for (int i = 0; i < n; i++) {
+
+            prefixSums[i + 1] = prefixSums[i] + numbers.get(i);
+
+        }
+
+
+        // calculate the sum of all subarrays
+        for (int i = 0; i < n; i++) {
+
+            for (int j = i; j < n; j++) {
+                totalSum += prefixSums[j + 1] - prefixSums[i];
+            }
+
+
+        }
+
+        return totalSum;
+
+
+    }
 
 
 
