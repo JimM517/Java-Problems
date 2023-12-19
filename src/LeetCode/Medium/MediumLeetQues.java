@@ -687,7 +687,27 @@ public class MediumLeetQues {
 
     }
 
+    // 122. Best Time to Buy and Sell Stock II
+    public int maxProfit(int[] prices) {
 
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            // check if current price is greater than previous day's price
+            if (prices[i] > prices[i - 1]) {
+                // if so, add the difference to maxProfit
+                maxProfit += prices[i] - prices[i - 1];
+            }
+
+        }
+
+        return maxProfit;
+
+    }
 
 
 
