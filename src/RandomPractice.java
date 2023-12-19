@@ -1924,6 +1924,25 @@ public class RandomPractice {
 
 
 
+    /** Two interview questions I had **/
+
+   // sort list of integers by the number of 1s in their binary representation
+
+    public List<Integer> sortBinary(List<Integer> elements) {
+        List<Integer> results = sortBySetBits(elements);
+
+        return results;
+    }
+
+
+    private static List<Integer> sortBySetBits(List<Integer> numbers) {
+
+        Collections.sort(numbers, Comparator
+                .comparingInt(Integer::bitCount)
+                .thenComparingInt(n -> n));
+        return numbers;
+    }
+
 
 
 
