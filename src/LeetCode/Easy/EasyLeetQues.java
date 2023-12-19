@@ -870,7 +870,39 @@ public class EasyLeetQues {
 
 
 
+    // 643. Maximum Average Subarray 1
 
+    public double findMaxAverage(int[] nums, int k) {
+
+        // sliding window approach
+
+
+       int sum = 0;
+
+        // first calculate the sum of the first k elements
+       for (int i = 0; i < k; i++) {
+           sum += nums[i];
+       }
+
+
+        // initialize the maximum sum with the sum of the first k elements
+       int maxSum = sum;
+
+
+       // iterate through the array starting from index k
+       for (int i = k; i < nums.length; i++) {
+
+           // update the sum by adding the current element and subtracting the element k steps back
+           sum = sum + nums[i] - nums[i - k];
+
+           // update the maximum sum if the current sum is greater
+           maxSum = Math.max(maxSum, sum);
+
+       }
+
+        // return the maximum average by dividing the maximum sum by k
+        return (double) maxSum / k;
+    }
 
 
 
