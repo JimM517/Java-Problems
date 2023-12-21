@@ -733,6 +733,40 @@ public class MediumLeetQues {
     }
 
 
+    /** memory limit exceeded, need to optimize **/
+    // Zigzag Conversion
+    public String convert(String s, int numRows) {
+
+        int n = s.length();
+
+        StringBuffer[] arr = new StringBuffer[numRows];
+
+        for (int i = 0; i < numRows; i++) arr[i] = new StringBuffer();
+
+        int i = 0;
+
+        while (i < n) {
+
+            for (int index = 0; index < numRows && i < n; index++) {
+                arr[index].append(s.charAt(i));
+            }
+
+            for (int index = numRows - 2; index > 0 && i < n; index--) {
+                arr[index].append(s.charAt(i++));
+            }
+
+
+        }
+
+        StringBuffer ans = new StringBuffer();
+
+        for (StringBuffer el : arr) {
+            ans.append(el);
+        }
+
+        return ans.toString();
+    }
+
 
 
 
