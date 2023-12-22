@@ -2014,6 +2014,41 @@ public class RandomPractice {
 
 
 
+    /** Sliding window example **/
+
+    // find max subarray of length k
+    public int maxSumSubarray(int[] nums, int k) {
+
+        int n = nums.length;
+        int sum = 0;
+
+        // calculate the initial sum of the first window of size k
+        for (int i = 0; i < k; i++) {
+            sum += nums[i];
+        }
+
+        int maxSum = sum;
+
+        // slide the window through the array
+        for (int i = k; i < n; i++) {
+
+            // add the next element to the sum
+            sum += nums[i];
+
+            // subtract the leftmost element that is no longer in the window
+            sum -= nums[i - k];
+
+            // update the maximum sum
+            maxSum = Math.max(maxSum, sum);
+
+        }
+
+        return maxSum;
+    }
+
+
+
+
 
 
 
