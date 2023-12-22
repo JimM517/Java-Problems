@@ -769,6 +769,45 @@ public class MediumLeetQues {
 
 
 
+    // 209. Minimum size subarray sum
+    public int minSubArrayLen(int target, int[] nums) {
+
+        // sliding window
+        int n = nums.length;
+        int left = 0;
+        int minLen = Integer.MAX_VALUE;
+        int currentSum = 0;
+
+
+        for (int right = 0; right < n; right++) {
+            // expand the window by including the current element
+            currentSum += nums[right];
+
+            // shrink the window from the left until the sum is less than target
+            while (currentSum >= target) {
+                // update the minimum length
+                minLen = Math.min(minLen, right - left + 1);
+
+                // shrink the window from the left
+                currentSum -= nums[left];
+
+                left++;
+            }
+        }
+        // if minLen is still Integer.MAX_VALUE, no subarray found
+        return (minLen == Integer.MAX_VALUE) ? 0 : minLen;
+
+
+
+    }
+
+
+
+
+
+
+
+
 
 
 
