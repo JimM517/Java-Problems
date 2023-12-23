@@ -6,7 +6,7 @@ import java.util.Map;
 public class Leet75 {
 
 
-    // two sum
+    // 1. two sum
     public int[] twoSum(int[] nums, int target) {
 
         Map<Integer, Integer> result = new HashMap<>();
@@ -29,6 +29,31 @@ public class Leet75 {
 
 
 
+    // 121. Best Time to Buy and Sell Stock
+    public int maxProfit(int[] prices) {
+
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        int start = prices[0];
+        int maxProfit = 0;
+
+        for (int i = 0; i < prices.length; i++) {
+
+            if (prices[i] < start) {
+                start = prices[i];
+            } else {
+                int currentProfit = prices[i] - start;
+
+                if (currentProfit > maxProfit) {
+                    maxProfit = currentProfit;
+                }
+            }
+        }
+
+        return maxProfit;
+    }
 
 
 
