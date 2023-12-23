@@ -56,6 +56,31 @@ public class Leet75 {
     }
 
 
+    // 217. contains duplicates
+    public boolean containsDuplicates(int[] nums) {
+
+        Map<Integer, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (result.containsKey(nums[i])) {
+                return true;
+            } else {
+                result.put(nums[i], i);
+            }
+
+
+        }
+
+        return false;
+
+    }
+
+
+
+
+
+
 
 
 
