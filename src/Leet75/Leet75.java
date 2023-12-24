@@ -109,27 +109,43 @@ public class Leet75 {
     // 53. Maximum subarray
     public int maxSubArray(int[] nums) {
 
-      int start = Integer.MIN_VALUE;
-      int end = 0;
+    /** Solution One **/
+//      int start = Integer.MIN_VALUE;
+//      int end = 0;
+//
+//
+//      for (int i = 0; i < nums.length; i++) {
+//
+//          end += nums[i];
+//
+//          if (start < end) {
+//              start = end;
+//          }
+//
+//          if (end < 0) {
+//              end = 0;
+//          }
+//
+//      }
+//
+//      return start;
 
+        /** Solution Two **/
 
-      for (int i = 0; i < nums.length; i++) {
+        int n = nums.length;
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
 
-          end += nums[i];
+        for (int i = 0; i < n; i++) {
+            sum += nums[i];
+            max = Math.max(sum, max);
 
-          if (start < end) {
-              start = end;
-          }
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
 
-          if (end < 0) {
-              end = 0;
-          }
-
-      }
-
-      return start;
-
-
+        return max;
     }
 
 
