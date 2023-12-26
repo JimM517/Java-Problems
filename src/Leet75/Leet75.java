@@ -174,6 +174,31 @@ public class Leet75 {
     }
 
 
+    // 153. Find Minimum in rotated sorted array
+    public int findMin(int[] nums) {
+
+        // binary search approach
+        // O (log n)
+        int left = 0;
+        int right = nums.length - 1;
+
+       while (left < right) {
+           int mid = left + (right - left) / 2;
+           // if nums[mid] > nums[right] the minimum must be in the right portion
+           if (nums[mid] > nums[right]) {
+               left = mid + 1;
+               // the minimum must be in the left portion
+           } else {
+               right = mid;
+           }
+       }
+
+        return nums[left];
+
+
+    }
+
+
 
 
 
