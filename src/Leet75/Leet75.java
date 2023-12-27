@@ -1,7 +1,6 @@
 package Leet75;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Leet75 {
 
@@ -242,6 +241,80 @@ public class Leet75 {
         return -1;
 
     }
+
+
+
+
+
+    // 15. 3Sum
+    public List<List<Integer>> threeSum(int[] nums) {
+
+        List<List<Integer>> results = new ArrayList<>();
+
+        // sort the array
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length; i++) {
+            // skip duplicate elements for i
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+
+            int j = i + 1;
+            int k = nums.length - 1;
+
+
+            while (j < k) {
+
+                int sum = nums[i] + nums[j] + nums[k];
+
+                if (sum == 0) {
+                    // found a triplet with zero sum
+                    results.add(Arrays.asList(nums[i], nums[j], nums[k]));
+
+                    // skip duplicate elements for j
+                    while (j < k && nums[j] == nums[j + 1]) {
+                        j++;
+                    }
+
+                    // skip duplicate elements for k
+                    while (j < k && nums[k] == nums[k - 1]) {
+                        k--;
+                    }
+
+                    // move pointers
+                    j++;
+                    k--;
+
+                } else if (sum < 0) {
+                    // sum is less than zero, increment j to increase sum
+                    j++;
+                } else {
+                    // sum is greater than zero, decrement k to decrease the sum
+                    k--;
+                }
+
+
+
+            }
+
+
+
+        }
+
+
+
+        return results;
+
+
+
+    }
+
+
+
+
+
 
 
 
