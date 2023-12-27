@@ -345,10 +345,26 @@ public class Leet75 {
 
     // 191. Number of 1 Bits
     public int hammingWeight(int n) {
+        // this works
+        // return Integer.bitCount(n);
 
-        return Integer.bitCount(n);
+        int count = 0;
+
+        while (n != 0) {
+            count++;
+
+            n &= (n - 1);
+
+
+        }
+        return count;
+
 
     }
+
+
+
+
 
 
 
