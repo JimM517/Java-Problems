@@ -363,6 +363,36 @@ public class Leet75 {
     }
 
 
+    // 338. Counting Bits
+    public int[] countBits(int n) {
+
+        // result array, will hold the number of 1s
+        int[] result = new int[n + 1];
+
+        // set first index to 0 because count of 1s in 0 is 0
+        result[0] = 0;
+
+        for (int i = 1; i <= n; i++) {
+
+            // store current number
+            int temp = i;
+            // counter to count the number of 1s
+            int count = 0;
+
+            // use bitwise AND operation to count the number of 1s
+            while (temp != 0) {
+                // remove the rightmost set bit
+                temp = temp & (temp - 1);
+                count++;
+            }
+            // store the count in result array
+            result[i] = count;
+
+        }
+        return result;
+
+    }
+
 
 
 
