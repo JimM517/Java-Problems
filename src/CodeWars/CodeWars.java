@@ -162,7 +162,29 @@ public class CodeWars {
 
 
 
+    // divisible ints
+    public int getCount(int n) {
 
+            String numStr = String.valueOf(n);
+
+            int count = 0;
+
+            for (int i = 0; i < numStr.length(); i++) {
+
+                for (int j = i + 1; j <= numStr.length(); j++) {
+
+                    String substring = numStr.substring(i, j);
+
+                    int num = Integer.parseInt(substring);
+
+                    if (num != 0 && n % num == 0) {
+                        count++;
+                    }
+
+                }
+            }
+            return count;
+    }
 
 
 
