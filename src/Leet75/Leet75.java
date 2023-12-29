@@ -459,13 +459,43 @@ public class Leet75 {
     // 300 Longest Increasing Subsequence
     public int lengthOfLIS(int[] nums) {
 
+        // store the length of LIS at each index
+        int[] cache = new int[nums.length];
+
+        // start at the last index
+        for (int i  = nums.length - 1; i >= 0; i--) {
+
+            int max = Integer.MIN_VALUE;
+
+            for (int j = i + 1; j < nums.length; j++) {
+
+                if (nums[i] < nums[j]) {
+                    // update max to store max length if nums[i] is < nums[j]
+                    max = Math.max(max, 1 + cache[j]);
+
+                }
+
+            }
+            // update cache to store max
+            // if this is still integer.min_value, no element was > nums[i] so we return 1
+            cache[i] = (max == Integer.MIN_VALUE) ? 1 : max;
 
 
+        }
 
+        int result = 0;
 
+        // loop through cache array to return the greatest max value
+        // set to result
+        for (int len : cache) {
+            result = Math.max(result, len);
+        }
 
-
+        // and then return result
+        return result;
     }
+
+
 
 
 
