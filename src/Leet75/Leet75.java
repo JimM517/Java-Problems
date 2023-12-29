@@ -431,6 +431,7 @@ public class Leet75 {
 
 
     // 322. Coin Change
+    /** not my solution, need to review **/
     public int coinChange(int[] coins, int amount) {
 
         // dynamic programming approach -> bottom up
@@ -455,6 +456,16 @@ public class Leet75 {
     }
 
 
+    // 300 Longest Increasing Subsequence
+    public int lengthOfLIS(int[] nums) {
+
+
+
+
+
+
+
+    }
 
 
 
