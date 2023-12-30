@@ -429,6 +429,28 @@ public class Leet75 {
     }
 
 
+    // 70. Climbing Stairs
+    public int climbStairs(int n) {
+
+        // dynamic programming - bottom up approach
+        // basically use fibonacci numbers to solve
+
+        int one = 1;
+        int two = 1;
+
+
+        for (int i = 0; i < n - 1; i++) {
+
+           int temp = one;
+           one = one + two;
+           two = temp;
+        }
+        return one;
+
+
+    }
+
+
 
     // 322. Coin Change
     /** not my solution, need to review **/
