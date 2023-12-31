@@ -548,7 +548,6 @@ public class Leet75 {
     // 139. Word Break
     public boolean wordBreak(String s, List<String> wordDict) {
 
-
         boolean[] dp = new boolean[s.length()];
 
         for (int i = 0; i < dp.length; i++) {
@@ -561,15 +560,9 @@ public class Leet75 {
                         break;
                     }
                 }
-
-
             }
-
-
         }
-
         return dp[dp.length - 1];
-
     }
 
 
@@ -602,7 +595,31 @@ public class Leet75 {
 
 
 
+    // 198. House Robber
+    public int rob(int[] nums) {
 
+        // two variables to represent the max amount of money from previous two houses
+        int rob1 = 0;
+        int rob2 = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            // nums[i] + rob1 will be max amount from two positions before
+            // rob2 will be the previous house
+            int temp = Math.max(nums[i] + rob1, rob2);
+
+            // update rob1 to now hold previous house
+            rob1 = rob2;
+            // rob2 is now the current house
+            rob2 = temp;
+
+
+        }
+        // return rob2 because this will be max amount at the end
+        return rob2;
+
+
+    }
 
 
 
