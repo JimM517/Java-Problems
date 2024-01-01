@@ -363,6 +363,8 @@ public class Leet75 {
     }
 
 
+
+
     // 338. Counting Bits
     public int[] countBits(int n) {
 
@@ -394,6 +396,8 @@ public class Leet75 {
     }
 
 
+
+
     // 268. Missing Number
     public int missingNumber(int[] nums) {
 
@@ -408,6 +412,7 @@ public class Leet75 {
         return result;
 
     }
+
 
 
 
@@ -429,6 +434,8 @@ public class Leet75 {
     }
 
 
+
+
     // 70. Climbing Stairs
     public int climbStairs(int n) {
 
@@ -447,6 +454,8 @@ public class Leet75 {
         }
         return one;
     }
+
+
 
 
 
@@ -475,6 +484,8 @@ public class Leet75 {
         }
         return dp[amount];
     }
+
+
 
 
     // 300 Longest Increasing Subsequence
@@ -517,6 +528,8 @@ public class Leet75 {
     }
 
 
+
+
     // 1143. Longest Common Subsequence
     // TODO review this!
     public int longestCommonSubsequence(String text1, String text2) {
@@ -545,6 +558,7 @@ public class Leet75 {
 
 
 
+
     // 139. Word Break
     public boolean wordBreak(String s, List<String> wordDict) {
 
@@ -564,6 +578,8 @@ public class Leet75 {
         }
         return dp[dp.length - 1];
     }
+
+
 
 
     // 39. Combination Sum
@@ -592,6 +608,8 @@ public class Leet75 {
             }
         }
     }
+
+
 
 
 
@@ -660,6 +678,36 @@ public class Leet75 {
 
 
 
+
+    // 91. Decode Ways
+    public int numDecodings(String s) {
+
+       if (s == null || s.length() == 0 || s.charAt(0) == '0') {
+           return 0;
+       }
+
+       int n = s.length();
+       int[] dp = new int[n + 1];
+       dp[0] = 1;
+       dp[1] = 1;
+
+       for (int i = 2; i <= n; i++) {
+           int oneDigit = s.charAt(i - 1) - '0';
+           int twoDigit = Integer.parseInt(s.substring(i - 2, i));
+
+           if (oneDigit != 0) {
+               dp[i] += dp[i - 1];
+           }
+
+           if (10 <= twoDigit && twoDigit <= 26) {
+               dp[i] += dp[i - 2];
+           }
+
+
+       }
+
+        return dp[n];
+    }
 
 
 
