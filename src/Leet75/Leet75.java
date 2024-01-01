@@ -624,6 +624,48 @@ public class Leet75 {
 
 
 
+    // House Robber
+    public int robTwo(int[] nums) {
+
+        // cant rob first and last house as they are neighbors
+
+        int n = nums.length;
+
+        if (n == 1) {
+            return nums[0];
+        }
+
+        int s1 = helpRob(nums, 0, n - 2);
+        int s2 = helpRob(nums, 1, n - 1);
+
+        return Math.max(s1, s2);
+    }
+
+
+    // use same solution from rob I as helper function with a little modification
+    public int helpRob(int[] nums, int l, int r) {
+
+        int a = 0;
+        int b = nums[l];
+
+        for (int i = l + 1; i <= r; i++) {
+            int temp = Math.max(nums[i] + a, b);
+
+            a = b;
+
+            b = temp;
+        }
+        return b;
+    }
+
+
+
+
+
+
+
+
+
 
 
 }
