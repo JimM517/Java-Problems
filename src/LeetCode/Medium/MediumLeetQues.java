@@ -844,6 +844,41 @@ public class MediumLeetQues {
 
 
 
+    // 78. Subsets
+    // TODO review - not my solution
+    public List<List<Integer>> subsets(int[] nums) {
+
+        // O(n * 2^n)
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        List<Integer> list = new ArrayList<>();
+
+        dfs(nums, result, list, nums.length, 0);
+
+        return result;
+
+    }
+
+
+    private void dfs(int[] nums, List<List<Integer>> result,  List<Integer> list, int n, int start) {
+
+        result.add(new ArrayList<>(list));
+
+        for (int i = start; i < n; i++) {
+
+            list.add(nums[i]);
+
+            dfs(nums, result, list, n, i + 1);
+
+            list.remove(list.size() - 1);
+
+        }
+
+
+
+    }
+
 
 
 
