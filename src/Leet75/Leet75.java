@@ -714,6 +714,7 @@ public class Leet75 {
 
 
     // 62. Unique Paths
+    // TODO - review, not my solution
     public int uniquePaths(int m, int n) {
 
         int[][] gridDp = new int[m][n];
@@ -741,6 +742,30 @@ public class Leet75 {
 
 
     }
+
+
+
+
+    // 55. Jump Game
+    public boolean canJump(int[] nums) {
+
+          // greedy O(n)
+
+        int goal = nums.length - 1;
+
+        for (int i = nums.length - 1; i >= 0; i--) {
+
+            if (i + nums[i] >= goal) {
+
+                goal = i;
+            }
+        }
+
+        return goal == 0;
+    }
+
+
+
 
 
 
