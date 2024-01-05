@@ -881,6 +881,61 @@ public class MediumLeetQues {
 
 
 
+    // 47. Permutations II
+    public List<List<Integer>> permuteUnique(int[] nums) {
+
+        // backtracking
+
+        List<List<Integer>> ans = new ArrayList<>();
+
+        Set<List<Integer>> matrix = new HashSet<>();
+
+        permutation(nums, 0, matrix);
+
+        for (List<Integer> elem : matrix) {
+            ans.add(elem);
+        }
+
+        return ans;
+
+    }
+
+    private static void permutation(int[] arr, int x, Set<List<Integer>> matrix) {
+
+        if (x == arr.length - 1) {
+
+            List<Integer> temp = new ArrayList<>();
+
+            for (int i = 0; i < arr.length; i++) {
+                temp.add(arr[i]);
+            }
+
+            matrix.add(temp);
+
+            return;
+        }
+
+        for (int i = x; i < arr.length; i++) {
+            swap(arr, i, x);
+            permutation(arr, x + 1, matrix);
+            swap(arr, i, x);
+        }
+
+    }
+
+    private static void swap(int[] arr, int i, int x) {
+
+        int temp = arr[i];
+        arr[i] = arr[x];
+        arr[x] = temp;
+
+    }
+
+
+
+
+
+
 
 
 
