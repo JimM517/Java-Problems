@@ -882,6 +882,7 @@ public class MediumLeetQues {
 
 
     // 47. Permutations II
+    // TODO review this
     public List<List<Integer>> permuteUnique(int[] nums) {
 
         // backtracking
@@ -932,9 +933,76 @@ public class MediumLeetQues {
     }
 
 
+    // 438. Find All Anagrams in a String
+    // TODO Review!!
+    public List<Integer> findAnagrams(String s, String p) {
+
+        List<Integer> ans = new ArrayList<>();
+        Map<Character, Integer> pCount = new HashMap<>();
+        Map<Character, Integer> sCount = new HashMap<>();
+
+            if (p.length() > s.length()) {
+                return new ArrayList<>();
+            }
 
 
+            for (int i = 0; i < p.length(); i++) {
+                char ch = p.charAt(i);
+                pCount.put(ch, pCount.getOrDefault(ch, 0) + 1);
+            }
 
+            for (int i = 0; i < p.length(); i++) {
+                char ch = s.charAt(i);
+                sCount.put(ch, sCount.getOrDefault(ch, 0) + 1);
+            }
+
+
+            int i = p.length();
+            int count = 0;
+
+            while (i < s.length()) {
+
+                if (compareMap(pCount, sCount)) {
+                    count++;
+                    ans.add(i - p.length());
+                }
+
+
+                char ch = s.charAt(i);
+                sCount.put(ch, sCount.getOrDefault(ch, 0) + 1);
+
+
+                char cha = s.charAt(i - p.length());
+
+                if (sCount.get(cha) == 1) {
+                    sCount.remove(cha);
+                } else {
+                    sCount.put(cha, sCount.get(cha) - 1);
+                }
+                i++;
+
+            }
+
+            if (compareMap(pCount, sCount)) {
+                count++;
+                ans.add(i - p.length());
+            }
+        return ans;
+    }
+
+
+    private static boolean compareMap(Map<Character, Integer> pCount, Map<Character, Integer> sCount) {
+
+        for (char ch : sCount.keySet()) {
+
+            if (!Objects.equals(pCount.getOrDefault(ch, 0), sCount.get(ch))) {
+                return false;
+            }
+
+        }
+
+        return true;
+    }
 
 
 
