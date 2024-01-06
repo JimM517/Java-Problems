@@ -924,6 +924,32 @@ public class EasyLeetQues {
     }
 
 
+    // 374. Guess Number Higher or Lower
+    /** This solution works **/
+//    public int guessNumber(int n) {
+//
+//        int start = 1;
+//        int end = n;
+//
+//        while (start <= n) {
+//
+//            int mid = start + (end - start)/ 2;
+//
+//            int result = guess(mid);
+//
+//            if (result > 0) {
+//                start = mid + 1;
+//            } else if (result < 0) {
+//                end = mid - 1;
+//            } else {
+//                return mid;
+//            }
+//        }
+//
+//
+//        return -1;
+//
+//    }
 
 
 
