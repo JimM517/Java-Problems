@@ -2,9 +2,9 @@ package Helpers;
 
 public class ListNode {
 
-    private int val;
+     int val;
 
-    private ListNode next;
+    public ListNode next;
 
     ListNode() {};
 

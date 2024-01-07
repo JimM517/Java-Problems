@@ -1,5 +1,7 @@
 package LeetCode.Easy;
 
+import Helpers.ListNode;
+
 import java.util.*;
 
 public class EasyLeetQues {
@@ -1003,9 +1005,57 @@ public class EasyLeetQues {
 
 
 
+    // 206. Reverse Linked List
+    public ListNode reverseList(ListNode head) {
+
+        ListNode prev = null;
+        ListNode curr = head;
+
+
+        while (curr != null) {
+
+            ListNode next = curr.next;
+
+            curr.next = prev;
+
+            prev = curr;
+
+            curr = next;
+
+
+        }
+        return prev;
+
+    }
 
 
 
+    // 26. Remove Duplicates from Sorted Array
+    public int removeDuplicates(int[] nums) {
+
+        if (nums.length == 0) {
+            return 0;
+        }
+
+        Set<Integer> dups = new HashSet<>();
+
+        int k = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (!dups.contains(nums[i])) {
+                nums[k++] = nums[i];
+                dups.add(nums[i]);
+            }
+
+
+        }
+
+        return k;
+
+
+
+    }
 
 
 
