@@ -1033,7 +1033,36 @@ public class MediumLeetQues {
 
 
 
+    // 17. Letter Combinations of a Phone Number
+    public List<String> letterCombinations(String digits) {
 
+        // backtracking
+
+        if (digits.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        String[] phone_Nums = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
+        List<String> result = new ArrayList<>();
+
+        stringBT("", digits, phone_Nums, result);
+
+        return result;
+    }
+
+
+    private void stringBT(String combination, String next_digits, String[] phone_Nums, List<String> result) {
+
+        if (next_digits.isEmpty()) {
+            result.add(combination);
+        } else {
+            String letters = phone_Nums[next_digits.charAt(0) - '2'];
+            for (char letter : letters.toCharArray()) {
+                stringBT(combination + letter, next_digits.substring(1), phone_Nums, result);
+            }
+        }
+    }
 
 
 
