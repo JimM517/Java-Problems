@@ -1163,7 +1163,53 @@ public class RandomLeet {
         }
 
         return sign;
+    }
 
+
+
+    // the coder friends
+    /** Had this problem in an interview as warm-up type question **/
+    public String coderFriends(String erica, String bob) {
+
+        int eCount = countProbs(erica);
+        int bCount = countProbs(bob);
+
+        if (eCount > bCount) {
+            return "Erica";
+        } else if (bCount > eCount) {
+            return "Bob";
+        } else {
+            return "Tie";
+        }
+    }
+
+
+    private int countProbs(String str) {
+
+        Map<Character, Integer> probMap = new HashMap<>();
+        probMap.put('E', 1);
+        probMap.put('M', 2);
+        probMap.put('H', 3);
+
+        int count = 0;
+
+
+
+        for (Character index : str.toUpperCase().toCharArray()) {
+            if (probMap.containsKey(index)) {
+                count += probMap.get(index);
+            }
+        }
+
+        return count;
 
     }
+
+
+
+
+
+
+
+
 }
