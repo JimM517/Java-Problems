@@ -1067,4 +1067,38 @@ public class MediumLeetQues {
 
 
 
+
+    // 560. Subarray Sum equals k
+    public int subarraySum(int[] nums, int k) {
+
+        int sum = 0;
+        int ans = 0;
+
+        Map<Integer, Integer> prefix = new HashMap<>();
+
+        prefix.put(0, 1);
+
+        for (int i = 0; i < nums.length; i++) {
+
+            sum += nums[i];
+
+            if (prefix.containsKey(sum - k)) {
+                ans += prefix.get(sum - k);
+            }
+            prefix.put(sum, prefix.getOrDefault(sum, 0) + 1);
+
+        }
+        return ans;
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
