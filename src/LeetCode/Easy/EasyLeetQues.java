@@ -1107,6 +1107,26 @@ public class EasyLeetQues {
 
 
 
+    // 58. Length of Last word
+    public int lengthOfLastWord(String s) {
+
+        String[] splitStr = s.split(" ");
+
+
+        Stack<String> resStack = new Stack<>();
+
+        for (int i = 0; i < splitStr.length; i++) {
+            resStack.push(splitStr[i]);
+        }
+        return resStack.pop().length();
+
+    }
+
+
+
+
+
+
 
 
 
