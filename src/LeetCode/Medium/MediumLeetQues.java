@@ -1150,4 +1150,35 @@ public class MediumLeetQues {
 
 
 
+
+    // 494. Target Sum
+    public int findTargetSumWays(int[] nums, int target) {
+        return targetHelper(nums, 0, target, 0);
+    }
+
+
+    private int targetHelper(int[] nums, int ans, int target, int index) {
+
+        if (index == nums.length && ans != target) {
+            return 0;
+        }
+
+        if (index == nums.length && ans == target) {
+            return 1;
+        }
+
+        int left = targetHelper(nums, ans + nums[index], target, index + 1);
+        int right = targetHelper(nums, ans - nums[index], target, index + 1);
+
+        return left + right;
+    }
+
+
+
+
+
+
+
+
+
 }
