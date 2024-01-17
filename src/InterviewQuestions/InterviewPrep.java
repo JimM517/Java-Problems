@@ -1,8 +1,6 @@
 package InterviewQuestions;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 public class InterviewPrep {
 
@@ -293,6 +291,30 @@ public class InterviewPrep {
         return true;
 
     }
+
+
+
+    //1. Two Sum.....again
+    public int[] twoSum(int[] nums, int target) {
+
+        Map<Integer, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (result.containsKey(target - nums[i])) {
+                return new int[]{result.get(target - nums[i]), i};
+            } else {
+                result.put(nums[i], i);
+            }
+
+        }
+        return new int[]{-1, -1};
+    }
+
+
+
+
+
 
 
 
