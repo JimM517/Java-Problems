@@ -2,6 +2,7 @@ package InterviewQuestions;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 public class InterviewPrep {
 
@@ -190,6 +191,49 @@ public class InterviewPrep {
         return n == 1;
 
     }
+
+
+
+
+
+    // 20. Valid Parentheses
+    public boolean isValid(String s) {
+
+        Stack<Character> checkParen = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+
+            if (c == '(' || c == '{' || c == '[') {
+                checkParen.push(c);
+            } else if (c == ')' || c == '}' || c == ']') {
+                if (checkParen.isEmpty()) {
+                    return false;
+                }
+
+
+                char top = checkParen.pop();
+
+                if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '[')) {
+                    return false;
+                }
+
+            }
+
+
+
+
+        }
+
+        return checkParen.isEmpty() ? true : false;
+    }
+
+
+
+
+
+
+
+
 
 
 
