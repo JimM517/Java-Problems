@@ -1,5 +1,8 @@
 package InterviewQuestions;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class InterviewPrep {
 
     // 151 Reverse Words in a string
@@ -142,6 +145,57 @@ public class InterviewPrep {
     public boolean isRectangleOverlap(int[] rec1, int[] rec2) {
         return rec1[0] < rec2[2] && rec1[1] < rec2[3] && rec1[2] > rec2[0] && rec1[3] > rec2[1];
     }
+
+
+
+
+
+
+    /******** Interview Prep for New Year 2024 ********/
+
+
+    // 202. Happy Number
+    public boolean isHappy(int n) {
+
+        // keep track of numbers already seen during the loop
+        Set<Integer> seenNumbers = new HashSet<>();
+
+        while (n != 1 && !seenNumbers.contains(n)) {
+
+            // add current number to seenNumbers
+            seenNumbers.add(n);
+
+            // convert to string to iterate through the digits
+            String str = String.valueOf(n);
+
+            int sum = 0;
+
+            // calculate the sum of each digit squared
+            for (int i = 0; i < str.length(); i++) {
+
+                int digit = Character.getNumericValue(str.charAt(i));
+
+                sum += digit * digit;
+
+
+            }
+
+            // update our sum
+            n = sum;
+
+
+        }
+
+        // if n == 1 we are happy aka true
+        return n == 1;
+
+    }
+
+
+
+
+
+
 
 
 
