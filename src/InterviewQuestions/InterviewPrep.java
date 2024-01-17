@@ -271,6 +271,28 @@ public class InterviewPrep {
 
 
 
+    // 9. Palindrome Number
+    public boolean isPalindrome(int x) {
+
+        String numToStr = Integer.toString(x);
+
+        int start = 0;
+        int end = numToStr.length() - 1;
+
+
+        while (start < end) {
+
+            if (numToStr.charAt(start) != numToStr.charAt(end)) {
+                return false;
+            }
+
+            start++;
+            end--;
+
+        }
+        return true;
+
+    }
 
 
 
