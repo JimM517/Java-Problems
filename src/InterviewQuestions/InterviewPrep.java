@@ -382,6 +382,40 @@ public class InterviewPrep {
 
 
 
+    // 349 Intersection of Two Arrays
+    public int[] intersection(int[] nums1, int[] nums2) {
+
+        Set<Integer> num1Count = new HashSet<>();
+
+        Set<Integer> num2Count = new HashSet<>();
+
+        for (int num : nums1) {
+            num1Count.add(num);
+        }
+
+        for (int num : nums2) {
+            if (num1Count.contains(num)) {
+                num2Count.add(num);
+            }
+        }
+
+        int[] result = new int[num2Count.size()];
+
+        int index = 0;
+
+        for (int num : num2Count) {
+            result[index++] = num;
+        }
+
+        return result;
+
+    }
+
+
+
+
+
+
 
 
 
