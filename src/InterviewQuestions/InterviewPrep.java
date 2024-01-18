@@ -351,6 +351,40 @@ public class InterviewPrep {
 
 
 
+    // 53. Maximum Subarray
+    public int maxSubArrayRevisited(int[] nums) {
+
+        int start = Integer.MIN_VALUE;
+
+        int end = 0;
+
+
+        for (int i = 0; i < nums.length; i++) {
+
+            end += nums[i];
+
+            if (start < end) {
+                start = end;
+            }
+
+            if (end < 0) {
+                end = 0;
+            }
+
+        }
+
+        return start;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 }
