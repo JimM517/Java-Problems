@@ -478,6 +478,39 @@ public class InterviewPrep {
 
 
 
+    // 1328. Break a Palindrome
+    public String breakPalindrome(String palindrome) {
+
+        int length = palindrome.length();
+
+        if (length == 1) {
+            return "";
+        }
+
+        char[] ch = palindrome.toCharArray();
+
+        // only iterate first half, in a palindrome, the halves are mirrors of each other
+        int itrLen = (length / 2) - 1;
+
+        for (int i = 0; i <= itrLen; i++) {
+
+            // if char at index i != a, we replace with a because this will make it lexicographically smaller
+            if (ch[i] != 'a') {
+                ch[i] = 'a';
+                return String.valueOf(ch);
+            }
+
+        }
+
+        // replace one char with b if all are 'a' to make it smallest
+        ch[length - 1] = 'b';
+        return String.valueOf(ch);
+
+    }
+
+
+
+
 
 
 
