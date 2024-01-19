@@ -152,6 +152,8 @@ public class InterviewPrep {
 
     /******** Interview Prep for New Year 2024 ********/
 
+    /**** EASY  ****/
+
 
     // 202. Happy Number
     public boolean isHappy(int n) {
@@ -434,6 +436,46 @@ public class InterviewPrep {
         return -1;
 
     }
+
+
+
+
+
+    /**** MEDIUM ****/
+
+    // 322. Coin Change
+
+    public int coinChange(int[] coins, int amount) {
+
+        int[] dp = new int[(amount + 1)];
+
+
+        for (int i = 1; i <= amount; i++) {
+
+            int min = Integer.MAX_VALUE;
+
+            for (int j = 0; j < coins.length; j++) {
+
+
+                if (i >= coins[j] && dp[i - coins[j]] != -1) {
+                    min = Math.min(min, dp[i - coins[j]]);
+                }
+
+
+            }
+
+            dp[i] = (min == Integer.MAX_VALUE) ? -1 : min + 1;
+
+        }
+
+        return dp[amount];
+
+
+    }
+
+
+
+
 
 
 
