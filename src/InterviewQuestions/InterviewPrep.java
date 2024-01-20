@@ -540,7 +540,7 @@ public class InterviewPrep {
 
 
 
-    public void swap(int[] nums, int i, int j) {
+    private void swap(int[] nums, int i, int j) {
 
 
         int temp = nums[i];
@@ -549,7 +549,7 @@ public class InterviewPrep {
     }
 
 
-    public void reverse(int[] nums, int start) {
+    private void reverse(int[] nums, int start) {
 
         int end = nums.length - 1;
 
@@ -562,6 +562,42 @@ public class InterviewPrep {
 
     }
 
+
+
+
+
+    // 17. Letter Combinations of a Phone Number
+    public List<String> letterCombinations(String digits) {
+
+        if (digits.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        String[] phoneNums = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
+        List<String> result = new ArrayList<>();
+
+        stringBT("", digits, phoneNums, result);
+
+        return result;
+    }
+
+
+    private void stringBT(String combination, String nextDigits, String[] phoneNums, List<String> result) {
+
+
+        if (nextDigits.isEmpty()) {
+            result.add(combination);
+        } else {
+            String letters = phoneNums[nextDigits.charAt(0) - '2'];
+            for (char letter : letters.toCharArray()) {
+                stringBT(combination + letter, nextDigits.substring(1), phoneNums, result);
+            }
+        }
+
+
+
+    }
 
 
 
