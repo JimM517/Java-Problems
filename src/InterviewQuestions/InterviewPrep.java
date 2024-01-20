@@ -602,6 +602,65 @@ public class InterviewPrep {
 
 
 
+    // 5. Longest Palindromic Substring
+    public String longestPalindrome(String s) {
+
+        String result = "";
+        int resultLen = 0;
+
+
+        for (int i = 0; i < s.length(); i++) {
+
+            // expand around the center with current character as center
+            // odd length
+            int left = i;
+            int right = i;
+
+
+
+            while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+
+                // update result if the current palindrome is longer
+                if ((right - left + 1) > resultLen) {
+
+                    result = s.substring(left, right + 1);
+                    resultLen = right - left + 1;
+                }
+                left -= 1;
+                right += 1;
+            }
+
+            // expand around the center with current and next character as centers
+            // even length
+            left = i;
+            right = i + 1;
+
+
+            while ((left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right))) {
+                // update result if the current palindrome is longer
+                if ((right - left + 1) > resultLen) {
+                    result = s.substring(left, right + 1);
+                    resultLen = right - left + 1;
+                }
+                left -= 1;
+                right += 1;
+
+            }
+
+
+        }
+
+
+
+
+        return result;
+
+    }
+
+
+
+
+
 
 
 
