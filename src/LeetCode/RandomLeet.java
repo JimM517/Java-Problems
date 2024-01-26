@@ -1247,6 +1247,25 @@ public class RandomLeet {
 
 
 
+    // 1413 Minimum Value to get positive step by step sum
+    public int minStartValue(int[] nums) {
+
+        int min = Integer.MAX_VALUE;
+
+        int currentSum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+           currentSum += nums[i];
+           min = Math.min(min, currentSum);
+
+        }
+
+        return Math.max(1, 1 - min);
+
+
+    }
+
 
 
 
