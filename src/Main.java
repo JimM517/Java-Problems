@@ -1,3 +1,4 @@
+import LeetCode.Easy.EasyLeetQues;
 import LeetCode.Medium.MediumLeetQues;
 import Sorting.SortingProblems;
 
@@ -223,7 +224,15 @@ public class Main {
         }
 
 
+        EasyLeetQues easy = new EasyLeetQues();
+
+        System.out.println(easy.fizzBuzz(3));
+
+
     }
+
+
+
 
 
 
