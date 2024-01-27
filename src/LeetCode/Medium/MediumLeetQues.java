@@ -1181,4 +1181,42 @@ public class MediumLeetQues {
 
 
 
+    // 46. permutations
+    public List<List<Integer>> permuteAgain(int[] nums) {
+
+        List<List<Integer>> list = new ArrayList<>();
+
+        permuteBacktrack(list, new ArrayList<>(), nums);
+
+        return list;
+
+    }
+
+
+    private void permuteBacktrack(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
+
+        if (tempList.size() == nums.length) {
+            list.add(new ArrayList<>(tempList));
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+
+                if (tempList.contains(nums[i])) {
+                    continue;
+                }
+
+                tempList.add(nums[i]);
+
+                permuteBacktrack(list, tempList, nums);
+
+                tempList.remove(tempList.size() - 1);
+            }
+        }
+
+
+
+    }
+
+
+
+
 }
