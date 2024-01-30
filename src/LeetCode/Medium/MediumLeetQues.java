@@ -1272,4 +1272,46 @@ public class MediumLeetQues {
 
 
 
+
+
+
+
+    // 1481. Least Number of Unique Integers after K removals
+    public int findLeastNumOfUniqueInts(int[] arr, int k) {
+
+
+        Map<Integer, Integer> result = new HashMap<>();
+
+        // count occurrences of each int
+        for (int j : arr) {
+            result.put(j, result.getOrDefault(j, 0) + 1);
+        }
+
+
+        // create list of entries for sorting
+        List<Map.Entry<Integer, Integer>> entries = new ArrayList<>(result.entrySet());
+
+        // sort entries based on the count of occurrences
+        entries.sort(Map.Entry.comparingByValue());
+
+        int count = result.size();
+
+
+        // remove the least frequent elements until k is reached
+        for (Map.Entry<Integer, Integer> entry : entries) {
+            if (k >= entry.getValue()) {
+                k -= entry.getValue();
+                count--;
+            } else {
+                break;
+            }
+        }
+
+        return count;
+
+    }
+
+
+
+
 }
