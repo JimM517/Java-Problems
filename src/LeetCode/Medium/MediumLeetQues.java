@@ -1412,6 +1412,34 @@ public class MediumLeetQues {
 
 
 
+    // 90. Subsets II
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+
+        List<List<Integer>> results = new ArrayList<>();
+        Arrays.sort(nums);
+        getSubs(0, nums, new ArrayList<>(), results);
+        return results;
+    }
+
+    private void getSubs(int idx, int[] nums, List<Integer> currentSubset, List<List<Integer>> result) {
+
+        result.add(new ArrayList<>(currentSubset));
+
+        for (int i = idx; i < nums.length; i++) {
+            if (i != idx && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            currentSubset.add(nums[i]);
+            getSubs(i + 1, nums, currentSubset, result);
+            currentSubset.remove(currentSubset.size() - 1);
+        }
+
+
+
+    }
+
+
+
 
 
 }
