@@ -1364,4 +1364,54 @@ public class MediumLeetQues {
 
 
 
+
+
+    // 279. Perfect Squares
+    public int numSquares(int n) {
+        return (int) numSquares(n, new HashMap<>());
+    }
+
+
+
+    private static double numSquares(int n, HashMap<Integer, Double> memo) {
+
+        if (n == 0) {
+            return 0;
+        }
+
+
+        if (memo.containsKey(n)) {
+            return memo.get(n);
+        }
+
+
+
+        double minSquares = Double.POSITIVE_INFINITY;
+
+        for (int i = 1; i <= Math.sqrt(n); i++) {
+
+            int square = i * i;
+
+            double numSqaures = 1 + numSquares(n - square, memo);
+
+
+            if (numSqaures < minSquares) {
+                minSquares = numSqaures;
+            }
+
+        }
+
+
+        double result = minSquares;
+        memo.put(n, result);
+
+
+        return result;
+
+    }
+
+
+
+
+
 }
