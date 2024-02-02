@@ -415,6 +415,36 @@ public class InterviewPrep {
 
 
 
+    // another solution for intersection
+    public int[] intersectionRevisited(int[] nums1, int[] nums2) {
+
+        Map<Integer, Integer> result = new HashMap<>();
+
+        for (int num : nums1) {
+            result.put(num, result.getOrDefault(num, 0) + 1);
+        }
+
+        List<Integer> temp = new ArrayList<>();
+
+        for (int num : nums2) {
+            if (result.containsKey(num) && result.get(num) > 0) {
+                temp.add(num);
+                result.put(num, result.get(num) - 1);
+            }
+        }
+
+
+        int[] intersect = new int[temp.size()];
+        for (int i = 0; i < temp.size(); i++) {
+            intersect[i] = temp.get(i);
+        }
+
+        return intersect;
+
+    }
+
+
+
 
 
     // 387. First Unique Character String
