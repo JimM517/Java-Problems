@@ -1485,6 +1485,20 @@ public class MediumLeetQues {
 
 
 
+    // 1838 Frequence of the most frequent element
+    // TODO complete
+    public int maxFrequency(int nums, int k) {
+
+
+
+
+
+
+
+
+    }
+
+
 
 
 
