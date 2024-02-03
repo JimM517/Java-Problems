@@ -1487,15 +1487,63 @@ public class MediumLeetQues {
 
     // 1838 Frequence of the most frequent element
     // TODO complete
-    public int maxFrequency(int nums, int k) {
+    public int maxFrequency(int[] nums, int k) {
+
+        // O(n log n)
+        // sliding window approach
+
+        // sort array to look at least (left) values that can be incemented by k
+        Arrays.sort(nums);
+
+
+//        int left = 0;
+//        int right = 0;
+//
+//        int result = 0;
+//        int total = 0;
+
+
+        int maxFrequency = 0;
+        long currentSum = 0;
+
+
+        for (int left = 0, right = 0; right < nums.length; right++) {
+            currentSum += nums[right];
+
+            while (currentSum + k < (long) nums[right] * (right - left + 1)) {
+                currentSum -= nums[left];
+                left++;
+            }
+
+            maxFrequency = Math.max(maxFrequency, right - left + 1);
+
+        }
+
+        return maxFrequency;
 
 
 
 
-
-
-
-
+//        while (right < nums.length) {
+//
+//            total += nums[right];
+//
+//            // while are window is invalid
+//            while (nums[right] * (right - left + 1) > total + k) {
+//
+//                // shrink window
+//
+//                total -= nums[left];
+//
+//                left++;
+//
+//            }
+//
+//            result = Math.max(result, right - left + 1);
+//
+//            right++;
+//        }
+//        return result;
     }
 
 
