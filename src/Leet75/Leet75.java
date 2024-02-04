@@ -768,6 +768,39 @@ public class Leet75 {
 
 
 
+    // 128 Longest Consecutive Sequence
+    public int longestConsecutive(int[] nums) {
+
+        Set<Integer> checkNums = new HashSet<>();
+
+        for (int num : nums) {
+            checkNums.add(num);
+        }
+
+        int longest = 0;
+
+        for (int num : nums) {
+           int next = num + 1;
+           int prev = num - 1;
+           int current = 1;
+
+           while (checkNums.remove(prev--)) {
+               current++;
+           }
+           while(checkNums.remove(next++)) {
+               current++;
+           }
+           if (current > longest) {
+               longest = current;
+           }
+        }
+
+        return longest;
+
+
+
+    }
+
 
 
 
