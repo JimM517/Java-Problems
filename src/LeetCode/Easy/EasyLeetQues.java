@@ -1,6 +1,6 @@
 package LeetCode.Easy;
 
-import Helpers.ListNode;
+import ListProbs.ListNode;
 
 import java.util.*;
 
