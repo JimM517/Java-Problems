@@ -226,7 +226,11 @@ public class Main {
 
         EasyLeetQues easy = new EasyLeetQues();
 
-        System.out.println(easy.fizzBuzz(3));
+//        System.out.println(easy.fizzBuzz(3));
+
+        String[] emails = {"alice@leetcode.com", "jim+@fake.com"};
+
+        System.out.println(easy.numUniqueEmails(emails));
 
 
     }

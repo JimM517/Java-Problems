@@ -1185,6 +1185,57 @@ public class EasyLeetQues {
 
 
 
+    // 929. Unique Email Addresses
+    public int numUniqueEmails(String[] emails) {
+
+            Set<String> uniqueEmails = new HashSet<>();
+
+            for (String email : emails) {
+
+                String[] parts = email.split("@");
+
+                String local = parts[0];
+                String domain = parts[1];
+
+                // remove everything after the first "+"
+                local = local.split("\\+")[0];
+
+                // remove "." and normalize local name
+                local = local.replaceAll("\\.", "");
+
+
+                // combine the local and domain
+                String normalized = local + "@" + domain;
+
+                // add the email to set to ensure unique
+                uniqueEmails.add(normalized);
+
+
+            }
+
+            return uniqueEmails.size();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
