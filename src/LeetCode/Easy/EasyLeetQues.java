@@ -21,6 +21,7 @@ public class EasyLeetQues {
 
         int ans = 0;
 
+
         for(int i=0;i<s.length()-1;i++){
             char ch= s.charAt(i);
             char chc= s.charAt(i+1);
