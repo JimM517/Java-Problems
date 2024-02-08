@@ -1615,6 +1615,38 @@ public class MediumLeetQues {
 
 
 
+    // 2390. Removing Stars from a string
+    public String removeStars(String s) {
+
+       char[] chars = s.toCharArray();
+
+       Stack<Character> stack = new Stack<>();
+
+       for (char c : chars) {
+           if (c != '*') {
+               stack.push(c);
+           } else {
+               stack.pop();
+           }
+       }
+
+       char[] result = new char[stack.size()];
+
+       int i = result.length - 1;
+
+       while (!stack.isEmpty()) {
+           result[i--] = stack.pop();
+       }
+
+       return new String(result);
+
+    }
+
+
+
+
+
+
 
 
 
