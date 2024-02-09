@@ -1,7 +1,5 @@
 package LeetCode.Easy;
 
-import ListProbs.ListNode;
-
 import java.util.*;
 
 public class EasyLeetQues {
@@ -1007,27 +1005,27 @@ public class EasyLeetQues {
 
 
     // 206. Reverse Linked List
-    public ListNode reverseList(ListNode head) {
-
-        ListNode prev = null;
-        ListNode curr = head;
-
-
-        while (curr != null) {
-
-            ListNode next = curr.next;
-
-            curr.next = prev;
-
-            prev = curr;
-
-            curr = next;
-
-
-        }
-        return prev;
-
-    }
+//    public ListNode reverseList(ListNode head) {
+//
+//        ListNode prev = null;
+//        ListNode curr = head;
+//
+//
+//        while (curr != null) {
+//
+//            ListNode next = curr.next;
+//
+//            curr.next = prev;
+//
+//            prev = curr;
+//
+//            curr = next;
+//
+//
+//        }
+//        return prev;
+//
+//    }
 
 
 
@@ -1222,7 +1220,24 @@ public class EasyLeetQues {
 
 
 
+    // 27. Remove Element
+    public int removeElement(int[] nums, int val) {
 
+        int k = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] != val) {
+                nums[k] = nums[i];
+                k++;
+            }
+
+
+        }
+
+        return k;
+
+    }
 
 
 
