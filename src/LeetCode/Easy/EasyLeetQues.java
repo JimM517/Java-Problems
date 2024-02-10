@@ -1343,6 +1343,36 @@ public class EasyLeetQues {
 
 
 
+    // 1299. Replace elements with greatest element on right side
+    public int[] replaceElements(int[] arr) {
+
+        if (arr.length == 1) {
+            return new int[]{-1};
+        }
+
+
+        int[] result = new int[arr.length];
+
+        result[result.length - 1] = -1;
+
+        int max = Integer.MIN_VALUE;
+
+        for (int i = arr.length - 2; i >= 0; i--) {
+
+            int before = arr[i + 1];
+
+            max = Math.max(max, before);
+
+            result[i] = max;
+
+
+        }
+
+        return result;
+    }
+
+
+
 
 
 
