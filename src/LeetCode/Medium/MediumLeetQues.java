@@ -1646,6 +1646,39 @@ public class MediumLeetQues {
 
 
 
+    // 71. Simplify Path
+    public String simplifyPath(String path) {
+
+        Stack<String> res = new Stack<>();
+
+        StringBuilder sb = new StringBuilder();
+
+        String[] str = path.split("/");
+
+        for (int i = 0; i < str.length; i++) {
+            if (!res.isEmpty() && str[i].equals("..")) {
+                res.pop();
+            } else if (!str[i].equals("") && !str[i].equals(".") && !str[i].equals("..")) {
+                res.push(str[i]);
+            }
+        }
+
+        if (res.isEmpty()) {
+            return "/";
+        }
+
+        while (!res.isEmpty()) {
+            sb.insert(0, res.pop()).insert(0, "/");
+        }
+
+        return sb.toString();
+
+    }
+
+
+
+
+
 
 
 
