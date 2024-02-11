@@ -1407,6 +1407,31 @@ public class EasyLeetQues {
 
 
 
+    // 1189. Maximum number of balloons
+    public int maxNumberOfBalloons(String text) {
+
+      int[] charCount = new int[26];
+
+      for (int i = 0; i < text.length(); i++) {
+          charCount[text.charAt(i) - 'a']++;
+      }
+
+      int min = charCount[1];
+      min = Math.min(min, charCount[0]);
+      min = Math.min(min, charCount[11] / 2);
+      min = Math.min(min, charCount[14] / 2);
+      min = Math.min(min, charCount[13]);
+
+      return min;
+
+
+    }
+
+
+
+
+
+
 
 
 
