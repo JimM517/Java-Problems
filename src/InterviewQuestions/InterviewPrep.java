@@ -853,6 +853,48 @@ public class InterviewPrep {
 
 
 
+    // not anything from leetcode, sawtooth sequence problem
+    public int sawtooth(int[] arr) {
+
+        int count = 0;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            int j = i + 1;
+            while (j < arr.length && isSawtooth(arr, i, j)) {
+                count++;
+                j++;
+            }
+        }
+        return count;
+
+    }
+
+
+
+
+    public boolean isSawtooth(int[] arr, int start, int end) {
+
+        if (end - start < 2) {
+            return false;
+        }
+
+
+        boolean increasing = arr[start] < arr[start + 1];
+
+
+        for (int i = start + 1; i < end; i++) {
+            if ((increasing && arr[i] <= arr[i - 1]) || (!increasing && arr[i] >= arr[i - 1])) {
+                return false;
+            }
+            increasing = !increasing;
+        }
+
+        return true;
+
+    }
+
+
+
 
 
 
