@@ -1,6 +1,8 @@
 package SlidingWindow;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class SlidingWindowProbs {
@@ -64,6 +66,40 @@ public class SlidingWindowProbs {
 
         return count;
 
+    }
+
+
+
+
+
+    // 76. Minimum Window Substring
+    public String minWindow(String s, String t) {
+
+        if (s.equals(t)) {
+            return s;
+        }
+
+
+        Map<Character, Integer> needT = new HashMap<>();
+
+        for (Character ch : t.toCharArray()) {
+            needT.put(ch, needT.getOrDefault(ch, 0) + 1);
+        }
+
+
+        int left = 0;
+        int right = 0;
+
+        int count = 0;
+
+
+        // TODO FINISH
+
+
+
+
+
+        return "";
     }
 
 
