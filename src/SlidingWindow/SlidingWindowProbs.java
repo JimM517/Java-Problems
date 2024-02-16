@@ -1,9 +1,6 @@
 package SlidingWindow;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class SlidingWindowProbs {
 
@@ -67,6 +64,77 @@ public class SlidingWindowProbs {
         return count;
 
     }
+
+
+
+
+
+    // 438 Find All Anagrams in a String
+    public List<Integer> findAnagrams(String s, String p) {
+
+
+        if (p.length() > s.length()) {
+            return new ArrayList<>();
+        }
+
+
+        List<Integer> result = new ArrayList<>();
+
+        Map<Character, Integer> pCount = new HashMap<>();
+        Map<Character, Integer> sCount = new HashMap<>();
+
+
+        for (int i = 0; i < p.length(); i++) {
+            pCount.put(p.charAt(i), pCount.getOrDefault(p.charAt(i), 0) + 1);
+        }
+
+
+
+        int i = 0;
+        int j = 0;
+
+
+        while (j < s.length()) {
+
+
+            sCount.put(s.charAt(j), sCount.getOrDefault(s.charAt(j), 0) + 1);
+
+            if (j - 1 + 1 < p.length()) {
+                j++;
+            }
+            else if (j - i + 1 == p.length()) {
+                if (sCount.equals(pCount)) {
+                    result.add(i);
+                }
+
+                sCount.put(s.charAt(i), sCount.getOrDefault(s.charAt(i), 0) - 1);
+                if (sCount.get(s.charAt(i)) == 0) {
+                    pCount.remove(s.charAt(i));
+                }
+
+            }
+
+            i++;
+            j++;
+
+        }
+
+        return result;
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
