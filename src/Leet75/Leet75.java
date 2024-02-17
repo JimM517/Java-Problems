@@ -1,5 +1,8 @@
 package Leet75;
 
+import Helpers.IntervalComparator;
+import Helpers.Intervals;
+
 import java.util.*;
 
 public class Leet75 {
@@ -797,9 +800,40 @@ public class Leet75 {
 
         return longest;
 
-
-
     }
+
+
+
+
+
+
+
+        // meeting rooms
+
+        public boolean canAttendMeetings(List<Intervals> intervals) {
+
+                Collections.sort(intervals, new IntervalComparator());
+
+
+                for (int i = 0; i < intervals.size(); i++) {
+
+                    Intervals i1 = intervals.get(i - 1);
+                    Intervals i2 = intervals.get(i);
+
+                    if (i1.getEnd() > i2.getStart()) {
+                        return false;
+                    }
+
+
+                }
+
+                return true;
+
+        }
+
+
+
+
 
 
 
