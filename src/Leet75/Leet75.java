@@ -834,7 +834,55 @@ public class Leet75 {
 
 
 
+        // meeting rooms II
+        public int minMeetingRooms(List<Intervals> intervals) {
 
+                if (intervals.size() == 0) {
+                    return 0;
+                }
+
+
+                int len = intervals.size();
+
+                int[] start = new int[len];
+                int[] end = new int[len];
+
+                for (int i = 0; i < len; i++) {
+
+                    start[i] = intervals.get(i).getStart();
+                    end[i] = intervals.get(i).getEnd();
+
+                }
+
+                Arrays.sort(start);
+                Arrays.sort(end);
+
+
+                int res = 0;
+                int count = 0;
+                int s = 0;
+                int e = 0;
+
+
+                while (s < len) {
+
+                    if (start[s] < end[e]) {
+                        s++;
+                        count++;
+                    } else {
+                        e++;
+                        count--;
+                    }
+
+                    res = Math.max(res, count);
+
+
+                }
+
+                return res;
+
+
+        }
 
 
 
