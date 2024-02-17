@@ -176,4 +176,46 @@ public class SlidingWindowProbs {
 
 
 
+
+    // 1456. Maximum number of vowels in a substring of given length
+    public int maxVowels(String s, int k) {
+
+      Set<Character> vowelSet = new HashSet<>();
+        vowelSet.add('a');
+        vowelSet.add('e');
+        vowelSet.add('i');
+        vowelSet.add('o');
+        vowelSet.add('u');
+
+
+        int vowel = 0;
+
+        for (int i = 0; i < k; i++) {
+            if (vowelSet.contains(s.charAt(i))) {
+                vowel++;
+            }
+        }
+
+
+
+        int max = vowel;
+
+        for (int i = k; i < s.length(); i++) {
+            if (vowelSet.contains(s.charAt(i - k))) {
+                vowel--;
+            }
+            if (vowelSet.contains(s.charAt(i))) {
+                vowel++;
+            }
+            max = Math.max(max, vowel);
+        }
+
+        return max;
+
+    }
+
+
+
+
+
 }
