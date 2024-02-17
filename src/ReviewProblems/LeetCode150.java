@@ -59,6 +59,49 @@ public class LeetCode150 {
 
 
 
+    //26 Remove duplicates from sorted array
+    public int removeDuplicates(int[] nums) {
+
+//       THIS WORKS
+
+//        if (nums.length == 0) {
+//            return 0;
+//        }
+//
+//
+//        Set<Integer> dups = new HashSet<>();
+//
+//        int k = 0;
+//
+//
+//        for (int i = 0; i < nums.length; i++) {
+//            if (!dups.contains(nums[i])) {
+//                nums[k++] = nums[i];
+//                dups.add(nums[i]);
+//            }
+//        }
+
+
+        int k = 1;
+
+        for (int i = 1; i < nums.length ; i++) {
+
+            if (nums[i] != nums[i - 1]) {
+                nums[k] = nums[i];
+                k++;
+            }
+
+        }
+
+
+        return k;
+
+    }
+
+
+
+
+
 
 
 
