@@ -1,5 +1,8 @@
 package ReviewProblems;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LeetCode150 {
 
     /** This class is just intended to review leetcode 150 **/
@@ -122,6 +125,37 @@ public class LeetCode150 {
         return k;
     }
 
+
+
+
+    // 169 Majority Element
+    int majorityElement(int[] nums) {
+
+        int n = nums.length;
+
+        int maj = 0;
+        int majorityCount = 0;
+
+
+        Map<Integer, Integer> result = new HashMap<>();
+        for (int num : nums) {
+            result.put(num, result.getOrDefault(num, 0) + 1);
+        }
+
+
+
+        for (Map.Entry<Integer, Integer> res : result.entrySet()) {
+
+            int curr = res.getValue();
+
+            if (curr > majorityCount && curr > n / 2) {
+                maj = res.getKey();
+                majorityCount = curr;
+            }
+        }
+        return maj;
+
+    }
 
 
 
