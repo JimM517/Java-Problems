@@ -160,6 +160,48 @@ public class LeetCode150 {
 
 
 
+    // 189. Rotate Array
+    public static void rev(int[] arr, int start, int end) {
+
+            while (start < end) {
+
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            }
+    }
+
+    public void rotate(int[] nums, int k) {
+
+        k = k % nums.length;
+
+        int d = nums.length - k;
+
+        rev(nums, 0, d - 1);
+        rev(nums, d, nums.length - 1);
+        rev(nums, 0, nums.length - 1);
+    }
+
+
+
+
+    // another solution for rotate
+    public void revAgain(int[] arr, int k) {
+
+
+        int[] temp = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            temp[(i + k) % arr.length] = arr[i];
+        }
+
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = temp[i];
+        }
+
+    }
 
 
 
