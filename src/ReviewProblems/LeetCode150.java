@@ -208,7 +208,7 @@ public class LeetCode150 {
 
 
 
-    //. 121 Best time to buy and sell stock
+    // 121. Best time to buy and sell stock
     public int maxProfit(int[] prices) {
 
         // nothing in array, return 0
@@ -242,6 +242,39 @@ public class LeetCode150 {
         }
         // return max
         return maxProfit;
+    }
+
+
+
+
+
+
+    // 122. Best time to buy and sell stock II
+    public int maxProfitTwo(int[] prices) {
+
+        // if array is empty, return 0
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        // set initial max profit
+        int maxProfit = 0;
+
+        // start loop at one because we want to compare previous amount
+        for (int i = 1; i < prices.length; i++) {
+
+            // if our current prices[i] is greater than our previous
+            // continue
+            if (prices[i] > prices[i - 1]) {
+                // set out max profit to the difference of our prices[i] and the previous value
+                maxProfit += prices[i] - prices[i - 1];
+            }
+        }
+
+        // return our max profit
+        return maxProfit;
+
+
     }
 
 
