@@ -208,4 +208,45 @@ public class LeetCode150 {
 
 
 
+    //. 121 Best time to buy and sell stock
+    public int maxProfit(int[] prices) {
+
+        // nothing in array, return 0
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        // set initial value to compare
+        int start = prices[0];
+
+        // maxProfit will be compared and used later
+        int maxProfit = 0;
+
+        for (int i = 0; i < prices.length; i++) {
+
+            // if our prices[i] is < start, we reset start to the lower value
+            // we want the lower value to see potential maximum profits
+            if (prices[i] < start) {
+                start = prices[i];
+            } else {
+                // our prices were bigger, get difference
+                int currentProfit = prices[i] - start;
+
+                // if the difference is greater than out current profit, set it to max
+                if (currentProfit > maxProfit) {
+                    maxProfit = currentProfit;
+                }
+
+
+            }
+        }
+        // return max
+        return maxProfit;
+    }
+
+
+
+
+
+
 }
