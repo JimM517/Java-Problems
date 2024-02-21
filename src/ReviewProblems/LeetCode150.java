@@ -308,6 +308,42 @@ public class LeetCode150 {
 
 
 
+    // 45. Jump game II
+    public int jump(int[] nums) {
+
+        int len = nums.length - 1;
+
+        // furthest index that can be reached
+        int end = 0;
+
+        // max position that can be reached with current i
+        int maxPosition = 0;
+
+        // step counter
+        int steps = 0;
+
+        for (int i = 0; i < len; i++) {
+
+            // the current max index that can be reached with i and nums[i]
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+
+            // if our i == end, we have reached maximum distance with current number of jumps
+            if (i == end) {
+                // set the end to max position, furthest reachable index with at least one more jump
+                end = maxPosition;
+                // increment steps
+                steps++;
+            }
+
+        }
+
+        // this is our min, return
+        return steps;
+
+    }
+
+
+
 
 
 
