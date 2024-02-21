@@ -282,4 +282,34 @@ public class LeetCode150 {
 
 
 
+
+    // 55. Jump game
+    public boolean canJump(int[] nums) {
+
+        // get the last index
+        int len = nums.length - 1;
+
+
+        // start at the end of array
+        for (int i = len; i >= 0; i--) {
+
+            // if our current index of i + the value of nums[i] is greater than len
+            // we can reach the last index, return true;
+            if (i + nums[i] >= len) {
+                return true;
+            }
+
+        }
+        // return our length = 0 if it only has one element
+        // it will return false, meaning we can't get to last index
+        return len == 0;
+    }
+
+
+
+
+
+
+
+
 }
