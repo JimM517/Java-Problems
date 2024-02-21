@@ -1,5 +1,6 @@
 package ReviewProblems;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -341,6 +342,33 @@ public class LeetCode150 {
         return steps;
 
     }
+
+
+
+
+
+
+    // 274. H-Index
+    public int hIndex(int[] citations) {
+
+        Arrays.sort(citations);
+
+        int n = citations.length;
+
+        for (int i = 0; i < n; i++) {
+
+            int h = n - i;
+
+            if (citations[i] >= h) {
+                return h;
+            }
+
+        }
+        return 0;
+    }
+
+
+
 
 
 
