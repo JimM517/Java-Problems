@@ -410,6 +410,44 @@ public class LeetCode150 {
 
 
 
+    // 134. gas station
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+
+        int totalGas = 0;
+
+        int totalCost = 0;
+
+        int tank = 0;
+
+        int startStation = 0;
+
+
+        for (int i = 0; i < gas.length; i++) {
+
+            totalGas += gas[i];
+
+            totalCost += cost[i];
+
+
+            tank += gas[i] - cost[i];
+
+            // reset if tank goes below 0
+            if (tank < 0) {
+
+                startStation = i + 1;
+                tank = 0;
+
+            }
+
+        }
+
+
+
+        return totalGas < totalCost ? -1 : startStation;
+
+
+    }
+
 
 
 
