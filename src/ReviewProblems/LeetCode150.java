@@ -494,6 +494,24 @@ public class LeetCode150 {
 
 
 
+    // 58. Length of last word
+    public int lengthOfLastWord(String s) {
+
+        String[] split = s.split(" ");
+
+        return split[split.length - 1].length();
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
