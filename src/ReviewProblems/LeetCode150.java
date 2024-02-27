@@ -508,6 +508,45 @@ public class LeetCode150 {
 
 
 
+    // 14. Longest common prefix
+    public String longestCommonPrefix(String[] strings) {
+
+        if (strings == null || strings.length == 0) {
+            return "";
+        }
+
+
+        int minLen = Integer.MAX_VALUE;
+        for (String str : strings) {
+            minLen = Math.min(minLen, str.length());
+        }
+
+
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < minLen; i++) {
+
+            char current = strings[0].charAt(i);
+
+            for (int j = 1; j < strings.length; j++) {
+
+                if (current != strings[j].charAt(i)) {
+                    return sb.toString();
+                }
+
+            }
+
+            sb.append(current);
+
+        }
+
+        return sb.toString();
+
+    }
+
+
+
 
 
 
