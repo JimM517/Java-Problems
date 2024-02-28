@@ -661,6 +661,31 @@ public class LeetCode150 {
 
 
 
+    // 392. Is subsequence
+    public boolean isSubsequence(String s, String t) {
+
+        int sIdx = 0;
+
+        for (int i = 0; i < t.length() && sIdx < s.length(); i++) {
+
+            if (s.charAt(sIdx) == t.charAt(i)) {
+                sIdx++;
+            }
+
+        }
+
+        return sIdx == s.length();
+
+
+
+    }
+
+
+
+
+
+
+
 
 
 
