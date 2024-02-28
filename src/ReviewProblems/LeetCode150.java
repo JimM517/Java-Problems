@@ -573,6 +573,45 @@ public class LeetCode150 {
 
 
 
+    // Zig zag conversion
+    public String convert(String s, int numRows) {
+
+        if (numRows == 1 || s.length() <= numRows) {
+            return s;
+        }
+
+
+        StringBuilder[] rows = new StringBuilder[numRows];
+        for (int i = 0; i < numRows; i++) {
+            rows[i] = new StringBuilder();
+        }
+
+
+        int index = 0;
+        int direction = -1;
+
+        for (char c : s.toCharArray()) {
+            rows[index].append(c);
+            if (index == 0 || index == numRows - 1) {
+                direction = -direction;
+            }
+            index += direction;
+        }
+
+
+        StringBuilder result = new StringBuilder();
+        for (StringBuilder row : rows) {
+            result.append(row);
+        }
+
+
+        return result.toString();
+
+
+    }
+
+
+
 
     // 28. find the index of the first occurrence in a string
     public int strStr(String haystack, String needle) {
@@ -614,6 +653,15 @@ public class LeetCode150 {
 
 
     }
+
+
+
+
+
+
+
+
+
 
 
 
