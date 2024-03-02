@@ -809,4 +809,48 @@ public class LeetCode150 {
 
 
 
+
+
+    /** HashMaps **/
+
+
+
+    // 383 Ransom Note
+    public boolean canConstruct(String ransomNote, String magazine) {
+        Map<Character, Integer> result = new HashMap<>();
+
+        for (Character c : magazine.toCharArray()) {
+
+            if (!result.containsKey(c)) {
+                result.put(c, 1);
+            } else {
+                result.put(c, result.get(c) + 1);
+            }
+
+        }
+
+
+
+        for (Character c : ransomNote.toCharArray()) {
+
+            if (result.containsKey(c) && result.get(c) > 0) {
+                result.put(c, result.get(c) - 1);
+            } else {
+                return false;
+            }
+
+
+
+        }
+
+
+        return true;
+
+
+
+    }
+
+
+
+
 }
