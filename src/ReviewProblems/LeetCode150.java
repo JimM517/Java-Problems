@@ -846,7 +846,33 @@ public class LeetCode150 {
 
 
 
+    // 3. longest substring without repeating characters
+    public int lengthOfLongestSubstring(String s) {
 
+        Set<Character> checkChars = new HashSet<>();
+
+        int left = 0;
+        int right = 0;
+
+        int count = 0;
+
+        while (right < s.length()) {
+
+            if (checkChars.contains(s.charAt(right))) {
+                checkChars.remove(s.charAt(left));
+                left++;
+            } else {
+                checkChars.add(s.charAt(right));
+                count = Math.max(count, right - left + 1);
+                right++;
+            }
+
+
+        }
+
+        return count;
+
+    }
 
 
 
