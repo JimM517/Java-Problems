@@ -809,6 +809,49 @@ public class LeetCode150 {
 
 
 
+    /** Sliding Window **/
+
+    // 209. Minimum size subarray
+    public int minSubArrayLen(int target, int[] nums) {
+
+        int n = nums.length;
+        int left = 0;
+        int minLen = Integer.MAX_VALUE;
+        int sum = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            sum += nums[i];
+
+            while (sum >= target) {
+
+
+                minLen = Math.min(minLen, i - left + 1);
+
+                sum -= nums[left];
+
+                left++;
+
+
+            }
+
+        }
+
+
+        return (minLen == Integer.MAX_VALUE) ? 0 : minLen;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     /** HashMaps **/
