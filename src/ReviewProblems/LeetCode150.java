@@ -959,29 +959,6 @@ public class LeetCode150 {
 
 
 
-    // 1. obligatory Two Sum
-    public int[] twoSum(int[] nums, int target) {
-
-        Map<Integer, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-
-            if (map.containsKey(target - nums[i])) {
-                return new int[]{map.get(target - nums[i]), i};
-            } else {
-                map.put(nums[i], i);
-            }
-
-
-        }
-
-        return new int[]{-1, -1};
-
-
-
-    }
-
-
 
     // 290. Word Pattern
     public boolean wordPattern(String pattern, String s) {
@@ -1036,6 +1013,101 @@ public class LeetCode150 {
 
 
     }
+
+
+
+
+
+    // 49. Group Anagrams
+    public List<List<String>> groupAnagrams(String[] strs) {
+
+
+        Map<String, List<String>> checkAnagram = new HashMap<>();
+
+        for (String curr : strs) {
+
+            char[] chr = curr.toCharArray();
+
+            Arrays.sort(chr);
+
+            String sortedWord = new String(chr);
+
+            if (!checkAnagram.containsKey(sortedWord)) {
+                checkAnagram.put(sortedWord, new ArrayList<>());
+            }
+
+            checkAnagram.get(sortedWord).add(curr);
+
+        }
+
+        return new ArrayList<>(checkAnagram.values());
+
+
+    }
+
+
+
+
+    // 1. obligatory Two Sum
+    public int[] twoSum(int[] nums, int target) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{map.get(target - nums[i]), i};
+            } else {
+                map.put(nums[i], i);
+            }
+
+
+        }
+
+        return new int[]{-1, -1};
+
+
+
+    }
+
+
+
+
+
+    // 202. Happy Number
+    public boolean isHappy(int n) {
+
+        Map<Integer, Integer> result = new HashMap<>();
+
+
+        while (n != 1 && !result.containsKey(n)) {
+
+            result.put(n, 0);
+
+            String str = String.valueOf(n);
+
+            int sum = 0;
+
+            for (int i = 0; i < str.length(); i++) {
+
+                int digit = Character.getNumericValue(str.charAt(i));
+
+                sum += digit * digit;
+
+            }
+
+            n = sum;
+
+        }
+
+
+
+        return n == 1;
+
+
+    }
+
+
 
 
 
