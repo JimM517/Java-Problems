@@ -1138,6 +1138,42 @@ public class LeetCode150 {
 
 
 
+   // 128. Longest consecutive sequence
+    public int longestConsecutive(int[] nums) {
+
+        Set<Integer> numSet = new HashSet<>();
+
+        for (int num : nums) {
+            numSet.add(num);
+        }
+
+
+
+        int longest = 0;
+
+        for (int num : nums) {
+
+            int next = num + 1;
+            int prev = num - 1;
+            int current = 1;
+
+            while (numSet.remove(prev--)) {
+                current++;
+            }
+
+            while (numSet.remove(next++)) {
+                current++;
+            }
+
+            if (current > longest) {
+                longest = current;
+            }
+
+        }
+
+        return longest;
+    }
+
 
 
 
