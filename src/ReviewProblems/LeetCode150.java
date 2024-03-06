@@ -1113,6 +1113,37 @@ public class LeetCode150 {
 
 
 
+    // 219. Contains duplicates two
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int currVal = nums[i];
+
+            if (map.containsKey(currVal) && i - map.get(currVal) <= k) {
+                return true;
+            }
+
+            map.put(currVal, i);
+
+
+        }
+
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
