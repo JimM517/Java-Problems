@@ -1181,6 +1181,49 @@ public class LeetCode150 {
 
 
 
+    /** Stacks **/
+
+
+
+    // 20. Valid parentheses
+    public boolean isValid(String s) {
+
+        Stack<Character> paren = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+
+            if (c == '(' || c == '{' || c == '[') {
+                paren.push(c);
+            } else if (c == ')' || c == '}' || c == ']') {
+
+                if (paren.isEmpty()) {
+                    return false;
+                }
+
+
+                char top = paren.pop();
+
+                if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '[')) {
+                    return false;
+                }
+
+
+            }
+        }
+
+        return paren.isEmpty() ? true : false;
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
