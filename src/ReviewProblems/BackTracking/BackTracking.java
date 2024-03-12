@@ -47,6 +47,59 @@ public class BackTracking {
 
 
 
+    // 77. combinations
+    public List<List<Integer>> combine(int n, int k) {
+
+        // this will store all combos
+        List<List<Integer>> result = new ArrayList<>();
+
+        // temporarily store each combo as it is being constructed
+        List<Integer> path = new ArrayList<>();
+
+
+        int[] arr = new int[n];
+
+        // fills array with numbers from 1 to n
+        for (int i = 1; i <= n; i++) {
+            arr[i - 1] = i;
+        }
+
+        solve(arr, result, path, 0, n, k);
+
+        return result;
+
+    }
+
+
+
+    public void solve(int[] arr, List<List<Integer>> result, List<Integer> path, int index, int n, int k) {
+
+        // we have formed a valid combo, add path to result and return
+        if (path.size() == k) {
+            result.add(new ArrayList<>(path));
+            return;
+        }
+
+        // we have reached end, return
+        if (index == n) {
+            return;
+        }
+
+
+        // add each element at arr[index] to path
+        path.add(arr[index]);
+        // call solve with next index
+        solve(arr, result, path, index + 1, n, k);
+        // remove last element to backtrack
+        path.remove(path.size() - 1);
+
+        // call to solve where we don't include arr[index], basically search other decision tree
+        solve(arr, result, path, index + 1, n, k);
+
+    }
+
+
+
 
 
 
