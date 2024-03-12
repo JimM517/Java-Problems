@@ -1,5 +1,3 @@
-package ReviewProblems;
-
 import java.util.*;
 
 public class LeetCode150 {
