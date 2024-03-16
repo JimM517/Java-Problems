@@ -1,6 +1,7 @@
 package ReviewProblems.BackTracking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -133,6 +134,54 @@ public class BackTracking {
 
                 permuteBacktrack(result, temp, nums);
 
+                temp.remove(temp.size() - 1);
+
+            }
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+    // 39. Combination Sum
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        Arrays.sort(candidates);
+
+        backTrack(result, new ArrayList<>(), candidates, target, 0);
+
+        return result;
+
+    }
+
+
+
+
+
+
+
+    private void backTrack(List<List<Integer>> list, List<Integer> temp, int[] nums, int remain, int start) {
+
+        if (remain < 0) {
+            return;
+        } else if (remain == 0) {
+            list.add(new ArrayList<>(temp));
+        } else {
+            for (int i = start; i < nums.length; i++) {
+
+                temp.add(nums[i]);
+                backTrack(list, temp, nums, remain - nums[i], i);
                 temp.remove(temp.size() - 1);
 
             }
