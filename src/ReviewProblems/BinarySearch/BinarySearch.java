@@ -78,6 +78,35 @@ public class BinarySearch {
 
 
 
+    // 162 find peak element
+    public int findPeakElement(int[] nums) {
+
+        int start = 0;
+        int end = nums.length - 1;
+
+
+        while (start < end) {
+
+            int mid = start + (end - start) / 2;
+
+            if (nums[mid] > nums[mid + 1]) {
+                // potential peak is on the left side
+                end = mid;
+            } else {
+                // potential peak is on the right side or nums[mid] <= nums[mid + 1]
+                start = mid + 1;
+            }
+
+
+
+        }
+
+        // return start as this will point to the peak element
+        return start;
+
+
+
+    }
 
 
 
