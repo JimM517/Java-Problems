@@ -33,6 +33,53 @@ public class BinarySearch {
 
 
 
+    // 74. Search a 2D matrix
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+        int left = 0;
+        int right = matrix.length - 1;
+
+        while (left <= right) {
+
+            int row = (left + right) / 2;
+
+            if (target > matrix[row][matrix[row].length - 1]) {
+                left = row + 1;
+            } else if (target < matrix[row][0]) {
+                right = row - 1;
+            } else {
+                int l = 0;
+                int r = matrix[row].length - 1;
+
+                while (l < r) {
+                    int m = (l + r) / 2;
+
+                    if (target > matrix[row][m]) {
+                        l = m + 1;
+                    } else if (target < matrix[row][m]) {
+                        r = m - 1;
+                    } else {
+                        return true;
+                    }
+
+
+                }
+                break;
+            }
+
+
+        }
+
+        return false;
+    }
+
+
+
+
+
+
+
+
 
 
 
