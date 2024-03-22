@@ -2081,6 +2081,53 @@ public class RandomPractice {
 
 
 
+    public String reverseVowelsAgain(String s) {
+
+      char[] vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+
+    StringBuilder vChars = new StringBuilder();
+
+      for (char c : s.toCharArray()) {
+          if (isVowel(c, vowels)) {
+              vChars.append(c);
+          }
+      }
+
+
+      vChars.reverse();
+
+
+      StringBuilder sb = new StringBuilder();
+      int index = 0;
+
+      for (char c : s.toCharArray()) {
+          if (isVowel(c, vowels)) {
+              sb.append(vChars.charAt(index));
+              index++;
+          } else {
+              sb.append(c);
+          }
+      }
+
+    return sb.toString();
+
+    }
+
+
+
+    private boolean isVowelsss(char c, char[] vowels) {
+        for (char vowel : vowels) {
+            if (c == vowel) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
+
 
 
 
