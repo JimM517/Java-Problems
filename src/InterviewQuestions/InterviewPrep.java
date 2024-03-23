@@ -899,6 +899,41 @@ public class InterviewPrep {
 
 
 
+    /** had this is an interview, remove vowels from a string **/
+
+    public String removeVowels(String str) {
+
+        if (str == null) {
+            return null;
+        }
+
+
+            String result = "";
+
+            for (int i = 0; i < str.length(); i++) {
+                char ch = str.charAt(i);
+                if (!hasVowel(ch)) {
+                    result += str.charAt(i);
+                }
+            }
+
+
+            return result;
+
+    }
+
+    public static boolean hasVowel(char ch) {
+        return "aeiouAEIOU".indexOf(ch) != -1;
+    }
+
+
+
+
+
+
+
+
+
 
 
 }
