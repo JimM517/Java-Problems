@@ -150,6 +150,41 @@ public class BinarySearch {
 
 
 
+    // 34. find first and last position of element in sorted array
+    public int[] searchRange(int[] nums, int target) {
+
+       int[] res = new int[nums.length];
+
+       int j = 0;
+
+       int i = 0;
+
+       int count = 0;
+
+
+       while (i < nums.length) {
+           if (nums[i] == target) {
+               res[j] = i;
+               j++;
+               count++;
+           }
+           i ++;
+       }
+
+       if (count == 0) {
+           return new int[]{-1, -1};
+       }
+
+
+        return new int[] {res[0], res[j - 1]};
+
+
+
+
+    }
+
+
+
 
 
 
