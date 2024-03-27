@@ -1,6 +1,8 @@
 package ReviewProblems.Matrix;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Matrix {
@@ -27,6 +29,25 @@ public class Matrix {
             }
         }
         return true;
+
+    }
+
+
+
+
+
+
+
+
+    // 54. spiral matrix
+    // TODO finish this problem
+    public List<Integer> spiralOrder(int[][] nums) {
+
+
+
+
+
+        return new ArrayList<>();
 
     }
 
