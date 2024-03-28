@@ -886,4 +886,46 @@ public class Leet75 {
 
 
 
+
+
+
+
+
+
+        // 2215 find the difference of two arrays
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        Set<Integer> checkOne = new HashSet<>();
+        Set<Integer> checkTwo = new HashSet<>();
+
+        for (int num : nums1) {
+            checkOne.add(num);
+        }
+
+        for (int num : nums2) {
+            checkTwo.add(num);
+        }
+
+
+        List<Integer> one = new ArrayList<>(checkOne);
+        one.removeAll(checkTwo);
+
+
+
+        List<Integer> two = new ArrayList<>(checkTwo);
+        two.removeAll(checkOne);
+
+
+
+        result.add(one);
+        result.add(two);
+
+        return result;
+
+    }
+
+
+
 }
