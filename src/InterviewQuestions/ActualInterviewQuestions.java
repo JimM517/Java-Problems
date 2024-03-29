@@ -130,6 +130,57 @@ public class ActualInterviewQuestions {
 
 
 
+    // interesting word
+    // for word to be interesting, letter can only repeat k times
+    // same letter can't right before or right after sequence
+    // aaab -> interesting [aaa]b
+    // abbbb -> not interesting a[bbb]b
+    public int countInterestingWords(String[] words, int k) {
+
+        int count = 0;
+
+        for (String word : words) {
+            if (!isInteresting(word, k)) {
+                continue;
+            } else {
+                count++;
+            }
+        }
+
+        return count;
+
+    }
+
+    // helper
+    public static boolean isInteresting(String word, int k) {
+
+        for (int i = 0; i < word.length(); i++) {
+
+            char ch = word.charAt(i);
+            int j = i + 1;
+            int count = 1;
+
+
+            while (j < word.length() && word.charAt(j) == ch) {
+                count++;
+                j++;
+            }
+
+            if (count == k) {
+                if ((i == 0 || word.charAt(i) != ch) && (j == word.length() || word.charAt(j) != ch)) {
+                    return true;
+                }
+            }
+
+
+        }
+
+        return false;
+
+    }
+
+
+
 
 
 
