@@ -899,54 +899,14 @@ public class InterviewPrep {
 
 
 
-    /** had this is an interview, remove vowels from a string **/
-
-    public String removeVowels(String str) {
-
-        if (str == null) {
-            return null;
-        }
-
-
-            String result = "";
-
-            for (int i = 0; i < str.length(); i++) {
-                char ch = str.charAt(i);
-                if (!hasVowel(ch)) {
-                    result += str.charAt(i);
-                }
-            }
-
-
-            return result;
-
-    }
-
-    public static boolean hasVowel(char ch) {
-        return "aeiouAEIOU".indexOf(ch) != -1;
-    }
 
 
 
 
 
-    /** also had in an interview, count occurrences of substring in parent **/
-    public int countSubstringOccurrences(String parent, String sub) {
-
-        if (parent == null || sub == null) {
-            return 0;
-        }
 
 
-        int count = 0;
-        int index = parent.indexOf(sub);
-        while (index != -1) {
-            count++;
-            index = parent.indexOf(sub, index + 1);
-        }
 
-        return count;
-    }
 
 
 
