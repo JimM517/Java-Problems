@@ -102,7 +102,28 @@ public class ActualInterviewQuestions {
 
 
 
+    // alternating int
+    // function takes in a number, adds the first, subtract second, add third and so on
+    public int alternatingInt(int n) {
 
+        String nString = String.valueOf(n);
+
+        int total = 0;
+
+        for (int i = 0; i < nString.length(); i++) {
+
+            int digit = Character.getNumericValue(nString.charAt(i));
+
+            if (i % 2 == 0) {
+                total += digit;
+            } else {
+                total -= digit;
+            }
+
+
+        }
+        return total;
+    }
 
 
 
