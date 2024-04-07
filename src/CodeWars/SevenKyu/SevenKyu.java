@@ -1,11 +1,11 @@
-package CodeWars.KyuSeven;
+package CodeWars.SevenKyu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class KyuSeven {
+public class SevenKyu {
 
     // change two-dimensional array
     public int[][] matrix(int[][] array) {
