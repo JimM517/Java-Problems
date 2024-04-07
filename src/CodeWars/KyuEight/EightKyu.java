@@ -1,5 +1,7 @@
 package CodeWars.KyuEight;
 
+import java.util.Arrays;
+
 public class EightKyu {
 
     // well of ideas
@@ -23,6 +25,20 @@ public class EightKyu {
 
 
     }
+
+
+
+
+    // sum arrays
+    public double sum(double[] numbers) {
+
+        return Arrays.stream(numbers).sum();
+    }
+
+
+
+
+
 
 
 
