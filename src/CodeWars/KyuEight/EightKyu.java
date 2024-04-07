@@ -39,7 +39,14 @@ public class EightKyu {
 
 
 
+    // beginner series #4 Cockroach
+    public int cockroachSpeed(double x) {
 
+        double cmsPerSec = x * 100000 / 3600;
+
+
+        return (int) Math.floor(cmsPerSec);
+    }
 
 
 
