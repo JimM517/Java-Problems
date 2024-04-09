@@ -1,4 +1,4 @@
-package ReviewProblems.BinarySearch;
+package LeetCodeOneFifty.BinarySearch;
 
 public class BinarySearch {
 

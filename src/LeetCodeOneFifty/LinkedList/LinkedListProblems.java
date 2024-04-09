@@ -1,4 +1,4 @@
-package ReviewProblems.LinkedList;
+package LeetCodeOneFifty.LinkedList;
 
 public class LinkedListProblems {
 

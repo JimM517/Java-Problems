@@ -1,4 +1,4 @@
-package ReviewProblems.SlidingWindow;
+package LeetCodeOneFifty.SlidingWindow;
 
 import java.util.HashSet;
 import java.util.Set;

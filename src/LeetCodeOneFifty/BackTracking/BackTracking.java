@@ -1,4 +1,4 @@
-package ReviewProblems.BackTracking;
+package LeetCodeOneFifty.BackTracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;

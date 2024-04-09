@@ -1,4 +1,4 @@
-package ReviewProblems.HashMaps;
+package LeetCodeOneFifty.HashMaps;
 
 import java.util.*;
 

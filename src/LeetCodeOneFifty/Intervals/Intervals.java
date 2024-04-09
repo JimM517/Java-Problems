@@ -1,4 +1,4 @@
-package ReviewProblems.Intervals;
+package LeetCodeOneFifty.Intervals;
 
 import java.util.ArrayList;
 import java.util.List;

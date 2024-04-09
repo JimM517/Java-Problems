@@ -1,4 +1,4 @@
-package ReviewProblems.TwoPointers;
+package LeetCodeOneFifty.TwoPointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package ReviewProblems.Arrays;
+package LeetCodeOneFifty.Arrays;
 
 import java.util.*;
 

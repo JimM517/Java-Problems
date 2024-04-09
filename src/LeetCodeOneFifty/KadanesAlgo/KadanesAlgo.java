@@ -1,4 +1,4 @@
-package ReviewProblems.KadanesAlgo;
+package LeetCodeOneFifty.KadanesAlgo;
 
 public class KadanesAlgo {
 

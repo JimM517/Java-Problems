@@ -1,4 +1,4 @@
-package ReviewProblems.Stacks;
+package LeetCodeOneFifty.Stacks;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package ReviewProblems.BitManipulation;
+package LeetCodeOneFifty.BitManipulation;
 
 public class BitManipulation {
 
