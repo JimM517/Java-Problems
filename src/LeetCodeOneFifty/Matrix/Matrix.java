@@ -40,7 +40,6 @@ public class Matrix {
 
 
     // 54. spiral matrix
-    // TODO finish this problem
     public List<Integer> spiralOrder(int[][] matrix) {
 
         List<Integer> result = new ArrayList<>();

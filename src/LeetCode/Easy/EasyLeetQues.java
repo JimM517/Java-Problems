@@ -1475,6 +1475,37 @@ public class EasyLeetQues {
 
 
 
+    // 2073. time needed to buy tickets
+    public int timeRequiredToBuy(int[] tickets, int k) {
+
+        Queue<Integer> ticketQueue = new LinkedList<>();
+
+        int time = 0;
+
+        for (int i = 0; i < tickets.length; i++) {
+            ticketQueue.add(i);
+        }
+
+        while (!ticketQueue.isEmpty()) {
+            int idx = ticketQueue.poll();
+            tickets[idx]--;
+            time++;
+
+
+            if (tickets[idx] == 0 && idx == k) {
+                return time;
+            }
+
+            if (tickets[idx] > 0) {
+                ticketQueue.add(idx);
+            }
+
+        }
+
+        return time;
+
+    }
+
 
 
 
