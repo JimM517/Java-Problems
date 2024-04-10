@@ -62,6 +62,27 @@ public class SevenKyu {
 
 
 
+    // cogs 2
+    public double[] cogRpm(int[] cogs, int n) {
+
+        double first =1;
+        double second =1;
+
+        for (int i =0; i<n; i++) {
+            first *= -(double) cogs[n-i] / cogs[i];
+
+        }
+        for (int i = n+1; i<cogs.length; i++) {
+            second *= -(double) cogs[i-1]  / cogs[i];
+
+        }
+        return new double[]{first, second};
+    }
+
+
+
+
+
 
 
 
