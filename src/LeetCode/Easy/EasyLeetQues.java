@@ -1508,6 +1508,54 @@ public class EasyLeetQues {
 
 
 
+    // 682. Baseball Game
+    public int calPoints(String[] operations) {
+
+
+            Stack<Integer> stack = new Stack<>();
+
+            for (String idx : operations) {
+
+                if (idx.equals("+")) {
+                    int top = stack.pop();
+                    int next = top + stack.peek();
+                    stack.push(top);
+                    stack.push(next);
+                } else if (idx.equals("D")) {
+                    stack.push(2 * stack.peek());
+                } else if (idx.equals("C")) {
+                    stack.pop();
+                } else {
+                    stack.push(Integer.parseInt(idx));
+                }
+            }
+
+
+            int total = 0;
+
+            for (int i : stack) {
+                total += i;
+            }
+
+        return total;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
