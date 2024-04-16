@@ -1,5 +1,8 @@
 package TreeProbs;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Trees {
 
     private class TreeNode {
@@ -82,6 +85,70 @@ public class Trees {
         // check on both sides if both are true then only its valid
         return validate(root.left, min, root.val) && validate(root.right, root.val, max);
 
+
+    }
+
+
+
+
+
+
+    // 108. Convert Sorted Array to Binary Search Tree
+    public TreeNode sortedArrayToBST(int[] nums) {
+
+        if (nums.length == 0) {
+            return null;
+        }
+
+
+        int n = nums.length;
+        int mid = n / 2;
+
+        TreeNode root = new TreeNode(nums[mid]);
+
+
+        Queue<Object[]> q = new LinkedList<>();
+
+        q.add(new Object[]{ root, new int[]{0, mid - 1} });
+
+        q.add(new Object[]{ root, new int[]{mid + 1, n - 1} });
+
+
+        while(!q.isEmpty()) {
+
+            Object[] curr = q.poll();
+
+
+            TreeNode parent = (TreeNode)curr[0];
+            int[] indices = (int[])curr[1];
+            int left = indices[0];
+            int right = indices[1];
+
+
+
+            if (left <= right && parent != null) {
+                mid = (left + right) / 2;
+                TreeNode child = new TreeNode(nums[mid]);
+
+                if (nums[mid] < parent.val) {
+                    parent.left = child;
+                } else {
+                    parent.right = child;
+                }
+
+
+                q.add(new Object[]{child, new int[]{left, mid - 1}});
+                q.add(new Object[]{child, new int[]{mid + 1, right}});
+
+
+
+            }
+
+
+
+        }
+
+        return root;
 
     }
 
