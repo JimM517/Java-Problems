@@ -14,6 +14,7 @@ public class Exercises {
         swapEnds([8, 6, 7, 9, 5]) → [5, 6, 7, 9, 8]
     */
 
+    // test
     public int[] SwapEnds(int[] nums) {
 //            int[] result = new int[nums.length];
 //            result[0] = nums[nums.length - 1];
