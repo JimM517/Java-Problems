@@ -1657,6 +1657,35 @@ public class EasyLeetQues {
 
 
 
+    /** this is a duplicate, it's just in the problem set so doing again **/
+    // 121. best time to buy and sell stock
+    public int maxProfit(int[] prices) {
+
+        if (prices.length == 0) {
+            return 0;
+        }
+
+
+        int start = prices[0];
+        int maxProfit = 0;
+
+
+        for (int i = 0; i < prices.length; i++) {
+
+            if (prices[i] < start) {
+                start = prices[i];
+            } else {
+                int current = prices[i] - start;
+
+                if (current > maxProfit) {
+                    current = maxProfit;
+                }
+            }
+        }
+        return maxProfit;
+
+    }
+
 
 
 
