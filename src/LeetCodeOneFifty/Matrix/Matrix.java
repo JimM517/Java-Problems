@@ -222,4 +222,45 @@ public class Matrix {
 
 
 
+    // 566. reshape the matrix
+    public int[][] matrixReshape(int[][] matrix, int r, int c) {
+
+        int row = matrix.length;
+        int col = matrix[0].length;
+
+
+        if ((row * col) != (r * c)) {
+            return matrix;
+        }
+
+
+
+        int[][] arr = new int[r][c];
+
+        int rowNum = 0;
+        int colNum = 0;
+
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                arr[rowNum][colNum] = matrix[i][j];
+                colNum++;
+                if (colNum == c) {
+                    colNum = 0;
+                    rowNum++;
+                }
+            }
+        }
+
+        return arr;
+    }
+
+
+
+
+
+
+
+
+
 }
