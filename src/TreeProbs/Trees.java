@@ -29,39 +29,39 @@ public class Trees {
 
 
     // 226 Invert Binary Tree
-//    public TreeNode invertTree(TreeNode root) {
-//
-//        if (root == null) {
-//            return null;
-//        }
-//
-//        Queue<TreeNode> q = new LinkedList<>();
-//        q.add(root);
-//        while (q.size() > 0) {
-//            int size = q.size();
-//            for (int i = 0; i < size; i++) {
-//                TreeNode temp = q.remove();
-//                invert(temp);
-//                if (temp.left != null) q.add(temp.left);
-//                if (temp.right != null) q.add(temp.right);
-//            }
-//        }
-//
-//        return root;
-//
-//    }
-//
-//
-//
-//    private static void invert(TreeNode root) {
-//        if (root == null) {
-//            return;
-//        }
-//
-//        TreeNode temp = root.right;
-//        root.right = root.left;
-//        root.left = temp;
-//    }
+    public TreeNode invertTree(TreeNode root) {
+
+        if (root == null) {
+            return null;
+        }
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while (q.size() > 0) {
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode temp = q.remove();
+                invert(temp);
+                if (temp.left != null) q.add(temp.left);
+                if (temp.right != null) q.add(temp.right);
+            }
+        }
+
+        return root;
+
+    }
+
+
+
+    private static void invert(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        TreeNode temp = root.right;
+        root.right = root.left;
+        root.left = temp;
+    }
 
 
 
@@ -151,6 +151,53 @@ public class Trees {
         return root;
 
     }
+
+
+
+
+
+
+    // 988 Smallest string starting from leaf
+    public String smallestFromLeaf(TreeNode root) {
+
+        dfs(root, new StringBuilder());
+
+        return answer;
+    }
+
+
+    private String answer = null;
+
+    public void dfs(TreeNode root, StringBuilder sb) {
+
+
+        if (root == null) {
+            return;
+        }
+
+
+        sb.append((char) (root.val + 'a'));
+
+        if (root.left == null && root.right == null) {
+
+            String path = sb.reverse().toString();
+            sb.reverse();
+
+            if (answer == null || answer.compareTo(path) > 0) {
+                answer = path;
+            }
+
+        }
+
+        dfs(root.left, sb);
+        dfs(root.right, sb);
+
+        sb.deleteCharAt(sb.length() - 1);
+    }
+
+
+
+
 
 
 
