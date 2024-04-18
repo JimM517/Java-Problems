@@ -230,11 +230,35 @@ public class Main {
 
         String[] emails = {"alice@leetcode.com", "jim+@fake.com"};
 
-        System.out.println(easy.numUniqueEmails(emails));
+//        System.out.println(easy.numUniqueEmails(emails));
+
+
+
+
+        int[][] matrix = {
+                {0, 1, 0, 0},
+                {1, 1, 1, 0},
+                {0, 1, 0, 0},
+                {1, 1, 0, 0},
+        };
+
+        printMatrix(matrix);
 
 
     }
 
+
+
+
+
+
+    private static void printMatrix(int[][] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                System.out.println(nums[i][j]);
+            }
+        }
+    }
 
 
 
