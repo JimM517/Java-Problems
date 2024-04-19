@@ -1717,6 +1717,73 @@ public class EasyLeetQues {
 
 
 
+    // 697. degree of an array
+    public int findShortestSubArray(int[] nums) {
+
+        Map<Integer, Integer> freqMap = new HashMap<>();
+
+        Map<Integer, Integer> firstOccurrence = new HashMap<>();
+
+        Map<Integer, Integer> lastOccurrence = new HashMap<>();
+
+
+        int maxFrequency = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+            maxFrequency = Math.max(maxFrequency, freqMap.get(num));
+
+            if (!firstOccurrence.containsKey(num)) {
+                firstOccurrence.put(num, i);
+            }
+            lastOccurrence.put(num, i);
+
+        }
+
+
+        int minLength = nums.length;
+
+        for (int num : freqMap.keySet()) {
+            if (freqMap.get(num) == maxFrequency) {
+
+                int length = lastOccurrence.get(num) - firstOccurrence.get(num) + 1;
+
+                minLength = Math.min(minLength, length);
+
+            }
+        }
+        return minLength;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
