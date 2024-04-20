@@ -1,9 +1,6 @@
 package LeetCodeOneFifty.Matrix;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Matrix {
 
@@ -293,6 +290,44 @@ public class Matrix {
 
 
 
+
+
+
+    // 1992. Find all groups of farmland
+    public int[][] findFarmLand(int[][] land) {
+
+        List<int[]> list = new LinkedList<>();
+
+        for (int i = 0; i < land.length; i++) {
+            for (int j = 0; j < land[0].length; j++) {
+                if (land[i][j] == 1) {
+                    int[] arr = {i, j, 0, 0};
+                    landSearch(land, i, j, arr);
+                    list.add(arr);
+                }
+            }
+        }
+        return list.toArray(new int[0][]);
+    }
+
+
+
+
+    private void landSearch(int[][] land, int i, int j, int[] arr) {
+
+        if (i >= land.length || j >= land[0].length || land[i][j] == 0) {
+            return;
+        }
+
+
+        land[i][j] = 0;
+        arr[2] = Math.max(i, arr[2]);
+        arr[3] = Math.max(arr[3], j);
+
+        landSearch(land, i + 1, j, arr);
+        landSearch(land, i, j + 1, arr);
+
+    }
 
 
 
