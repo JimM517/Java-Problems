@@ -75,4 +75,47 @@ public class StackProbs {
     }
 
 
+
+    // 678. valid parenthesis string
+    public boolean checkValidString(String s) {
+
+
+        Stack<Integer> brackets = new Stack<>();
+
+        Stack<Integer> star = new Stack<>();
+
+        char[] strs = s.toCharArray();
+
+        for (int i = 0; i < strs.length; i++) {
+
+            char ch = strs[i];
+
+            if (ch == '(') {
+                brackets.push(i);
+            } else if (ch == '*') {
+                star.push(i);
+            } else if (!brackets.isEmpty()) {
+                brackets.pop();
+            } else if (!star.isEmpty()) {
+                star.pop();
+            } else {
+                return false;
+            }
+        }
+
+
+        while (!brackets.isEmpty() && !star.isEmpty() && brackets.peek() < star.peek()) {
+            brackets.pop();
+            star.pop();
+        }
+
+        return brackets.isEmpty();
+
+    }
+
+
+
+
+
+
 }
