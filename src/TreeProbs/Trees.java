@@ -1,6 +1,8 @@
 package TreeProbs;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Trees {
@@ -198,8 +200,34 @@ public class Trees {
 
 
 
+    // 872. leaf-similar trees
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+
+        List<Integer> rOne = new ArrayList<>();
+        List<Integer> rTwo = new ArrayList<>();
+
+        getLeaves(root1, rOne);
+        getLeaves(root2, rTwo);
+
+        return rOne.equals(rTwo);
+
+    }
 
 
+    private void getLeaves(TreeNode root, List<Integer> leaves) {
+
+        if (root == null) {
+            return;
+        }
+
+
+        if (root.left == null && root.right == null) {
+            leaves.add(root.val);
+        }
+
+        getLeaves(root.left, leaves);
+        getLeaves(root.right, leaves);
+    }
 
 
 
