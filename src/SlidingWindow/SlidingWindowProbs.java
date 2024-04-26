@@ -216,6 +216,42 @@ public class SlidingWindowProbs {
 
 
 
+    // 485 max consecutive ones
+    public int findMaxConsecutive(int[] nums) {
+
+      int count = 0;
+      int len = 0;
+
+
+      for (int i = 0; i < nums.length; i++) {
+          if (nums[i] == 0) {
+              count = 0;
+          }
+          else {
+              count++;
+              len = Math.max(len, count);
+          }
+      }
+      return len;
+
+    }
+
+
+
+
+
+
+
+
+
+    // 1004. Max Consecutive Ones III
+    public int longestOnes(int[] nums, int k) {
+
+
+
+
+
+    }
 
 
 }
