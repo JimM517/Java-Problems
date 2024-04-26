@@ -269,4 +269,37 @@ public class SlidingWindowProbs {
     }
 
 
+
+
+
+
+
+    // 1493. longest subarray of 1's after deleting one element
+    public int longestSubarray(int[] nums) {
+
+            int prevWindow = 0;
+            int currWindow = 0;
+            int maxLength = 0;
+
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == 0) {
+                    maxLength = Math.max(maxLength, prevWindow + currWindow);
+                    prevWindow = currWindow;
+                    currWindow = 0;
+                } else {
+                    currWindow++;
+                }
+            }
+
+            if (currWindow == nums.length) {
+                return currWindow - 1;
+            }
+
+            maxLength = Math.max(maxLength, prevWindow + currWindow);
+            return maxLength;
+
+    }
+
+
+
 }
