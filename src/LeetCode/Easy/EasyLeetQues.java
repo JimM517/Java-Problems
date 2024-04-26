@@ -1845,6 +1845,34 @@ public class EasyLeetQues {
 
 
 
+    // 409. longest palindrome
+    public int longestPalindrome(String s) {
+
+
+        Map<Character, Integer> map = new HashMap<>();
+
+
+        for (Character ch : s.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        int len = 0;
+        boolean hasOdd = false;
+
+
+        for (int count : map.values()) {
+            if (count % 2 == 0) {
+                len += count;
+            } else {
+                len += count - 1;
+                hasOdd = true;
+            }
+        }
+
+        return hasOdd ? len + 1 : len;
+
+    }
+
 
 
 
