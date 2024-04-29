@@ -230,4 +230,54 @@ public class LinkedListProblems {
 
 
 
+    // 206. Reverse Linked List
+    public ListNode reverseList(ListNode head) {
+
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
+
+
+
+
+
+
+    // 92. Reverse linked list II
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+
+        ListNode temp = new ListNode(0);
+        temp.next = head;
+        ListNode prev = temp;
+
+
+        for (int i = 0; i < left - 1; i++) {
+            prev = prev.next;
+        }
+
+
+
+        ListNode curr = prev.next;
+        ListNode nextNode;
+
+
+        for (int i = 0; i < right - left; i++) {
+            nextNode = curr.next;
+            curr.next = nextNode.next;
+            nextNode.next = prev.next;
+            prev.next = nextNode;
+        }
+        return temp.next;
+    }
+
+
+
 }
