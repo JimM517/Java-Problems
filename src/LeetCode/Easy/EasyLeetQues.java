@@ -1899,6 +1899,34 @@ public class EasyLeetQues {
 
 
 
+    // 1732. find the highest altitude
+    public int largestAltitude(int[] gain) {
+
+        int maxAltitude = 0;
+
+
+
+        int[] temp = new int[gain.length + 1];
+
+        temp[0] = 0;
+
+        for (int i = 1; i < temp.length; i++) {
+            temp[i] = temp[i - 1] + gain[i - 1];
+
+            if (temp[i] > maxAltitude) {
+                maxAltitude = temp[i];
+            }
+
+        }
+
+
+
+        return maxAltitude;
+
+    }
+
+
+
 }
 
 
