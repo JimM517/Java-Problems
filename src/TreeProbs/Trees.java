@@ -231,4 +231,32 @@ public class Trees {
 
 
 
+
+    // 101. symmetric tree
+    public boolean isSymmetric(TreeNode root) {
+
+        if (root == null) {
+            return true;
+        }
+
+        return checkBalance(root.left, root.right);
+    }
+
+
+
+
+    public boolean checkBalance(TreeNode node1, TreeNode node2) {
+
+        if (node1 == null && node2 == null) {
+            return true;
+        }
+
+        if (node1 == null || node2 == null) {
+            return false;
+        }
+
+        return node1.val == node2.val && checkBalance(node1.left, node2.right) && checkBalance(node1.right, node2.left);
+    }
+
+
 }
