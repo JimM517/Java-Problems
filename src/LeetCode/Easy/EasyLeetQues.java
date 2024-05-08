@@ -1970,6 +1970,25 @@ public class EasyLeetQues {
 
 
 
+    // 2000. reverse prefix of word
+    public String reversePrefix(String word, char ch) {
+
+        int firstOcc = word.indexOf(ch);
+
+        if (firstOcc == -1) {
+            return word;
+        }
+
+        StringBuilder sb = new StringBuilder(word.substring(0, firstOcc + 1)).reverse();
+
+        StringBuilder remaining = new StringBuilder(word.substring(firstOcc + 1));
+
+
+        sb.append(remaining);
+
+        return sb.toString();
+
+    }
 
 
 
