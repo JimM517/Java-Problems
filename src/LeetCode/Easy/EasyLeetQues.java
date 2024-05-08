@@ -1927,6 +1927,57 @@ public class EasyLeetQues {
 
 
 
+
+
+
+    // 506. relative ranks
+    public String[] findRelativeRanks(int[] score) {
+
+
+        PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> (b - a));
+
+        int n = score.length;
+
+        for (int i = 0; i < n; i++) {
+            heap.offer(score[i]);
+        }
+
+        String[] s = new String[heap.peek() + 1];
+
+        String[] s1 = new String[n];
+
+        for (int i = 0; i < n; i++) {
+            if (i == 0) {
+                s[heap.poll()] = "Gold Medal";
+            } else if (i == 1) {
+                s[heap.poll()] = "Silver Medal";
+            } else if (i == 2) {
+                s[heap.poll()] = "Bronze Medal";
+            } else {
+                s[heap.poll()] = String.valueOf(i + 1);
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            s1[i] = s[score[i]];
+        }
+
+        return s1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
