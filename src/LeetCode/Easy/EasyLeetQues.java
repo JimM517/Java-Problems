@@ -1994,6 +1994,26 @@ public class EasyLeetQues {
 
 
 
+    // 2441 Largest positive integer that exists with its negative
+    public int findMaxK(int[] nums) {
+
+        Set<Integer> set = new HashSet<>();
+
+
+        int max = Integer.MIN_VALUE;
+
+        for (int num : nums) {
+            set.add(num);
+
+            if (set.contains(-num)) {
+                max = Math.max(max, Math.abs(num));
+            }
+
+        }
+
+        return max == Integer.MIN_VALUE ? -1 : max;
+    }
+
 
 
 
