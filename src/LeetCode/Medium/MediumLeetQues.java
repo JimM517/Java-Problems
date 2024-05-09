@@ -1778,4 +1778,45 @@ public class MediumLeetQues {
 
 
 
+
+
+    // 3075. Maximize happiness of selected children
+    public long maximumHappinessSum(int[] happiness, int k) {
+
+            Arrays.sort(happiness);
+            reverseHap(happiness);
+
+            int i = 0;
+
+            long result = 0;
+
+            while (k-- > 0) {
+                happiness[i] = Math.max(happiness[i] - i, 0);
+                result += happiness[i++];
+            }
+
+            return result;
+
+    }
+
+
+
+    private void reverseHap(int[] happiness) {
+        int start = 0;
+        int end = happiness.length - 1;
+
+        while (start < end) {
+
+            int temp = happiness[start];
+            happiness[start] = happiness[end];
+            happiness[end] = temp;
+            start++;
+            end--;
+        }
+
+    }
+
+
+
+
 }
