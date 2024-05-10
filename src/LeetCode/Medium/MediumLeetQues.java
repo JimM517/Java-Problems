@@ -1511,6 +1511,42 @@ public class MediumLeetQues {
     }
 
 
+    //  216. combination sum III
+    public List<List<Integer>> combinationSum3(int k, int n) {
+
+        List<List<Integer>> result = combo3BackTrack(k, n, 1, new ArrayList<>());
+
+
+        if (n < k) {
+            return result;
+        }
+
+        return result;
+
+    }
+
+
+    public List<List<Integer>> combo3BackTrack(int k, int n, int i, List<Integer> temp) {
+
+        if (n == 0 && k == 0) {
+            List<List<Integer>> res = new ArrayList<>();
+            res.add(new ArrayList<>(temp));
+            return res;
+        }
+        List<List<Integer>> answer = new ArrayList<>();
+        for (int j = i; j <= 9; j++) {
+            if (n - j < 0 || k - 1 < 0) {
+                break;
+            }
+            temp.add(j);
+            answer.addAll(combo3BackTrack(k - 1, n - j, j + 1, temp));
+            temp.remove(temp.size() - 1);
+        }
+
+        return answer;
+
+    }
+
 
 
 
