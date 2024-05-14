@@ -1904,8 +1904,62 @@ public class MediumLeetQues {
 
 
 
+    private int maxGold;
+
+    // 1219. Path with Maximum Gold
+    public int getMaximumGold(int[][] grid) {
+
+        maxGold = 0;
+
+        int rows = grid.length;
+        int cols = grid[0].length;
 
 
+        // looping each cell in the grid
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] > 0) {
+                    findPath(grid, i, j, 0);
+                }
+            }
+        }
+        return maxGold;
+
+    }
+
+
+
+
+
+    public void findPath(int[][] grid, int row, int col, int currentGold) {
+
+        // checking out of bounds or empty cell
+        if (row < 0 || row >= grid.length || col < 0 || col > grid[0].length || grid[row][col] == 0) {
+            return;
+        }
+
+        // adds gold in current cell to current total
+        currentGold += grid[row][col];
+
+        // updates the max
+        maxGold = Math.max(maxGold, currentGold);
+
+        // save gold amount in current cell and mark it visited by 0
+        int temp = grid[row][col];
+        grid[row][col] = 0;
+
+
+        // check all directions
+        findPath(grid, row - 1, col, currentGold);
+        findPath(grid, row + 1, col, currentGold);
+        findPath(grid, row, col - 1, currentGold);
+        findPath(grid, row, col + 1, currentGold);
+
+
+        // restore the gold amount
+        grid[row][col] = temp;
+
+    }
 
 
 
