@@ -1997,6 +1997,37 @@ public class MediumLeetQues {
 
 
 
+    // 881. Boats to save people
+    public int numRescueBoats(int[] people, int limit) {
+
+        int count = 0;
+
+        int start = 0;
+        int end = people.length - 1;
+
+        while (start <= end) {
+
+            if (people[start] + people[end] <= limit) {
+                start++;
+            }
+            end--;
+            count++;
+
+
+        }
+
+
+        return count;
+
+    }
+
+
+
+
+
+
+
+
 
 
 
