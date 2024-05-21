@@ -275,6 +275,38 @@ public class BackTracking {
 
 
 
+    // 78. Subsets
+    public List<List<Integer>> subsets(int[] nums) {
+
+        int n = nums.length;
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        subDFS(nums, result, new ArrayList<>(), n, 0);
+
+        return result;
+    }
+
+
+
+    public void subDFS(int[] nums, List<List<Integer>> result, List<Integer> temp, int n, int start) {
+
+
+        result.add(new ArrayList<>(temp));
+
+
+        for (int i = start; i < n; i++) {
+            temp.add(nums[i]);
+
+            subDFS(nums, result, temp, n, i + 1);
+
+            temp.remove(temp.size() - 1);
+
+        }
+
+    }
+
+
 
 
 

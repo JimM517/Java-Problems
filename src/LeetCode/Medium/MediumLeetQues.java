@@ -876,7 +876,6 @@ public class MediumLeetQues {
 
 
     // 78. Subsets
-    // TODO review - not my solution
     public List<List<Integer>> subsets(int[] nums) {
 
         // O(n * 2^n)
