@@ -2017,6 +2017,40 @@ public class EasyLeetQues {
 
 
 
+
+    // 3074. apple redistribution in boxes
+    public int minimumBoxes(int[] apple, int[] capacity) {
+
+        int totalApples = 0;
+        for (int app : apple) {
+            totalApples += app;
+        }
+
+
+        Arrays.sort(capacity);
+
+        int boxesUsed = 0;
+        int currCap = 0;
+
+        for (int i = capacity.length - 1; i >= 0; i--) {
+            currCap += capacity[i];
+            boxesUsed++;
+
+            if (currCap >= totalApples) {
+                return boxesUsed;
+            }
+
+
+        }
+        return capacity.length;
+
+
+
+    }
+
+
+
+
 }
 
 
