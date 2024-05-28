@@ -2025,6 +2025,37 @@ public class MediumLeetQues {
 
 
 
+    // 1208. Get equal substrings within budget
+    public int equalSubstring(String s, String t, int maxCost) {
+
+        int n = s.length();
+        int start = 0;
+        int currentCost = 0;
+        int maxLen = 0;
+
+
+
+        for (int end = 0; end < n; end++) {
+
+            currentCost += Math.abs(s.charAt(end) - t.charAt(end));
+
+
+            while (currentCost > maxCost) {
+                currentCost -= Math.abs(s.charAt(start) - t.charAt(start));
+                start++;
+            }
+
+            maxLen = Math.max(maxLen, end - start + 1);
+
+        }
+
+        return maxLen;
+
+
+
+    }
+
+
 
 
 
