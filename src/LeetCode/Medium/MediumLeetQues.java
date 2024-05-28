@@ -2033,8 +2033,6 @@ public class MediumLeetQues {
         int currentCost = 0;
         int maxLen = 0;
 
-
-
         for (int end = 0; end < n; end++) {
 
             currentCost += Math.abs(s.charAt(end) - t.charAt(end));
@@ -2048,11 +2046,7 @@ public class MediumLeetQues {
             maxLen = Math.max(maxLen, end - start + 1);
 
         }
-
         return maxLen;
-
-
-
     }
 
 
