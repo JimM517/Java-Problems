@@ -2053,6 +2053,33 @@ public class MediumLeetQues {
 
 
 
+    // 2401. Longest Nice Subarray
+    public int longestNiceSubarray(int[] nums) {
+
+            int start = 0;
+            int maxLen = 1;
+            int subOr = 0;
+
+            for (int i = 0; i < nums.length; i++) {
+
+
+                while (((subOr & nums[i]) != 0)) {
+                    subOr ^= nums[start++];
+                }
+
+                subOr |= nums[i];
+
+                int currentLen = i - start + 1;
+                maxLen = Math.max(maxLen, currentLen);
+
+
+            }
+
+            return maxLen;
+
+    }
+
+
 
 
 
