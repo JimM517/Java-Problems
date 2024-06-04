@@ -78,6 +78,23 @@ public class MediumLeetQues {
     }
 
 
+    // 2486. Append characters to string to make subsequence
+    public int appendCharacter(String s, String t) {
+
+        int sPointer = 0;
+        int tPointer = 0;
+
+        while (sPointer < s.length() && tPointer < t.length()) {
+            if (s.charAt(sPointer) == t.charAt(tPointer)) {
+                tPointer++;
+            }
+            sPointer++;
+        }
+        return t.length() - tPointer;
+
+    }
+
+
 
     // 153. Find Minimum in Rotated Sorted Array
 
