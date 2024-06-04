@@ -1,5 +1,7 @@
 package LeetCode.Easy;
 
+import ListProbs.ListNode;
+
 import java.util.*;
 
 public class EasyLeetQues {
@@ -2047,6 +2049,9 @@ public class EasyLeetQues {
 
 
     }
+
+
+
 
 
 
