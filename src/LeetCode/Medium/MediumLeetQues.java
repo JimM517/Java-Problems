@@ -2098,6 +2098,46 @@ public class MediumLeetQues {
 
 
 
+    // 846 hand of straights
+    public boolean isNStraightHand(int[] hand, int groupSize) {
+
+        if (hand.length % groupSize != 0) {
+            return false;
+        }
+
+
+        Map<Integer, Integer> count = new HashMap<>();
+
+        Arrays.sort(hand);
+
+
+        for (int card : hand) {
+            count.put(card, count.getOrDefault(card, 0) + 1);
+        }
+
+
+        for (int card : hand) {
+            if (count.get(card) > 0) {
+
+
+                for (int i = 0; i < groupSize; i++) {
+                    int currentCard = card + i;
+
+                    if (count.getOrDefault(currentCard, 0) <= 0) {
+                        return false;
+                    }
+
+                    count.put(currentCard, count.get(currentCard) - 1);
+                }
+
+
+
+            }
+        }
+
+        return true;
+    }
+
 
 
 
