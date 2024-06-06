@@ -1,7 +1,5 @@
 package LeetCode.Easy;
 
-import ListProbs.ListNode;
-
 import java.util.*;
 
 public class EasyLeetQues {
@@ -2052,6 +2050,35 @@ public class EasyLeetQues {
 
 
 
+
+
+    // 1002. Find common characters
+    public List<String> commonChars(String[] words) {
+
+      int[][] occurrences = new int[words.length][26];
+      for (int i = 0; i < words.length; i++) {
+          for (char c : words[i].toCharArray()) {
+              occurrences[i][c - 'a']++;
+          }
+      }
+
+      List<String> result = new ArrayList<>();
+
+      for (int i = 'a'; i <= 'z'; i++) {
+          int min = Integer.MAX_VALUE;
+
+          for (int j = 0; j < occurrences.length; j++) {
+              min = Math.min(min, occurrences[j][i - 'a']);
+          }
+          for (int j = 0; j < min; j++) {
+              result.add(String.valueOf((char) i));
+          }
+      }
+
+        return result;
+
+
+    }
 
 
 
