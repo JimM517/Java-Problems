@@ -2140,6 +2140,40 @@ public class MediumLeetQues {
 
 
 
+    // 648. replace words
+    public String replaceWords(List<String> dictionary, String sentence) {
+
+        Set<String> rootSet = new HashSet<>(dictionary);
+
+        StringBuilder sb = new StringBuilder();
+
+        String[] words = sentence.split("\\s+");
+
+        for (String word : words) {
+
+            String prefix = "";
+
+            for (int i = 1; i <= word.length(); i++) {
+                prefix = word.substring(0, i);
+                if (rootSet.contains(prefix)) {
+                    break;
+                }
+            }
+            if (sb.length() > 0) {
+                sb.append(" ");
+            }
+            sb.append(prefix);
+
+        }
+
+        return sb.toString();
+
+
+
+    }
+
+
+
 
 
 }
