@@ -37,7 +37,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 334. increasing triplet subsequence
     public boolean increasingTriplet(int[] nums) {
 
@@ -58,7 +57,6 @@ public class MediumLeetQues {
         return false;
 
     }
-
 
 
     // 392. Is subsequence
@@ -95,7 +93,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 153. Find Minimum in Rotated Sorted Array
 
     public int findMin(int[] nums) {
@@ -121,9 +118,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     // 3. Longest Substring without repeating characters
     public int lengthOfLongestSubstring(String s) {
 
@@ -140,8 +134,8 @@ public class MediumLeetQues {
         while (right < s.length()) {
 
             if (characterSet.contains(s.charAt(right))) {
-               characterSet.remove(s.charAt(left));
-               left++;
+                characterSet.remove(s.charAt(left));
+                left++;
             } else {
                 characterSet.add(s.charAt(right));
                 count = Math.max(count, right - left + 1);
@@ -155,9 +149,7 @@ public class MediumLeetQues {
         return count;
 
 
-
     }
-
 
 
     // 424. longest repeating character replacement
@@ -199,7 +191,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 567. Permutation in String
 
     public boolean checkInclusion(String s1, String s2) {
@@ -237,11 +228,9 @@ public class MediumLeetQues {
             }
 
 
-
         }
         return false;
     }
-
 
 
     // 153. Find Minimum in Rotated Sorted Array
@@ -302,8 +291,8 @@ public class MediumLeetQues {
 
         // return list of all values
 
-       // ** HAD TO COMMENT THIS OUT TO RUN MAIN?? **
-       // return new ArrayList<>(testAnagram.values());
+        // ** HAD TO COMMENT THIS OUT TO RUN MAIN?? **
+        // return new ArrayList<>(testAnagram.values());
 
         return null;
     }
@@ -364,7 +353,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 167. Two Sum II - sorted input array
     public int[] twoSum(int[] numbers, int target) {
 
@@ -423,11 +411,11 @@ public class MediumLeetQues {
                     results.add(Arrays.asList(nums[i], nums[j], nums[k]));
 
                     // skip duplicates for j
-                    while(j < k && nums[j] == nums[j + 1]) {
+                    while (j < k && nums[j] == nums[j + 1]) {
                         j++;
                     }
                     // skip duplicates for k
-                    while(j < k && nums[k] == nums[k - 1]) {
+                    while (j < k && nums[k] == nums[k - 1]) {
                         k--;
                     }
                     // move pointers
@@ -443,14 +431,10 @@ public class MediumLeetQues {
                 }
 
 
-
-
             }
 
 
-
         }
-
 
 
         return results;
@@ -460,34 +444,32 @@ public class MediumLeetQues {
     // 3Sum closest
     public int threeSumClosest(int[] nums, int target) {
 
-            Arrays.sort(nums);
+        Arrays.sort(nums);
 
-            int closestSum = Integer.MAX_VALUE;
+        int closestSum = Integer.MAX_VALUE;
 
-            for (int i = 0; i < nums.length - 2; i++) {
+        for (int i = 0; i < nums.length - 2; i++) {
 
-                int j = i + 1;
-                int k = nums.length - 1;
+            int j = i + 1;
+            int k = nums.length - 1;
 
-                while (j < k) {
-                    int sum = nums[i] + nums[j] + nums[k];
+            while (j < k) {
+                int sum = nums[i] + nums[j] + nums[k];
 
-                    if (Math.abs(target - sum) < Math.abs(target - closestSum)) {
-                        closestSum = sum;
-                    }
-
-                    if (sum > target) {
-                        k--;
-                    } else {
-                        j++;
-                    }
-
+                if (Math.abs(target - sum) < Math.abs(target - closestSum)) {
+                    closestSum = sum;
                 }
+
+                if (sum > target) {
+                    k--;
+                } else {
+                    j++;
+                }
+
             }
-            return closestSum;
+        }
+        return closestSum;
     }
-
-
 
 
     // 5. Longest Palindromic Substring
@@ -528,7 +510,6 @@ public class MediumLeetQues {
             }
 
 
-
         }
 
 
@@ -546,7 +527,6 @@ public class MediumLeetQues {
         return answer;
 
     }
-
 
 
     private void backTrack(int[] nums, int index, List<List<Integer>> answer) {
@@ -579,7 +559,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 80. Remove Duplicates from Sorted Array II
 
     public int removeDuplicates(int[] nums) {
@@ -603,7 +582,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 189. Rotate Array
 
     public static void rev(int[] arr, int start, int end) {
@@ -623,8 +601,6 @@ public class MediumLeetQues {
     }
 
 
-
-
     public void rotate(int[] nums, int k) {
 
         k = k % nums.length;
@@ -638,7 +614,6 @@ public class MediumLeetQues {
         rev(nums, 0, nums.length - 1);
 
     }
-
 
 
     // 55. Jump Game
@@ -668,7 +643,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 1328. Break a palindrome
     public String breakPalindrome(String palindrome) {
 
@@ -694,7 +668,6 @@ public class MediumLeetQues {
             }
 
 
-
         }
 
         // replace ch with b in case all previous chars are a's
@@ -703,7 +676,6 @@ public class MediumLeetQues {
 
 
     }
-
 
 
     // 45. Jump Game II
@@ -726,7 +698,6 @@ public class MediumLeetQues {
                 end = maxPosition;
                 steps++;
             }
-
 
 
         }
@@ -774,14 +745,15 @@ public class MediumLeetQues {
             }
 
 
-
         }
-       return 0;
+        return 0;
 
     }
 
 
-    /** memory limit exceeded, need to optimize **/
+    /**
+     * memory limit exceeded, need to optimize
+     **/
     // Zigzag Conversion
     public String convert(String s, int numRows) {
 
@@ -816,7 +788,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 209. Minimum size subarray sum
     public int minSubArrayLen(int target, int[] nums) {
 
@@ -846,9 +817,7 @@ public class MediumLeetQues {
         return (minLen == Integer.MAX_VALUE) ? 0 : minLen;
 
 
-
     }
-
 
 
     // 33. Search in Rotated Sorted Array
@@ -870,12 +839,12 @@ public class MediumLeetQues {
             }
             // left portion
             else if (nums[start] <= nums[mid]) {
-                    if (target > nums[mid] || target < nums[start]) {
-                        start = mid + 1;
-                    } else {
-                        end = mid - 1;
-                    }
-             // right portion
+                if (target > nums[mid] || target < nums[start]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+                // right portion
             } else {
                 if (target < nums[mid] || target > nums[end]) {
                     end = mid - 1;
@@ -887,9 +856,6 @@ public class MediumLeetQues {
 
         return -1;
     }
-
-
-
 
 
     // 78. Subsets
@@ -908,7 +874,7 @@ public class MediumLeetQues {
     }
 
 
-    private void dfs(int[] nums, List<List<Integer>> result,  List<Integer> list, int n, int start) {
+    private void dfs(int[] nums, List<List<Integer>> result, List<Integer> list, int n, int start) {
 
         result.add(new ArrayList<>(list));
 
@@ -923,9 +889,7 @@ public class MediumLeetQues {
         }
 
 
-
     }
-
 
 
     // 47. Permutations II
@@ -988,52 +952,52 @@ public class MediumLeetQues {
         Map<Character, Integer> pCount = new HashMap<>();
         Map<Character, Integer> sCount = new HashMap<>();
 
-            if (p.length() > s.length()) {
-                return new ArrayList<>();
-            }
+        if (p.length() > s.length()) {
+            return new ArrayList<>();
+        }
 
 
-            for (int i = 0; i < p.length(); i++) {
-                char ch = p.charAt(i);
-                pCount.put(ch, pCount.getOrDefault(ch, 0) + 1);
-            }
+        for (int i = 0; i < p.length(); i++) {
+            char ch = p.charAt(i);
+            pCount.put(ch, pCount.getOrDefault(ch, 0) + 1);
+        }
 
-            for (int i = 0; i < p.length(); i++) {
-                char ch = s.charAt(i);
-                sCount.put(ch, sCount.getOrDefault(ch, 0) + 1);
-            }
-
-
-            int i = p.length();
-            int count = 0;
-
-            while (i < s.length()) {
-
-                if (compareMap(pCount, sCount)) {
-                    count++;
-                    ans.add(i - p.length());
-                }
+        for (int i = 0; i < p.length(); i++) {
+            char ch = s.charAt(i);
+            sCount.put(ch, sCount.getOrDefault(ch, 0) + 1);
+        }
 
 
-                char ch = s.charAt(i);
-                sCount.put(ch, sCount.getOrDefault(ch, 0) + 1);
+        int i = p.length();
+        int count = 0;
 
-
-                char cha = s.charAt(i - p.length());
-
-                if (sCount.get(cha) == 1) {
-                    sCount.remove(cha);
-                } else {
-                    sCount.put(cha, sCount.get(cha) - 1);
-                }
-                i++;
-
-            }
+        while (i < s.length()) {
 
             if (compareMap(pCount, sCount)) {
                 count++;
                 ans.add(i - p.length());
             }
+
+
+            char ch = s.charAt(i);
+            sCount.put(ch, sCount.getOrDefault(ch, 0) + 1);
+
+
+            char cha = s.charAt(i - p.length());
+
+            if (sCount.get(cha) == 1) {
+                sCount.remove(cha);
+            } else {
+                sCount.put(cha, sCount.get(cha) - 1);
+            }
+            i++;
+
+        }
+
+        if (compareMap(pCount, sCount)) {
+            count++;
+            ans.add(i - p.length());
+        }
         return ans;
     }
 
@@ -1050,8 +1014,6 @@ public class MediumLeetQues {
 
         return true;
     }
-
-
 
 
     // 187. Repeated DNA Sequences
@@ -1075,9 +1037,7 @@ public class MediumLeetQues {
         return new ArrayList<>(repeated);
 
 
-
     }
-
 
 
     // 17. Letter Combinations of a Phone Number
@@ -1112,9 +1072,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     // 560. Subarray Sum equals k
     public int subarraySum(int[] nums, int k) {
 
@@ -1140,9 +1097,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     // 665. Non-decreasing array
     public boolean checkPossibility(int[] nums) {
 
@@ -1163,39 +1117,31 @@ public class MediumLeetQues {
             }
 
 
-
         }
         return true;
     }
-
-
-
-
 
 
     // 1911. Maximum Alternating Subsequence Sum
     public long maxAlternatingSum(int[] nums) {
 
 
-            int n = nums.length;
+        int n = nums.length;
 
-            long[][] dp = new long[n][2];
+        long[][] dp = new long[n][2];
 
-            dp[0][0] = nums[0];
+        dp[0][0] = nums[0];
 
-            for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; i++) {
 
-                dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + nums[i]);
-                dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - nums[i]);
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + nums[i]);
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - nums[i]);
 
 
-            }
+        }
 
-            return Math.max(dp[n - 1][0], dp[n - 1][1]);
+        return Math.max(dp[n - 1][0], dp[n - 1][1]);
     }
-
-
-
 
 
     // 494. Target Sum
@@ -1219,13 +1165,6 @@ public class MediumLeetQues {
 
         return left + right;
     }
-
-
-
-
-
-
-
 
 
     // 46. permutations
@@ -1260,11 +1199,7 @@ public class MediumLeetQues {
         }
 
 
-
     }
-
-
-
 
 
     // 79. Word Search
@@ -1291,7 +1226,6 @@ public class MediumLeetQues {
     }
 
 
-
     private boolean boardSearch(char[][] board, String word, int i, int j, int index, boolean[][] visited) {
 
         if (index == word.length()) {
@@ -1312,15 +1246,8 @@ public class MediumLeetQues {
         visited[i][j] = false;
 
 
-
         return false;
     }
-
-
-
-
-
-
 
 
     // 1481. Least Number of Unique Integers after K removals
@@ -1359,8 +1286,6 @@ public class MediumLeetQues {
     }
 
 
-
-
     // 81. Search in rotated sorted array II
     public boolean searchTwo(int[] nums, int target) {
 
@@ -1375,31 +1300,22 @@ public class MediumLeetQues {
 
             if (nums[mid] == target) {
                 return true;
-            }
-
-
-            else if (nums[mid] == nums[start] && nums[mid] == nums[end]) {
+            } else if (nums[mid] == nums[start] && nums[mid] == nums[end]) {
                 start += 1;
                 end -= 1;
-            }
-
-            else if (nums[mid] >= nums[start]) {
+            } else if (nums[mid] >= nums[start]) {
                 if (target >= nums[start] && target < nums[mid]) {
                     end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
-            }
-
-            else if (nums[mid] <= nums[end]) {
+            } else if (nums[mid] <= nums[end]) {
                 if (target > nums[mid] && target <= nums[end]) {
                     start = mid + 1;
                 } else {
                     end = mid - 1;
                 }
             }
-
-
 
 
         }
@@ -1410,14 +1326,10 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     // 279. Perfect Squares
     public int numSquares(int n) {
         return (int) numSquares(n, new HashMap<>());
     }
-
 
 
     private static double numSquares(int n, HashMap<Integer, Double> memo) {
@@ -1430,7 +1342,6 @@ public class MediumLeetQues {
         if (memo.containsKey(n)) {
             return memo.get(n);
         }
-
 
 
         double minSquares = Double.POSITIVE_INFINITY;
@@ -1458,7 +1369,6 @@ public class MediumLeetQues {
     }
 
 
-
     // 90. Subsets II
     public List<List<Integer>> subsetsWithDup(int[] nums) {
 
@@ -1482,11 +1392,7 @@ public class MediumLeetQues {
         }
 
 
-
     }
-
-
-
 
 
     // combination sum II
@@ -1502,7 +1408,6 @@ public class MediumLeetQues {
 
 
     }
-
 
 
     public void comboBack(List<List<Integer>> list, List<Integer> temp, int[] nums, int remain, int start) {
@@ -1521,7 +1426,6 @@ public class MediumLeetQues {
                 temp.remove(temp.size() - 1);
             }
         }
-
 
 
     }
@@ -1564,10 +1468,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
-
     // 1838 Frequence of the most frequent element
     // TODO complete
     public int maxFrequency(int[] nums, int k) {
@@ -1605,8 +1505,6 @@ public class MediumLeetQues {
         return maxFrequency;
 
 
-
-
 //        while (right < nums.length) {
 //
 //            total += nums[right];
@@ -1628,9 +1526,6 @@ public class MediumLeetQues {
 //        }
 //        return result;
     }
-
-
-
 
 
     // 1679. Max Number of k-sum pairs
@@ -1658,8 +1553,6 @@ public class MediumLeetQues {
 
         return count;
     }
-
-
 
 
     // 1657. Determine if two strings are close
@@ -1695,38 +1588,32 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     // 2390. Removing Stars from a string
     public String removeStars(String s) {
 
-       char[] chars = s.toCharArray();
+        char[] chars = s.toCharArray();
 
-       Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack<>();
 
-       for (char c : chars) {
-           if (c != '*') {
-               stack.push(c);
-           } else {
-               stack.pop();
-           }
-       }
+        for (char c : chars) {
+            if (c != '*') {
+                stack.push(c);
+            } else {
+                stack.pop();
+            }
+        }
 
-       char[] result = new char[stack.size()];
+        char[] result = new char[stack.size()];
 
-       int i = result.length - 1;
+        int i = result.length - 1;
 
-       while (!stack.isEmpty()) {
-           result[i--] = stack.pop();
-       }
+        while (!stack.isEmpty()) {
+            result[i--] = stack.pop();
+        }
 
-       return new String(result);
+        return new String(result);
 
     }
-
-
-
 
 
     // 71. Simplify Path
@@ -1759,9 +1646,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     // 402. remove k digits
     public String removeKDigits(String num, int k) {
 
@@ -1777,13 +1661,10 @@ public class MediumLeetQues {
         }
 
 
-
-
         while (k > 0 && !stack.isEmpty()) {
             stack.pop();
             k--;
         }
-
 
 
         StringBuilder sb = new StringBuilder();
@@ -1795,7 +1676,7 @@ public class MediumLeetQues {
         sb.reverse();
 
 
-        while(sb.length() > 0 && sb.charAt(0) == '0') {
+        while (sb.length() > 0 && sb.charAt(0) == '0') {
             sb.deleteCharAt(0);
         }
 
@@ -1803,8 +1684,6 @@ public class MediumLeetQues {
         return sb.length() > 0 ? sb.toString() : "0";
 
     }
-
-
 
 
     // 2370. longest ideal subsequence
@@ -1828,29 +1707,24 @@ public class MediumLeetQues {
     }
 
 
-
-
-
-
     // 3075. Maximize happiness of selected children
     public long maximumHappinessSum(int[] happiness, int k) {
 
-            Arrays.sort(happiness);
-            reverseHap(happiness);
+        Arrays.sort(happiness);
+        reverseHap(happiness);
 
-            int i = 0;
+        int i = 0;
 
-            long result = 0;
+        long result = 0;
 
-            while (k-- > 0) {
-                happiness[i] = Math.max(happiness[i] - i, 0);
-                result += happiness[i++];
-            }
+        while (k-- > 0) {
+            happiness[i] = Math.max(happiness[i] - i, 0);
+            result += happiness[i++];
+        }
 
-            return result;
+        return result;
 
     }
-
 
 
     private void reverseHap(int[] happiness) {
@@ -1869,15 +1743,11 @@ public class MediumLeetQues {
     }
 
 
-
-
     // 2300 successful pairs or spells and potions
     public int[] successfulPairs(int[] spells, int[] potions, long success) {
 
         int n = spells.length;
         int m = potions.length;
-
-
 
 
         int[] result = new int[n];
@@ -1917,9 +1787,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     private int maxGold;
 
     // 1219. Path with Maximum Gold
@@ -1942,9 +1809,6 @@ public class MediumLeetQues {
         return maxGold;
 
     }
-
-
-
 
 
     public void findPath(int[][] grid, int row, int col, int currentGold) {
@@ -1978,10 +1842,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
-
     // 165. Compare Version Numbers
     public int compareVersion(String version1, String version2) {
 
@@ -2003,14 +1863,12 @@ public class MediumLeetQues {
             }
 
 
-
         }
 
         return 0;
 
 
     }
-
 
 
     // 881. Boats to save people
@@ -2038,10 +1896,6 @@ public class MediumLeetQues {
     }
 
 
-
-
-
-
     // 1208. Get equal substrings within budget
     public int equalSubstring(String s, String t, int maxCost) {
 
@@ -2067,35 +1921,31 @@ public class MediumLeetQues {
     }
 
 
-
-
-
     // 2401. Longest Nice Subarray
     public int longestNiceSubarray(int[] nums) {
 
-            int start = 0;
-            int maxLen = 1;
-            int subOr = 0;
+        int start = 0;
+        int maxLen = 1;
+        int subOr = 0;
 
-            for (int i = 0; i < nums.length; i++) {
-
-
-                while (((subOr & nums[i]) != 0)) {
-                    subOr ^= nums[start++];
-                }
-
-                subOr |= nums[i];
-
-                int currentLen = i - start + 1;
-                maxLen = Math.max(maxLen, currentLen);
+        for (int i = 0; i < nums.length; i++) {
 
 
+            while (((subOr & nums[i]) != 0)) {
+                subOr ^= nums[start++];
             }
 
-            return maxLen;
+            subOr |= nums[i];
+
+            int currentLen = i - start + 1;
+            maxLen = Math.max(maxLen, currentLen);
+
+
+        }
+
+        return maxLen;
 
     }
-
 
 
     // 846 hand of straights
@@ -2131,13 +1981,11 @@ public class MediumLeetQues {
                 }
 
 
-
             }
         }
 
         return true;
     }
-
 
 
     // 648. replace words
@@ -2169,9 +2017,38 @@ public class MediumLeetQues {
         return sb.toString();
 
 
-
     }
 
+
+    // 523. continuous subarray sum
+    public boolean checkSubarraySum(int[] nums, int k) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+
+        int sum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+
+            int remainder = sum % k;
+
+            if (remainder < 0) {
+                remainder += k;
+            }
+
+            if (map.containsKey(remainder)) {
+                if (i - map.get(remainder) > 1) {
+                    return true;
+                }
+            } else {
+                map.put(remainder, i);
+            }
+
+        }
+        return false;
+
+    }
 
 
 
