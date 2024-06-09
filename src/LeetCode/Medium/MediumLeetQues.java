@@ -2085,4 +2085,39 @@ public class MediumLeetQues {
 
 
 
+
+
+    // 2845. count of interesting subarrays
+    public long countInterestingSubarrays(List<Integer> nums, int modulo, int k) {
+
+            Map<Integer, Integer> map = new HashMap<>();
+
+            map.put(0, 1);
+
+            int countModk = 0;
+            long interestingCount = 0;
+
+
+            for (int num : nums) {
+                if (num % modulo == k) {
+                    countModk++;
+                }
+
+
+                int current = countModk % modulo;
+
+                int required = (current - k + modulo) % modulo;
+
+
+                interestingCount += map.getOrDefault(required, 0);
+
+                map.put(current, map.getOrDefault(current, 0) + 1);
+
+            }
+
+            return interestingCount;
+    }
+
+
+
 }
