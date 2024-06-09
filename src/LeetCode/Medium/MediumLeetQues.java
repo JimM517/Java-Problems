@@ -2052,5 +2052,37 @@ public class MediumLeetQues {
 
 
 
+    // 974. subarray sums divisible by k
+    public int subarraysDivByK(int[] nums, int k) {
+
+            int total = 0;
+
+            Map<Integer, Integer> map = new HashMap<>();
+            map.put(0, 1);
+
+
+            int sum = 0;
+
+            for (int num : nums) {
+                sum += num;
+
+                int remainer = sum % k;
+
+                if (remainer < 0) {
+                    remainer += k;
+                }
+
+
+                if (map.containsKey(remainer)) {
+                    total += map.get(remainer);
+                }
+
+                map.put(remainer, map.getOrDefault(remainer, 0) + 1);
+
+            }
+        return total;
+    }
+
+
 
 }
