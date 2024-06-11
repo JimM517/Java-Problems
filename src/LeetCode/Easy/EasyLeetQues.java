@@ -2146,6 +2146,39 @@ public class EasyLeetQues {
 
 
 
+    // 2864. Maximum odd binary number
+    public String maximumOddBinary(String s) {
+
+        int countOnes = 0;
+        int countZeros = 0;
+
+        for (char c : s.toCharArray()) {
+            if (c == '1') {
+                countOnes++;
+            } else {
+                countZeros++;
+            }
+        }
+
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < countOnes - 1; i++) {
+            sb.append('1');
+        }
+
+        for (int i = 0; i < countZeros; i++) {
+            sb.append('0');
+        }
+
+
+        sb.append('1');
+
+        return sb.toString();
+
+    }
+
+
 
 
 
