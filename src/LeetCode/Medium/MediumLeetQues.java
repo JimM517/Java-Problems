@@ -2120,4 +2120,49 @@ public class MediumLeetQues {
 
 
 
+    // 75. sort colors
+    public void sortColors(int[] nums) {
+
+        int countZeros = 0;
+        int countOnes = 0;
+        int countTwos = 0;
+
+        for (int num : nums) {
+            if (num == 0) {
+                countZeros++;
+            } else if (num == 1) {
+                countOnes++;
+            } else {
+                countTwos++;
+            }
+        }
+
+
+
+        int idx = 0;
+
+        while (countZeros > 0) {
+            nums[idx] = 0;
+            countZeros--;
+            idx++;
+        }
+
+        while (countOnes > 0) {
+            nums[idx] = 1;
+            countOnes--;
+            idx++;
+        }
+
+        while (countTwos > 0) {
+            nums[idx] = 2;
+            countTwos--;
+            idx++;
+        }
+
+
+
+    }
+
+
+
 }
