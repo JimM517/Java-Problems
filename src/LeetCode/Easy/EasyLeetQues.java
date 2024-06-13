@@ -2181,6 +2181,7 @@ public class EasyLeetQues {
 
 
 
+    // 2037. minimum number of moves to seat everyone
     public int minMovesToSeat(int[] seats, int[] students) {
 
         int result = 0;
