@@ -2165,4 +2165,28 @@ public class MediumLeetQues {
 
 
 
+
+    // 945. minimum increment to make array unique
+    public int minIncrementForUnique(int[] nums) {
+
+        Arrays.sort(nums);
+
+        int idx = 0;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] <= nums[i - 1]) {
+                int x = nums[i - 1] + 1;
+                idx = idx + (x - nums[i]);
+                nums[i] = x;
+            }
+        }
+
+
+        return idx;
+    }
+
+
+
+
+
 }
