@@ -2187,6 +2187,34 @@ public class MediumLeetQues {
 
 
 
+    // 260. single number III
+    public int[] singleNumber(int[] nums) {
+
+        int[] result = new int[2];
+
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        int idx = 0;
+
+        for (Map.Entry<Integer, Integer> checker : map.entrySet()) {
+            if (checker.getValue() == 1) {
+                result[idx] = checker.getKey();
+                idx++;
+            }
+        }
+
+
+        return result;
+
+
+    }
+
+
+
 
 
 }
