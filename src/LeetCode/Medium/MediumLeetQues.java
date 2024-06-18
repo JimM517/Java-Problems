@@ -2278,4 +2278,36 @@ public class MediumLeetQues {
 
 
 
+
+    // 2610. convert an array into a 2D array with conditions
+    public List<List<Integer>> findMatrix(int[] nums) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        int max = Collections.max(map.values());
+
+        for (int i = 0; i < max; i++) {
+            result.add(new ArrayList<>());
+        }
+
+        for (Map.Entry<Integer, Integer> idx : map.entrySet()) {
+            int value = idx.getKey();
+            int count = idx.getValue();
+
+            for (int i = 0; i < count; i++) {
+                result.get(i).add(value);
+            }
+        }
+
+        return result;
+    }
+
+
+
 }
