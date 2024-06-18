@@ -2215,6 +2215,36 @@ public class MediumLeetQues {
 
 
 
+    // 633. sum of square numbers
+    public boolean judgeSquareSum(int c) {
+
+
+       long a = 0;
+       long b = (long) Math.sqrt(c);
+
+
+       while (a <= b) {
+
+           long midSum = (a * a) + (b * b);
+
+
+           if (midSum == c) {
+               return true;
+           }
+           else if (midSum > c) {
+               b--;
+           }
+           else {
+               a++;
+           }
+
+       }
+        return false;
+
+    }
+
+
+
 
 
 }
