@@ -2310,4 +2310,56 @@ public class MediumLeetQues {
 
 
 
+
+
+
+    // 1482. minimum number of days to make m bouquets
+    public int minDays(int[] bloomDay, int m, int k) {
+
+        if (m * k > bloomDay.length) {
+            return -1;
+        }
+
+        int result = -1;
+
+        int start = 1;
+        int end = 1000000000;
+
+
+        while (start <= end) {
+
+            int mid = start + (end - start) / 2;
+
+            int consecutiveLen = 0;
+            int bouquets = 0;
+
+            for (int i = 0; i < bloomDay.length; i++) {
+                if (bloomDay[i] <= mid) {
+                    consecutiveLen++;
+                    if (consecutiveLen == k) {
+                        consecutiveLen = 0;
+                        bouquets++;
+                    }
+                } else {
+                    consecutiveLen = 0;
+                }
+                if (bouquets >= m) {
+                    break;
+                }
+            }
+            if (bouquets >= m) {
+                result = mid;
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+
+
+
+        }
+        return result;
+    }
+
+
+
 }
