@@ -2465,4 +2465,44 @@ public class MediumLeetQues {
 
 
 
+
+    // 1438. longest continuous subarray with absolute diff less than or equal to limit
+    public int longestSubarray(int[] nums, int limit) {
+
+        PriorityQueue<Integer> min = new PriorityQueue<>();
+        PriorityQueue<Integer> max = new PriorityQueue<>((a, b) -> Integer.compare(b,a));
+
+        int a = 0;
+        int b = 0;
+        int result = 0;
+
+        while (b < nums.length) {
+            min.add(nums[b]);
+            max.add(nums[b]);
+
+
+            while (Math.abs(max.peek() - min.peek()) > limit) {
+                min.remove(nums[a]);
+                max.remove(nums[a]);
+                a++;
+            }
+            result = Math.max(b - a + 1, result);
+            b++;
+        }
+
+        return result;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
