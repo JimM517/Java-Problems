@@ -262,6 +262,17 @@ public class Trees {
 
 
 
+    // 1038. Binary search tree to greater sum tree
+    private int bstRes = 0;
+    public TreeNode bstToGst(TreeNode root) {
+        if (root != null) {
+            bstToGst(root.right);
+            bstRes += root.val;
+            root.val = bstRes;
+            bstToGst(root.left);
+        }
+        return root;
+    }
 
 
 
