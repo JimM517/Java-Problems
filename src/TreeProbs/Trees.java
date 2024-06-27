@@ -278,4 +278,31 @@ public class Trees {
 
 
 
+    // 1382. balance a binary search tree
+   private List<TreeNode> sortedList = new ArrayList<>();
+
+    public TreeNode balanceBST(TreeNode root) {
+        inorderTrav(root);
+        return sortAToBST(0, sortedList.size() - 1);
+    }
+
+
+    public void inorderTrav(TreeNode root) {
+        if (root == null) return;
+        inorderTrav(root.left);
+        sortedList.add(root);
+        inorderTrav(root.right);
+    }
+
+
+    private TreeNode sortAToBST(int start, int end) {
+        if (start > end) return null;
+        int mid = (start + end) / 2;
+        TreeNode root = sortedList.get(mid);
+        root.left = sortAToBST(start, mid - 1);
+        root.right = sortAToBST(mid + 1, end);
+        return root;
+    }
+
+
 }
