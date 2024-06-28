@@ -2541,6 +2541,31 @@ public class MediumLeetQues {
 
 
 
+    //2285. maximum total importance of roads
+    public long maximumImportance(int n, int[][] roads) {
+
+
+        long answer = 0;
+        long x = 1;
+
+        long[] degree = new long[n];
+
+        for (int road[] : roads) {
+            degree[road[0]]++;
+            degree[road[1]]++;
+        }
+
+        Arrays.sort(degree);
+        for (long i : degree) {
+            answer += i * (x++);
+        }
+        return answer;
+
+    }
+
+
+
+
 
 
 
