@@ -2567,6 +2567,40 @@ public class MediumLeetQues {
 
 
 
+    // 2192. all ancestors of a node in a directed acyclic graph
+    public List<List<Integer>> getAncestors(int n, int[][] edges) {
+
+
+        int[] inDegree = new int[n];
+
+        Map<Integer, List<Integer>> parentToKids = new HashMap<>();
+        for (int[] e : edges) {
+            parentToKids.computeIfAbsent(e[0], l -> new ArrayList<>()).add(e[1]);
+            inDegree[e[1]]++;
+        }
+
+        List<Set<Integer>> sets = new ArrayList<>();
+        Queue<Integer> q = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            sets.add(new HashSet<>());
+            if (inDegree[i] == 0) {
+                q.offer(i);
+            }
+        }
+
+
+        List<List<Integer>> answer = new ArrayList<>();
+        for (Set<Integer> set : sets) {
+            answer.add(new ArrayList<>(new TreeSet<>(set)));
+        }
+
+        return answer;
+
+    }
+
+
+
 
 
 
