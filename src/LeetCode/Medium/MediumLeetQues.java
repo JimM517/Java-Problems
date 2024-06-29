@@ -2568,6 +2568,7 @@ public class MediumLeetQues {
 
 
     // 2192. all ancestors of a node in a directed acyclic graph
+    // TODO this solution doesn't work
     public List<List<Integer>> getAncestors(int n, int[][] edges) {
 
 
