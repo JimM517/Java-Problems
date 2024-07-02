@@ -2240,6 +2240,31 @@ public class EasyLeetQues {
 
 
 
+    // 1550. Three consecutive odds
+    public boolean threeConsecutiveOdds(int[] arr) {
+
+        boolean foundOdd = false;
+
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] % 2 == 1) {
+                foundOdd = true;
+            }
+            if (foundOdd) {
+                if (arr[i - 1] % 2 == 1 && arr[i - 2] % 2 == 1) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
+
+
+    }
+
+
+
+
 
 
 }
