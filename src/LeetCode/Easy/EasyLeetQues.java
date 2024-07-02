@@ -2265,6 +2265,40 @@ public class EasyLeetQues {
 
 
 
+    // 350. Intersection of two arrays II
+    public int[] intersect(int[] nums1, int[] nums2) {
+
+        Map<Integer, Integer> map1 = new HashMap<>();
+
+        for (int num : nums1) {
+            map1.put(num, map1.getOrDefault(num, 0) + 1);
+        }
+
+
+        List<Integer> checkNums2 = new ArrayList<>();
+        for (int num : nums2) {
+
+            if (map1.containsKey(num) && map1.get(num) > 0) {
+                checkNums2.add(num);
+                map1.put(num, map1.getOrDefault(num, 0) - 1);
+            }
+
+
+        }
+
+
+        int[] result = new int[checkNums2.size()];
+        for (int i = 0; i < checkNums2.size(); i++) {
+            result[i] = checkNums2.get(i);
+        }
+
+        return result;
+
+
+    }
+
+
+
 
 
 }
