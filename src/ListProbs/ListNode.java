@@ -70,5 +70,63 @@ public class ListNode {
 
 
 
+    // 2181. merge nodes in between zeros
+    public ListNode mergeNodes(ListNode head) {
+
+        ListNode dum = new ListNode(Integer.MIN_VALUE);
+        ListNode prev = dum;
+
+
+        while (head != null && head.next != null) {
+
+            prev.next = head;
+
+            head = head.next;
+
+            while (head != null && head.val != 0) {
+
+                prev.next.val += head.val;
+
+                head = head.next;
+            }
+            prev = prev.next;
+        }
+        prev.next = null;
+
+        return dum.next;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
