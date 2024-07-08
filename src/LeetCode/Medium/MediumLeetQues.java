@@ -2628,6 +2628,40 @@ public class MediumLeetQues {
 
 
 
+    // 1823. find the winner of the circular game
+    public int findTheWinner(int n, int k) {
+
+        // n friends
+        // next k friends you need to eliminate
+
+        List<Integer> circle = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            circle.add(i);
+        }
+
+
+        int currentIdx = 0;
+
+
+        while (circle.size() > 1) {
+
+            int friendToRemove = (currentIdx + k - 1) % circle.size();
+
+            circle.remove(friendToRemove);
+
+            currentIdx = friendToRemove;
+        }
+
+
+        return circle.get(0);
+
+
+    }
+
+
+
+
 
 
 
