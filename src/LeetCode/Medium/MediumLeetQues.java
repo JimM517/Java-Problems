@@ -2665,5 +2665,38 @@ public class MediumLeetQues {
 
 
 
+    // 1701. Average waiting time
+    public double averageWaitingTime(int[][] customers) {
+
+        // customers[i] = [arrival][time]
+        // time is time needed to prepare food
+
+        int n = customers.length;
+
+        double timeWaiting = customers[0][1];
+
+        int finishedPrev = customers[0][0] + customers[0][1];
+
+        for (int i = 1; i < n; i++) {
+            int[] times = customers[i];
+            int arrive = times[0];
+
+
+            int start = Math.max(arrive, finishedPrev);
+            int end = start + times[1];
+            finishedPrev = end;
+            timeWaiting += end - arrive;
+
+        }
+
+        return timeWaiting / n;
+
+    }
+
+
+
+
+
+
 
 }
