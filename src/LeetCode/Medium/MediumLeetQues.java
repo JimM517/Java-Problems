@@ -2697,6 +2697,34 @@ public class MediumLeetQues {
 
 
 
+    // 1190. reverse substrings between each pair of parentheses
+    public String reverseParentheses(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (c == ')') {
+                StringBuilder sb = new StringBuilder();
+                while (stack.peek() != '(') {
+                    sb.append(stack.pop());
+                }
+                stack.pop();
+                int i = 0;
+                while (i < sb.length()) {
+                    stack.push(sb.charAt(i++));
+                }
+            }
+            else {
+                stack.push(c);
+            }
+         }
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+        }
+        return sb.reverse().toString();
+    }
+
 
 
 }
