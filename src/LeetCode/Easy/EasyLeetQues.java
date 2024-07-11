@@ -2328,7 +2328,26 @@ public class EasyLeetQues {
 
 
 
+    // 1598. Crawler log folder
+    public int minOperations(String[] logs) {
 
+        int count = 0;
+
+        for (String log : logs) {
+
+            if (log.equals("../")) {
+                count = Math.max(0, --count);
+            } else if (!log.equals("./")) {
+                count++;
+            }
+
+
+
+        }
+
+        return count;
+
+    }
 
 
 

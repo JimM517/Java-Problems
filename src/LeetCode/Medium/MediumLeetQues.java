@@ -2673,7 +2673,7 @@ public class MediumLeetQues {
 
         int n = customers.length;
 
-        double timeWaiting = customers[0][1];
+        double  timeWaiting = customers[0][1];
 
         int finishedPrev = customers[0][0] + customers[0][1];
 
