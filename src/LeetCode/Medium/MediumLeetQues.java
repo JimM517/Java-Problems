@@ -2727,4 +2727,148 @@ public class MediumLeetQues {
 
 
 
+
+    // 1717. Maximum score from removing substrings
+    public int maximumGain(String s, int x, int y) {
+
+        if (x > y) {
+            return getCount(s, x, y, 'a', 'b');
+        }
+
+        return getCount(s, y, x, 'b', 'a');
+    }
+
+    private int getCount(String s, int x, int y, char a, char b) {
+
+        int countA = 0;
+        int countB = 0;
+        int total = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char c = s.charAt(i);
+
+            if (c == a) {
+                countA++;
+            }
+            else if (c == b) {
+                if (countA > 0) {
+                    countA--;
+                    total += x;
+                } else {
+                    countB++;
+                }
+            } else {
+                total += Math.min(countA, countB) * y;
+                countA = 0;
+                countB = 0;
+            }
+
+
+        }
+
+        total += Math.min(countA, countB) * y;
+        return total;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
