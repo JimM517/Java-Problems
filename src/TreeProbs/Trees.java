@@ -1,9 +1,6 @@
 package TreeProbs;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Trees {
 
@@ -303,6 +300,67 @@ public class Trees {
         root.right = sortAToBST(mid + 1, end);
         return root;
     }
+
+
+
+
+
+    // 2196. Create Binary Tree from descriptions
+    public TreeNode createBinaryTree(int[][] descriptions) {
+
+        Map<Integer, TreeNode> map = new HashMap<>();
+
+        Set<Integer> children = new HashSet<>();
+
+        for (int[] arr : descriptions) {
+
+            int parent = arr[0];
+            int child = arr[1];
+            int isLeft = arr[2];
+
+            children.add(child);
+
+
+            TreeNode node = map.getOrDefault(parent, new TreeNode(parent));
+
+            if (isLeft == 1) {
+                node.left = map.getOrDefault(child, new TreeNode(child));
+                map.put(child, node.left);
+            } else {
+                node.right = map.getOrDefault(child, new TreeNode(child));
+                map.put(child, node.right);
+            }
+
+            map.put(parent, node);
+        }
+
+        int root = -1;
+
+        for (int[] arr : descriptions) {
+
+            if (!children.contains(arr[0])) {
+                root = arr[0];
+                break;
+            }
+
+        }
+
+        return map.getOrDefault(root, null);
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 }
