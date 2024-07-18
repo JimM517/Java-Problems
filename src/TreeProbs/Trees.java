@@ -357,8 +357,49 @@ public class Trees {
 
 
 
+    // 1530. Number of good leaf node pairs
+    int count = 0;
+    public int countPairs(TreeNode root, int distance) {
+
+        distance(root, distance);
+        return count;
+    }
 
 
+    public List<Integer> distance(TreeNode root, int distance) {
+
+        if (root == null) {
+            return new ArrayList<>();
+        }
+
+        if (root.left == null && root.right == null) {
+            List<Integer> sublist = new ArrayList<>();
+            sublist.add(1);
+            return sublist;
+        }
+
+        List<Integer> l1 = distance(root.left, distance);
+        List<Integer> l2 = distance(root.right, distance);
+
+        for (int d1 : l1) {
+            for (int d2 : l2) {
+                if (d1 + d2 <= distance) {
+                    count++;
+                }
+            }
+        }
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int val : l1) {
+            list.add(val + 1);
+        }
+        for (int val : l2) {
+            list.add(val + 1);
+        }
+
+        return list;
+    }
 
 
 
