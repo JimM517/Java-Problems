@@ -2351,7 +2351,42 @@ public class EasyLeetQues {
 
 
 
+    // 1380. lucky numbers in a matrix
+    public List<Integer> luckyNumbers(int[][] matrix) {
 
+        List<Integer> result = new ArrayList<>();
+
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        for (int i = 0; i < n; i++) {
+
+            int num = Integer.MAX_VALUE;
+            int index = -1;
+
+            for (int j = 0; j < m; j++) {
+
+                if (matrix[i][j] < num) {
+                    num = matrix[i][j];
+                    index = j;
+                }
+
+            }
+
+            boolean flag = true;
+            for (int row = 0; row < n; row++) {
+                if (matrix[row][index] > num) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                result.add(num);
+            }
+        }
+
+        return result;
+
+    }
 
 
 
