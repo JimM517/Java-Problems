@@ -2777,7 +2777,34 @@ public class MediumLeetQues {
 
 
 
+    // 1605. find valid matrix given row and column sums
+    public int[][] restoreMatrix(int[] rowSum, int[] colSum) {
 
+        int p = rowSum.length;
+        int q = colSum.length;
+
+        int i = 0;
+        int j = 0;
+
+        int[][] result = new int[p][q];
+
+        while (i < p && j < q) {
+
+            result[i][j] = Math.min(rowSum[i], colSum[j]);
+
+            rowSum[i] -= result[i][j];
+            colSum[j] -= result[i][j];
+
+            if (rowSum[i] == 0) {
+                i++;
+            }
+            if (colSum[j] == 0) {
+                j++;
+            }
+
+        }
+        return result;
+    }
 
 
 
