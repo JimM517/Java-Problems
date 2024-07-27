@@ -2463,6 +2463,27 @@ public class EasyLeetQues {
 
 
 
+    // 2027. Minimum moves to convert string
+    public int minimumMoves(String s) {
+
+        int numX = 0;
+
+        int i = 0;
+
+        while (i < s.length()) {
+
+            if (s.charAt(i) == 'X') {
+                i += 2;
+                numX++;
+            }
+            i++;
+
+        }
+
+
+
+        return numX;
+    }
 
 
 
