@@ -3022,7 +3022,16 @@ public class MediumLeetQues {
 
 
 
+    // 1653. Minimum deletions to make string balanced
+    public int minimumDeletions(String s) {
 
+        int count = 0;
+
+
+
+
+        return count;
+    }
 
 
 
