@@ -2489,6 +2489,25 @@ public class EasyLeetQues {
 
 
 
+    // 2124 check if all A's appear before all b's
+    public boolean checkString(String s) {
+
+        boolean found = true;
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == 'b' && s.charAt(i + 1) == 'a') {
+                found = false;
+            }
+
+
+
+        }
+        return found;
+
+
+    }
+
+
 
 
 
