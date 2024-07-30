@@ -3026,11 +3026,17 @@ public class MediumLeetQues {
     public int minimumDeletions(String s) {
 
         int count = 0;
+        int result = 0;
 
-
-
-
-        return count;
+        for (char x : s.toCharArray()) {
+            if (x == 'b') {
+                count++;
+            } else if (count > 0) {
+                result++;
+                count--;
+            }
+        }
+        return result;
     }
 
 
