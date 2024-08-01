@@ -2510,6 +2510,26 @@ public class EasyLeetQues {
 
 
 
+    // 2678. number of senior citizens
+    public int countSeniors(String[] details) {
+
+        int count = 0;
+
+        for (String x : details) {
+
+            String ageStr = x.substring(11, 13);
+
+            int age = Integer.parseInt(ageStr);
+
+            if (age > 60) {
+                count++;
+            }
+
+
+        }
+        return count;
+    }
+
 
 
 
