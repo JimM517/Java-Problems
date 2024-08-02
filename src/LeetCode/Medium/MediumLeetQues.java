@@ -3042,7 +3042,40 @@ public class MediumLeetQues {
 
 
 
+    // 2134. Minimum swaps to group all 1's together II
+    public int minSwaps(int[] nums) {
 
+        int win = 0;
+        int zeroCount = 0;
+        int min = Integer.MAX_VALUE;
+
+        for (int x : nums) {
+            if (x == 1) {
+                win++;
+            }
+        }
+
+
+        for (int i = 0; i < win; i++) {
+            if (nums[i % nums.length] == 0) {
+                zeroCount++;
+            }
+        }
+
+        for (int i = win; i < 2 * nums.length; i++) {
+
+            if (nums[i % nums.length] == 0) {
+                zeroCount++;
+            }
+            if (nums[(i - win) % nums.length] == 0) {
+                zeroCount--;
+            }
+            min = Math.min(min, zeroCount);
+
+        }
+        return min;
+
+    }
 
 
 
