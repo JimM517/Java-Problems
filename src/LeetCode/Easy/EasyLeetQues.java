@@ -2532,7 +2532,16 @@ public class EasyLeetQues {
 
 
 
+    // 1460. make two arrays equal by reversing subarrays
+    public boolean canBeEqual(int[] target, int[] arr) {
 
+        Arrays.sort(target);
+        Arrays.sort(arr);
+
+        return Arrays.equals(arr, target);
+
+
+    }
 
 
 
