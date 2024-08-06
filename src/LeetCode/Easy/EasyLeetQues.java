@@ -2546,6 +2546,36 @@ public class EasyLeetQues {
 
 
 
+    // 2053. kth distinct string in an array
+    public String kthDistinct(String[] arr, int k) {
+
+        Map<String, Integer> map = new HashMap<>();
+
+
+        for (String x : arr) {
+            map.put(x, map.getOrDefault(x, 0) + 1);
+        }
+
+        int distinct = 0;
+        for (String x : arr) {
+            if (map.get(x) == 1) {
+                distinct++;
+                if (distinct == k) {
+                    return x;
+                }
+            }
+        }
+
+
+        return "";
+
+    }
+
+
+
+
+
+
 
 
 
