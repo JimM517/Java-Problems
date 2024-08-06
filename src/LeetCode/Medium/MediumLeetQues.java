@@ -3112,6 +3112,38 @@ public class MediumLeetQues {
 
 
 
+    // 3016. minimum number of pushes to type word II
+    public int minimumPushes(String word) {
+
+        int[] countOfEachNum = new int[26];
+
+        for (char c : word.toCharArray()) {
+
+            countOfEachNum[c - 'a']++;
+
+        }
+        Arrays.sort(countOfEachNum);
+
+        int idx = 1;
+        int sum = 0;
+        int count = 1;
+
+        for (int i = 25; i >= 0; i--) {
+
+            if (idx <= 8) {
+                idx++;
+            }
+            else {
+                idx = 2;
+                count++;
+            }
+            sum += countOfEachNum[i] * count;
+
+        }
+        return sum;
+
+    }
+
 
 
 
