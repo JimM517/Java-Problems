@@ -2612,7 +2612,21 @@ public class EasyLeetQues {
 
 
 
+    // 476. Number complement
+    public int findComplement(int num) {
+        int temp = (int) (Math.pow(2, digits(num)) - 1);
+        return temp - num;
+    }
 
+
+    public int digits(int n) {
+        int count = 0;
+        while (n > 0) {
+            n /= 2;
+            count++;
+        }
+        return count;
+    }
 
 
 
