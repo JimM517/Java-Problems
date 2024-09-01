@@ -2665,9 +2665,23 @@ public class EasyLeetQues {
 
 
 
+    }
 
 
+    // 2022. convert 1D array into 2D array
+    public int[][] construct2DArray(int[] original, int m, int n) {
+        int[][] result = new int[m][n];
 
+        if (m * n != original.length) {
+            return new int[0][0];
+        }
+
+        for (int i = 0; i < m * n; i++) {
+            result[i / n][i % n] = original[i];
+        }
+
+
+        return result;
 
     }
 
