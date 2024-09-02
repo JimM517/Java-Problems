@@ -3274,6 +3274,31 @@ public class MediumLeetQues {
 
 
 
+    // 1894. find the student that will replace the chalk
+    public int chalkReplacer(int[] chalk, int k) {
+
+        long total = 0;
+
+
+
+        for (int x : chalk) {
+            total += x;
+        }
+
+
+
+
+        k %= total;
+
+        for (int i = 0; i < chalk.length; i++) {
+            if (chalk[i] > k) {
+               return i;
+            }
+            k -= chalk[i];
+        }
+
+        return -1;
+    }
 
 
 
