@@ -1,5 +1,8 @@
 package ListProbs;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ListNode {
 
      int val;
@@ -99,7 +102,32 @@ public class ListNode {
 
 
 
+    // 3217. Delete nodes from linked list present in array
+    public ListNode modifiedList(int[] nums, ListNode head) {
 
+
+
+        Set<Integer> numSet = new HashSet<>();
+
+        for (int x : nums) {
+            numSet.add(x);
+        }
+
+        ListNode result = new ListNode(-1);
+        ListNode trv = result;
+
+
+        while (head != null) {
+            if (!numSet.contains(head.val)) {
+                trv.next = head;
+                trv = trv.next;
+            }
+            head = head.next;
+        }
+        trv.next = null;
+        return result.next;
+
+    }
 
 
 
