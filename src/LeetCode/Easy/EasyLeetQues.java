@@ -2714,7 +2714,21 @@ public class EasyLeetQues {
 
 
 
+    // 2220. Minimum bit flips to convert number
+    public int minBitFlips(int start, int goal) {
 
+      int count = 0;
+
+      int diff = start ^ goal;
+
+      while (diff > 0) {
+          count++;
+          diff = diff & (diff - 1);
+      }
+
+
+      return count;
+    }
 
 
 
