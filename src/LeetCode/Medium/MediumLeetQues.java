@@ -3404,7 +3404,26 @@ public class MediumLeetQues {
 
 
 
+    // 2419. longest subarray with max bitwise AND
+    public int longestSubarray(int[] nums) {
 
+        int result = 0, length = 0, max = 0;
+
+        for (int x : nums) {
+            max = Math.max(max, x);
+        }
+
+        for (int j : nums) {
+            if (j == max) {
+                result = Math.max(result, ++length);
+            } else {
+                length = 0;
+            }
+        }
+
+        return result;
+
+    }
 
 
 
