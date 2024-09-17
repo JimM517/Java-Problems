@@ -2758,6 +2758,53 @@ public class EasyLeetQues {
 
 
 
+    // 884. Uncommon words from two sentences
+    public String[] uncommonFromSentences(String s1, String s2) {
+
+
+        Map<String, Integer> map1 = new HashMap<>();
+        Map<String, Integer> map2 = new HashMap<>();
+
+        String[] words1 = s1.split(" ");
+        String[] words2 = s2.split(" ");
+
+        List<String> total = new ArrayList<>();
+
+        for (String word : words1) {
+            map1.put(word, map1.getOrDefault(word, 0) + 1);
+        }
+
+        for (String word : words2) {
+            map2.put(word, map2.getOrDefault(word, 0) + 1);
+        }
+
+
+        for (String x : map1.keySet()) {
+          if (map1.get(x) == 1 && !map2.containsKey(x)) {
+              total.add(x);
+          }
+        }
+
+        for (String x : map2.keySet()) {
+            if (map2.get(x) == 1 && !map1.containsKey(x)) {
+                total.add(x);
+            }
+        }
+
+
+        String[] result = new String[total.size()];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = total.get(i);
+        }
+
+
+        return result;
+
+
+    }
+
+
 
 
 
