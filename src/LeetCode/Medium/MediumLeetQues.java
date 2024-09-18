@@ -3477,6 +3477,38 @@ public class MediumLeetQues {
 
 
 
+    // 179. Largest Number
+    public String largestNumber(int[] nums) {
+
+        if (nums.length == 0) {
+            return "";
+        }
+
+        String[] conv = new String[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            conv[i] = Integer.toString(nums[i]);
+        }
+
+
+        Arrays.sort(conv, (a,b) -> (b + a).compareTo(a + b));
+
+        StringBuilder result = new StringBuilder();
+
+        if (conv[0].equals("0")) {
+            return "0";
+        }
+        for (int i = 0; i < conv.length; i++) {
+            result.append(conv[i]);
+        }
+
+        return result.toString();
+
+    }
+
+
+
+
 
 
 
