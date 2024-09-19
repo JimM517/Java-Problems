@@ -3509,6 +3509,49 @@ public class MediumLeetQues {
 
 
 
+    // 241. Different ways to add parentheses
+    Map<String, List<Integer>> map = new HashMap<>();
+    public List<Integer> diffWaysToCompute(String expression) {
+
+        if (map.containsKey(expression)) {
+            return map.get(expression);
+        }
+
+        List<Integer> result = new ArrayList<>();
+
+
+        for (int i = 0; i < expression.length(); i++) {
+            char current = expression.charAt(i);
+
+            if (current == '-' || current == '+' || current == '*') {
+                List<Integer> left = diffWaysToCompute(expression.substring(0, i));
+                List<Integer> right = diffWaysToCompute(expression.substring(i + 1));
+
+                for (int l : left) {
+                    for (int r : right) {
+                        if (current == '-') {
+                            result.add(l - r);
+                        } else if (current == '+') {
+                            result.add(l + r);
+                        } else if (current == '*') {
+                            result.add(l * r);
+                        }
+                    }
+                }
+
+            }
+        }
+        if (result.isEmpty()) {
+            result.add(Integer.parseInt(expression));
+        }
+        map.put(expression, result);
+        return result;
+    }
+
+
+
+
+
 
 
 
