@@ -138,4 +138,29 @@ public class HardLeetQues {
 
 
 
+
+
+
+    // 214. Shortest Palindrome
+    public String shortestPalindrome(String s) {
+
+        int len = s.length();
+
+        String reversed = new StringBuilder(s).reverse().toString();
+
+        for (int i = 0; i < len; i++) {
+            if (s.substring(0, len - i).equals(reversed.substring(i))) {
+                return new StringBuilder(reversed.substring(0, i)).append(s).toString();
+            }
+        }
+
+
+        return "";
+    }
+
+
+
+
+
+
 }
