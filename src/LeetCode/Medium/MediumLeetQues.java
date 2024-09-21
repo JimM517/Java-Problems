@@ -3549,8 +3549,43 @@ public class MediumLeetQues {
     }
 
 
+    // lexicographical numbers
+    public List<Integer> lexicalOrder(int n) {
+
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 1; i <= 9; i++) {
+            generateLexicalNumbers(i, n, result);
+        }
 
 
+        return result;
+
+
+    }
+
+
+
+    public void generateLexicalNumbers(int currentNumber, int limit, List<Integer> result) {
+
+        if (currentNumber > limit) return;
+
+        result.add(currentNumber);
+
+
+        for (int nextDigit = 0; nextDigit <= 9; nextDigit++) {
+            int nextNumber = currentNumber * 10 + nextDigit;
+
+            if (nextNumber <= limit) {
+                generateLexicalNumbers(nextNumber, limit, result);
+            } else {
+                break;
+            }
+        }
+
+
+
+    }
 
 
 
