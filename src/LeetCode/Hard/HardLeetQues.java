@@ -163,4 +163,49 @@ public class HardLeetQues {
 
 
 
+    // 440 K-th smallest in lexicographical order
+    public int findKthNumber(int n, int k) {
+        // start at first lexicographical order
+        int curr = 1;
+        // decrement k because starts at 1, not 0
+        k--;
+
+        while (k > 0) {
+            int steps = countLexSteps(curr, n);
+            if (steps <= k) {
+                // if there are fewer or equal steps than k, skip subtree
+                curr++;
+                k -= steps;
+            }
+            else {
+                // if there are more steps, descend into the subtree
+                curr *= 10;
+                k--;
+            }
+
+        }
+        return curr;
+    }
+
+    // will count steps between curr and curr + 1 in lexicographical tree
+    public int countLexSteps(int curr, int limit) {
+        long steps = 0;
+        long first = 0;
+        long last = curr;
+
+        while (first <= limit) {
+
+            steps += Math.min(last, limit) - first + 1;
+            first *= 10;
+            last = last * 10 + 9;
+        }
+
+        return (int) steps;
+
+    }
+
+
+
+
+
 }
