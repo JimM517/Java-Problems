@@ -3590,4 +3590,45 @@ public class MediumLeetQues {
 
 
 
+    // 2707. Extra characters in a string
+    Integer memo[];
+    Set<String> dictSet;
+    public int minExtraChar(String s, String[] dictionary) {
+
+        int n = s.length();
+        memo = new Integer[n];
+        dictSet = new HashSet<>(Arrays.asList(dictionary));
+
+        return minCharDp(0, n, s);
+    }
+
+
+    public int minCharDp(int start, int n, String s) {
+
+        if (start == n) {
+            return 0;
+        }
+        if (memo[start] != null) {
+            return memo[start];
+        }
+
+        int answer = minCharDp(start + 1, n, s) + 1;
+        for (int end = start; end < n; end++) {
+
+            var curr = s.substring(start, end + 1);
+
+            if (dictSet.contains(curr)) {
+                answer = Math.min(answer, minCharDp(end + 1, n, s));
+            }
+
+        }
+
+        return memo[start] = answer;
+
+
+    }
+
+
+
+
 }
