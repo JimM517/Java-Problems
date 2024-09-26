@@ -3670,6 +3670,34 @@ public class MediumLeetQues {
 
 
 
+    // 729. My Calendar I
+    private class MyCalendar {
+
+        List<int[]> myList;
+
+        public MyCalendar() {
+            myList = new ArrayList<>();
+        }
+
+
+        public boolean book(int start, int end) {
+
+            for (int[] x : myList) {
+                if (x[0] < end && start < x[1]) {
+                    return false;
+                }
+            }
+
+            myList.add(new int[]{start, end});
+            return true;
+
+        }
+
+
+
+    }
+
+
 
 
 
