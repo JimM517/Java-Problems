@@ -3702,4 +3702,52 @@ public class MediumLeetQues {
 
 
 
+
+
+    // 731. My Calendar II
+    private class MyCalendarTwo {
+
+        List<int[]> booking;
+        List<int[]> over;
+
+        public MyCalendarTwo() {
+            booking = new ArrayList<>();
+            over = new ArrayList<>();
+    }
+
+        public boolean book(int start, int end) {
+
+            for (int[] overlap : over) {
+                if (Math.max(start, overlap[0]) < Math.min(end, overlap[1])) {
+                    return false;
+                }
+            }
+
+
+            for (int[] book : booking) {
+                int overStart = Math.max(start, book[0]);
+                int overEnd = Math.min(end, book[1]);
+
+
+                if (overStart < overEnd) {
+                    over.add(new int[] {overStart, overEnd});
+                }
+            }
+
+            booking.add(new int[]{start, end});
+            return true;
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
 }
