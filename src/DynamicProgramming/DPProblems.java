@@ -1,5 +1,8 @@
 package DynamicProgramming;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DPProblems {
 
 
@@ -99,6 +102,26 @@ public class DPProblems {
         return dp[dp.length - 1][dp[0].length - 1];
     }
 
+
+
+    // 2900. longest unequal adjacent groups subsequence I
+    public List<String> getLongestSubsequence(String[] words, int[] groups) {
+
+            List<String> result = new ArrayList<>();
+            result.add(words[0]);
+            int prev = groups[0];
+
+            for (int i = 0; i < groups.length; i++) {
+                if (prev != groups[i]) {
+                    result.add(words[i]);
+                    prev = groups[i];
+                }
+            }
+
+            return result;
+
+
+    }
 
 
 
