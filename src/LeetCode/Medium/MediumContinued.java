@@ -1,5 +1,7 @@
 package LeetCode.Medium;
 
+import java.util.Stack;
+
 public class MediumContinued {
 
 
@@ -60,6 +62,36 @@ public class MediumContinued {
     }
 
 
+
+
+    // 1963. Minimum number of swaps to make the string balanced
+    public int minSwaps(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+        int start = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char ch = s.charAt(i);
+            if (ch == '[') {
+                stack.push(ch);
+            } else {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                } else {
+                    start++;
+                }
+            }
+
+
+        }
+
+        return (start + 1) / 2;
+
+
+
+    }
 
 
 
