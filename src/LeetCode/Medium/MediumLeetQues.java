@@ -3828,12 +3828,23 @@ public class MediumLeetQues {
             if (d != s + e) {
                 return -1;
             }
-            result += (s * e);
+            result += ((long) s * e);
         }
 
         return result;
 
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
