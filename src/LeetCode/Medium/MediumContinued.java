@@ -96,4 +96,46 @@ public class MediumContinued {
 
 
 
+    // 921. Minimum add to make parentheses valid
+    public int minAddToMakeValid(String s) {
+
+        int opens = 0;
+        int closed = 0;
+
+        for (Character ch : s.toCharArray()) {
+
+            if (ch == '(') {
+                closed++;
+            } else {
+                if (closed == 0) {
+                    opens++;
+                } else {
+                    closed--;
+                }
+            }
+
+
+        }
+
+
+        return opens + closed;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
