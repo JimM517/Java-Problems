@@ -3,6 +3,7 @@ package LeetCode.DuplicateProbs;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class Duplicates {
 
@@ -77,6 +78,43 @@ public class Duplicates {
         }
 
         return false;
+
+    }
+
+
+
+
+
+    // // 921. Minimum add to make parentheses valid
+    public int minAddToMakeValid(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+        int minMoves = 0;
+
+        for (Character ch : s.toCharArray()) {
+
+            if (stack.isEmpty()) {
+                if (ch == '(') {
+                    stack.push(ch);
+                } else {
+                    minMoves++;
+                }
+            }  else {
+                if (ch == '(') {
+                    stack.push(ch);
+                } else {
+                    stack.pop();
+                }
+            }
+        }
+
+        if (!stack.isEmpty() && stack.peek() == '(') {
+            minMoves += stack.size();
+        }
+
+
+        return minMoves;
 
     }
 
