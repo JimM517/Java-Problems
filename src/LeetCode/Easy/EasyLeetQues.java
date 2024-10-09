@@ -850,7 +850,7 @@ public class EasyLeetQues {
 
 
 
-    // 219. Contains Duplicates II
+    // 219. Contains LeetCode.DuplicateProbs.Duplicates II
     public boolean containsNearByDuplicates(int[] nums, int k) {
 
 
@@ -1029,7 +1029,7 @@ public class EasyLeetQues {
 
 
 
-    // 26. Remove Duplicates from Sorted Array
+    // 26. Remove LeetCode.DuplicateProbs.Duplicates from Sorted Array
     public int removeDuplicates(int[] nums) {
 
         if (nums.length == 0) {

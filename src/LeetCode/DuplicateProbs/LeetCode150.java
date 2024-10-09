@@ -1,3 +1,5 @@
+package LeetCode.DuplicateProbs;
+
 import java.util.*;
 
 public class LeetCode150 {
@@ -103,7 +105,7 @@ public class LeetCode150 {
 
 
 
-    // 80. Remove Duplicates from Sorted Array II
+    // 80. Remove LeetCode.DuplicateProbs.Duplicates from Sorted Array II
     public int removeDuplcatesTwo(int[] nums) {
 
         if (nums.length <= 2) {

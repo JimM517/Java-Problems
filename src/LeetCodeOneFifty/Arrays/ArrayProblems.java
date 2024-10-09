@@ -99,7 +99,7 @@ public class ArrayProblems {
 
 
 
-    // 80. Remove Duplicates from Sorted Array II
+    // 80. Remove LeetCode.DuplicateProbs.Duplicates from Sorted Array II
     public int removeDuplcatesTwo(int[] nums) {
 
         if (nums.length <= 2) {

@@ -559,7 +559,7 @@ public class MediumLeetQues {
     }
 
 
-    // 80. Remove Duplicates from Sorted Array II
+    // 80. Remove LeetCode.DuplicateProbs.Duplicates from Sorted Array II
 
     public int removeDuplicates(int[] nums) {
 
