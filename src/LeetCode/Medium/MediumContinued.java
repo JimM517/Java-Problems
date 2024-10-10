@@ -126,6 +126,42 @@ public class MediumContinued {
 
 
 
+    // 962. maximum width of ramp
+    public int maxWidthRamp(int[] nums) {
+
+        Stack<Integer> stack = new Stack<>();
+
+        // build stack with decreasing indices
+        for (int i = 0; i < nums.length; i++) {
+
+            // we will only push indices where the current val is less or equal to the previous
+            // will form a decreasing stack of values
+            if (stack.isEmpty() || nums[stack.peek()] > nums[i]) {
+                stack.push(i);
+            }
+        }
+
+
+        int maxW = 0;
+
+        // start at the end of the array to find max width
+        for (int j = nums.length - 1; j >= 0; j--) {
+
+            // check largest possible ramp
+            while (!stack.isEmpty() && nums[stack.peek()] <= nums[j]) {
+                int i = stack.pop();
+                maxW = Math.max(maxW, j - i);
+            }
+        }
+
+
+        return maxW;
+
+
+
+
+    }
+
 
 
 
