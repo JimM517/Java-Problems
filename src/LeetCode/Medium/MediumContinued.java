@@ -244,6 +244,39 @@ public class MediumContinued {
 
 
 
+    // 2530. maximal score after applying k operations
+    public int maxKElements(int[] nums, int k) {
+
+        int result = 0;
+
+        PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.reverseOrder());
+
+        for (int num : nums) {
+            heap.add(num);
+        }
+
+
+        for (int i = 0; i < k; i++) {
+
+            int currMax = heap.poll();
+
+            result += currMax;
+
+            heap.add((int) Math.ceil(currMax / 3.0));
+
+
+
+        }
+
+
+        return result;
+
+
+
+    }
+
+
+
 
 
 
