@@ -376,6 +376,33 @@ public class MediumContinued {
 
 
 
+    // 2044 count number of maximum bitwise or subsets
+    public int countMaxOrSubsets(int[] nums) {
+        int maxValue = 0;
+        for (int num : nums) {
+            maxValue |= num;
+        }
+        return countSubsets(nums, 0, 0, maxValue);
+    }
+
+
+    private int countSubsets(int[] nums, int idx, int currentOr, int targetOr) {
+
+        if (idx == nums.length) {
+            return (currentOr == targetOr) ? 1 : 0;
+        }
+
+        int countWithout = countSubsets(nums, idx + 1, currentOr, targetOr);
+
+        int countWith = countSubsets(nums, idx + 1, currentOr | nums[idx], targetOr);
+
+        return countWithout + countWith;
+
+
+
+    }
+
+
 
 
 
