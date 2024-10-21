@@ -426,6 +426,34 @@ public class MediumContinued {
 
 
 
+    // 1593. split a string into the max number of unique substrings
+    int maxCount = 0;
+    public int maxUniqueSplit(String s) {
+
+        backTrackingForUniqueSplit(0, new HashSet<>(), s);
+
+        return maxCount;
+    }
+
+
+
+    private void backTrackingForUniqueSplit(int start, Set<String> seen, String s) {
+
+        if (start == s.length()) {
+            maxCount = Math.max(seen.size(), maxCount);
+        }
+
+        for (int i = start + 1; i <= s.length(); i++) {
+            String temp = s.substring(start, i);
+            if (!seen.contains(temp)) {
+                seen.add(temp);
+                backTrackingForUniqueSplit(i, seen, s);
+                seen.remove(temp);
+            }
+        }
+    }
+
+
 
 
 
