@@ -82,6 +82,44 @@ public class SevenKyu {
 
 
 
+    // Circular list
+    public class Circular<T> {
+
+        private final T[] elements;
+        private int currentIdx = -1;
+        private int length;
+
+        public Circular(final T... elements) {
+            if (elements == null || elements.length == 0) {
+                throw new IllegalArgumentException("${T}");
+
+            }
+            this.elements = elements;
+            this.length = elements.length;
+        }
+
+        T next() {
+
+            if (++currentIdx == length) {
+                currentIdx = 0;
+            }
+            return elements[currentIdx];
+
+        }
+
+
+        T prev() {
+
+            if (--currentIdx < 0) {
+                currentIdx = length - 1;
+            }
+
+            return elements[currentIdx];
+        }
+
+
+
+    }
 
 
 
