@@ -446,6 +446,38 @@ public class Trees {
 
 
 
+    // flip equivalent binary trees
+    public boolean flipEquiv(TreeNode root1, TreeNode root2) {
+
+        // if both trees are empty
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+
+        // just one tree is empty
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+
+        // corresponding values are different
+        if (root1.val != root2.val) {
+            return false;
+        }
+
+
+
+        boolean noSwap = flipEquiv(root1.left, root2.left) && flipEquiv(root1.right, root2.right);
+        boolean swap = flipEquiv(root1.left, root2.right) && flipEquiv(root1.right, root2.left);
+
+
+
+
+        return noSwap || swap;
+
+    }
+
+
+
 
 
 
