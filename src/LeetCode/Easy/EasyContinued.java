@@ -97,6 +97,24 @@ public class EasyContinued {
 
 
 
+    //
+    public boolean rotateString(String s, String goal) {
+
+        if (s.length() != goal.length()) {
+            return false;
+        }
+
+        // concatenate s with s, check if goal is in s
+        s = s + s;
+
+        return s.contains(goal);
+
+    }
+
+
+
+
+
 
 
 
