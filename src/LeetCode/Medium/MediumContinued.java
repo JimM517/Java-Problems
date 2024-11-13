@@ -625,5 +625,16 @@ public class MediumContinued {
 
 
 
+    // 2563. Count the number of fair pairs
+    public long countFairPairs(int[] nums, int lower, int upper) {
+
+
+
+
+        return 0;
+    }
+
+
+
 
 }
