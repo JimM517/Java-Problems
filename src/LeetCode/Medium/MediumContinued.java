@@ -654,4 +654,44 @@ public class MediumContinued {
 
 
 
+
+
+    // 3254. find the power of k-size subarrays I
+    public int[] resultsArray(int[] nums, int k) {
+        int len = nums.length;
+        int[] result = new int[len - k + 1];
+
+
+        for (int start = 0; start <= len - k; start++) {
+
+            boolean isConsecutive = true;
+
+
+            for (int index = start; index < start + k - 1; index++) {
+
+                if (nums[index + 1] != nums[index] + 1) {
+                    isConsecutive = false;
+                    break;
+                }
+            }
+
+            if (isConsecutive) {
+                result[start] = nums[start + k - 1];
+            } else {
+                result[start] = -1;
+            }
+
+
+        }
+        return result;
+
+    }
+
+
+
+
+
+
+
+
 }
