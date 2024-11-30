@@ -1,6 +1,6 @@
 package InterviewQuestions;
 
-public class ActualInterviewQuestions {
+public class SeenQuestions {
 
     /*** All of the questions listed here are from actual interviews so far ***/
 
