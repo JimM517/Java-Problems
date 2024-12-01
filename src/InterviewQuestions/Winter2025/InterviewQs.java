@@ -124,6 +124,27 @@ public class InterviewQs {
 
 
 
+    // 2273. Find resultant array after removing anagrams
+    public List<String> removeAnagrams(String[] words) {
+        String prev = "";
+        List<String> answer = new ArrayList<>();
+        for (int i = 0; i < words.length; i++) {
+            char[] chars = words[i].toCharArray();
+            Arrays.sort(chars);
+            String temp = new String(chars);
+            if (!temp.equals(prev)) {
+                answer.add(words[i]);
+                prev = temp;
+            }
+        }
+
+        return answer;
+
+    }
+
+
+
+
 
 
 
