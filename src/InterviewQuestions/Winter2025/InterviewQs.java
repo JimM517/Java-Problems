@@ -99,6 +99,30 @@ public class InterviewQs {
 
 
 
+    // 2068. check whether two strings are almost equivalent
+    public boolean checkAlmostEquivalent(String word1, String word2) {
+
+        if (word1.length() != word2.length()) {
+            return false;
+        }
+
+        Map<Character, Integer> answer = new HashMap<>();
+        for (int i = 0; i < word1.length(); i++) {
+            answer.put(word1.charAt(i), answer.getOrDefault(word1.charAt(i), 0) + 1);
+            answer.put(word2.charAt(i), answer.getOrDefault(word2.charAt(i), 0) - 1);
+
+        }
+
+        for (int i : answer.values()) {
+            if (i > 3 || i < -3) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 
 
 
