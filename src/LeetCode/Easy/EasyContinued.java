@@ -1,8 +1,6 @@
 package LeetCode.Easy;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class EasyContinued {
 
@@ -132,6 +130,21 @@ public class EasyContinued {
 
 
 
+
+    // 1346. check if N and its double exist
+    public boolean checkIfExists(int[] arr) {
+
+       for (int i = 0; i < arr.length; i++) {
+           for (int j = 0; j < arr.length; j++) {
+               if (i != j && arr[i] == 2 * arr[j]) {
+                   return true;
+               }
+           }
+       }
+
+        return false;
+
+    }
 
 
 
