@@ -690,6 +690,23 @@ public class MediumContinued {
 
 
 
+    // 2109. adding spaces to a string
+    public String addSpaces(String s, int[] spaces) {
+
+            StringBuilder answer = new StringBuilder();
+
+            int start = 0;
+            for (int space : spaces) {
+                answer.append(s, start, space).append(" ");
+                start = space;
+            }
+            answer.append(s.substring(start));
+            return answer.toString();
+
+    }
+
+
+
 
 
 
