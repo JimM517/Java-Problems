@@ -147,5 +147,47 @@ public class InterviewQs {
 
 
 
+    // 2602. minimum operations to make all array elements equal
+    public List<Long> minOperations(int[] nums, int[] queries) {
+        Arrays.sort(nums);
+        List<Long> answer = new ArrayList<>();
+
+        int n = nums.length;
+
+        long[] prefix = new long[n + 1];
+
+        for (int i = 1; i <= n; i++) {
+            prefix[i] = prefix[i - 1] + nums[i - 1];
+        }
+        for (int x : queries) {
+            int i = binaryS(nums, x);
+            answer.add(x * (2L * i - n) + prefix[n] - 2 * prefix[i]);
+        }
+
+
+        return answer;
+
+    }
+
+
+    private int binaryS(int[] nums, int x) {
+        int low = 0;
+        int high = nums.length;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+        return low;
+    }
+
+
+
+
 
 }
