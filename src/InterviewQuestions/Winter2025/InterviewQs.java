@@ -223,5 +223,36 @@ public class InterviewQs {
 
 
 
+    // 1481. Least number of unique integers after k removals
+    public int findLeastNumOfUniqueInts(int[] arr, int k) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+
+        List<Integer> frequencies = new ArrayList<>(map.values());
+
+        Collections.sort(frequencies);
+
+        int elementsRemoved = 0;
+
+        for (int i = 0; i < frequencies.size(); i++) {
+
+            elementsRemoved += frequencies.get(i);
+
+            if (elementsRemoved > k) {
+                return frequencies.size() - i;
+            }
+
+        }
+
+        return 0;
+    }
+
+
+
 
 }
