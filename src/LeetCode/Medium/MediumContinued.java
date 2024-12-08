@@ -710,6 +710,29 @@ public class MediumContinued {
 
 
 
+    // 2825. make string a subsequence using cyclic increments
+    public boolean canMakeSubsequence(String str1, String str2) {
+
+        int n = str1.length();
+        int m = str2.length();
+
+        int i = 0;
+        int j = 0;
+
+        while (i < n && j < m) {
+
+            char current = str1.charAt(i);
+            char next = (char) ((current - 'a' + 1) % 26 + 'a');
+
+            if (current == str2.charAt(j) || next == str2.charAt(j)) {
+                j++;
+            }
+
+            i++;
+        }
+        return j == m;
+    }
+
 
 
 
