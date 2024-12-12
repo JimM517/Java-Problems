@@ -169,6 +169,31 @@ public class EasyContinued {
 
 
 
+    // 2558. take gifts from the richest pile
+    public long pickGifts(int[] gifts, int k) {
+
+        List<Integer> gList = new ArrayList<>();
+        for (int gift : gifts) {
+            gList.add(-gift);
+        }
+
+        PriorityQueue<Integer> heap = new PriorityQueue<>(gList);
+        for (int i = 0; i < k; i++) {
+            int maxElement = -heap.poll();
+
+            heap.offer(-(int) Math.sqrt(maxElement));
+        }
+
+        long remainingGifts = 0;
+        while (!heap.isEmpty()) {
+            remainingGifts -= heap.poll();
+        }
+        return remainingGifts;
+    }
+
+
+
+
 
 
 
