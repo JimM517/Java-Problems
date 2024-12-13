@@ -812,7 +812,39 @@ public class MediumContinued {
 
 
 
+    // 2593. find score of an array after marking all elements
+    public long findScore(int[] nums) {
 
+        long answer = 0;
+        boolean[] marked = new boolean[nums.length];
+
+        PriorityQueue<int[]> heap = new PriorityQueue<>((arr1, arr2) -> {
+            if (arr1[0] != arr2[0]) return arr1[0] - arr2[0];
+            return arr1[1] - arr2[1];
+        });
+
+        for (int i = 0; i < nums.length; i++) {
+            heap.add(new int[] {nums[i], i});
+        }
+
+        while (!heap.isEmpty()) {
+            int[] element = heap.remove();
+            int number = element[0];
+            int index = element[1];
+            if (!marked[index]) {
+                answer += number;
+                marked[index] = true;
+
+                if (index - 1 >= 0) {
+                    marked[index - 1] = true;
+                }
+                if (index + 1 < nums.length) {
+                    marked[index + 1] = true;
+                }
+            }
+        }
+        return answer;
+    }
 
 
 
