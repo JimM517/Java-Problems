@@ -308,6 +308,83 @@ public class InterviewQs {
 
 
 
+    // 752. open the lock
+    // bfs -- shortest path
+    // dfs will cause TLE because it will search entire branch before searching others
+    // TODO need to review this
+    public int openLock(String[] deadends, String target) {
+        Map<Character, Character> next = Map.of(
+                '0', '1',
+                '1', '2',
+                '2', '3',
+                '3', '4',
+                '4', '5',
+                '5', '6',
+                '6', '7',
+                '7', '8',
+                '8', '9',
+                '9', '0'
+        );
+
+        Map<Character, Character> prev = Map.of(
+                '0', '9',
+                '1', '0',
+                '2', '1',
+                '3', '2',
+                '4', '3',
+                '5', '4',
+                '6', '5',
+                '7', '6',
+                '8', '7',
+                '9', '8'
+        );
+
+        Set<String> visited = new HashSet<>(Arrays.asList(deadends));
+
+        Queue<String> pending = new LinkedList<>();
+
+        int turns = 0;
+
+        if (visited.contains("0000")) {
+            return -1;
+        }
+
+        pending.add("0000");
+        visited.add("0000");
+
+        while (!pending.isEmpty()) {
+            int currentLevelNode = pending.size();
+            for (int i = 0; i < currentLevelNode; i++) {
+                String current = pending.poll();
+
+                if (current.equals(target)) {
+                    return turns;
+                }
+
+                for (int wheel = 0; wheel < 4; wheel += 1) {
+                    StringBuilder sb = new StringBuilder(current);
+                    sb.setCharAt(wheel, next.get(sb.charAt(wheel)));
+
+                    if (!visited.contains(sb.toString())) {
+                        pending.add(sb.toString());
+                        visited.add(sb.toString());
+                    }
+
+                    sb = new StringBuilder(current);
+                    sb.setCharAt(wheel, prev.get(sb.charAt(wheel)));
+
+                    if (!visited.contains(sb.toString())) {
+                        pending.add(sb.toString());
+                        visited.add(sb.toString());
+                    }
+                }
+            }
+            turns += 1;
+        }
+        return -1;
+    }
+
+
 
 
 
