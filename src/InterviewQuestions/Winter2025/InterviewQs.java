@@ -408,6 +408,29 @@ public class InterviewQs {
 
 
 
+    // 53. maximum subarray
+    public int maxSubArray(int[] nums) {
+        int start = Integer.MIN_VALUE;
+
+        int end = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            end += nums[i];
+
+
+            if (start < end) {
+                start = end;
+            }
+            if (end < 0) {
+                end = 0;
+            }
+
+
+        }
+        return start;
+    }
+
+
 
 
 
