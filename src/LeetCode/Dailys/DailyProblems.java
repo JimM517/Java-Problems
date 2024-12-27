@@ -47,5 +47,21 @@ public class DailyProblems {
 
 
 
+    // 1014. best sightseeing pair
+    public int maxScoreSightseeingPair(int[] values) {
+
+        int m = values[0];
+        int answer = values[0] + values[1] + 1;
+        int n = values.length;
+
+        for (int i = 1; i < n; i++) {
+            answer = Math.max(answer, m + (values[i] - i));
+            m = Math.max(m, values[i] + i);
+        }
+        return answer;
+    }
+
+
+
 
 }
