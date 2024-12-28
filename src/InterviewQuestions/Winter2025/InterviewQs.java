@@ -481,6 +481,28 @@ public class InterviewQs {
 
 
 
+    // 1710. maximum units on a truck
+    public int maximumUnits(int[][] boxTypes, int truckSize) {
+
+        Arrays.sort(boxTypes, (a, b) -> b[1] - a[1]);
+
+        int count = 0;
+        int size = boxTypes.length;
+
+        for (int i = 0; i < size && truckSize > 0; i++) {
+            int boxes = boxTypes[i][0];
+            int units = boxTypes[i][1];
+            truckSize -= boxes;
+            count += boxes * units;
+            if (truckSize < 0) {
+                count += truckSize * units;
+                break;
+            }
+        }
+        return count;
+    }
+
+
 
 
 
