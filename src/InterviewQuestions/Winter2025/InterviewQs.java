@@ -451,6 +451,33 @@ public class InterviewQs {
 
 
 
+    // happy number
+    public boolean isHappy(int n) {
+        Map<Integer, Integer> checked = new HashMap<>();
+
+        while (n != 1 && !checked.containsKey(n)) {
+
+            checked.put(n, 0);
+
+
+            String temp = String.valueOf(n);
+
+            int sum = 0;
+
+            for (int i = 0; i < temp.length(); i++) {
+
+                int digit = Character.getNumericValue(temp.charAt(i));
+
+                sum += (digit * digit);
+            }
+
+            n = sum;
+        }
+
+
+        return n == 1;
+    }
+
 
 
 
