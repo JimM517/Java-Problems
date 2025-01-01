@@ -506,4 +506,31 @@ public class InterviewQs {
 
 
 
+    // 22. generate parentheses
+    public List<String> generateParentheses(int n) {
+        List<String> validCombos = new ArrayList<>();
+        backTrack("", 0, 0, n, validCombos);
+        return validCombos;
+    }
+
+    public void backTrack(String current, int open, int closed, int n, List<String> validCombos) {
+
+        if (current.length() == 2 * n) {
+            validCombos.add(current);
+            return;
+        }
+
+        if (open < n) {
+            backTrack(current + "(", open + 1, closed, n, validCombos);
+        }
+
+        if (closed < open) {
+            backTrack(current + ')', open, closed + 1, n, validCombos);
+        }
+
+
+    }
+
+
+
 }
