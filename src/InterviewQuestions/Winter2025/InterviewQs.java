@@ -533,4 +533,53 @@ public class InterviewQs {
 
 
 
+
+    // 2104. sum of subarray ranges
+    public long subArrayRanges(int[] nums) {
+        long result = 0;
+
+        int n = nums.length;
+
+        for (int left = 0; left < n; left++) {
+            int minVal = nums[left];
+            int maxVal = nums[left];
+            for (int right = left; right < n; right++) {
+                minVal = Math.min(minVal, nums[right]);
+                maxVal = Math.max(maxVal, nums[right]);
+                result += maxVal - minVal;
+            }
+        }
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
