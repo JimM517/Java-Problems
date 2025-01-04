@@ -1,8 +1,6 @@
 package LeetCode.Dailys;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class January2025 {
 
@@ -105,6 +103,42 @@ public class January2025 {
         }
         return count;
 
+    }
+
+
+
+
+
+    // 1930. unique length-3 palindromic subsequences
+    public int countPalindromicSubsequence(String s) {
+
+       Set<Character> letters = new HashSet<>();
+       for (Character ch : s.toCharArray()) {
+           letters.add(ch);
+       }
+
+       int answer = 0;
+       for (Character letter : letters) {
+           int i = -1;
+           int j = 0;
+
+
+           for (int k = 0; k < s.length(); k++) {
+               if (s.charAt(k) == letter) {
+                   if (i == -1) {
+                       i = k;
+                   }
+                   j = k;
+               }
+           }
+
+           Set<Character> between = new HashSet<>();
+           for (int k = i + 1; k < j; k++) {
+               between.add(s.charAt(k));
+           }
+           answer += between.size();
+       }
+        return answer;
     }
 
 
