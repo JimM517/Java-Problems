@@ -978,6 +978,30 @@ public class MediumContinued {
 
 
 
+    // 848. shifting letters
+    public String shiftingLetters(String s, int[] shifts) {
+
+        StringBuilder sb = new StringBuilder();
+        int x = 0;
+        for (int shift : shifts) {
+            x = (x + shift) % 26;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            int index = s.charAt(i) - 'a';
+            sb.append((char) ((index + x) % 26 + 97));
+            x = Math.floorMod(x - shifts[i], 26);
+        }
+        return sb.toString();
+    }
+
+
+
+
+
+
+
+
 
 
 
