@@ -323,6 +323,29 @@ public class January2025 {
 
 
 
+    // 1400. construct k palindrome strings
+    public boolean canConstruct(String s, int k) {
+        if (s.length() < k) {
+            return false;
+        }
+
+
+        Map<Character, Integer> map = new HashMap<>();
+        for (char ch : s.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        List<Integer> numChars = new ArrayList<>(map.values());
+        int totalOdds = 0;
+
+        for (int num : numChars) {
+            if (num % 2 == 1) {
+                totalOdds++;
+            }
+        }
+
+        return totalOdds > k ? false : true;
+    }
 
 
 
