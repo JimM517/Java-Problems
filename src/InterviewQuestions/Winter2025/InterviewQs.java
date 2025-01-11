@@ -585,6 +585,24 @@ public class InterviewQs {
 
 
 
+    // 560. subarray equals k
+    public int subarraySum(int[] nums, int k) {
+        int sum = 0;
+        int answer = 0;
+
+        Map<Integer, Integer> prefix = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+
+            if (prefix.containsKey(sum - k)) {
+                answer += prefix.get(sum - k);
+            }
+
+            prefix.put(sum, prefix.getOrDefault(sum, 0) + 1);
+        }
+        return answer;
+    }
 
 
 
