@@ -394,6 +394,27 @@ public class January2025 {
 
 
 
+    // 3223. Minimum length of string after operations
+    public int minimumLength(String s) {
+
+        Map<Character, Integer> map = new HashMap<>();
+        for (char ch : s.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+
+        int count = 0;
+        for (int x : map.values()) {
+            if (x % 2 == 1) {
+                count += x - 1;
+            } else {
+                count += x - 2;
+            }
+        }
+
+        return s.length() - count;
+
+    }
 
 
 
