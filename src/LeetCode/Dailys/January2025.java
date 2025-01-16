@@ -487,7 +487,34 @@ public class January2025 {
 
 
 
+    public int xorAllNums(int[] nums1, int[] nums2) {
 
+        int m = nums1.length;
+        int n = nums2.length;
+
+        if (m % 2 == 0 && n % 2 == 0) {
+            return 0;
+        }
+
+        int xor1 = 0;
+        int xor2 = 0;
+
+
+        if (n % 2 != 0) {
+            for (int num : nums1) {
+                xor1 ^= num;
+            }
+        }
+
+        if (m % 2 != 0) {
+            for (int num : nums2) {
+                xor2 ^= num;
+            }
+        }
+
+
+        return xor1 ^ xor2;
+    }
 
 
 
