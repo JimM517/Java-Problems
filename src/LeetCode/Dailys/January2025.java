@@ -535,6 +535,16 @@ public class January2025 {
         boolean checkForOne = (original[0] == original[original.length - 1]);
 
         return checkForZero || checkForOne;
+
+
+        // another solution
+//        int XOR = 0;
+//        for (int element : derived) {
+//            XOR = XOR ^ element;
+//        }
+//        return XOR == 0;
+
+
     }
 
 
