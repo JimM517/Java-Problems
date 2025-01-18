@@ -1,4 +1,4 @@
-package CodeWars.KyuEight;
+package CodeWars.EightKyu;
 
 import java.util.Arrays;
 
