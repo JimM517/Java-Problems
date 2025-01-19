@@ -141,8 +141,43 @@ public class SevenKyu {
 
         return mode.equals("value") ? min : index;
 
+    }
 
 
+
+
+    // move in squared strings I
+    public static String vertMirror(String strng) {
+        String[] mirror = strng.split("\n");
+
+        StringBuilder result = new StringBuilder();
+
+
+        for (String s : mirror) {
+
+          result.append(new StringBuilder(s).reverse()).append("\n");
+
+
+        }
+        return result.toString().trim();
+    }
+
+
+    public static String horMirror(String strng) {
+        String[] mirror = strng.split("\n");
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = mirror.length - 1; i >= 0; i--) {
+            result.append(mirror[i]).append("\n");
+        }
+        return result.toString().trim();
+    }
+
+
+    public static String oper(java.util.function.Function<String, String> operator, String s) {
+        // your code and complete ... before operator
+        return operator.apply(s);
     }
 
 
