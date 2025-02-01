@@ -2,7 +2,7 @@ package LeetCode.Dailys;
 
 import java.util.*;
 
-public class January2025 {
+public class January {
 
 
     // 1422. maximum score after splitting a string
