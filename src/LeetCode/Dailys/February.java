@@ -123,4 +123,38 @@ public class February {
 
 
 
+
+
+
+        // 1790. check if one string swap can make strings equal
+        public boolean areAlmostEqual(String s1, String s2) {
+
+            int firstIndexDiff = 0;
+            int secondIndexDiff = 0;
+            int numDifference = 0;
+
+            for (int i = 0; i < s1.length(); i++) {
+                if (s1.charAt(i) != s2.charAt(i)) {
+                    numDifference++;
+
+                    if (numDifference > 2) {
+                        return false;
+                    } else if (numDifference == 1) {
+                        firstIndexDiff = i;
+                    } else {
+                        secondIndexDiff = i;
+                    }
+
+                }
+            }
+
+            return (s1.charAt(firstIndexDiff) == s2.charAt(secondIndexDiff) && (s1.charAt(secondIndexDiff) == s2.charAt(firstIndexDiff)));
+        }
+
+
+
+
+
+
+
 }
