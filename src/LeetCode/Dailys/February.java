@@ -280,8 +280,24 @@ public class February {
         }
 
 
+        // 2364. Count number of bad pairs
+        public long countBadPairs(int[] nums) {
 
+                long pairs = 0;
+                Map<Integer, Integer> diffCount = new HashMap<>();
 
+                for (int i = 0; i < nums.length; i++) {
+                    int diff = i - nums[i];
+
+                    int goodPairs = diffCount.getOrDefault(diff, 0);
+
+                    pairs += i - goodPairs;
+
+                    diffCount.put(diff, goodPairs + 1);
+
+                }
+                return pairs;
+        }
 
 
 
