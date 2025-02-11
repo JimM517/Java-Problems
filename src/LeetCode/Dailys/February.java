@@ -301,6 +301,36 @@ public class February {
 
 
 
+        // 3174. clear digits
+        public String clearDigits(String s) {
+            // delete digits and first closest non-digit to its left
+
+            StringBuilder result = new StringBuilder();
+
+            Stack<Character> stacks = new Stack<>();
+
+            for (char ch : s.toCharArray()) {
+
+                if (Character.isDigit(ch)) {
+                    while (!stacks.isEmpty() && Character.isDigit(stacks.peek())) {
+                        stacks.pop();
+                    }
+                    if (!stacks.isEmpty()) {
+                        stacks.pop();
+                    }
+                } else {
+                    stacks.push(ch);
+                }
+            }
+
+            for (char ch : stacks) {
+                result.append(ch);
+            }
+
+
+            return result.toString();
+
+        }
 
 
 
