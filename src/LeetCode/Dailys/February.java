@@ -333,6 +333,28 @@ public class February {
         }
 
 
+        // 1910. remove all occurrences of a substring
+        public String removeOccurrences(String s, String part) {
+
+
+            StringBuilder sb = new StringBuilder(s);
+
+            while (s.indexOf(part) != -1) {
+
+                int idx = sb.indexOf(part);
+
+                sb.delete(idx, idx + part.length());
+
+
+
+            }
+
+
+
+
+            return sb.toString();
+
+    }
 
 
 
