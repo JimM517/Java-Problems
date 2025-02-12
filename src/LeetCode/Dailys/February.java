@@ -359,6 +359,38 @@ public class February {
 
 
 
+    // 2342. max sum of a pair with equal sum of digits
+    public int maximumSum(int[] nums) {
+
+        int maxSum = -1;
+
+        Map<Integer, Integer> maxes = new HashMap<>();
+        for (int num : nums) {
+            int summedDigits = sumDigits(num);
+
+            if (maxes.containsKey(summedDigits)) {
+                maxSum = Math.max(maxSum, num + maxes.get(summedDigits));
+                maxes.put(summedDigits, Math.max(maxes.get(summedDigits), num));
+
+            } else {
+                maxes.put(summedDigits, num);
+            }
+
+        }
+        return maxSum;
+
+    }
+
+    public int sumDigits(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+
+
 
 
 
