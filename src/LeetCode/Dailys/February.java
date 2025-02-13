@@ -1,6 +1,7 @@
 package LeetCode.Dailys;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class February {
 
@@ -393,7 +394,29 @@ public class February {
 
 
 
+    // 3066. minimum operations to exceed threshold II
+    public int minOperations(int[] nums, int k) {
 
+        PriorityQueue<Long> queue = new PriorityQueue<>(
+                Arrays.stream(nums)
+                .mapToLong(i -> (long) i)
+                .boxed()
+                .collect(Collectors.toList())
+            );
+
+        int result = 0;
+
+        while (queue.peek() < k) {
+            long num1 = queue.remove();
+            long num2 = queue.remove();
+
+            long numToAdd = num1 * 2 + num2;
+            queue.add(numToAdd);
+            result++;
+        }
+
+        return result;
+    }
 
 
 
