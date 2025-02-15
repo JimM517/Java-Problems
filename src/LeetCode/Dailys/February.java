@@ -459,7 +459,16 @@ public class February {
 
 
 
+    // 2698. find the punishment number of an integer
+    public int punishmentNumber(int n) {
 
+        int result = 0;
+
+
+
+
+        return result;
+    }
 
 
 

@@ -998,8 +998,45 @@ public class MediumContinued {
 
 
 
+    // 131. palindrome partitioning
+    public List<List<String>> partition(String s) {
+
+        List<List<String>> answer = new ArrayList<>();
+        isValidPartition(answer, new ArrayList<>(), s, 0);
+
+        return answer;
+    }
 
 
+
+    public void isValidPartition(List<List<String>> arr, List<String> currPartition, String s, int start) {
+
+        if (start == s.length()) {
+            arr.add(new ArrayList<>(currPartition));
+            return;
+        }
+
+        for (int end = start; end < s.length(); end++) {
+            if (checkPal(s, start, end)) {
+                currPartition.add(s.substring(start, end + 1));
+                isValidPartition(arr, currPartition, s, end + 1);
+                currPartition.remove(currPartition.size() - 1);
+            }
+        }
+
+
+    }
+
+    public boolean checkPal(String s, int start, int end) {
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
 
 
 
