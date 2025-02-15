@@ -461,15 +461,39 @@ public class February {
 
     // 2698. find the punishment number of an integer
     public int punishmentNumber(int n) {
+            int punishNum = 0;
 
-        int result = 0;
+            for (int i = 0; i <= n; i++) {
+                int squared = i * i;
 
-
-
-
-        return result;
+                if (checkPartition(squared, i)) {
+                    punishNum += squared;
+                }
+            }
+        return punishNum;
     }
 
+
+
+    public boolean checkPartition(int num, int target) {
+
+        if (target < 0 || num < target) {
+            return false;
+        }
+
+        if (num == target) {
+            return true;
+        }
+
+        return (
+                checkPartition(num / 10, target - (num % 10)) ||
+                checkPartition(num / 100, target - (num % 100)) ||
+                checkPartition(num / 1000, target - (num % 1000))
+                );
+
+
+
+    }
 
 
 
