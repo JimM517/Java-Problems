@@ -586,7 +586,26 @@ public class February {
     }
 
 
+    // 2375. construct smallest number from DI string
+    public String smallestNumber(String pattern) {
 
+        Stack<Integer> numStack = new Stack<>();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i <= pattern.length(); i++) {
+
+            numStack.add(i + 1);
+
+            if (i == pattern.length() || pattern.charAt(i) == 'I') {
+                while (!numStack.isEmpty()) {
+                    sb.append(numStack.pop());
+                }
+            }
+
+
+        }
+        return sb.toString();
+    }
 
 
 
