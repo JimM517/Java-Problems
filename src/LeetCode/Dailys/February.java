@@ -552,8 +552,38 @@ public class February {
 
 
 
+    // 1079. letter tile possibilities
+    public int numTilePositions(String tiles) {
+
+        Set<String> result = new HashSet<>();
+        boolean[] used = new boolean[tiles.length()];
+        checkPermutations(tiles, new StringBuilder(), used, result);
+
+        return result.size();
+
+    }
+
+    public void checkPermutations(String s, StringBuilder sb, boolean[] used, Set<String> result) {
+
+        if (sb.length() > 0) {
+            result.add(sb.toString());
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+
+            if (used[i]) continue;
+
+            used[i] = true;
+            sb.append(s.charAt(i));
+
+            checkPermutations(s, sb, used, result);
+
+            sb.deleteCharAt(sb.length() - 1);
+            used[i] = false;
+        }
 
 
+    }
 
 
 
