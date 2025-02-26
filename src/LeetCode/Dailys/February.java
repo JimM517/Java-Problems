@@ -808,7 +808,25 @@ public class February {
 
 
 
+    // 1749. maximum absolute sum of any subarray
+    public int maxAbsoluteSum(int[] nums) {
 
+        // kadanes
+
+        int minPrefixSum = 0;
+        int maxPrefixSum = 0;
+        int prefixSum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            prefixSum += nums[i];
+
+            minPrefixSum = Math.min(minPrefixSum, prefixSum);
+            maxPrefixSum = Math.max(maxPrefixSum, prefixSum);
+
+        }
+        return maxPrefixSum - minPrefixSum;
+
+    }
 
 
 
