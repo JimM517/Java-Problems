@@ -830,7 +830,37 @@ public class February {
 
 
 
+    // 873. length of longest fibonacci subsequence
+    public int lenLongestFibSubseq(int[] arr) {
 
+        Set<Integer> fibs = new HashSet<>();
+        int n = arr.length;
+
+        for (int num : arr) {
+            fibs.add(num);
+        }
+
+
+
+        int maxLen = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int prev = arr[j];
+                int curr = arr[i] + arr[j];
+                int len = 2;
+
+
+                while (fibs.contains(curr)) {
+                    int temp = curr;
+                    curr += prev;
+                    prev = temp;
+                    maxLen = Math.max(maxLen, ++len);
+                }
+
+            }
+        }
+        return maxLen;
+    }
 
 
 
