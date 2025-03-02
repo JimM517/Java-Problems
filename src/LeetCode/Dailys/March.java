@@ -1,5 +1,10 @@
 package LeetCode.Dailys;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 public class March {
 
     // march 2025 dailys
@@ -30,6 +35,75 @@ public class March {
 
         return modifiedNums;
     }
+
+
+    // 2570. merge two 2D arrays by summing values
+    public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
+
+        Map<Integer, Integer> map = new TreeMap<>();
+
+        for (int[] nums : nums1) {
+            map.put(nums[0], nums[1]);
+        }
+
+        for (int[] nums : nums2) {
+            map.put(nums[0], map.getOrDefault(nums[0], 0) + nums[1]);
+        }
+
+        List<int[]> merged = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> x : map.entrySet()) {
+            merged.add(new int[] {x.getKey(), x.getValue()});
+        }
+
+
+        int[][] result = new int[merged.size()][2];
+        for (int i = 0; i < merged.size(); i++) {
+            result[i] = merged.get(i);
+        }
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
