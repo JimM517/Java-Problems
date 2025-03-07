@@ -152,9 +152,58 @@ public class March {
 
 
 
+    // 2523. closest prime numbers in a range
+    public int[] closestPrimes(int left, int right) {
+
+        int[] sieveArray = sieve(right);
+
+        List<Integer> primeNumbers = new ArrayList<>();
+        for (int num = left; num <= right; num++) {
+            if (sieveArray[num] == 1) {
+                primeNumbers.add(num);
+            }
+        }
+
+
+        if (primeNumbers.size() < 2) {
+            return new int[]{-1, -1};
+        }
+
+        int minDiff = Integer.MAX_VALUE;
+        int[] closestPair = new int[2];
+        Arrays.fill(closestPair, -1);
+
+        for (int i = 1; i < primeNumbers.size(); i++) {
+            int diff = primeNumbers.get(i) - primeNumbers.get(i - 1);
+            if (diff < minDiff) {
+                minDiff = diff;
+                closestPair[0] = primeNumbers.get(i - 1);
+                closestPair[1] = primeNumbers.get(i);
+            }
+        }
+        return closestPair;
+    }
 
 
 
+    public int[] sieve(int upper) {
+
+        int[] sieve = new int[upper + 1];
+
+        Arrays.fill(sieve, 1);
+        sieve[0] = 0;
+        sieve[1] = 0;
+
+        for (int p = 2; p * p <= upper; p++) {
+            if (sieve[p] == 1) {
+                for (int j = p * p; j <= upper; j += p) {
+                    sieve[j] = 0;
+                }
+            }
+        }
+
+        return sieve;
+    }
 
 
 
