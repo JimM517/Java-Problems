@@ -243,6 +243,37 @@ public class March {
 
 
 
+    // alternating groups II
+    public int numOfAlternatingGroups(int[] colors, int k) {
+
+        int length = colors.length;
+        int result = 0;
+
+        int alternatingElems = 1;
+        int lastColor = colors[0];
+
+        for (int i = 1; i < length + k - 1; i++) {
+            int index = i % length;
+
+            if (colors[index] == lastColor) {
+                alternatingElems = 1;
+                lastColor = colors[index];
+                continue;
+            }
+
+            alternatingElems++;
+
+            if (alternatingElems >= k) {
+                result++;
+            }
+
+            lastColor = colors[index];
+        }
+
+
+        return result;
+
+    }
 
 
 
