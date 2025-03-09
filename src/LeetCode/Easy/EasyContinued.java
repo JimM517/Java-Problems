@@ -251,6 +251,33 @@ public class EasyContinued {
 
 
 
+    // 3206. alternating groups I
+    public int numberOfAlternatingGroups(int[] colors) {
+
+        int n = colors.length;
+
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            int next = colors[(i + 1) % n];
+            int previous = colors[(i - 1 + n) % n];
+
+           if (colors[i] != next && colors[i] != previous) {
+               count++;
+           }
+
+
+
+
+        }
+
+
+        return count;
+    }
+
+
+
 
 
 
