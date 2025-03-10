@@ -279,6 +279,159 @@ public class EasyContinued {
 
 
 
+    // count vowel substrings of a string
+    public int countVowelSubstrings(String word) {
+
+        Set<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
+        int count = 0;
+
+
+        for (int i = 0; i < word.length(); i++) {
+            Map<Character, Integer> frequencies = new HashMap<>();
+
+            for (int j = i; j < word.length(); j++) {
+                char ch = word.charAt(j);
+                if (!vowels.contains(ch)) break;
+
+                frequencies.put(ch, frequencies.getOrDefault(ch, 0) + 1);
+
+                if (frequencies.size() == 5) {
+                    count++;
+                }
+            }
+
+
+        }
+        return count;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
