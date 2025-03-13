@@ -366,7 +366,24 @@ public class March {
 
 
 
+    // 2529. maximum count of positive and negative integers
+    public int maximumCount(int[] nums) {
 
+        int pos = 0;
+        int neg = 0;
+
+        for (int num : nums) {
+            if (num > 0) {
+                pos++;
+            } else if (num < 0) {
+                neg++;
+            }
+        }
+
+
+
+        return Math.max(pos, neg);
+    }
 
 
 
