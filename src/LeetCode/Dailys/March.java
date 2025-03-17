@@ -532,11 +532,7 @@ public class March {
                 if (temp % 2 != 0) {
                     return false;
                 }
-
-
-
             }
-
             return true;
         }
 
