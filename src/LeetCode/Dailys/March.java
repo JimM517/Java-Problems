@@ -515,6 +515,32 @@ public class March {
 
 
 
+        // 2206. divide array into pairs
+        public boolean divideArray(int[] nums) {
+            // count frequencies of each number
+            Map<Integer, Integer> countPairs = new HashMap<>();
+
+            for (int num : nums) {
+                countPairs.put(num, countPairs.getOrDefault(num, 0) + 1);
+            }
+
+            // iterate over map and if each value is not divisible by 2, then it can't be broken into pairs -> return false
+            for (Map.Entry<Integer, Integer> x : countPairs.entrySet()) {
+
+                int temp = x.getValue();
+
+                if (temp % 2 != 0) {
+                    return false;
+                }
+
+
+
+            }
+
+            return true;
+        }
+
+
 
 
 
