@@ -669,7 +669,7 @@ public class March {
         Arrays.sort(meetings, Comparator.comparingInt(a -> a[0]));
 
         for (int[] meeting : meetings) {
-            int start = meeting[0], end = meeting[i];
+            int start = meeting[0], end = meeting[1];
 
             if (start > latestEnd + 1) {
                 freeDays += start - latestEnd - 1;
