@@ -685,6 +685,57 @@ public class March {
 
 
 
+    // 2033. Minimum operations to make uni-value grid
+    public int minOperations(int[][] grid, int x) {
+
+            int operations = 0;
+
+            List<Integer> flat = new ArrayList<>();
+
+            for (int i = 0; i < grid.length; i++) {
+                for (int j = 0; j < grid[0].length; j++) {
+                    flat.add(grid[i][j]);
+                }
+            }
+
+            Collections.sort(flat);
+
+
+            int len = flat.size();
+
+            int finalCommon = flat.get(len / 2);
+
+            for (int num : flat) {
+                if (num % x != finalCommon % x) {
+                    return - 1;
+                }
+                operations += Math.abs(finalCommon - num) / x;
+            }
+            return operations;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
