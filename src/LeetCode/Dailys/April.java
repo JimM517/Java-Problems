@@ -1,9 +1,7 @@
 package LeetCode.Dailys;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class April {
 
@@ -256,7 +254,42 @@ public class April {
 
 
 
+    // 3396. Minimum number of operations to make elements in array distinct
+    public int minimumOperations(int[] nums) {
 
+        List<Integer> numList = new ArrayList<>();
+        for (int num : nums) {
+            numList.add(num);
+        }
+
+        int minOps = 0;
+
+        while (true) {
+            Set<Integer> seen = new HashSet<>();
+            boolean hasDuplicate = false;
+
+            for (int num : numList) {
+                if (!seen.add(num)) {
+                    hasDuplicate = true;
+                    break;
+                }
+            }
+
+            if (!hasDuplicate) {
+                break;
+            }
+
+            // Remove first 3 elements (or all remaining if less than 3)
+            int removeCount = Math.min(3, numList.size());
+            for (int i = 0; i < removeCount; i++) {
+                numList.remove(0);
+            }
+
+            minOps++;
+        }
+
+        return minOps;
+    }
 
 
 
