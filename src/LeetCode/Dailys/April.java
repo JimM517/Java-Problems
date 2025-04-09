@@ -293,6 +293,25 @@ public class April {
 
 
 
+    // 3375. minimum operations to make array values equal to k
+    public int minOperations(int[] nums, int k) {
+
+        Set<Integer> numSet = new HashSet<>();
+
+        for (int num : nums) {
+            if (num < k) {
+                return -1;
+            } else if (num > k) {
+                numSet.add(num);
+            }
+        }
+
+        return numSet.size();
+
+
+    }
+
+
 
 
 
