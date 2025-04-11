@@ -395,7 +395,7 @@ public class April {
 
 
 
-        // 2843. county symmetric integers
+        // 2843. count symmetric integers
         public int countSymmetricIntegers(int low, int high) {
 
             int res = 0;
