@@ -679,7 +679,25 @@ public class April {
 
 
 
+    // 781. rabbits in forest
+    public int numRabbits(int[] answers) {
 
+        Map<Integer, Integer> map = new HashMap<>();
+        int total = 0;
+
+        for (int ans : answers) {
+            map.put(ans, map.getOrDefault(ans, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int k = entry.getKey();
+            int count = entry.getValue();
+            int groupSize = k + 1;
+            int groups = (count + k) / groupSize;
+            total += groups * groupSize;
+        }
+        return total;
+    }
 
 
 
