@@ -828,7 +828,36 @@ public class April {
 
 
 
+    // 2799. Count complete subarrays in an array
+    public int countComplete(int[] nums) {
 
+        int result = 0;
+        Map<Integer, Integer> count = new HashMap<>();
+        int n = nums.length;
+        int right = 0;
+        int distinct = new HashSet<>(
+                Arrays.asList(Arrays.stream(nums).boxed().toArray(Integer[]::new))
+        ).size();
+
+        for (int left = 0; left < n; left++) {
+            if (left > 0) {
+                int remove = nums[left - 1];
+                count.put(remove, count.get(remove) - 1);
+                if (count.get(remove) == 0) {
+                    count.remove(remove);
+                }
+            }
+            while (right < n && count.size() < distinct) {
+                int add = nums[right];
+                count.put(add, count.getOrDefault(add, 0) + 1);
+                right++;
+            }
+            if (count.size() == distinct) {
+                result += (n - right + 1);
+            }
+        }
+        return result;
+    }
 
 
 
