@@ -861,6 +861,41 @@ public class April {
 
 
 
+    // 2845. count of interesting subarrays
+    public long countInterestingSubarrays(List<Integer> nums, int modulo, int k) {
+
+        int n = nums.size();
+        Map<Integer, Integer> count = new HashMap<>();
+        long result = 0;
+        int prefix = 0;
+        count.put(0, 1);
+        for (int i = 0; i < n; i++) {
+            prefix += nums.get(i) % modulo == k ? 1 : 0;
+            result += count.getOrDefault((prefix - k + modulo) % modulo, 0);
+            count.put(prefix % modulo, count.getOrDefault(prefix % modulo, 0) + 1);
+        }
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
