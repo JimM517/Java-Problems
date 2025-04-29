@@ -938,6 +938,35 @@ public class April {
 
 
 
+    // 2962. count subarrays where max element appears at least k times
+    public long countSubarrraysKTimes(int[] nums, int k) {
+
+        int maximum = Arrays.stream(nums).max().getAsInt();
+
+        long answer = 0;
+        long start = 0;
+
+        int maxElementsInWindow = 0;
+
+        for (int end = 0; end < nums.length; end++) {
+            if (nums[end] == maximum) {
+                maxElementsInWindow++;
+            }
+            while (maxElementsInWindow == k) {
+                if (nums[(int) start] == maximum) {
+                    maxElementsInWindow--;
+                }
+                start++;
+            }
+            answer += start;
+        }
+
+        return answer;
+
+    }
+
+
+
 
 
 
