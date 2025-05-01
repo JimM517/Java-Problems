@@ -1043,6 +1043,58 @@ public class MediumContinued {
 
 
 
+    // 2576. find the maximum number of marked indices
+    public int maxNumOfMarkedIndices(int[] nums) {
+
+        Arrays.sort(nums);
+        int n = nums.length;
+        int left = 0;
+        int right = n / 2;
+        int marked = 0;
+
+        while (left < n / 2 && right < n) {
+            if (2 * nums[left] <= nums[right]) {
+                marked += 2;
+                left++;
+            }
+            right++;
+        }
+
+        return marked;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
