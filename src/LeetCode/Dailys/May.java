@@ -1,8 +1,6 @@
 package LeetCode.Dailys;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
+import java.util.*;
 
 public class May {
 
@@ -136,6 +134,55 @@ public class May {
             return Math.min(rotateTop, rotateBottom);
 
         }
+
+
+
+
+
+
+        // 1128. number of equivalent domino pairs
+    public int numEquivDominoPairs(int[][] dominoes) {
+
+            int[] store = new int[100];
+
+            int count = 0;
+
+            for (int[] i : dominoes) {
+                int a = Math.min(i[0], i[1]);
+                int b = Math.max(i[0], i[1]);
+                int key = a * 10 + b;
+                count = count + store[key];
+                store[key]++;
+            }
+
+            return count;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
