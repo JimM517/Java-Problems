@@ -182,7 +182,19 @@ public class May {
 
 
 
+    // 1920. build an array from permutation
+    public int[] buildArray(int[] nums) {
 
+
+            int[] myArr = new int[nums.length];
+
+
+            for (int i = 0; i < nums.length; i++) {
+                myArr[i] = nums[nums[i]];
+            }
+
+            return myArr;
+    }
 
 
 
