@@ -501,7 +501,7 @@ public class May {
 
     // 3337. Total characters in a string after transformations II
     // TODO review this one!!
-        private static final int MOD = (int) 1e9 + 7;
+        private static final int twoMOD = (int) 1e9 + 7;
         private static final int L = 26;
 
         private static class Mat {
