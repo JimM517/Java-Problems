@@ -783,6 +783,39 @@ public class May {
 
 
 
+    // 3355. Zero Array Transformation I
+    public boolean isZeroArray(int[] nums, int[][] queries) {
+
+            int[] delta = new int[nums.length + 1];
+
+            for (int[] query : queries) {
+
+                int left = query[0];
+                int right = query[1];
+
+                delta[left] += 1;
+                delta[right + 1] -= 1;
+
+
+            }
+
+            int[] operationCounts = new int[delta.length];
+            int current = 0;
+
+            for (int i = 0; i < delta.length; i++) {
+                current += delta[i];
+                operationCounts[i] -= current;
+
+            }
+
+            for (int i = 0; i < nums.length; i++) {
+                if (operationCounts[i] < nums[i]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
 
 
