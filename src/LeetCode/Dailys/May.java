@@ -808,6 +808,42 @@ public class May {
 
 
 
+    // 73. set matrix zeros
+    public void setZeroes(int[][] matrix) {
+
+         Set<Integer> rows = new HashSet<>();
+         Set<Integer> columns = new HashSet<>();
+
+         for (int i = 0; i < matrix.length; i++) {
+             for (int j = 0; j < matrix[0].length; j++) {
+
+                 int currentValue = matrix[i][j];
+
+                 if (currentValue == 0) {
+                     rows.add(i);
+                     columns.add(j);
+                 }
+
+
+             }
+         }
+
+
+        for (int i : rows) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = 0;
+            }
+        }
+
+
+        for (int j : columns) {
+            for (int i = 0; i < matrix.length; i++) {
+                matrix[i][j] = 0;
+            }
+        }
+
+
+    }
 
 
 
