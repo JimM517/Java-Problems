@@ -937,6 +937,31 @@ public class May {
 
 
 
+    // 2131. longest palindrome by concatenating two letter words
+    public int longestPalindrome(String[] words) {
+
+            int result = 0;
+            int[][] letterArr = new int[26][26];
+            for (int i = 0; i < words.length; i++) {
+                int index = words[i].charAt(0) - 'a';
+                int indexTwo = words[i].charAt(1) - 'a';
+                if (letterArr[indexTwo][index] > 0) {
+                    --letterArr[indexTwo][index];
+                    result += 4;
+                } else {
+                    ++letterArr[index][indexTwo];
+                }
+            }
+
+
+            for (int i = 0; i < 26; i++) {
+                if (letterArr[i][i] > 0) {
+                    return result + 2;
+                }
+            }
+            return result;
+        }
+
 
 
 
