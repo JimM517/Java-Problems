@@ -1012,6 +1012,21 @@ public class May {
 
 
 
+    // 2894. divisible and non-divisible sum difference
+    public int differenceSums(int n, int m) {
+
+            int answer = 0;
+
+            for (int i = 0; i <= n; i++) {
+                if (i % m == 0) {
+                    answer -= i;
+                } else {
+                    answer += i;
+                }
+            }
+            return answer;
+        }
+
 
 
 
