@@ -310,7 +310,23 @@ public class EasyContinued {
 
 
 
+// 2928. distribute candies among children I
+    public int distributeCandies(int n, int limit) {
 
+        int result = 0;
+
+        for (int i = 0; i <= limit; i++) {
+            for (int j = 0; j <= limit; j++) {
+                int k = n - i - j;
+
+                if (k >= 0 && k <= limit) {
+                    result++;
+                }
+            }
+        }
+        return result;
+
+    }
 
 
 
