@@ -103,6 +103,27 @@ public class June {
 
 
 
+        // 3403. find the lexicographically largest string from the box I
+    public String answerString(String word, int numFriends) {
+
+        if (numFriends == 1) {
+            return word;
+        }
+
+        int n = word.length();
+
+        String result = "";
+        for (int i = 0; i < n; i++) {
+            String s = word.substring(i, Math.min(i + n - numFriends + 1, n));
+            if (result.compareTo(s) <= 0) {
+                result = s;
+            }
+        }
+
+        return result;
+    }
+
+
 
 
 
