@@ -1,8 +1,6 @@
 package LeetCode.Dailys;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class June {
 
@@ -208,6 +206,40 @@ public class June {
 
 
 
+
+
+    // 3170. lexicographically minimum string after removing stars
+    public String clearStars(String s) {
+
+        Deque<Integer>[] cnt = new Deque[26];
+        for (int i = 0; i < 26; i++) {
+            cnt[i] = new ArrayDeque<>();
+        }
+
+        char[] arr = s.toCharArray();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != '*') {
+                cnt[arr[i] - 'a'].push(i);
+            } else {
+                for (int j = 0; j < 26; j++) {
+                    if (!cnt[j].isEmpty()) {
+                        arr[cnt[j].pop()] = '*';
+                        break;
+                    }
+                }
+            }
+        }
+
+        StringBuilder answer = new StringBuilder();
+        for (char ch : arr) {
+            if (ch != '*') {
+                answer.append(ch);
+            }
+        }
+
+        return answer.toString();
+
+    }
 
 
 
