@@ -309,7 +309,26 @@ public class June {
 
 
 
+    // 3442. maximum difference between even and off frequency I
+    public int maxDifference(String s) {
 
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (char ch : s.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        int maxOdd = 1, minEven = s.length();
+        for (int value : map.values()) {
+            if (value % 2 == 1) {
+                maxOdd = Math.max(maxOdd, value);
+            } else {
+                minEven = Math.min(minEven, value);
+            }
+        }
+        return maxOdd - minEven;
+
+    }
 
 
 
