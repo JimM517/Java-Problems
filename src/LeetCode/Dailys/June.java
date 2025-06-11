@@ -309,7 +309,7 @@ public class June {
 
 
 
-    // 3442. maximum difference between even and off frequency I
+    // 3442. maximum difference between even and odd frequency I
     public int maxDifference(String s) {
 
         Map<Character, Integer> map = new HashMap<>();
@@ -334,7 +334,7 @@ public class June {
 
 
 
-// 3445. Maximum difference between even and off frequency II
+// 3445. Maximum difference between even and odd frequency II
     public int maxDifference(String s, int k) {
 
 
