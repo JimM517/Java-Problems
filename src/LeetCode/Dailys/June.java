@@ -389,7 +389,31 @@ public class June {
 
 
 
+// 3423. maximum difference between adjacent elements in circular array
+    public int maxAdjacentDistance(int[] nums) {
 
+            int maxDiff = Math.abs(nums[nums.length - 1] - nums[0]);
+
+
+
+
+            for (int i = 1; i < nums.length; i++) {
+
+                int currDiff = Math.abs(nums[i] - nums[i - 1]);
+
+                if (currDiff > maxDiff) {
+                    maxDiff = currDiff;
+                }
+
+
+
+            }
+
+
+            return maxDiff;
+
+
+    }
 
 
 
