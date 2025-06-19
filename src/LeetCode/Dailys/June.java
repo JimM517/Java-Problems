@@ -605,8 +605,23 @@ public class June {
     }
 
 
+// 2294. partition array such that maximum difference is k
+    public int partitionArray(int[] nums, int k) {
 
+        Arrays.sort(nums);
 
+        int answer = 1;
+        int res = nums[0];
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] - res > k) {
+                answer++;
+                res = nums[i];
+            }
+        }
+        return answer;
+
+    }
 
 
 
