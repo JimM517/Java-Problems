@@ -671,6 +671,192 @@ public class June {
 
 
 
+    // 3085. minimum deletions to make string k-special
+    public int minimumDeletions(String word, int k) {
+
+            Map<Character, Integer> count = new HashMap<>();
+
+            for (char ch : word.toCharArray()) {
+                count.put(ch, count.getOrDefault(ch, 0) + 1);
+            }
+
+            int result = word.length();
+
+            for (int a : count.values()) {
+                int deleted = 0;
+                for (int b : count.values()) {
+                    if (a > b) {
+                        deleted += b;
+                    } else if (b > a + k) {
+                        deleted += b - (a + k);
+                    }
+                }
+                result = Math.min(result, deleted);
+            }
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
