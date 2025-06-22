@@ -700,6 +700,27 @@ public class June {
 
 
 
+        // 2138. divide a string into groups of size k
+    public String[] divideString(String s, int k, char fill) {
+
+            int len = (s.length() + k - 1) / k;
+
+            String[] result = new String[len];
+
+            for (int i = 0; i < len; i++) {
+                int start = i * k;
+                int end = Math.min(start + k, s.length());
+
+                String group = s.substring(start, end);
+
+                while (group.length() < k) {
+                    group += fill;
+                }
+                result[i] = group;
+            }
+
+            return result;
+    }
 
 
 
