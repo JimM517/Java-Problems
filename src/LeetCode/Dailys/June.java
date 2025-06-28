@@ -934,7 +934,27 @@ public class June {
 
 
 
+    // 2099 find subsequence of length k with the largest sum
+    public int[] maxSubsequence(int[] nums, int k) {
 
+        int n = nums.length;
+
+        int[][] vals = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            vals[i][0] = i;
+            vals[i][1] = nums[i];
+        }
+
+
+        Arrays.sort(vals, (a, b) -> Integer.compare(b[1], a[1]));
+
+        Arrays.sort(vals, 0, k, (a, b) -> Integer.compare(a[0], b[0]));
+        int[] result = new int[k];
+        for (int i = 0; i < k; i++) {
+            result[i] = vals[i][1];
+        }
+        return result;
+    }
 
 
 
