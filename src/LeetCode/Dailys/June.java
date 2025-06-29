@@ -959,6 +959,35 @@ public class June {
 
 
 
+    // 1498. number of subsequences that satisfy the given sum condition
+    public int numSubseq(int[] nums, int target) {
+        int mod = 1_000_000_007;
+        Arrays.sort(nums);
+
+        int n = nums.length;
+        int left = 0, right = n - 1;
+        int result = 0;
+
+        // precompute powers of 2
+        int[] pow2 = new int[n];
+        pow2[0] = 1;
+        for (int i = 1; i < n; i++) {
+            pow2[i] = (pow2[i - 1] * 2) % mod;
+        }
+
+        while (left <= right) {
+            if (nums[left] + nums[right] <= target) {
+                // all subsequences formed with nums[left] as min and any subset of [left+1..right]
+                result = (result + pow2[right - left]) % mod;
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return result;
+    }
+
 
 
 
