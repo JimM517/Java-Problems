@@ -107,6 +107,27 @@ public class July {
 
 
 
+    // 3307. find the kth character in string game II
+    public char kthCharacter(long k, int[] operations) {
+
+        int answer = 0;
+        int t;
+
+        while (k != 1) {
+            t = 63 - Long.numberOfLeadingZeros(k);
+            if ((1L << t) == k) {
+                t--;
+            }
+            k = k - (1L << t);
+            if (operations[t] != 0) {
+                answer++;
+            }
+
+        }
+
+        return (char) ('a' + (answer % 26));
+    }
+
 
 
 
