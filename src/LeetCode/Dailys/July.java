@@ -1,8 +1,6 @@
 package LeetCode.Dailys;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class July {
 
@@ -131,7 +129,24 @@ public class July {
 
 
 
+    // 1394. find the lucky integer in an array
+    public int findLucky(int[] arr) {
 
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+
+        int max = -1;
+
+        for (int key : map.keySet()) {
+            if (key == map.get(key)) {
+                max = Math.max(max, key);
+            }
+        }
+        return max;
+    }
 
 
 
