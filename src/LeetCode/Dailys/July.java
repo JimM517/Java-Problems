@@ -152,7 +152,42 @@ public class July {
 
 
 
+    // 1865. finding pairs with a certain sum
+    class FindSumPairs {
 
+        private int[] nums1;
+        private int[] nums2;
+        private Map<Integer, Integer> count;
+
+        public FindSumPairs(int[] nums1, int[] nums2) {
+            this.nums1 = nums1;
+            this.nums2 = nums2;
+            this.count = new HashMap<>();
+            for (int num : nums2) {
+                count.put(num, count.getOrDefault(num, 0) + 1);
+            }
+        }
+
+        public void add(int index, int val) {
+            int oldVal = nums2[index];
+            count.put(oldVal, count.get(oldVal) - 1);
+            nums2[index] += val;
+            count.put(nums2[index], count.getOrDefault(nums2[index], 0) + 1);
+        }
+
+        public int count(int tot) {
+
+            int answer = 0;
+            for (int num : nums1) {
+                int rest = tot - num;
+                answer += count.getOrDefault(rest, 0);
+            }
+            return answer;
+        }
+
+
+
+    }
 
 
 
