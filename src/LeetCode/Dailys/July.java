@@ -192,6 +192,41 @@ public class July {
 
 
 
+    // 1353. maximum number of events that can be attended
+    public int maxEvents(int[][] events) {
+        Arrays.sort(events, (a, b) -> Integer.compare(a[0], b[0]));
+
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        int day = 0, i = 0, res = 0;
+        int n = events.length;
+
+        // Find the maximum end day
+        int maxDay = 0;
+        for (int[] e : events) {
+            maxDay = Math.max(maxDay, e[1]);
+        }
+
+        for (day = 1; day <= maxDay; day++) {
+            // Add all events starting today
+            while (i < n && events[i][0] == day) {
+                minHeap.offer(events[i][1]);
+                i++;
+            }
+
+            // Remove expired events
+            while (!minHeap.isEmpty() && minHeap.peek() < day) {
+                minHeap.poll();
+            }
+
+            // Attend the event that ends earliest
+            if (!minHeap.isEmpty()) {
+                minHeap.poll();
+                res++;
+            }
+        }
+
+        return res;
+    }
 
 
 
