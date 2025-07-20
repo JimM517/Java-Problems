@@ -177,7 +177,10 @@ public class EightKyu {
 
 
 
-
+    // convert a string to an array
+    public static String[] stringToArray(String s) {
+        return s.split(" ");
+    }
 
 
 
