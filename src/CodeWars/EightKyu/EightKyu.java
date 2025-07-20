@@ -148,7 +148,22 @@ public class EightKyu {
 
 
 
+    // sum of multiples
+    public static long sumMul(int n, int m) {
 
+        if (n <= 0 || m <= 0) {
+            throw new IllegalArgumentException("Both n and m must be natural numbers (positive integers).");
+        }
+
+        long sum = 0;
+
+        for (int i = n; i < m; i += n) {
+            sum += i;
+        }
+
+        return sum;
+
+    }
 
 
 
