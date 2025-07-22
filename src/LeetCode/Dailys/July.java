@@ -742,6 +742,46 @@ public class July {
 
 
 
+    // 1695. maximum erasure value
+    public int maximumUniqueSubarray(int[] nums) {
+
+            Set<Integer> set = new HashSet<>();
+
+            int left = 0;
+            int right = 0;
+
+            int max = 0;
+            int currentSum = 0;
+
+            while (right < nums.length) {
+
+                if (!set.contains(nums[right])) {
+                    set.add(nums[right]);
+                    currentSum += nums[right];
+                    max = Math.max(max, currentSum);
+                    right++;
+                } else {
+                    set.remove(nums[left]);
+                    currentSum -= nums[left];
+                    left++;
+                }
+
+
+            }
+
+
+
+
+            return max;
+
+    }
+
+
+
+
+
+
+
 
 
 
