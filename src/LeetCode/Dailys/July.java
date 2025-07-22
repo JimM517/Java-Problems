@@ -739,6 +739,32 @@ public class July {
 
 
 
+    // 1957. delete characters to make fancy string
+    public String makeFancyString(String s) {
+
+        char prev = s.charAt(0);
+        int frequency = 1;
+        StringBuilder sb = new StringBuilder();
+        sb.append(s.charAt(0));
+
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == prev) {
+                frequency++;
+            } else {
+                prev = s.charAt(i);
+                frequency = 1;
+            }
+            if (frequency < 3) {
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+
+    }
+
+
+
+
 
 
 
