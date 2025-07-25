@@ -932,7 +932,21 @@ public class July {
 
 
 
+    // 3487. maximum unique subarray sum after deletion
+    public int maxSum(int[] nums) {
 
+
+            Set<Integer> numSet = new HashSet<>();
+            for (int num : nums) {
+                if (num > 0) {
+                    numSet.add(num);
+                }
+            }
+            if (numSet.isEmpty()) {
+                return Arrays.stream(nums).max().getAsInt();
+            }
+            return numSet.stream().mapToInt(Integer::intValue).sum();
+    }
 
 
 
