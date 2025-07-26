@@ -1,5 +1,8 @@
 package CodeWars.SixKyu;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SixKyuQuestions {
 
     // tribonacci sequence
@@ -20,6 +23,58 @@ public class SixKyuQuestions {
 
         return result;
     }
+
+
+
+
+
+    // find the odd int
+    public static int findIt(int[] a) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : a) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        int count = 0;
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+           if (entry.getValue() % 2 != 0) {
+               return entry.getKey();
+           }
+        }
+
+
+        return -1;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
