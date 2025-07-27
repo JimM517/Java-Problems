@@ -208,6 +208,31 @@ public class SevenKyu {
 
 
 
+    // highest and lowest
+    public static String highAndLow(String numbers) {
+        String[] split = numbers.split(" ");
+        int highest = Integer.parseInt(split[0]);
+        int lowest = Integer.parseInt(split[0]);
+
+        for (int i = 1; i < split.length; i++) {
+            int current = Integer.parseInt(split[i]);
+
+            if (current > highest) {
+                highest = current;
+            }
+            if (current < lowest) {
+                lowest = current;
+            }
+        }
+
+
+        return highest + " " + lowest;
+    }
+
+
+
+
+
 
 
 
