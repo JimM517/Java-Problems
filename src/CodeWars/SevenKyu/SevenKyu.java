@@ -232,6 +232,11 @@ public class SevenKyu {
 
 
 
+    // regex validate PIN code
+    public static boolean validatePIN(String pin) {
+        return pin.matches("^\\d{4}$") || pin.matches("^\\d{6}$");
+    }
+
 
 
 
