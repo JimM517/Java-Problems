@@ -1067,6 +1067,32 @@ public class July {
 
 
 
+    // 2419. longest subarray with maximum bitwise AND
+    public int longestSubarray(int[] nums) {
+
+            int maxVal = 0;
+            int answer = 0;
+            int currentStreak = 0;
+
+            for (int num : nums) {
+                if (maxVal < num) {
+                    maxVal = num;
+                    answer = currentStreak = 0;
+                }
+                if (maxVal == num) {
+                    currentStreak++;
+                } else {
+                    currentStreak = 0;
+                }
+                answer = Math.max(answer, currentStreak);
+            }
+            return answer;
+
+    }
+
+
+
+
 
 
 
