@@ -83,9 +83,40 @@ public class August {
 
 
 
+    // 2106. maximum fruits harvested after at most k steps
+    public int maxTotalFruits(int[][] fruits, int startPos, int k) {
+        int left = 0;
+        int right = 0;
+        int n = fruits.length;
+        int sum = 0;
+        int answer = 0;
+
+        while (right < n) {
+            sum += fruits[right][1];
+
+            while (left <= right && step(fruits, startPos, left, right) > k) {
+                sum -= fruits[left][1];
+                left++;
+            }
+            answer = Math.max(answer, sum);
+            right++;
+        }
+        return answer;
+    }
 
 
+    public int step(int[][] fruits, int startPos, int left, int right) {
 
+        return (
+                Math.min(
+                Math.abs(startPos - fruits[right][0]),
+                Math.abs(startPos - fruits[left][0])
+        ) +
+                fruits[right][0] -
+                fruits[left][0]
+        );
+
+    }
 
 
 
