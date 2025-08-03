@@ -239,6 +239,32 @@ public class SevenKyu {
 
 
 
+    // jaden casing strings
+    public String toJadenCase(String phrase) {
+
+        if (phrase == null || phrase.isEmpty()) {
+            return null;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        String[] words = phrase.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            if (!word.isEmpty()) {
+                sb.append(Character.toUpperCase(word.charAt(0)));
+                if (word.length() > 1) {
+                    sb.append(word.substring(1));
+                }
+            }
+            if (i < words.length - 1) {
+                sb.append(" ");
+            }
+        }
+
+        return sb.toString();
+    }
+
 
 
 
