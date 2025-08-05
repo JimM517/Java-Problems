@@ -1,9 +1,6 @@
 package LeetCode.Dailys;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 
 public class August {
 
@@ -116,6 +113,33 @@ public class August {
                 fruits[left][0]
         );
 
+    }
+
+
+
+    // 904. fruits into baskets
+    public int totalFruit(int[] fruits) {
+        Map<Integer, Integer> basket = new HashMap<>();
+        int left = 0, max = 0;
+
+        for (int right = 0; right < fruits.length; right++) {
+            // Add the current fruit to the basket
+            basket.put(fruits[right], basket.getOrDefault(fruits[right], 0) + 1);
+
+            // If we have more than 2 types of fruits, shrink from the left
+            while (basket.size() > 2) {
+                basket.put(fruits[left], basket.get(fruits[left]) - 1);
+                if (basket.get(fruits[left]) == 0) {
+                    basket.remove(fruits[left]);
+                }
+                left++;
+            }
+
+            // Update the max window length
+            max = Math.max(max, right - left + 1);
+        }
+
+        return max;
     }
 
 
