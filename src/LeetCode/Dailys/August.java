@@ -212,7 +212,7 @@ public class August {
             segTree[p] = Math.max(segTree[p << 1], segTree[(p << 1) | 1]);
         }
 
-        public int numOfUnplacedFruits(int[] fruits, int[] baskets) {
+        public int numOfUnplacedFruitsThree(int[] fruits, int[] baskets) {
             this.baskets = baskets;
             int m = baskets.length;
             int count = 0;
