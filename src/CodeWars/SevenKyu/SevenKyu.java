@@ -288,7 +288,22 @@ public class SevenKyu {
 
 
 
+    // beginner series #3 sum of numbers
+    public int GetSum(int a, int b) {
 
+        int total = 0;
+
+        int larger = Math.max(a, b);
+        int smaller = Math.min(a, b);
+
+     for (int i = smaller; i <= larger; i++) {
+         if (smaller == larger) {
+             return smaller;
+         }
+         total += i;
+     }
+     return total;
+    }
 
 
 
