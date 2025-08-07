@@ -267,6 +267,25 @@ public class SevenKyu {
 
 
 
+    // vowel count
+    public static int getCount(String str) {
+
+
+        String vowels = "aeiouAEIOU";
+
+        int count = 0;
+        for (char ch : str.toCharArray()) {
+            if (vowels.contains(String.valueOf(ch))) {
+                count++;
+            }
+        }
+
+
+        return count;
+
+    }
+
+
 
 
 
