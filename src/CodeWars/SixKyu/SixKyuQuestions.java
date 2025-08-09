@@ -1,7 +1,6 @@
 package CodeWars.SixKyu;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class SixKyuQuestions {
 
@@ -54,7 +53,32 @@ public class SixKyuQuestions {
 
 
 
+    // sort the odd
+    public static int[] sortArray(int[] array) {
 
+            List<Integer> odds = new ArrayList<>();
+
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 1) {
+                    odds.add(array[i]);
+                }
+            }
+
+            Collections.sort(odds);
+            int oddIdx = 0;
+
+            for (int i = 0; i < array.length; i++) {
+
+                if (array[i] % 2 != 0) {
+
+                    array[i] = odds.get(oddIdx++);
+                }
+            }
+
+
+
+            return array;
+    }
 
 
 
