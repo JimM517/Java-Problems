@@ -337,6 +337,23 @@ public class SevenKyu {
 
 
 
+    // ones and zeroes
+    public static int ConvertBinaryArrayToInt(List<Integer> binary) {
+
+
+        String convert = "";
+        for (int i = 0; i < binary.size(); i++) {
+            convert += Integer.toString(binary.get(i));
+        }
+
+        int num = Integer.parseInt(convert, 2);
+
+
+        return num;
+
+
+
+    }
 
 
 
