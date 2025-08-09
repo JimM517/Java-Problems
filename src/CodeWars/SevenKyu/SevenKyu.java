@@ -359,6 +359,19 @@ public class SevenKyu {
 
 
 
+    // sum of odd numbers
+    public static int rowSumOddNumbers(int n) {
+
+            return n * n * n;
+
+
+
+    }
+
+
+
+
+
 
 
 
