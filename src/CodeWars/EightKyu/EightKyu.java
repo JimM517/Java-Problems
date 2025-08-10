@@ -204,6 +204,31 @@ public class EightKyu {
     }
 
 
+    // sum without highest and lowest number
+    public static int sum(int[] numbers) {
+      if (numbers == null || numbers.length <= 2) {
+          return 0;
+      }
+      int max = Integer.MIN_VALUE;
+      int min = Integer.MAX_VALUE;
+      int total = 0;
+
+      for (int num : numbers) {
+          total += num;
+          if (num < min) {
+              min = num;
+          }
+          if (num > max) {
+              max = num;
+          }
+      }
+      return total - min - max;
+    }
+
+
+
+
+
 
 
 
