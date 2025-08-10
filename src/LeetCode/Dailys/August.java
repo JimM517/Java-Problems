@@ -354,6 +354,38 @@ public class August {
 
 
 
+    // 869. reordered power of 2
+    public boolean reorderedPowerOf2(int n) {
+
+        String s = String.valueOf(n);
+
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        for (int i = 0; i < 30; i++) {
+            int x = 1 << i;
+            String ss = String.valueOf(x);
+            Map<Character, Integer> freq = new HashMap<>();
+            for (char c : ss.toCharArray()) {
+                freq.put(c, freq.getOrDefault(c, 0) + 1);
+            }
+            if (freq.equals(map)) {
+                return true;
+            }
+        }
+
+
+        return false;
+
+    }
+
+
+
+
+
 
 
 
