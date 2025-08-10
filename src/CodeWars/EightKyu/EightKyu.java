@@ -185,6 +185,24 @@ public class EightKyu {
 
 
 
+    // fake binary
+    public static String fakeBin(String numberString) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : numberString.toCharArray()) {
+            int current = c - '0';
+            if (current < 5) {
+                sb.append("0");
+            } else {
+                sb.append("1");
+            }
+        }
+
+        return sb.toString();
+
+    }
+
 
 
 
