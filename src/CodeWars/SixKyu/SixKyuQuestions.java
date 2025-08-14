@@ -112,6 +112,84 @@ public class SixKyuQuestions {
 
 
 
+    // delete occurrences of an element if it occurs more than n times
+    public static int[] deleteNth(int[] elements, int maxOccurrences){
+
+        List<Integer> result = new ArrayList<>();
+
+
+        Map<Integer, Integer> freq = new HashMap<>();
+
+      for (int elem : elements) {
+          int count = freq.getOrDefault(elem, 0);
+          if (count < maxOccurrences) {
+              result.add(elem);
+              freq.put(elem, count + 1);
+          }
+      }
+
+
+
+      int[] total = new int[result.size()];
+      for (int i = 0; i < result.size(); i++) {
+          total[i] = result.get(i);
+      }
+
+      return total;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
