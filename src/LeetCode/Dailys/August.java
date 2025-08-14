@@ -461,6 +461,22 @@ public class August {
 
 
 
+    // 2264. largest 3-same-digit number in string
+    public String largestGoodInteger(String num) {
+
+        char maxDigit = '\0';
+
+        for (int idx = 0; idx <= num.length() - 3; idx++) {
+            if (num.charAt(idx) == num.charAt(idx + 1) && num.charAt(idx) == num.charAt(idx + 2)) {
+                maxDigit = (char) Math.max(maxDigit, num.charAt(idx));
+            }
+        }
+        return maxDigit == '\0' ? "" : new String(new char[]{maxDigit, maxDigit, maxDigit});
+    }
+
+
+
+
 
 
 
