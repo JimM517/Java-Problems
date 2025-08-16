@@ -515,13 +515,11 @@ public class August {
 
         }
 
-        String str = "";
-        for (int i = 0; i < nums.length; i++) {
-            str += Integer.toString(nums[i]);
+        StringBuilder sb = new StringBuilder();
+        for (int dig : nums) {
+            sb.append(dig);
         }
-
-        int total = Integer.parseInt(str);
-        return total;
+        return Integer.parseInt(sb.toString());
     }
 
 
