@@ -499,7 +499,30 @@ public class August {
 
 
 
+    // 1323. maximum 69 number
+    public int maximum69Number(int num) {
 
+        int[] nums = String.valueOf(num).chars().map(c -> c - '0').toArray();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] == 6) {
+                nums[i] = 9;
+                break;
+            }
+
+
+
+        }
+
+        String str = "";
+        for (int i = 0; i < nums.length; i++) {
+            str += Integer.toString(nums[i]);
+        }
+
+        int total = Integer.parseInt(str);
+        return total;
+    }
 
 
 
