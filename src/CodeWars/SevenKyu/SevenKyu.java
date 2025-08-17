@@ -1,9 +1,6 @@
 package CodeWars.SevenKyu;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SevenKyu {
 
@@ -371,6 +368,19 @@ public class SevenKyu {
 
 
 
+    // sum of two lowest positive integers
+    public static long sumTwoSmallestNumbers(long[] numbers) {
+
+        long answer = 0;
+
+        Arrays.sort(numbers);
+
+
+        answer += numbers[0] + numbers[1];
+
+        return answer;
+
+    }
 
 
 
