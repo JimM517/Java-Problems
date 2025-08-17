@@ -524,7 +524,7 @@ public class August {
 
 
 
-    //
+    // new 21 game
     public double new21Game(int n, int k, int maxPts) {
 
         double[] dp = new double[n + 1];
