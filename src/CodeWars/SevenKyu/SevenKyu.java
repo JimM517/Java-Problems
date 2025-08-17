@@ -384,7 +384,15 @@ public class SevenKyu {
 
 
 
+    // odd or even
+    public static String oddOrEven(int[] array) {
 
+        int total = Arrays.stream(array).sum();
+
+
+        return total % 2 == 0 ? "even" : "odd";
+
+    }
 
 
 
