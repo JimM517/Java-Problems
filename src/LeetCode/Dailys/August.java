@@ -553,6 +553,36 @@ public class August {
 
 
 
+    // 2348. number of zero-filled subarrays
+    public long zeroFilledSubarray(int[] nums) {
+
+        long result = 0;
+        int zeroes = 0;
+
+        for (int num : nums) {
+            if (num == 0) {
+                zeroes++;
+                result += zeroes;
+            } else {
+                zeroes = 0;
+            }
+        }
+
+
+        return result;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
