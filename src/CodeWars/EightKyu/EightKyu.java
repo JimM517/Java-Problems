@@ -269,7 +269,7 @@ public class EightKyu {
 
 
     // reverse strings
-    public static String solution(String str) {
+    public static String reversedString(String str) {
 
         StringBuilder sb = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
