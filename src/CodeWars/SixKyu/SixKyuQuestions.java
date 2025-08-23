@@ -141,6 +141,20 @@ public class SixKyuQuestions {
 
 
 
+    // are they the "same"
+    public static boolean comp(int[] a, int[] b) {
+
+        if (a == null || b == null) return false;
+        if (a.length != b.length) return false;
+
+        int[] sqaured = Arrays.stream(a).map(x -> x * x).toArray();
+
+        Arrays.sort(sqaured);
+        Arrays.sort(b);
+
+        return Arrays.equals(sqaured, b);
+
+    }
 
 
 
