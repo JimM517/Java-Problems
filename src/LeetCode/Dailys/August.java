@@ -751,12 +751,33 @@ public class August {
 
 
         // 1493. longest subarray of 1's after deleting one element
+    /*** basically max consecutive ones III with a special case ***/
     public int longestSubarray(int[] nums) {
 
+        int left = 0;
+        int maxLen = 0;
+        int zeroCount = 0;
+        int k = 1;
+
+        for (int right = 0; right < nums.length; right++) {
+
+            if (nums[right] == 0) {
+                zeroCount++;
+            }
+
+            while (zeroCount > k) {
+                if (nums[left] == 0) {
+                    zeroCount--;
+                }
+                left++;
+            }
+
+            maxLen = Math.max(maxLen, right - left + 1);
+
+        }
 
 
-
-
+        return maxLen - 1;
 
     }
 
