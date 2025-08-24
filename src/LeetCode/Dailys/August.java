@@ -750,6 +750,15 @@ public class August {
 
 
 
+        // 1493. longest subarray of 1's after deleting one element
+    public int longestSubarray(int[] nums) {
+
+
+
+
+
+
+    }
 
 
 
