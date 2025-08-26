@@ -185,7 +185,20 @@ public class SixKyuQuestions {
 
 
 
+    // isograms
+    public static boolean isIsogram(String str) {
 
+        Set<Character> characterSet = new HashSet<>();
+        String lower = str.toLowerCase();
+
+        for (char ch : lower.toCharArray()) {
+            if (characterSet.contains(ch)) {
+                return false;
+            }
+            characterSet.add(ch);
+        }
+        return true;
+    }
 
 
 
