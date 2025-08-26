@@ -202,6 +202,12 @@ public class SixKyuQuestions {
 
 
 
+    // parse int from char problem
+    public static int howOld(final String herOld) {
+
+        return herOld.charAt(0) - '0';
+
+    }
 
 
 
