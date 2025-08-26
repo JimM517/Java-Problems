@@ -398,6 +398,33 @@ public class SevenKyu {
 
 
 
+    // complimentary DNA
+    public static String makeComplement(String dna) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (char ch : dna.toCharArray()) {
+            switch (ch) {
+                case 'A':
+                    sb.append('T');
+                    break;
+                case 'T':
+                    sb.append('A');
+                    break;
+                case 'C':
+                    sb.append('G');
+                    break;
+                case 'G':
+                    sb.append('C');
+                    break;
+            }
+        }
+
+
+       return sb.toString();
+
+    }
+
 
 
 
