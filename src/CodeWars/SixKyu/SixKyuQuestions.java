@@ -160,6 +160,28 @@ public class SixKyuQuestions {
 
 
 
+    // write numbers in expanded form
+    public static String expandedForm(int num) {
+
+        String temp = Integer.toString(num);
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < temp.length(); i++) {
+            int digit = temp.charAt(i) - '0';
+            if (digit != 0) {
+                int placeValue = (int) (digit * Math.pow(10, temp.length() - i - 1));
+
+                if (sb.length() > 0) {
+                    sb.append(" + ");
+                }
+                sb.append(placeValue);
+            }
+        }
+        return sb.toString();
+    }
+
+
+
 
 
 
