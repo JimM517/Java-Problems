@@ -187,11 +187,18 @@ public class SixKyuQuestions {
 
 
 
+    // build a pile of cubes
+    public static long findNb(long m) {
 
+        long sum = 0;
+        long n = 0;
 
-
-
-    //
+        while (sum < m) {
+            n++;
+            sum += n * n * n;
+        }
+        return sum == m ? n : -1;
+    }
 
 
 
