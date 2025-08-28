@@ -204,6 +204,35 @@ public class SixKyuQuestions {
 
 
 
+    // equal sides of an array
+    public static int findEvenIndex(int[] arr) {
+
+        int totalSum = 0;
+        int leftSum = 0;
+
+        // First, get the total sum of the array
+        for (int num : arr) {
+            totalSum += num;
+        }
+
+        // Iterate through the array
+        for (int i = 0; i < arr.length; i++) {
+            // Right sum = totalSum - leftSum - current element
+            int rightSum = totalSum - leftSum - arr[i];
+
+            if (leftSum == rightSum) {
+                return i; // return index, not value
+            }
+
+            // Add current element to leftSum for next iteration
+            leftSum += arr[i];
+        }
+
+        return -1; // no index found
+    }
+
+
+
 
 
 
