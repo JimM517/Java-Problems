@@ -956,6 +956,12 @@ public class August {
 
 
 
+    // 3021. alice and bob playing flower game
+    public long flowerGame(int n, int m) {
+
+        return ((long) m * n) / 2;
+    }
+
 
 
 
