@@ -293,6 +293,27 @@ public class EightKyu {
 
 
 
+    // alternating case
+    public static String toAlternatingString(String string) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (char ch : string.toCharArray()) {
+
+            if (ch == Character.toLowerCase(ch)) {
+                sb.append(Character.toUpperCase(ch));
+            } else {
+                sb.append(Character.toLowerCase(ch));
+            }
+
+
+        }
+
+        return sb.toString();
+
+    }
+
+
 
 
 
