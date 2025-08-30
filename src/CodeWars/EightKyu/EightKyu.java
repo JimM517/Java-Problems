@@ -283,6 +283,12 @@ public class EightKyu {
 
 
 
+    // get character from ASCII value
+    public static char getChar(int c) {
+
+        return (char) c;
+
+    }
 
 
 
