@@ -462,6 +462,20 @@ public class SevenKyu {
 
 
 
+    // find the stray number
+    public static int stray(int[] numbers) {
+
+        int a = numbers[0], b = numbers[1], c = numbers[2];
+
+        int majority = (a == b || a == c) ? a : b;
+
+        for (int num : numbers) {
+            if (num != majority) {
+                return num;
+            }
+        }
+        return -1;
+    }
 
 
 
