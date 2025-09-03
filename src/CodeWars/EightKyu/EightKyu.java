@@ -317,7 +317,17 @@ public class EightKyu {
 
 
 
+    // reversed sequence
+    public static int[] reverse(int n) {
 
+        int[] result = new int[n];
+        int idx = 0;
+        for (int i = n; i >= 1; i--) {
+            result[idx++] = i;
+        }
+
+        return result;
+    }
 
 
 
