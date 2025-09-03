@@ -495,6 +495,20 @@ public class SevenKyu {
 
 
 
+    // money, money, money
+    public static int calculateYears(double principal, double interest, double tax, double desired) {
+
+            int years = 0;
+            while (principal < desired) {
+                double net = principal * interest * (1 - tax);
+                principal += net;
+                years++;
+            }
+
+
+            return years;
+
+    }
 
 
 
