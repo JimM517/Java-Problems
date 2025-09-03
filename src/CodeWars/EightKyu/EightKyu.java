@@ -352,6 +352,54 @@ public class EightKyu {
     }
 
 
+    // double char
+    public static String doubleChar(String s) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (char ch : s.toCharArray()) {
+
+            sb.append(ch).append(ch);
+
+
+        }
+
+
+        return sb.toString();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
