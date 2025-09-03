@@ -483,7 +483,14 @@ public class SevenKyu {
 
 
 
+    // remove the anchor from URL
+    public static String removeUrlAnchor(String url) {
 
+        int idx = url.indexOf("#");
+
+        return (idx == -1) ? url : url.substring(0, idx);
+
+    }
 
 
 
