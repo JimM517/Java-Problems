@@ -332,6 +332,11 @@ public class EightKyu {
 
 
 
+    // function 2 - squaring an argument
+    public static int square(int n) {
+        return (int) Math.pow(n, 2);
+    }
+
 
 
 
