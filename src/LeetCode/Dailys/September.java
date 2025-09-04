@@ -205,6 +205,21 @@ public class September {
 
 
 
+    // 3516. find the closest person
+    public int findClosest(int x, int y, int z) {
+
+            int xCord = Math.abs(z - x);
+            int yCord = Math.abs(z - y);
+
+            if (xCord < yCord) {
+                return 1;
+            } else if (xCord > yCord) {
+                return 2;
+            }
+        return 0;
+    }
+
+
 
 
 
