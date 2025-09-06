@@ -234,6 +234,29 @@ public class SixKyuQuestions {
 
 
 
+    // Array.diff
+    public static int[] arrayDiff(int[] a, int[] b) {
+
+       Set<Integer> setB = new HashSet<>();
+       for (int x : b) {
+           setB.add(x);
+       }
+
+       List<Integer> resultList = new ArrayList<>();
+       for (int x : a) {
+           if (!setB.contains(x)) {
+               resultList.add(x);
+           }
+       }
+
+       int[] result = new int[resultList.size()];
+       for (int i = 0; i < resultList.size(); i++) {
+           result[i] = resultList.get(i);
+       }
+
+        return result;
+
+    }
 
 
 
