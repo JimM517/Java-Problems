@@ -261,6 +261,27 @@ public class SixKyuQuestions {
 
 
 
+    // take a ten minute walk
+    public static boolean isValid(char[] walk) {
+
+
+        if (walk.length != 10) {
+            return false;
+        }
+
+        Map<Character, Integer> map = new HashMap<>();
+        for (char ch : walk) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        int north = map.getOrDefault('n', 0);
+        int south = map.getOrDefault('s', 0);
+        int east = map.getOrDefault('e', 0);
+        int west = map.getOrDefault('w', 0);
+
+        return north == south && east == west;
+
+    }
 
 
 
