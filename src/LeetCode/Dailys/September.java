@@ -272,6 +272,30 @@ public class September {
 
 
 
+    // 1304. find N unique integers sum up to zero
+    public int[] sumZero(int n) {
+
+            int[] answer = new int[n];
+            int idx = 0;
+
+            for (int i = 1; i <= n / 2; i++) {
+                answer[idx++] = i;
+                answer[idx++] = -i;
+            }
+            if (n % 2 == 1) {
+                answer[idx] = 0;
+            }
+
+
+            return answer;
+
+
+    }
+
+
+
+
+
 
 
 
