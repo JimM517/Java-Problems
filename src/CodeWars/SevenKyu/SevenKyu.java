@@ -513,7 +513,29 @@ public class SevenKyu {
 
 
 
+    // anagram detection
+    public static boolean isAnagram(String a, String b) {
 
+            if (a == null || b == null) {
+                return false;
+            }
+
+            a = a.toLowerCase();
+            b = b.toLowerCase();
+
+            if (a.length() != b.length()) {
+                return false;
+            }
+
+            char[] charA = a.toCharArray();
+            char[] charB = b.toCharArray();
+
+            Arrays.sort(charA);
+            Arrays.sort(charB);
+
+            return Arrays.equals(charA, charB);
+
+    }
 
 
 
