@@ -391,6 +391,26 @@ public class EightKyu {
 
 
 
+    // add length
+    public static String[] addLength(String str) {
+
+        String[] result = str.split(" ");
+
+        for (int i = 0; i < result.length; i++) {
+
+            String current = result[i];
+            int len = current.length();
+
+            current += " " + len;
+
+            result[i] = current;
+
+
+        }
+
+        return result;
+
+    }
 
 
 
