@@ -413,6 +413,23 @@ public class EightKyu {
     }
 
 
+    // remove duplicates from a list
+    public static int[] distinct(int[] array) {
+        Set<Integer> set = new LinkedHashSet<>();
+
+        for (int num : array) {
+            set.add(num);
+        }
+
+
+        int[] result = new int[set.size()];
+        int k = 0;
+        for (int num : set) {
+            result[k++] = num;
+        }
+
+        return result;
+    }
 
 
 
