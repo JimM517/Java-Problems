@@ -1,9 +1,6 @@
 package LeetCode.Dailys;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class September {
 
@@ -338,6 +335,43 @@ public class September {
     }
 
 
+
+
+
+    // minimum number of people to teach
+    public int minimumTeachings(int n, int[][] languages, int[][] friendships) {
+
+            Set<Integer> cncon = new HashSet<>();
+            for (int[] friendship : friendships) {
+                Map<Integer, Integer> mp = new HashMap<>();
+                boolean conm = false;
+                for (int lan : languages[friendship[0] - 1]) {
+                    mp.put(lan, 1);
+                }
+                for (int lan : languages[friendship[1] - 1]) {
+                    if (mp.containsKey(lan)) {
+                        conm = true;
+                        break;
+                    }
+                }
+                if (!conm) {
+                    cncon.add(friendship[0] - 1);
+                    cncon.add(friendship[1] - 1);
+                }
+            }
+
+            int max_count = 0;
+            int[] cnt = new int[n + 1];
+            for (int friendship : cncon) {
+                for (int lan : languages[friendship]) {
+                    cnt[lan]++;
+                    max_count = Math.max(max_count, cnt[lan]);
+                }
+            }
+
+
+            return cncon.size() - max_count;
+    }
 
 
 
