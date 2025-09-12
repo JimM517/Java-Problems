@@ -415,6 +415,15 @@ public class September {
 
 
 
+        // 3227. vowels game in a string
+    public boolean doesAliceWin(String s) {
+        return s
+                .chars()
+                .anyMatch(c -> {
+                    return "aeiou".indexOf(c) != -1;
+                });
+    }
+
 
 
 
