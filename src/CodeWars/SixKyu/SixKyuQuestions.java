@@ -312,6 +312,33 @@ public class SixKyuQuestions {
 
 
 
+    // the supermarket queue
+    public static int solveSuperMarketQueue(int[] customers, int n) {
+
+        int[] tills = new int[n];
+
+        for (int time : customers) {
+
+            int idx = 0;
+            for (int i = 1; i < n; i++) {
+                if (tills[i] < tills[idx]) {
+                    idx = i;
+                }
+            }
+
+            tills[idx] += time;
+        }
+
+        int max = 0;
+        for (int t : tills) {
+            if (t > max) {
+                max = t;
+            }
+        }
+
+        return max;
+
+    }
 
 
 
