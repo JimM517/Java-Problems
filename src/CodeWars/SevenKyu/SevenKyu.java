@@ -550,7 +550,17 @@ public class SevenKyu {
 
 
 
+    // previous multiple of three
+    public static int prevMultOfThree(int n) {
 
+        while (n > 0) {
+            if (n % 3 == 0) {
+                return n;
+            }
+            n /= 10;
+        }
+        return -1;
+    }
 
 
 
