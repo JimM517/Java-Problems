@@ -426,6 +426,36 @@ public class September {
 
 
 
+    // 3541. find most frequent vowel and consonant
+    public int maxFreqSum(String s) {
+
+         Map<Character, Integer> vowels = new HashMap<>();
+         Map<Character, Integer> consonants = new HashMap<>();
+
+         for (int i = 0; i < s.length(); i++) {
+
+             if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u') {
+                 vowels.put(s.charAt(i), vowels.getOrDefault(s.charAt(i), 0) + 1);
+             } else {
+                 consonants.put(s.charAt(i), consonants.getOrDefault(s.charAt(i), 0) + 1);
+             }
+
+
+         }
+
+         int vowelMax = 0;
+         int consonantMax = 0;
+
+         for (int x : vowels.values()) {
+           vowelMax = Math.max(vowelMax, x);
+         }
+
+         for (int x : consonants.values()) {
+             consonantMax = Math.max(consonantMax, x);
+         }
+
+        return vowelMax + consonantMax;
+    }
 
 
 
