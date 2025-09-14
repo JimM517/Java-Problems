@@ -343,6 +343,34 @@ public class SixKyuQuestions {
 
 
 
+    // counting duplicates
+    public static int duplicateCount(String text) {
+
+        Map<Character, Integer> charMap = new HashMap<>();
+
+        for (char ch : text.toCharArray()) {
+
+            char curr = Character.toLowerCase(ch);
+
+            charMap.put(curr, charMap.getOrDefault(curr, 0) + 1);
+
+        }
+
+
+        int total = 0;
+
+        for (int x : charMap.values()) {
+            if (x > 1) {
+                total++;
+            }
+        }
+
+
+        return total;
+
+    }
+
+
 
 
 
