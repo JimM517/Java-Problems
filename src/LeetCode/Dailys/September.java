@@ -459,13 +459,65 @@ public class September {
 
 
 
+    // 966 vowel spellchecker
+    Set<String> words_perfect;
+    Map<String, String> words_cap;
+    Map<String, String> words_vow;
+    public String[] spellChecker(String[] wordList, String[] queries) {
+
+            words_perfect = new HashSet<>();
+            words_cap = new HashMap<>();
+            words_vow = new HashMap<>();
+
+            for (String word : wordList) {
+                words_perfect.add(word);
+
+                String wordLow = word.toLowerCase();
+                words_cap.putIfAbsent(wordLow, word);
+
+                String wordlowDV = devowel(wordLow);
+                words_vow.putIfAbsent(wordlowDV, word);
+            }
+
+            String[] answer = new String[queries.length];
+            int t = 0;
+            for (String query : queries) {
+                answer[t++] = solve(query);
+            }
+            return answer;
+
+    }
+
+    public String solve(String query) {
+
+        if (words_perfect.contains(query)) {
+            return query;
+        }
+
+        String queryL = query.toLowerCase();
+        if (words_cap.containsKey(queryL)) {
+            return words_cap.get(queryL);
+        }
+
+        String queryLV = devowel(queryL);
+        if (words_vow.containsKey(queryLV)) {
+            return words_vow.get(queryLV);
+        }
+        return "";
+    }
+
+    public String devowel(String word) {
+        StringBuilder answer = new StringBuilder();
+        for (char c : word.toCharArray()) {
+            answer.append(isVowel(c) ? '*' : c);
+        }
+        return answer.toString();
+    }
 
 
-
-
-
-
-
+    boolean isVowel(char c) {
+        return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+    }
 
 
 
