@@ -523,6 +523,30 @@ public class September {
 
 
 
+    // 1935. maximum number of words you can type
+    public int canBeTypedWords(String text, String brokenLetters) {
+
+
+        int total = 0;
+
+        String[] strings = text.split(" ");
+
+        for (String str : strings) {
+            boolean canType = true;
+            for (char ch : brokenLetters.toCharArray()) {
+                if (str.indexOf(ch) != -1) {
+                    canType = false;
+                    break;
+                }
+            }
+            if (canType) {
+                total++;
+            }
+        }
+
+        return total;
+    }
+
 
 
 
