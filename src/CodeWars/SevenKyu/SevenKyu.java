@@ -565,6 +565,23 @@ public class SevenKyu {
 
 
 
+    // simple fun #176 reverse letter
+    public static String reverseLetter(final String str) {
+
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+
+            if (!Character.isLetter(str.charAt(i))) {
+                continue;
+            }
+            sb.append(str.charAt(i));
+
+        }
+        return sb.toString();
+    }
+
 
 
 
