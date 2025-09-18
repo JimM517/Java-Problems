@@ -465,6 +465,13 @@ public class EightKyu {
 
 
 
+    // plural
+    public static boolean isPlural(float f) {
+
+        return f != 1;
+
+
+    }
 
 
 
