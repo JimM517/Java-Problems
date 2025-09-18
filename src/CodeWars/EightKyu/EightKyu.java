@@ -474,7 +474,23 @@ public class EightKyu {
     }
 
 
+    // removing elements
+    public static Object[] removeEveryOther(Object[] arr) {
 
+        List<Object> myList = new ArrayList<>();
+
+        for (int i = 0; i < arr.length; i+=2) {
+            myList.add(arr[i]);
+        }
+
+        Object[] result = new Object[myList.size()];
+        int k = 0;
+        for (Object x : myList) {
+            result[k++] = x;
+        }
+
+        return result;
+    }
 
 
 
