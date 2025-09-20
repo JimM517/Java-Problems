@@ -399,6 +399,51 @@ public class SixKyuQuestions {
 
 
 
+    // playing with passphrases
+    public static String playPass(String s, int n) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (char ch : s.toCharArray()) {
+
+            if (Character.isLetter(ch)) {
+
+                char base = 'A';
+
+                char shifted = (char) ((ch - base + n) % 26 + base);
+                sb.append(shifted);
+
+            } else if (Character.isDigit(ch)) {
+                int digit = ch - '0';
+                sb.append(9 - digit);
+            } else {
+                sb.append(ch);
+            }
+        }
+
+
+        for (int i = 0; i < sb.length(); i++) {
+            char c = sb.charAt(i);
+            if (Character.isLetter(c)) {
+                if (i % 2 == 0) {
+                    sb.setCharAt(i, Character.toUpperCase(c));
+                } else {
+                    sb.setCharAt(i, Character.toLowerCase(c));
+                }
+            }
+        }
+
+        sb.reverse();
+
+        return sb.toString();
+
+    }
+
+
+
+
+
+
 
 
 
