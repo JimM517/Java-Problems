@@ -586,6 +586,28 @@ public class SevenKyu {
 
 
 
+    // row weights
+    public static int[] rowWeights(final int[] weights) {
+
+        int evenWeight = 0;
+        int oddWeight = 0;
+
+        for (int i = 0; i < weights.length; i++) {
+            if (i % 2 == 0) {
+                evenWeight += weights[i];
+            } else {
+                oddWeight += weights[i];
+            }
+        }
+
+
+        return new int[] {evenWeight, oddWeight};
+
+
+    }
+
+
+
 
 
 
