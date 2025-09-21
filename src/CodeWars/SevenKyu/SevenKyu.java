@@ -607,7 +607,10 @@ public class SevenKyu {
     }
 
 
-
+    // sum of angles
+    public static int sumOfAngles(int n) {
+        return (n - 2) * 180;
+    }
 
 
 
