@@ -614,6 +614,28 @@ public class SevenKyu {
 
 
 
+    // find the capitals
+    public static int[] capitals(String s) {
+
+
+        List<Integer> temp = new ArrayList<>();
+        for (int i = 0; i < s.length(); i++) {
+
+            if (Character.isUpperCase(s.charAt(i))) {
+                temp.add(i);
+            }
+
+
+        }
+
+        int[] result = new int[temp.size()];
+        int k = 0;
+        for (int x : temp) {
+            result[k++] = x;
+        }
+
+        return result;
+    }
 
 
 
