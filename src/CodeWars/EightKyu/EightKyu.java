@@ -495,6 +495,45 @@ public class EightKyu {
 
 
 
+    // surface area and volume of a box
+    public static int[] getSize(int w, int h, int d) {
+
+        int[] result = new int[2];
+
+        int surfaceArea = 2 * (w * h + w * d + h * d);
+        int volume = w * h * d;
+
+        result[0] = surfaceArea;
+        result[1] = volume;
+
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
