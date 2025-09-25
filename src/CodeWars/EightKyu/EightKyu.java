@@ -547,7 +547,25 @@ public class EightKyu {
 
 
 
+    // DNA to RNA conversion
+    public String dnaToRna(String dna) {
 
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : dna.toCharArray()) {
+
+            if (c == 'T') {
+                sb.append('U');
+            } else {
+                sb.append(c);
+            }
+
+
+        }
+
+        return sb.toString();
+
+    }
 
 
 
