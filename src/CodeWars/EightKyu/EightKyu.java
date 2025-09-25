@@ -517,8 +517,20 @@ public class EightKyu {
 
         return n % 2 == 0;
 
+    }
 
 
+
+
+    // find the smallest integer in an array
+    public static int findSmallestInt(int[] args) {
+
+        int min = args[0];
+        for (int i = 1; i < args.length; i++) {
+            min = Math.min(min, args[i]);
+        }
+
+        return min;
     }
 
 
