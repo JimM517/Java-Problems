@@ -638,6 +638,39 @@ public class SevenKyu {
     }
 
 
+    // max length difference
+    public static int mxdiflg(String[] a1, String[] a2) {
+
+        if (a1 == null || a2 == null || a1.length == 0 || a2.length == 0) {
+            return -1;
+        }
+
+        int minA1 = Integer.MAX_VALUE;
+        int maxA1 = Integer.MIN_VALUE;
+
+        int minA2 = Integer.MAX_VALUE;
+        int maxA2 = Integer.MIN_VALUE;
+
+
+        for (String s : a1) {
+
+            int len = s.length();
+            minA1 = Math.min(minA1, len);
+            maxA1 = Math.max(maxA1, len);
+        }
+
+        for (String s : a2) {
+
+            int len = s.length();
+            minA2 = Math.min(minA2, len);
+            maxA2 = Math.max(maxA2, len);
+
+        }
+
+        return Math.max(Math.abs(maxA1 - minA2), Math.abs(maxA2 - minA1));
+
+    }
+
 
 
 
