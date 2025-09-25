@@ -466,6 +466,48 @@ public class SixKyuQuestions {
 
 
 
+    // help the bookseller
+    public static String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
+
+        if (lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
+            return "";
+        }
+
+        int[] totals = new int[lstOf1stLetter.length];
+
+        for (String art : lstOfArt) {
+
+            String letter = art.substring(0, 1);
+            int qty = Integer.parseInt(art.split(" ")[1]);
+
+            for (int j = 0; j < lstOf1stLetter.length; j++) {
+                if (letter.equals(lstOf1stLetter[j])) {
+                    totals[j] += qty;
+                }
+            }
+
+
+        }
+
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < lstOf1stLetter.length; i++) {
+            if (i > 0) {
+                sb.append(" - ");
+            }
+            sb.append("(")
+                    .append(lstOf1stLetter[i])
+                    .append(" : ")
+                    .append(totals[i])
+                    .append(")");
+        }
+
+        return sb.toString();
+
+
+    }
+
+
 
 
 
