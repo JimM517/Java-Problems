@@ -714,6 +714,20 @@ public class SevenKyu {
 
 
 
+    // sum of minimums
+    public static int sumOfMinimums(int[][] arr) {
+        int total = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            int min = Integer.MAX_VALUE;  // reset for each row
+            for (int j = 0; j < arr[i].length; j++) {
+                min = Math.min(min, arr[i][j]);
+            }
+            total += min;  // add min of this row
+        }
+
+        return total;
+    }
 
 
 
