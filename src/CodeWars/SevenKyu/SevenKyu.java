@@ -691,7 +691,25 @@ public class SevenKyu {
 
 
 
+    // form the minimum
+    public static int minValues(int[] values) {
 
+        Arrays.sort(values);
+        StringBuilder temp = new StringBuilder();
+
+        for (int i = 0; i < values.length; i++) {
+
+            String digit = String.valueOf(values[i]);
+
+            if (temp.indexOf(digit) == -1) {
+                temp.append(digit);
+            }
+
+        }
+
+        return Integer.parseInt(temp.toString());
+
+    }
 
 
 
