@@ -510,6 +510,43 @@ public class SixKyuQuestions {
 
 
 
+    // detect pangram
+    public boolean check(String sentence) {
+
+        Set<Character> letters = new HashSet<>();
+        for (char ch : sentence.toLowerCase().toCharArray()) {
+            if (ch >= 'a' && ch <= 'z') {
+                letters.add(ch);
+            }
+        }
+        return letters.size() == 26;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
