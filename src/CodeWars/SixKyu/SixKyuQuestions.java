@@ -550,6 +550,31 @@ public class SixKyuQuestions {
 
 
 
+    // consecutive strings
+    public static String longestConsec(String[] strarr, int k) {
+
+        if (strarr == null || strarr.length == 0 || k > strarr.length || k <= 0) {
+            return "";
+        }
+
+        String longest = "";
+        int maxLen = 0;
+
+        for (int i = 0; i <= strarr.length - k; i++) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < k; j++) {
+                sb.append(strarr[i + j]);
+            }
+            String temp = sb.toString();
+            if (temp.length() > maxLen) {
+                maxLen = temp.length();
+                longest = temp;
+            }
+        }
+
+        return longest;
+    }
+
 
 
 
