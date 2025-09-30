@@ -793,6 +793,24 @@ public class SevenKyu {
 
 
 
+    // two to one
+    public static String longest(String s1, String s2) {
+
+        Set<Character> combinedStringSet = new HashSet<>();
+        for (char c : (s1 + s2).toCharArray()) {
+            combinedStringSet.add(c);
+        }
+
+        List<Character> sortedChars = new ArrayList<>(combinedStringSet);
+        Collections.sort(sortedChars);
+
+        StringBuilder sb = new StringBuilder();
+        for (char c : sortedChars) {
+            sb.append(c);
+        }
+        return sb.toString();
+
+    }
 
 
 
