@@ -753,6 +753,28 @@ public class SevenKyu {
 
 
 
+    // friend or for?
+    public static List<String> friend(List<String> x) {
+
+        List<String> result = new ArrayList<>();
+
+        for (String temp : x) {
+
+            if (temp.length() == 4) {
+                result.add(temp);
+            }
+
+
+        }
+
+        return result;
+
+
+
+    }
+
+
+
 
 
 
