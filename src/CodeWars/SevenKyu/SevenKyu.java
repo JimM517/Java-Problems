@@ -1,5 +1,6 @@
 package CodeWars.SevenKyu;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class SevenKyu {
@@ -729,6 +730,24 @@ public class SevenKyu {
         return total;
     }
 
+
+
+
+
+    // find your villain name
+    public static String getVillainName(LocalDate birthDate) {
+
+
+
+        String[] first = { "The Evil","The Vile","The Cruel", "The Trashy","The Despicable", "The Embarrassing", "The Disreputable","The Atrocious", "The Twirling",  "The Orange","The Terrifying", "The Awkward" };
+        String[] last = { "Mustache", "Pickle", "Hood Ornament", "Raisin", "Recycling Bin", "Potato", "Tomato", "House Cat", "Teaspoon", "Laundry Basket" };
+
+        int month = birthDate.getMonthValue() - 1;
+        int date = birthDate.getDayOfMonth() % 10;
+
+
+        return first[month] + " " + last[date];
+    }
 
 
 
