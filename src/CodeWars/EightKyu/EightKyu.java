@@ -568,6 +568,14 @@ public class EightKyu {
     }
 
 
+    // hex to decimal
+    public static int hexToDecimal(final String hexString) {
+
+        return Integer.parseInt(hexString, 16);
+
+
+    }
+
 
 
 
