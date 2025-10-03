@@ -579,8 +579,19 @@ public class EightKyu {
 
 
 
+    // abbreviate a two word name
+    public static String abbrevName(String name) {
 
 
+        String[] splitName = name.split(" ");
+        char first = Character.toUpperCase(splitName[0].charAt(0));
+        char last = Character.toUpperCase(splitName[1].charAt(0));
+
+        return first + "." + last;
+
+
+
+    }
 
 
 
