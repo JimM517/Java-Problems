@@ -34,6 +34,19 @@ public class October {
 
 
 
+    // 3100. water bottles II
+    public int maxBottlesDrunk(int numBottles, int numExchange) {
+
+        int answer = numBottles;
+        for (int empty = numBottles; empty >= numExchange; numExchange++) {
+            answer++;
+            empty -= numExchange - 1;
+        }
+
+        return answer;
+
+
+    }
 
 
 
