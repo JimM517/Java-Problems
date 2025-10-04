@@ -1,4 +1,177 @@
 package CodeWars.FiveKyu;
 
 public class FiveKyu {
+
+
+
+    // maximum subarray sum
+    public static int sequence(int[] arr) {
+
+
+        if (arr.length == 0) {
+            return 0;
+        }
+
+        int current = 0;
+        int max = 0;
+
+        for (int num : arr) {
+
+            current = Math.max(0, current + num);
+            max = Math.max(max, current);
+
+        }
+        return max;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
