@@ -833,6 +833,41 @@ public class SevenKyu {
 
 
 
+    // remove the minimum
+    public static int[] removeSmallest(int[] numbers) {
+
+        if (numbers.length == 0) {
+            return new int[]{};
+        }
+
+        int min = numbers[0];
+
+        for (int num : numbers) {
+            min = Math.min(min, num);
+        }
+
+        List<Integer> result = new ArrayList<>();
+        boolean removed = false;
+
+        for (int num : numbers) {
+
+            if (!removed && num == min) {
+                removed = true;
+            } else {
+                result.add(num);
+            }
+
+
+        }
+
+        int[] answer = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            answer[i] = result.get(i);
+        }
+
+        return answer;
+    }
+
 
 
 
