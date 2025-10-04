@@ -611,6 +611,32 @@ public class EightKyu {
 
 
 
+    // a wolf in sheep's clothing
+    public static String warnTheSheep(String[] array) {
+
+
+             // "Oi! Sheep number 1! You are about to be eaten by a wolf!";
+
+            // "Pls go away and stop eating my sheep";
+
+        int wolfIndex = -1;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals("wolf")) {
+                wolfIndex = i;
+                break;
+            }
+        }
+
+        if (wolfIndex == array.length - 1) {
+            return "Pls go away and stop eating my sheep";
+        }
+
+        int sheepNumber = array.length - wolfIndex - 1;
+        return "Oi! Sheep number " + sheepNumber + "! You are about to be eaten by a wolf!";
+
+    }
+
 
 
 
