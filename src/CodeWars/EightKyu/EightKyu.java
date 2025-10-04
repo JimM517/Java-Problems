@@ -658,8 +658,33 @@ public class EightKyu {
 
 
 
+    // convert to binary
+    public static int toBinary(int n) {
 
 
+        String temp = Integer.toBinaryString(n);
+
+
+        return Integer.parseInt(temp);
+
+    }
+
+    // another solution to converting to binary
+    public static int toBinaryTwo(int n) {
+
+        int multiplier = 1;
+        int value = 0;
+
+        do {
+            value += (n % 2) * multiplier;
+            n /= 2;
+            multiplier *= 10;
+        } while (n > 0);
+
+        return value;
+
+
+    }
 
 
 
