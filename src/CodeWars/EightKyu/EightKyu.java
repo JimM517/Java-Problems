@@ -598,6 +598,75 @@ public class EightKyu {
 
 
 
+    // find out whether the shape is a cube
+    public static boolean isCube(int volume, int side) {
+
+        if (volume <= 0 || side <= 0) {
+            return false;
+        }
+        return volume == side * side * side;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
