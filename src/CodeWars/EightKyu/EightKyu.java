@@ -640,6 +640,21 @@ public class EightKyu {
 
 
 
+    // enumerable magic #25 - take the first N elements
+    public static int[] take(int[] arr, int n) {
+
+        if (arr == null || arr.length == 0 || n <= 0) {
+            return new int[]{};
+        }
+
+        int limit = Math.min(n, arr.length);
+        int[] result = new int[limit];
+
+        for (int i = 0; i < limit; i++) {
+            result[i] = arr[i];
+        }
+        return result;
+    }
 
 
 
