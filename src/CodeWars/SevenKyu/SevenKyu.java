@@ -885,7 +885,24 @@ public class SevenKyu {
 
 
 
+    // flatten and sort array
+    public static int[] flattenAndSort(int[][] array) {
 
+
+        List<Integer> temp = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                temp.add(array[i][j]);
+            }
+        }
+
+        Collections.sort(temp);
+        int[] result = new int[temp.size()];
+        for (int i = 0; i < temp.size(); i++) {
+            result[i] = temp.get(i);
+        }
+        return result;
+    }
 
 
 
