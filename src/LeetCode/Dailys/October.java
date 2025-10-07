@@ -1,9 +1,6 @@
 package LeetCode.Dailys;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class October {
 
@@ -308,7 +305,36 @@ public class October {
 
 
 
+// 1488. avoid flood in the city
+    public int[] avoidFlood(int[] rains) {
 
+        int[] answer = new int[rains.length];
+        Arrays.fill(answer, 1);
+        TreeSet<Integer> st = new TreeSet<>();
+
+        Map<Integer, Integer> mp = new HashMap<>();
+        for (int i = 0; i < rains.length; i++) {
+
+            if (rains[i] == 0) {
+                st.add(i);
+            } else {
+                answer[i] = -1;
+                if (mp.containsKey(rains[i])) {
+                    Integer it = st.ceiling(mp.get(rains[i]));
+                    if (it == null) {
+                        return new int[0];
+                    }
+                    answer[it] = rains[i];
+                    st.remove(it);
+                }
+                mp.put(rains[i], i);
+            }
+
+        }
+
+        return answer;
+
+    }
 
 
 
