@@ -609,7 +609,38 @@ public class SixKyuQuestions {
 
 
 
+    // reverse or rotate
+    public static String revRot(String strng, int sz) {
 
+        if (sz <= 0 || strng.isEmpty() || sz > strng.length()) {
+            return "";
+        }
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i + sz <= strng.length(); i += sz) {
+            String chunk = strng.substring(i, i + sz);
+            int sum = 0;
+
+
+            for (char c : chunk.toCharArray()) {
+                sum += Character.getNumericValue(c);
+            }
+
+            if (sum % 2 == 0) {
+                result.append(new StringBuilder(chunk).reverse());
+            } else {
+                result.append(chunk.substring(1)).append(chunk.charAt(0));
+            }
+        }
+
+        return result.toString();
+
+
+
+
+
+    }
 
 
 
