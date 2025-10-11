@@ -1109,6 +1109,4 @@ public class SevenKyu {
 
 
 
-
-
 }
