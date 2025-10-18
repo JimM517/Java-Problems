@@ -733,7 +733,14 @@ public class EightKyu {
 
 
 
+    // keep hydrated
+    public static int liters(double time) {
 
+
+        return (int) ((int) time * 0.5);
+
+
+    }
 
 
 
