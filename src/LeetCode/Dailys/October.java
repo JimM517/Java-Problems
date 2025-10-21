@@ -737,7 +737,20 @@ public class October {
 
 
 
+    // 2011. final value of variable after performing operations
+    public int finalValueAfterOperations(String[] operations) {
 
+        int result = 0;
+
+        for (int i = 0; i < operations.length; i++) {
+            if (operations[i].startsWith("++") || operations[i].substring(1).equals("++")) {
+                result++;
+            } else {
+                result--;
+            }
+        }
+        return result;
+    }
 
 
 
