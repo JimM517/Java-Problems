@@ -668,6 +668,36 @@ public class SixKyuQuestions {
 
 
 
+    // your order please
+    public static String order(String words) {
+
+        if (words == null || words.isEmpty()) {
+            return "";
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        String[] wordsArray = words.split(" ");
+
+
+        for (int i = 1; i <= wordsArray.length; i++) {
+            String key = Integer.toString(i);
+            for (String word : wordsArray) {
+                if (word.contains(key)) {
+                    if (sb.length() > 0) {
+                        sb.append(" ");
+                    }
+                    sb.append(word);
+                    break;
+                }
+            }
+        }
+
+
+        return sb.toString();
+
+
+    }
 
 
 
