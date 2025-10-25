@@ -703,6 +703,88 @@ public class SixKyuQuestions {
 
 
 
+    // string subpattern recognition I
+    public static boolean hasSubpattern(String str) {
+
+        if (str.length() == 1) {
+            return false;
+        }
+
+        String doubled = str + str;
+        String trimmed = doubled.substring(1, doubled.length() - 1);
+        return trimmed.contains(str);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
