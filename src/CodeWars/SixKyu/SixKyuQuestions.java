@@ -759,6 +759,32 @@ public class SixKyuQuestions {
     }
 
 
+    // IP address to number
+    class IpTranslator {
+
+        public static long ipToNum(String ip) {
+            String[] parts = ip.split("\\.");
+            long num = 0;
+            num |= (Long.parseLong(parts[0]) << 24);
+            num |= (Long.parseLong(parts[1]) << 16);
+            num |= (Long.parseLong(parts[2]) << 8);
+            num |= (Long.parseLong(parts[3]));
+            return num;
+        }
+
+
+        public static String numToIp(long num) {
+            return String.format("%d.%d.%d.%d",
+                    (num >> 24) & 0xFF,
+                    (num >> 16) & 0xFF,
+                    (num >> 8) & 0xFF,
+                    num & 0xFF
+            );
+        }
+
+
+
+    }
 
 
 
