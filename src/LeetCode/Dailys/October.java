@@ -970,6 +970,22 @@ public class October {
 
 
 
+    // 3370. smallest number with all set bits
+    public int smallestNumber(int n) {
+
+            int x = 1;
+            while (x < n) {
+                x = x * 2 + 1;
+            }
+
+            return x;
+
+
+
+    }
+
+
+
 
 
 
