@@ -986,7 +986,20 @@ public class October {
 
 
 
+    // 1526. minimum number of increments on subarrays to form a target array
+    public int minNumberOperations(int[] target) {
 
+        int n = target.length;
+        int ans = target[0];
+        for (int i = 1; i < n; ++i) {
+            ans += Math.max(target[i] - target[i - 1], 0);
+        }
+        return ans;
+
+
+
+
+    }
 
 
 
