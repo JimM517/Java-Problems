@@ -27,6 +27,25 @@ public class FiveKyu {
 
 
 
+    // mean square error
+    public static double solution(int[] arr1, int[] arr2) {
+
+        int n = arr1.length;
+
+        double total = 0;
+
+        for (int i = 0; i < n; i++) {
+            double diff = arr1[i] - arr2[i];
+            total += Math.pow(diff, 2);
+
+        }
+
+
+        return total / n;
+
+
+    }
+
 
 
 
