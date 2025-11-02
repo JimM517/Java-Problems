@@ -795,7 +795,24 @@ public class EightKyu {
 
 
 
+    // sum differences of arrays
+    public static int sumOfDifferences(int[] arr) {
 
+
+
+        int sumDiff = 0;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+
+
+            sumDiff += (arr[i] - arr[i + 1]);
+
+        }
+
+        return Math.abs(sumDiff);
+
+
+    }
 
 
 
