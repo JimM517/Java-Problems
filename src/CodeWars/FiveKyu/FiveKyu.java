@@ -56,6 +56,7 @@ public class FiveKyu {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if (arr[i].charAt(j) == 'x') {
+                    // add 4 -> each island has 4 sides
                     perimeter += 4;
                     if (i > 0 && arr[i - 1].charAt(j) == 'x') perimeter -= 1;
                     if (i < rows - 1 && arr[i + 1].charAt(j) == 'x') perimeter -= 1;
