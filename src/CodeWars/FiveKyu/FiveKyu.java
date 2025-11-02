@@ -47,6 +47,31 @@ public class FiveKyu {
     }
 
 
+    // land perimeter
+    public static String landPerimeter(String[] arr) {
+        int perimeter = 0;
+        int cols = arr[0].length();
+        int rows = arr.length;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (arr[i].charAt(j) == 'x') {
+                    perimeter += 4;
+                    if (i > 0 && arr[i - 1].charAt(j) == 'x') perimeter -= 1;
+                    if (i < rows - 1 && arr[i + 1].charAt(j) == 'x') perimeter -= 1;
+                    if (j > 0 && arr[i].charAt(j - 1) == 'x') perimeter -= 1;
+                    if (j < cols - 1 && arr[i].charAt(j + 1) == 'x') perimeter -= 1;
+                }
+            }
+        }
+
+        String result = Integer.toString(perimeter);
+
+        return "Total land perimeter: " + result;
+
+
+    }
+
 
 
 
