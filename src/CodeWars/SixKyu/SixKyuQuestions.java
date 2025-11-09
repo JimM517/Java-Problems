@@ -813,8 +813,27 @@ public class SixKyuQuestions {
 
 
 
+    // decode the morse code
+    public static String decode(String morseCode) {
 
+        morseCode = morseCode.trim();
 
+        String[] words = morseCode.split(" {3}");
+        StringBuilder decoded = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            String[] letters = words[i].split(" ");
+            for (String letter : letters) {
+                if (!letter.isEmpty()) {
+                    decoded.append(MorseCode.get(letter));
+                }
+            }
+            if (i < words.length - 1) {
+                decoded.append(' ');
+            }
+        }
+        return decoded.toString();
+    }
 
 
 
