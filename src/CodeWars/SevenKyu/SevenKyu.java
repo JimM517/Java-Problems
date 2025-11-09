@@ -947,6 +947,15 @@ public class SevenKyu {
 
 
 
+    // you're square
+    public static boolean isSquare(int n) {
+
+        int num = (int) Math.sqrt(n);
+
+        return num * num == n;
+
+
+    }
 
 
 
