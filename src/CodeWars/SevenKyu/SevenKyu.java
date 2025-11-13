@@ -961,7 +961,16 @@ public class SevenKyu {
 
 
 
+    // binary addition
+    public static String binaryAddition(int a, int b) {
 
+        int sum = a + b;
+
+        return Integer.toBinaryString(sum);
+
+
+
+    }
 
 
 
