@@ -837,7 +837,30 @@ public class SixKyuQuestions {
 
 
 
+    // rectangle into squares
+    public static List<Integer> sqInRect(int lng, int wdth) {
 
+        if (lng == wdth) {
+            return null;
+        }
+
+        List<Integer> result = new ArrayList<>();
+
+        while (lng > 0 && wdth > 0) {
+            if (lng > wdth) {
+                result.add(wdth);
+                lng -= wdth;
+            } else {
+                result.add(lng);
+                wdth -= lng;
+            }
+        }
+
+
+        return result;
+
+
+    }
 
 
 
