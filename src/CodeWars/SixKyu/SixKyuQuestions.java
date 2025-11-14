@@ -867,7 +867,30 @@ public class SixKyuQuestions {
 
 
 
+// consonant value
+    public static int solve(final String s) {
 
+
+
+            String vowels = "aeiouAEIOU";
+            int max = 0;
+            int current = 0;
+
+            for (char c : s.toCharArray()) {
+                if (!vowels.contains(String.valueOf(c))) {
+                    current += (c - 'a' + 1);
+                } else {
+                    max = Math.max(max, current);
+                    current = 0;
+                }
+            }
+
+
+
+
+            return Math.max(max, current);
+
+    }
 
 
 
