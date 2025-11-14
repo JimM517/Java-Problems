@@ -76,7 +76,34 @@ public class FiveKyu {
 
 
 
+    // Rot13
+    public static String rot13(String str) {
 
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : str.toCharArray()) {
+
+            if (c >= 'a' && c <= 'z') {
+                // lowercase character
+                char shifted = (char) ('a' + ((c - 'a' + 13) % 26));
+                sb.append(shifted);
+            } else if (c >= 'A' && c <= 'Z') {
+                // uppercase character
+                char shifted = (char)('A' + ((c - 'A' + 13) % 26));
+                sb.append(shifted);
+            } else {
+                // non-alphabetic character will not change
+                sb.append(c);
+            }
+
+
+        }
+
+
+        return sb.toString();
+
+
+    }
 
 
 
