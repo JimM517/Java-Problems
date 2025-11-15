@@ -831,7 +831,16 @@ public class EightKyu {
 
 
 
+    // find the position
+    public static String position(char alphabet) {
 
+
+        int res = alphabet - 'a' + 1;
+
+
+        return "Position of alphabet: " + res;
+
+    }
 
 
 
