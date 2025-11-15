@@ -930,6 +930,45 @@ public class SixKyuQuestions {
 
 
 
+    // encrypt this!
+    public static String encryptThis(String text) {
+
+        if (text == null || text.isEmpty()) return "";
+
+        String[] words = text.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (String w : words) {
+            if (w.length() == 0) {
+                continue;
+            }
+
+            StringBuilder sb = new StringBuilder();
+            sb.append((int) w.charAt(0));
+
+            if (w.length() == 1) {
+                result.append(sb).append(" ");
+                continue;
+            }
+
+            if (w.length() == 2) {
+                sb.append(w.charAt(1));
+                result.append(sb).append(" ");
+                continue;
+            }
+
+            char second = w.charAt(1);
+            char last = w.charAt(w.length() - 1);
+
+            sb.append(last);
+            sb.append(w.substring(2, w.length() - 1));
+            sb.append(second);
+
+            result.append(sb).append(" ");
+        }
+
+        return result.toString().trim();
+    }
 
 
 
