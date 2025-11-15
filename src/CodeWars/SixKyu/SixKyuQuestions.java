@@ -897,6 +897,34 @@ public class SixKyuQuestions {
 
 
 
+    // count the smiley faces
+    public static int countSmileys(List<String> arr) {
+        int total = 0;
+
+        for (String face : arr) {
+            if (isValidSmiley(face)) {
+                total++;
+            }
+        }
+        return total;
+    }
+
+    public static boolean isValidSmiley(String s) {
+
+
+        if (s.length() == 2) {
+            return (s.charAt(0) == ':' || s.charAt(0) == ';') &&
+                    (s.charAt(1) == ')' || s.charAt(1) == 'D');
+        }
+
+        if (s.length() == 3) {
+            return (s.charAt(0) == ':' || s.charAt(0) == ';') &&
+                    (s.charAt(1) == '-' || s.charAt(1) == '~') &&
+                    (s.charAt(2) == ')' || s.charAt(2) == 'D');
+        }
+
+        return false;
+    }
 
 
 
