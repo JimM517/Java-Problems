@@ -110,6 +110,24 @@ public class FiveKyu {
 
 
 
+    // simple string expansion
+    public static String solve(String s) {
+
+        char[] a = new StringBuilder(s).reverse().toString().toCharArray();
+        String b = "", c;
+        for (char ch : a) {
+            if (Character.isLetter(ch)) b += ch;
+            else if (Character.isDigit(ch)) {
+                int i = ch - '0' - 1;
+                c = b;
+                while (i > 0) {
+                    b += c;
+                    i--;
+                }
+            }
+        }
+        return new StringBuilder(b).reverse().toString();
+    }
 
 
 
