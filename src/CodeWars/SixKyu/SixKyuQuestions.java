@@ -999,7 +999,21 @@ public class SixKyuQuestions {
 
 
 
+    // camelcase method
+    public static String camelCase(String str) {
 
+
+        String[] temp = str.trim().split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for (String word : temp) {
+            if (word.isEmpty()) continue;
+            sb.append(Character.toUpperCase(word.charAt(0)));
+            if (word.length() > 1) {
+                sb.append(word.substring(1));
+            }
+        }
+        return sb.toString();
+    }
 
 
 
