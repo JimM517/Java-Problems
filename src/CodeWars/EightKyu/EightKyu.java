@@ -846,7 +846,24 @@ public class EightKyu {
 
 
 
+    // is it a palindrome?
+    public static Boolean isPalindrome(String x) {
 
+        x = x.toLowerCase().replaceAll("[^a-z0-9]", "");
+        int i = 0;
+        int j = x.length() - 1;
+
+        while (i < j) {
+            if (x.charAt(i) != x.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+
+        return true;
+
+    }
 
 
 
