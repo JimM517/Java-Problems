@@ -979,7 +979,23 @@ public class SixKyuQuestions {
 
 
 
+    // data reverse
+    public static int[] DataReverse(int[] data) {
 
+
+        int len = data.length;
+        int[] result = new int[len];
+
+        int numBytes = len / 8;
+
+        for (int i = 0; i < numBytes; i++) {
+            System.arraycopy(data, i * 8, result, (numBytes - 1 - i) * 8, 8);
+        }
+
+        return result;
+
+
+    }
 
 
 
