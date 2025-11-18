@@ -170,6 +170,30 @@ public class FiveKyu {
 
 
 
+    // string incrementer
+    public static String incrementString(String str) {
+
+        StringBuilder sb = new StringBuilder(" " + str);
+        for (int i = sb.length() - 1; i >= 0; i--) {
+            char ch = sb.charAt(i);
+            if (Character.isDigit(ch)) {
+                ch = ch == '9' ? '0' : ch++;
+                sb.replace(i, i + 1, String.valueOf(ch));
+                if (ch != '0') {
+                    break;
+                }
+                continue;
+            }
+            sb.insert(i + 1, "1");
+            break;
+        }
+        return sb.substring(1);
+
+    }
+
+
+
+
 
 
 
