@@ -1020,6 +1020,26 @@ public class SixKyuQuestions {
 
 
 
+    // playing with digits
+    public static long digPow(int n, int p) {
+
+
+        String str = Integer.toString(n);
+        long total = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            int digit = str.charAt(i) - '0';
+            total += Math.pow(digit, p + i);
+        }
+        if (total % n == 0) {
+            return total / n;
+        } else {
+            return -1;
+        }
+
+
+    }
+
 
 
 
