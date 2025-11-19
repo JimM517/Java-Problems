@@ -1,9 +1,7 @@
 package CodeWars.FiveKyu;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class FiveKyu {
 
@@ -194,6 +192,29 @@ public class FiveKyu {
 
 
 
+
+
+    // first non-repeating character
+    public static String firstNonRepeatingLetter(String s) {
+
+        Map<Character, Integer> freq = new HashMap<>();
+
+        // Count characters in a case-insensitive way
+        for (char c : s.toCharArray()) {
+            char lower = Character.toLowerCase(c);
+            freq.put(lower, freq.getOrDefault(lower, 0) + 1);
+        }
+
+        // Second pass: find first non-repeating
+        for (char c : s.toCharArray()) {
+            char lower = Character.toLowerCase(c);
+            if (freq.get(lower) == 1) {
+                return String.valueOf(c);  // return original case
+            }
+        }
+
+        return "";
+    }
 
 
 
