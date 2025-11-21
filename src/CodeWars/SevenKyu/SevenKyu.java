@@ -1012,7 +1012,38 @@ public class SevenKyu {
 
 
 
+    // sum of numbers from 0 to N
+    public static String showSequence(int value) {
 
+        if (value < 0) return value + "<0";
+        if (value == 0) return "0=0";
+
+
+        StringBuilder result = new StringBuilder();
+        int total = 0;
+        for (int i = 0; i <= value; i++) {
+
+            total += i;
+
+            result.append(String.valueOf(i));
+
+            if (i < value) {
+                result.append("+");
+            }
+
+
+
+        }
+
+        result.append(" = ").append(total);
+
+        return result.toString();
+
+
+
+
+
+    }
 
 
 
