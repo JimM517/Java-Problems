@@ -220,7 +220,48 @@ public class FiveKyu {
 
 
 
+    // String n iterations
+    public static String jumbledString(String s, long n) {
 
+        if (s == null || s.length() < 2 || n == 0) {
+            return s;
+        }
+
+        String original = s;
+        String current = s;
+
+        int cycle = 0;
+        do {
+            current = shuffle(current);
+            cycle++;
+        } while (!current.equals(original));
+
+        long effective = n % cycle;
+        current = s;
+
+        for (int i = 0; i < effective; i++) {
+            current = shuffle(current);
+        }
+
+        return current;
+
+    }
+
+
+
+    private static String shuffle(String s) {
+        StringBuilder even = new StringBuilder();
+        StringBuilder odd = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            if (i % 2 == 0) {
+                even.append(s.charAt(i));
+            } else {
+                odd.append(s.charAt(i));
+            }
+        }
+        return even.append(odd).toString();
+    }
 
 
 
