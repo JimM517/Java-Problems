@@ -1074,7 +1074,42 @@ public class SixKyuQuestions {
 
 
 
+    // simple frequency sort
+    public static int[] sortByFrequency(int[] array) {
 
+        Map<Integer, Integer> freq = new HashMap<>();
+
+        // Count frequency of each number
+        for (int num : array) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+
+        // Convert array → list for sorting
+        List<Integer> list = new ArrayList<>();
+        for (int num : array) {
+            list.add(num);
+        }
+
+        // Sort by:
+        // 1) frequency descending
+        // 2) value ascending
+        Collections.sort(list, (a, b) -> {
+            int freqCompare = freq.get(b) - freq.get(a);
+            if (freqCompare != 0) {
+                return freqCompare; // higher frequency first
+            }
+            return a - b; // smaller number first
+        });
+
+        // Convert back to int[]
+        int[] result = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            result[i] = list.get(i);
+        }
+
+        return result;
+
+    }
 
 
 
