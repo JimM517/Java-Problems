@@ -1043,6 +1043,34 @@ public class SixKyuQuestions {
 
 
 
+    // replace with alphabet position
+    public String alphabetPosition(String text) {
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < text.length(); i++) {
+
+            char c = text.charAt(i);
+
+            if (!Character.isLetter(text.charAt(i))) continue;
+
+            int position = Character.toLowerCase(c) - 'a' + 1;
+
+            result.append(position).append(" ");
+
+
+
+
+        }
+
+        if (result.length() > 0) {
+            result.setLength(result.length() - 1);
+        }
+
+        return result.toString();
+
+    }
+
 
 
 
