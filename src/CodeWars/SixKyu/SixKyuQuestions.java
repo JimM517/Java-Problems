@@ -1,5 +1,6 @@
 package CodeWars.SixKyu;
 
+import java.math.BigInteger;
 import java.util.*;
 
 public class SixKyuQuestions {
@@ -1206,6 +1207,26 @@ public class SixKyuQuestions {
     }
 
 
+
+
+
+
+    // sum the nums, sum the sums and sum the nums up to that sum
+    public static BigInteger sumOfSums(int n) {
+
+        BigInteger N = BigInteger.valueOf(n);
+
+        BigInteger Z = N
+                .multiply(N.add(BigInteger.ONE))
+                .multiply(N.add(BigInteger.valueOf(2)))
+                .divide(BigInteger.valueOf(6));
+
+        return Z.multiply(Z.add(BigInteger.ONE))
+                .divide(BigInteger.valueOf(2));
+
+
+
+    }
 
 
 
