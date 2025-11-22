@@ -1192,6 +1192,18 @@ public class SixKyuQuestions {
 
 
 
+    // pizza pieces
+    public static int maxPizza(int cuts) {
+
+        if (cuts < 0) return -1;
+
+        return (cuts * (cuts + 1)) / 2 + 1;
+
+
+
+
+
+    }
 
 
 
