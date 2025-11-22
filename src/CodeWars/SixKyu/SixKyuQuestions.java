@@ -1161,6 +1161,113 @@ public class SixKyuQuestions {
 
 
 
+    // a rule of divisibility by 13
+    public static long thirt(long n) {
+
+
+
+        int[] pattern = {1, 10, 9, 12, 3, 4};
+
+        long prev = -1;
+
+        while (prev != n) {
+
+            prev = n;
+
+            long sum = 0;
+            String s = new StringBuilder(Long.toString(n)).reverse().toString();
+
+            for (int i = 0; i < s.length(); i++) {
+                int digit = s.charAt(i) - '0';
+                sum += digit * pattern[i % pattern.length];
+            }
+
+            n = sum;
+
+        }
+        return n;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
