@@ -1114,8 +1114,48 @@ public class SixKyuQuestions {
 
 
 
+    // unique substring from joined string
+    public int longestSubstring(String a, String b) {
+
+        Set<Character> common = new HashSet<>();
+        Set<Character> setA = new HashSet<>();
+
+        for (char c : a.toCharArray()) {
+            setA.add(c);
+        }
+
+        for (char c : b.toCharArray()) {
+            if (setA.contains(c)) {
+                common.add(c);
+            }
+        }
+
+        return Math.max(
+                longestWithoutCommon(a + b, common),
+                longestWithoutCommon(b + a, common)
+        );
 
 
+    }
+
+
+
+    private static int longestWithoutCommon(String s, Set<Character> common) {
+
+        int maxLen = 0;
+        int current = 0;
+
+        for (char c : s.toCharArray()) {
+            if (common.contains(c)) {
+                current = 0;
+            } else {
+                current++;
+                maxLen = Math.max(maxLen, current);
+            }
+        }
+        return maxLen;
+
+    }
 
 
 
