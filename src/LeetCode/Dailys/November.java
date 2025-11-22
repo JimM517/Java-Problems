@@ -799,6 +799,22 @@ public class November {
 
 
 
+    // 3190 find minimum operations to make all elements divisible by three
+    public int minimumOperations(int[] nums) {
+
+        int total = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 3 != 0) {
+                total += Math.min(nums[i] % 3, 3 - nums[i] % 3);
+            }
+        }
+
+        return total;
+
+
+    }
+
 
 
 
