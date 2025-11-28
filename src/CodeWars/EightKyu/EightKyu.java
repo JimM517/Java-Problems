@@ -867,10 +867,22 @@ public class EightKyu {
 
 
 
+    // welcome to the city
+    public String sayHello(String[] name, String city, String state) {
+
+        if (name.length == 1) {
+            return "Hello, " + name[0] + "! Welcome to " + city + ", " + state + "!";
+        }
+
+        if (name.length == 3) {
+            return "Hello, " + name[0] + " " + name[1] + " " + name[2] + "! Welcome to " + city + ", " + state + "!";
+        }
 
 
+        return "Hello, " + name[0] + " " + name[1] + "! Welcome to " + city + ", " + state + "!";
 
 
+    }
 
 
 
