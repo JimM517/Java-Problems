@@ -1232,7 +1232,26 @@ public class SixKyuQuestions {
 
 
 
+// tortoise racing
+    public static int[] race(int v1, int v2, int g) {
 
+        // time = lead / relative speed
+        // relative speed = b - a
+        // g --> lead
+
+        if (v2 <= v1) return null;
+
+        int relative = v2 - v1;
+
+        int totalSeconds = g * 3600 / relative;
+
+        int h = totalSeconds / 3600;
+        int m = (totalSeconds % 3600) / 60;
+        int s = totalSeconds % 60;
+
+        return new int[]{h, m, s};
+
+    }
 
 
 
