@@ -1257,7 +1257,22 @@ public class SixKyuQuestions {
 
 
 
+    // count characters in your string
+    public static Map<Character, Integer> count(String str) {
 
+        Map<Character, Integer> map = new HashMap<>();
+
+        if (str.isEmpty()) {
+            return map;
+        }
+
+        for (char ch : str.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        return map;
+
+    }
 
 
 
