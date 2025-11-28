@@ -268,9 +268,46 @@ public class FiveKyu {
 
 
 
+    // product of consecutive fib numbers
+    public static long[] productFib(long prod) {
+
+        int n = 0;
+        long fn = fib(n);
+        long fn1 = fib(n + 1);
+
+        while (fn * fn1 < prod) {
+            n++;
+            fn = fn1;
+            fn1 = fib(n + 1);
+        }
+
+        return new long[]{fn, fn1, fn * fn1 == prod ? 1 : 0};
+
+    }
 
 
 
+    // helper
+    public static long fib(int n) {
+
+        long one = 0;
+        long two = 1;
+
+        for (int i = 0; i < n; i++) {
+
+            long next = one + two;
+            one = two;
+            two = next;
+
+
+
+
+        }
+
+        return two;
+
+
+    }
 
 
 
