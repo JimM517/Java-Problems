@@ -1051,7 +1051,24 @@ public class SevenKyu {
 
 
 
+// the highest profit wins!
+    public static int[] minMax(int[] arr) {
 
+        int min = arr[0];
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+
+            min = Math.min(min, arr[i]);
+            max = Math.max(max, arr[i]);
+
+
+        }
+
+
+        return new int[]{min, max};
+
+    }
 
 
 
