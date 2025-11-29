@@ -345,7 +345,26 @@ public class FiveKyu {
 
 
 
+    // integers: recreation one
+    public static String listSquared(long m, long n) {
 
+        List<String> result = new ArrayList<>();
+        for(long i = m; i <= n; i++){
+            long sum = 0;
+            for(long j = 1; j <= i; j++){
+                if(i % j == 0){
+                    sum = sum + (j*j);
+                }
+            }
+            double x = Math.sqrt(sum);
+            if(x - Math.floor(x) == 0){
+                result.add("[" + i + ", " + sum + "]");
+            }
+        }
+        return result.toString();
+
+
+    }
 
 
 
