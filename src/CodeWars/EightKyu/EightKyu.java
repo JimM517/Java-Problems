@@ -887,7 +887,19 @@ public class EightKyu {
 
 
 
+    // tip calculator
+    public static Integer calculateTip(double amount, String rating) {
+        if (rating == null) return null;
 
+        return switch (rating.toLowerCase()) {
+            case "terrible" -> 0;
+            case "poor" -> (int) Math.ceil(amount * 0.05);
+            case "good" -> (int) Math.ceil(amount * 0.10);
+            case "great" -> (int) Math.ceil(amount * 0.15);
+            case "excellent" -> (int) Math.ceil(amount * 0.20);
+            default -> null;
+        };
+    }
 
 
 
