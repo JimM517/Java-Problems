@@ -420,8 +420,8 @@ public class FiveKyu {
 
 
 
-
-
+    // regex password validation
+    public static final String REGEX = "^(?=.{6,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)[A-Za-z\\\\d]+$";
 
 
 
