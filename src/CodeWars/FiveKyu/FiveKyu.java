@@ -370,6 +370,52 @@ public class FiveKyu {
 
 
 
+    // simple encryption #1 - alternating split
+    public static String encrpyt(final String text, final int n) {
+
+        if (text == null || text.isEmpty() || n <= 0) return text;
+
+        String result = text;
+
+        for (int i = 0; i < n; i++) {
+            StringBuilder odd = new StringBuilder();
+            StringBuilder even = new StringBuilder();
+
+            for (int idx = 0; idx < result.length(); idx++) {
+                if (idx % 2 == 1) odd.append(result.charAt(idx));
+                else even.append(result.charAt(idx));
+            }
+            result = odd.append(even).toString();
+        }
+        return result;
+
+    }
+
+
+    public static String decrypt(final String encryptedText, final int n) {
+
+        if (encryptedText == null || encryptedText.isEmpty() || n <= 0) return encryptedText;
+
+        String result = encryptedText;
+
+        for (int i = 0; i < n; i++) {
+            int half = result.length() / 2;
+            String odd = result.substring(0, half);
+            String even = result.substring(half);
+
+            StringBuilder sb = new StringBuilder();
+
+            int idxOdd = 0, idxEven = 0;
+            for (int idx = 0; idx < result.length(); idx++) {
+                if (idx % 2 == 1) sb.append(odd.charAt(idxOdd++));
+                else sb.append(even.charAt(idxEven++));
+            }
+            result = sb.toString();
+        }
+
+        return result;
+
+    }
 
 
 
