@@ -5,6 +5,22 @@ import java.util.*;
 
 public class SevenKyu {
 
+
+    public static void main(String[] args) {
+
+
+        System.out.println(generateShape(3));
+
+
+    }
+
+
+
+
+
+
+
+
     // change two-dimensional array
     public int[][] matrix(int[][] array) {
 
@@ -1098,6 +1114,25 @@ public class SevenKyu {
 
 
 
+    // build a square
+    public static final String generateShape(int n) {
+
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                sb.append("+");
+            }
+            if (i < n - 1) {
+                sb.append("\n");
+            }
+        }
+
+
+        return sb.toString();
+
+
+    }
 
 
 
