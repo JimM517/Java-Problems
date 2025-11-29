@@ -1074,6 +1074,27 @@ public class SevenKyu {
 
 
 
+    // love vs friendship
+    public static int wordsToMarks(String text) {
+
+
+        int total = 0;
+
+        for (char ch : text.toCharArray()) {
+
+            total += ch - 'a' + 1;
+
+
+        }
+
+
+        return total;
+
+
+
+    }
+
+
 
 
 
