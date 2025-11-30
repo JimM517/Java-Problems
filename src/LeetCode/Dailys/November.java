@@ -1032,6 +1032,39 @@ public class November {
 
 
 
+    // 1590. make sum divisible by p
+    public int minSubarray(int[] nums, int p) {
+
+            int n = nums.length;
+            int totalSum = 0;
+
+            for (int num : nums) {
+                totalSum = (totalSum + num) % p;
+            }
+
+            int target = totalSum % p;
+            if (target == 0) {
+                return 0;
+            }
+
+            Map<Integer, Integer> map = new HashMap<>();
+            map.put(0, -1);
+            int currentSum = 0;
+            int minLen = n;
+
+            for (int i = 0; i < n; i++) {
+                currentSum = (currentSum + nums[i]) % p;
+
+                int needed = (currentSum - target + p) % p;
+
+                if (map.containsKey(needed)) {
+                    minLen = Math.min(minLen, i - map.get(needed));
+                }
+                map.put(currentSum, i);
+            }
+        return minLen == n ? -1 : minLen;
+    }
+
 
 
 
