@@ -1306,6 +1306,23 @@ public class SixKyuQuestions {
 
 
 
+    // find the parity outlier
+    public static int find(int[] integers) {
+
+        int even = 0;
+        int odd = 0;
+        int cycle = 0;
+
+        for (int val : integers) {
+            if (val % 2 == 0) {
+                cycle++;
+                even = val;
+            } else {
+                odd = val;
+            }
+        }
+        return cycle > 1 ? odd : even;
+    }
 
 
 
