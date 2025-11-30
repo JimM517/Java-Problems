@@ -1277,7 +1277,30 @@ public class SixKyuQuestions {
 
 
 
+    // mexican wave
+    public static String[] wave(String str) {
 
+
+        List<String> result = new ArrayList<>();
+
+        for (int i = 0; i < str.length(); i++) {
+
+            if (str.charAt(i) == ' ') continue;  // skip spaces
+
+            String wave =
+                    str.substring(0, i) +
+                            Character.toUpperCase(str.charAt(i)) +
+                            str.substring(i + 1);
+
+            result.add(wave);
+        }
+
+        return result.toArray(new String[0]);
+
+
+
+
+    }
 
 
 
