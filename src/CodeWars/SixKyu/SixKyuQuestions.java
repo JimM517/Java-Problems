@@ -1357,6 +1357,38 @@ public class SixKyuQuestions {
 
 
 
+    // follow that spy
+    public String findRoutes(String[][] routes) {
+
+        Map<String, String> map = new HashMap<>();
+        Set<String> destinations = new HashSet<>();
+
+        for (String[] r : routes) {
+            map.put(r[0], r[1]);
+            destinations.add(r[1]);
+        }
+
+        String start = null;
+        for (String[] r :routes) {
+            if (!destinations.contains(r[0])) {
+                start = r[0];
+                break;
+            }
+        }
+
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(start);
+
+        String next = map.get(start);
+
+        while (next != null) {
+            sb.append(", ").append(next);
+            next = map.get(next);
+        }
+        return sb.toString();
+
+    }
 
 
 
