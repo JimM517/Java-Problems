@@ -1392,7 +1392,26 @@ public class SixKyuQuestions {
 
 
 
+    // break camelCase
+    public static String breakCamelCase(String input) {
 
+
+        StringBuilder sb = new StringBuilder();
+
+
+        for (char c : input.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                sb.append(" ");
+            }
+            sb.append(c);
+        }
+
+
+
+        return sb.toString();
+
+
+    }
 
 
 
