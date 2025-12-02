@@ -1,5 +1,8 @@
 package LeetCode.Dailys;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class December {
 
 
@@ -28,6 +31,252 @@ public class December {
         }
         return left;
     }
+
+
+
+
+
+
+    // 3623. count number of trapezoids I
+    public int countTrapezoids(int[][] points) {
+
+        Map<Integer, Integer> pointNum = new HashMap<>();
+        final int MOD = 1000000007;
+
+        long answer = 0;
+        long sum = 0;
+
+        for (int[] point : points) {
+            pointNum.put(point[1], pointNum.getOrDefault(point[1], 0) + 1);
+        }
+        for (int pNum : pointNum.values()) {
+            long edge = ((long) pNum * (pNum - 1)) / 2;
+            answer = (answer + edge * sum) % MOD;
+            sum = (sum + edge) % MOD;
+        }
+
+        return (int) answer;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
