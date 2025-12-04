@@ -1417,7 +1417,15 @@ public class SixKyuQuestions {
 
 
 
+// sum of digits / digital root
+    public static int digital_root(int n) {
+        if (n == 0) {
+            return 0;
+        }
 
+        return 1 + (n - 1) % 9;
+
+    }
 
 
 
