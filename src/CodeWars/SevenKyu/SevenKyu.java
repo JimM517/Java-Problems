@@ -1141,7 +1141,21 @@ public class SevenKyu {
 
 
 
+    // disemvowel trolls
+    public static String disemvowel(String str) {
 
+        StringBuilder sb = new StringBuilder();
+        String vowels = "aeiouAEIOU";
+        for (int i = 0; i < str.length(); i++) {
+            if (vowels.contains(String.valueOf(str.charAt(i)))) {
+                continue;
+            } else {
+                sb.append(str.charAt(i));
+            }
+        }
+        return sb.toString();
+
+    }
 
 
 
