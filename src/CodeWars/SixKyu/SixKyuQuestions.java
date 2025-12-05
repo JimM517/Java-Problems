@@ -1432,6 +1432,33 @@ public class SixKyuQuestions {
 
 
 
+    // duplicate encoder
+    public static String encode(String word) {
+
+        Map<Character, Integer> freq = new HashMap<>();
+        for (char c : word.toCharArray()) {
+            char ch = Character.toLowerCase(c);
+            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < word.length(); i++) {
+            char current = Character.toLowerCase(word.charAt(i));
+            if (freq.containsKey(current)) {
+                if (freq.get(current) == 1) {
+                    sb.append("(");
+                } else {
+                    sb.append(")");
+                }
+            }
+
+
+        }
+
+        return sb.toString();
+
+    }
 
 
 
