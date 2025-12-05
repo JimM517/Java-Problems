@@ -176,6 +176,19 @@ public class December {
 
 
 
+    // 3432. count partitions with even sum difference
+    public int countPartitions(int[] nums) {
+
+        int total = 0;
+        for (int n : nums) {
+            total += n;
+        }
+        return total % 2 == 0 ? nums.length - 1 : 0;
+    }
+
+
+
+
 
 
 
