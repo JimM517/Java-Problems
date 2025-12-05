@@ -1464,6 +1464,38 @@ public class SixKyuQuestions {
 
 
 
+    // michael roads
+//    class Road {
+//        private Road L;
+//        private Road R;
+//        private String scent;
+//
+//        public String sniffLeft();       // returns scent of Road L
+//        public String sniffRight();      // returns scent of Road R
+//
+//        public void traverseLeft();      // changes this Road to Road L
+//        public void traverseRight();     // changes this Road to Road R
+//    }
+//    public static String solveRoads(Road road) throws OverusedSnifferException {
+//        for (StringBuilder path = new StringBuilder();;) {
+//            switch(road.sniffLeft()) {
+//                case "This one reeks.":
+//                    path.append('L');
+//                    road.traverseLeft();
+//                    break;
+//                case "Pleasant air.":
+//                    path.append('R');
+//                    road.traverseRight();
+//                    break;
+//                case "I smell Michael on the other road!":
+//                    path.append('R');
+//                    return path.toString();
+//                case "Michael!":
+//                    path.append('L');
+//                    return path.toString();
+//            }
+//        }
+//    }
 
 
 
