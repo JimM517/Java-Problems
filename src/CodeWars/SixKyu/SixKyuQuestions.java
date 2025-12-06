@@ -1498,9 +1498,33 @@ public class SixKyuQuestions {
 //    }
 
 
+    // easy diagonal (pascals triangle coefficients)
+public static BigInteger diagonal(int n, int p) {
+
+        // n! / k!(n - k)!
+
+        return binomial(n + 1, p + 1);
+}
 
 
+public static BigInteger binomial(int n, int k) {
+        BigInteger result = BigInteger.ONE;
+        for (int i = 1; i <= k; i++) {
+            result = result.multiply(BigInteger.valueOf(n - (i - 1)));
+            result = result.divide(BigInteger.valueOf(i));
+        }
+        return result;
+}
 
+/** using factorial will cause TLE **/
+//public static int factorial(int n) {
+//
+//        if (n == 0) {
+//            return 1;
+//        }
+//
+//        return n * factorial(n - 1);
+//}
 
 
 
