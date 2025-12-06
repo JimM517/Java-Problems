@@ -1181,6 +1181,18 @@ public class SevenKyu {
 
 
 
+    // product of maximums
+    public static long maxProduct(int[] numbers, int sub_size) {
+
+
+        Arrays.sort(numbers);
+        long total = 1;
+        int len = numbers.length;
+        for (int i = len - 1; i >= len - sub_size; i--) {
+            total *= numbers[i];
+        }
+        return total;
+    }
 
 
 
