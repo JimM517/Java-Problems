@@ -483,7 +483,30 @@ public class FiveKyu {
 
 
 
+// scramblies
+    public static boolean scramble(String str1, String str2) {
 
+        Map<Character, Integer> str1Map = new HashMap<>();
+
+
+        for (char ch : str1.toCharArray()) {
+            str1Map.put(ch, str1Map.getOrDefault(ch, 0) + 1);
+        }
+
+        for (char ch : str2.toCharArray()) {
+            if (str1Map.containsKey(ch) && str1Map.get(ch) > 0) {
+                str1Map.put(ch, str1Map.get(ch) - 1);
+            } else {
+                return false;
+            }
+        }
+
+
+        return true;
+
+
+
+    }
 
 
 
