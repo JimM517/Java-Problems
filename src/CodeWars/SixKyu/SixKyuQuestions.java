@@ -2,6 +2,7 @@ package CodeWars.SixKyu;
 
 import java.math.BigInteger;
 import java.util.*;
+import java.util.function.LongBinaryOperator;
 
 public class SixKyuQuestions {
 
@@ -1528,6 +1529,44 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // reducing by steps
+    public class Operarray {
+        public static long gcdi(long x, long y) {
+            while (y != 0) {
+                long temp = y;
+                y = x % y;
+                x = temp;
+            }
+            return Math.abs(x);
+        }
+
+        public static long lcmu(long a, long b) {
+            return Math.abs(a * b) / gcdi(a, b);
+        }
+
+        public static long som(long a, long b) {
+            return a + b;
+        }
+
+        public static long maxi(long a, long b) {
+            return Math.max(a, b);
+        }
+
+        public static long mini(long a, long b) {
+            return Math.min(a, b);
+        }
+
+        public static long[] operArray(LongBinaryOperator operater, long[] arr, long init) {
+            long[] result = new long[arr.length];
+            long accumulator = init;
+
+            for (int i = 0; i < arr.length; i++) {
+                accumulator = operater.applyAsLong(accumulator, arr[i]);
+                result[i] = accumulator;
+            }
+            return result;
+        }
+}
 
 
 
