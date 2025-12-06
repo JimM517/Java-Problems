@@ -2,6 +2,7 @@ package CodeWars.FiveKyu;
 
 import java.math.BigInteger;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class FiveKyu {
 
@@ -445,9 +446,38 @@ public class FiveKyu {
 
 
 
+    // weight for weight
+    public static String orderWeight(String strng) {
+        if (strng == null || strng.trim().isEmpty()) {
+            return "";
+        }
+
+        return Arrays.stream(strng.trim().split("\\s"))
+                .sorted((a, b) -> {
+                    int weightA = digitSum(a);
+                    int weightB = digitSum(b);
+
+                    if (weightA == weightB) {
+                        return a.compareTo(b);
+                    }
+                    return Integer.compare(weightA, weightB);
+                })
+                .collect(Collectors.joining(" "));
+
+    }
 
 
+    private static int digitSum(String s) {
 
+        int sum = 0;
+        for (char c : s.toCharArray()) {
+            sum += c - '0';
+        }
+
+
+        return sum;
+
+    }
 
 
 
