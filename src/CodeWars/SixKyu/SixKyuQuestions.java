@@ -1569,6 +1569,144 @@ public static BigInteger binomial(int n, int k) {
 }
 
 
+// create phone number
+    public static String createPhoneNumber(int[] numbers) {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("(");
+        for (int i = 0; i < numbers.length; i++) {
+            sb.append(Integer.toString(numbers[i]));
+            if (i == 2) {
+                sb.append(")").append(" ");
+            }
+
+            if (i == 5) {
+                sb.append("-");
+
+            }
+
+
+
+
+        }
+
+
+        return sb.toString();
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
