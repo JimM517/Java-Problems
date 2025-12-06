@@ -928,6 +928,24 @@ public class EightKyu {
 
 
 
+    // to sqaure(root) or not to square(root)
+    public static int[] squareOrSquareRoot(int[] array) {
+
+        for (int i = 0; i < array.length; i++) {
+
+            double sqrt = Math.sqrt(array[i]);
+
+            if (sqrt == (int) sqrt) {
+                array[i] = (int) sqrt;
+            } else {
+                array[i] = array[i] * array[i];
+            }
+
+
+
+        }
+        return array;
+    }
 
 
 
