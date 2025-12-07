@@ -515,6 +515,39 @@ public class FiveKyu {
 
 
 
+    // uniform milk production
+    /** not my solution, this one threw me off a bit **/
+    public static int uniformMilkOutput(int[] a, int x) {
+
+        int resIdx = -1;
+        long currSum = 0, maxDiff = -1;
+        Deque<Integer> minDeque = new LinkedList<>(), maxDeque = new LinkedList<>();
+        for (int i = 0; i < a.length; ++i) {
+            if (!minDeque.isEmpty() && minDeque.peekFirst() == i - x) minDeque.pollFirst();
+            if (!maxDeque.isEmpty() && maxDeque.peekFirst() == i - x) maxDeque.pollFirst();
+            while (!minDeque.isEmpty() && a[minDeque.peekLast()] > a[i]) minDeque.pollLast();
+            while (!maxDeque.isEmpty() && a[maxDeque.peekLast()] < a[i]) maxDeque.pollLast();
+            minDeque.offerLast(i); maxDeque.offerLast(i);
+            currSum += a[i];
+            if (i >= x - 1) {
+                long avg = currSum * (x - 1);
+                for (int j : new int[] {minDeque.peekFirst(), maxDeque.peekFirst()}) {
+                    long d = Math.abs(avg - (currSum - a[j]) * x);
+                    if (d > maxDiff || d == maxDiff && j < resIdx) {
+                        maxDiff = d; resIdx = j;
+                    }
+                }
+                currSum -= a[i - x + 1];
+            }
+        }
+        return resIdx;
+
+    }
+
+
+
+
+
 
 
 
