@@ -949,6 +949,22 @@ public class EightKyu {
 
 
 
+    // lario and muigi pipe problem
+    public static int[] pipeFix(int[] numbers) {
+
+        int start = numbers[0];
+        int end = numbers[numbers.length - 1];
+
+        int[] result = new int[end - start + 1];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = start + i;
+        }
+
+        return result;
+
+    }
+
 
 
 
