@@ -1601,6 +1601,24 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // find the mine!
+    public static int[] findMine(int[][] field) {
+
+
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[0].length; j++) {
+                if (field[i][j] == 1) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+
+
+
+        return new int[]{-1, -1};
+
+
+    }
 
 
 
