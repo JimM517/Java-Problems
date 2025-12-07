@@ -1585,17 +1585,8 @@ public static BigInteger binomial(int n, int k) {
 
             }
 
-
-
-
         }
-
-
         return sb.toString();
-
-
-
-
     }
 
 
@@ -1626,12 +1617,40 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // irreducible sum of rationals
+    public static String sumFracts(int[][] l) {
+        if (l.length == 0)
+            return null;
+        int n = 0;
+        int d = 1;
+        for (int[] r : l) {
+            int nd = d * r[1] / gcd(d, r[1]);
+            n *= nd / d;
+            n += r[0] * nd / r[1];
+            d = nd;
+        }
+        int f = gcd(n, d);
+        n /= f;
+        d /= f;
+        return d != 1 ? "[" + n + ", " + d + "]" : "" + n;
 
 
 
+    }
 
 
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = a % b;
+            a = b;
+            b = temp;
+        }
+        return a;
+    }
 
+    public static int lcm(int a, int b) {
+        return a * b / gcd(a, b);
+    }
 
 
 
