@@ -228,6 +228,22 @@ public class December {
 
 
 
+    // 1523. count odd numbers in an interval range
+    public int countOdds(int low, int high) {
+        int n = high - low + 1;
+        int totalOdds = 0;
+        if (n % 2 == 0) {
+            totalOdds = n / 2;
+        }
+        if (n % 2 == 1) {
+            if (low % 2 == 1 || high % 2 == 1) {
+                totalOdds = (n / 2) + 1;
+            } else {
+                totalOdds = n / 2;
+            }
+        }
+        return totalOdds;
+    }
 
 
 
