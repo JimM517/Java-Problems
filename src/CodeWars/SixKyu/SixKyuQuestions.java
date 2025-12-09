@@ -4,6 +4,8 @@ import java.math.BigInteger;
 import java.util.*;
 import java.util.function.LongBinaryOperator;
 
+import static java.math.BigInteger.valueOf;
+
 public class SixKyuQuestions {
 
     // tribonacci sequence
@@ -1215,15 +1217,15 @@ public class SixKyuQuestions {
     // sum the nums, sum the sums and sum the nums up to that sum
     public static BigInteger sumOfSums(int n) {
 
-        BigInteger N = BigInteger.valueOf(n);
+        BigInteger N = valueOf(n);
 
         BigInteger Z = N
                 .multiply(N.add(BigInteger.ONE))
-                .multiply(N.add(BigInteger.valueOf(2)))
-                .divide(BigInteger.valueOf(6));
+                .multiply(N.add(valueOf(2)))
+                .divide(valueOf(6));
 
         return Z.multiply(Z.add(BigInteger.ONE))
-                .divide(BigInteger.valueOf(2));
+                .divide(valueOf(2));
 
 
 
@@ -1511,8 +1513,8 @@ public static BigInteger diagonal(int n, int p) {
 public static BigInteger binomial(int n, int k) {
         BigInteger result = BigInteger.ONE;
         for (int i = 1; i <= k; i++) {
-            result = result.multiply(BigInteger.valueOf(n - (i - 1)));
-            result = result.divide(BigInteger.valueOf(i));
+            result = result.multiply(valueOf(n - (i - 1)));
+            result = result.divide(valueOf(i));
         }
         return result;
 }
@@ -1655,6 +1657,27 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // odd/even number of divisors
+    public static String oddity(BigInteger n) {
+
+        BigInteger sqrt = bigIntSqrt(n);
+        return sqrt.multiply(sqrt).equals(n) ? "odd" : "even";
+
+
+
+    }
+
+
+    public static BigInteger bigIntSqrt(BigInteger n) {
+        BigInteger x = n;
+        BigInteger y = x.add(BigInteger.ONE).shiftRight(1);
+
+        while (y.compareTo(x) < 0) {
+            x = y;
+            y = x.add(n.divide(x)).shiftRight(1);
+        }
+        return x;
+    }
 
 
 
