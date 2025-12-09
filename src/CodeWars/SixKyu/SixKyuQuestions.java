@@ -1683,6 +1683,32 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // take a number and sum its digits raised to the consecutive powers
+    public static List<Long> sumDigPow(long a, long b) {
+
+        List<Long> result = new ArrayList<>();
+
+
+        for (long i = a; i <= b; i++) {
+            String s = Long.toString(i);
+            long sum = 0;
+
+            for (int pos = 0; pos < s.length(); pos++) {
+                int digit = s.charAt(pos) - '0';
+                sum += Math.pow(digit, pos + 1);
+            }
+            if (sum == i) {
+                result.add(i);
+            }
+        }
+
+
+
+
+        return result;
+
+
+    }
 
 
 
