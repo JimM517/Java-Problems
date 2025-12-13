@@ -413,7 +413,44 @@ public class December {
 
 
 
+// 3606. coupon code validator
+    public List<String> validateCoupons(String[] code, String[] businessLine, boolean[] isActive) {
 
+        List<int[]> validIndexes = new ArrayList<>();
+        List<String> result = new ArrayList<>();
+
+        String regex = "^[A-Za-z0-9_]+$";
+
+        Map<String, Integer> priority = new HashMap<>();
+        priority.put("electronics", 0);
+        priority.put("grocery", 1);
+        priority.put("pharmacy", 2);
+        priority.put("restaurant", 3);
+
+
+        for (int i = 0; i < code.length; i++) {
+            if (code[i] != null && code[i].matches(regex) && priority.containsKey(businessLine[i]) && isActive[i]) {
+                validIndexes.add(new int[]{i});
+            }
+        }
+
+
+        validIndexes.sort((a, b) -> {
+            int p1 = priority.get(businessLine[a[0]]);
+            int p2 = priority.get(businessLine[b[0]]);
+
+            if (p1 != p2) {
+                return Integer.compare(p1, p2);
+            }
+            return code[a[0]].compareTo(code[b[0]]);
+        });
+
+        for (int[] idx : validIndexes) {
+            result.add(code[idx[0]]);
+        }
+
+        return result;
+    }
 
 
 
