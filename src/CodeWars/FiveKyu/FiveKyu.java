@@ -574,7 +574,38 @@ public class FiveKyu {
 
 
 
+// simple pig latin
+    public static String pigIt(String str) {
 
+        StringBuilder sb = new StringBuilder();
+
+        String[] splitted = str.split(" ");
+
+        for (int i = 0; i < splitted.length; i++) {
+
+           String word = splitted[i];
+
+           if (Character.isLetter(word.charAt(0))) {
+               sb.append(word.substring(1))
+                       .append(word.charAt(0))
+                       .append("ay");
+           } else {
+               sb.append(word);
+           }
+
+
+           if (i < splitted.length - 1) {
+               sb.append(" ");
+           }
+
+
+
+        }
+
+        return sb.toString();
+
+
+    }
 
 
 
