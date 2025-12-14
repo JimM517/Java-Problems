@@ -1715,6 +1715,43 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // Good vs. Evil
+    public static String battle(String goodAmounts, String evilAmounts) {
+
+        int[] goodWorth = {1, 2, 3, 3, 4, 10};
+        int[] evilWorth = {1, 2, 2, 2, 3, 5, 10};
+
+        String[] good = goodAmounts.split(" ");
+        String[] evil = evilAmounts.split(" ");
+
+
+        int goodScore = 0;
+        int evilScore = 0;
+
+        for (int i = 0; i < good.length; i++) {
+            goodScore += Integer.parseInt(good[i]) * goodWorth[i];
+        }
+
+        for (int i = 0; i < evil.length; i++) {
+            evilScore += Integer.parseInt(evil[i]) * evilWorth[i];
+        }
+
+
+        if (goodScore > evilScore) {
+            return "Battle Result: Good triumphs over Evil";
+        } else if (goodScore < evilScore) {
+            return "Battle Result: Evil eradicates all trace of Good";
+        } else {
+            return "Battle Result: No victor on this battle field";
+        }
+
+
+
+
+
+
+
+    }
 
 
 
