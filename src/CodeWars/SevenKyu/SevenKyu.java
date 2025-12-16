@@ -1196,8 +1196,17 @@ public class SevenKyu {
 
 
 
+    // string scramble
+    public static String scramble(String str, int[] indices) {
 
-    //
+        char[] result = new char[str.length()];
+
+        for (int i = 0; i < str.length(); i++) {
+            result[indices[i]] = str.charAt(i);
+        }
+        return new String(result);
+    }
+
 
 
 
