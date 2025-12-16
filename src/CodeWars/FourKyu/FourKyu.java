@@ -1,7 +1,9 @@
 package CodeWars.FourKyu;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class FourKyu {
 
@@ -98,10 +100,42 @@ public class FourKyu {
 
 
 
+    // so many permutations!!!!
+    public static List<String> singlePermutations(String s) {
+
+       Set<String> result = new HashSet<>();
+
+       boolean[] used = new boolean[s.length()];
+       permuteBT(result, new StringBuilder(), s, used);
+       return new ArrayList<>(result);
+
+    }
+
+
+
+    public static void permuteBT(Set<String> result, StringBuilder current, String s, boolean[] used) {
+
+        if (current.length() == s.length()) {
+            result.add(current.toString());
+            return;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (used[i]) continue;
+
+            used[i] = true;
+            current.append(s.charAt(i));
+
+            permuteBT(result, current, s, used);
+
+            current.deleteCharAt(current.length() - 1);
+            used[i] = false;
+        }
 
 
 
 
+    }
 
 
 
