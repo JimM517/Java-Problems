@@ -637,6 +637,39 @@ public class FiveKyu {
 
 
 
+    // divide and maximize
+    public static int divideAndMultiply(long[] numbers) {
+
+        int mod = 1000000007;
+
+        int powersOfTwo = 0;
+        int largest = 0;
+
+        for (int x = 0; x < numbers.length; x++) {
+            while(numbers[x] % 2 == 0) {
+                numbers[x] /= 2;
+                powersOfTwo++;
+            }
+            if (numbers[x] > numbers[largest]) {
+                largest = x;
+            }
+        }
+
+        long total = 0;
+
+        for (int x = 0; x < numbers.length; x++) {
+            long number = numbers[x];
+
+            if (x == largest) {
+                while (powersOfTwo > 0) {
+                    number = (number * 2) % mod;
+                    powersOfTwo--;
+                }
+            }
+            total = (total + number) % mod;
+        }
+        return (int) total;
+    }
 
 
 
