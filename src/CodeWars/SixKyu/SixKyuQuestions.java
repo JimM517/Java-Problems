@@ -1800,6 +1800,30 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // backspaces in string
+    public static String cleanString(String s) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if (c == '#') {
+                if (sb.length() > 0) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+            } else {
+                sb.append(c);
+            }
+        }
+
+        return sb.toString();
+
+
+
+
+    }
+
 
 
 
