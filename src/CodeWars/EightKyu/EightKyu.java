@@ -993,6 +993,48 @@ public class EightKyu {
 
 
 
+    // gravitation force between two objects
+    public static double findGrav(double[] arrVal, String[] arrUnit) {
+
+        // both len 3 - > mass ob1, mass ob2, distance
+
+        final double G = 6.67e-11;
+
+        // convert m1, m2 to kg
+        // convert r into meters
+
+        double m1 = arrVal[0];
+        double m2 = arrVal[1];
+        double r = arrVal[2];
+
+        // convert mass 1
+        switch (arrUnit[0]) {
+            case "g": m1 /= 1_000; break;
+            case "mg": m1 /= 1_000_000; break;
+            case "μg": m1 /= 1_000_000_000; break;
+            case "lb": m1 *= 0.453592; break;
+        }
+
+        switch (arrUnit[1]) {
+            case "g": m2 /= 1_000; break;
+            case "mg": m2 /= 1_000_000; break;
+            case "μg": m2 /= 1_000_000_000; break;
+            case "lb": m2 *= 0.453592; break;
+        }
+
+        switch (arrUnit[2]) {
+            case "cm": r /= 100; break;
+            case "mm": r /= 1_000; break;
+            case "μm": r /= 1_000_000; break;
+            case "ft": r *= 0.3048; break;
+        }
+
+        return G * m1 * m2 / (r * r);
+
+    }
+
+
+
 
 
 
