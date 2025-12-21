@@ -748,6 +748,34 @@ class Result {
 
 
 
+    // 955. delete columns to make sorted II
+    public int minDeletionSizeTwo(String[] strs) {
+
+        int N = strs.length;
+        int W = strs[0].length();
+
+        boolean[] cuts = new boolean[N - 1];
+
+        int answer = 0;
+
+        search: for (int j = 0; j < W; j++) {
+            for (int i = 0; i < N - 1; i++) {
+                if (!cuts[i] && strs[i].charAt(j) > strs[i + 1].charAt(j)) {
+                    answer++;
+                    continue search;
+                }
+            }
+            for (int i = 0; i < N - 1; i++) {
+                if (strs[i].charAt(j) < strs[i + 1].charAt(j)) {
+                    cuts[i] = true;
+                }
+            }
+        }
+
+        return answer;
+
+    }
+
 
 
 
