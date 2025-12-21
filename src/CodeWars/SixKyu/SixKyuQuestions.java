@@ -1827,6 +1827,32 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // sentence calculator
+    public static int lettersToNumbers(String s) {
+
+        int totalScore = 0;
+
+        for (char c : s.toCharArray()) {
+
+            if (Character.isLowerCase(c)) {
+                totalScore += c - 'a' + 1;
+            } else if (Character.isUpperCase(c)) {
+                totalScore += (c - 'A' + 1) * 2;
+            } else if (Character.isDigit(c)) {
+                totalScore += c - '0';
+            } else {
+                totalScore += 0;
+            }
+        }
+        return totalScore;
+    }
+
+
+
+
+
+
+
 
 
 
