@@ -1035,6 +1035,15 @@ public class EightKyu {
 
 
 
+    // grasshopper - terminal game combat function
+    public static int combat(int health, int damage) {
+
+        int total = health - damage;
+
+        return total < 0 ? 0 : total;
+
+    }
+
 
 
 
