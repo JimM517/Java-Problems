@@ -1850,8 +1850,34 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+     // reach me and sum my digits
+    public static long SumDigNthTerm(long initval, long[] patternl, int nthterm) {
+
+        long val = initval;
+
+        if (nthterm == 1) {
+            return digitSum(val);
+        }
+
+        for (int i = 1; i < nthterm; i++) {
+            val += patternl[(i - 1) % patternl.length];
+        }
+
+        return digitSum(val);
+
+    }
 
 
+    public static long digitSum(long n) {
+        long sum = 0;
+        n = Math.abs(n);
+
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
 
 
 
