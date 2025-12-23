@@ -1295,6 +1295,22 @@ public class SevenKyu {
 
 
 
+    // center of the matrix
+    public static Integer center(int[][] matrix) {
+
+        if (matrix.length == 0) return null;
+
+        int row = matrix.length;
+        int col = matrix[0].length;
+
+        if ((row * col) % 2 == 0) return null;
+        else {
+            int midRow = row / 2;
+            int midCol = col / 2;
+            return matrix[midRow][midCol];
+        }
+
+    }
 
 
 
