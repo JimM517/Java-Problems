@@ -1254,6 +1254,43 @@ public class SevenKyu {
 
 
 
+    // convert a linked list to a string
+    static class Node {
+        private int data;
+        private Node next;
+
+        public Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+
+        public int getData() {
+            return data;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+    }
+    public static String stringify(Node list) {
+
+        StringBuilder sb = new StringBuilder();
+
+        while (list != null) {
+            sb.append(list.getData()).append(" -> ");
+            list = list.getNext();
+        }
+
+        sb.append("null");
+        return sb.toString();
+
+
+    }
 
 
 
