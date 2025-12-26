@@ -1316,6 +1316,34 @@ public class SevenKyu {
 
 
 
+    // count the digit
+    public static int nbDig(int n, int d) {
+
+        int total = 0;
+        for (int i = 0; i <= n; i++) {
+
+            int curr = i * i;
+
+            if (curr == 0 && d == 0) {
+                total++;
+            }
+
+            while (curr > 0) {
+                if (curr % 10 == d) {
+                    total++;
+                }
+                curr /= 10;
+            }
+
+
+        }
+
+        return total;
+
+
+
+    }
+
 
 
 
