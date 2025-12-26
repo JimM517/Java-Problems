@@ -1881,6 +1881,21 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // bit counting
+    public static int countBits(int n) {
+
+        String intToBin = Integer.toBinaryString(n);
+
+        int total = 0;
+
+        for (int i = 0; i < intToBin.length(); i++) {
+            if (intToBin.charAt(i) == '1') {
+                total++;
+            }
+        }
+
+        return total;
+    }
 
 
 
