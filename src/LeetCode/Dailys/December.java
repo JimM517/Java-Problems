@@ -842,7 +842,7 @@ class Result {
 
 
 
-// apple redistribution into boxes
+// 3074. apple redistribution into boxes
     public int minimumBoxes(int[] apple, int[] capacity) {
 
         int m = capacity.length;
@@ -872,7 +872,7 @@ class Result {
 
 
 
-    // maximize happiness of selected children
+    // 3075. maximize happiness of selected children
     public long maximumHappinessSum(int[] happiness, int k) {
 
        Arrays.sort(happiness);
@@ -893,7 +893,35 @@ class Result {
 
 
 
+    // 2483. minimum penalty for a shop
+    public int bestClosingTime(String customers) {
 
+        int curPenalty = 0;
+        for (int i = 0; i < customers.length(); i++) {
+            if (customers.charAt(i) == 'Y') {
+                curPenalty++;
+            }
+        }
+
+        int minPenalty = curPenalty;
+        int earliestHour = 0;
+
+        for (int i = 0; i < customers.length(); i++) {
+            char ch = customers.charAt(i);
+
+            if (ch == 'Y') {
+                curPenalty--;
+            } else {
+                curPenalty++;
+            }
+
+            if (curPenalty < minPenalty) {
+                earliestHour = i + 1;
+                minPenalty = curPenalty;
+            }
+        }
+        return earliestHour;
+    }
 
 
 
