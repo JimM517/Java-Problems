@@ -842,7 +842,33 @@ class Result {
 
 
 
+// apple redistribution into boxes
+    public int minimumBoxes(int[] apple, int[] capacity) {
 
+        int m = capacity.length;
+
+        int minBoxes = 0;
+        int totalApples = 0;
+        int totalCapacity = 0;
+        for (int x : apple) {
+            totalApples += x;
+        }
+
+        Arrays.sort(capacity);
+
+        for (int i = m - 1; i >= 0; i--) {
+            totalCapacity += capacity[i];
+            minBoxes++;
+
+            if (totalCapacity >= totalApples) {
+                return minBoxes;
+            }
+        }
+
+        return -1;
+
+
+    }
 
 
 
