@@ -872,6 +872,24 @@ class Result {
 
 
 
+    // maximize happiness of selected children
+    public long maximumHappinessSum(int[] happiness, int k) {
+
+       Arrays.sort(happiness);
+
+       long maxHappy = 0;
+       int turns = 0;
+
+       for (int i = happiness.length - 1; i >= 0 && turns < k; i--) {
+           int current = happiness[i] - turns;
+           if (current <= 0) break;
+
+           maxHappy += current;
+           turns++;
+       }
+        return maxHappy;
+    }
+
 
 
 
