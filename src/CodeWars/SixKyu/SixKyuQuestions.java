@@ -1900,6 +1900,25 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // meeting
+    public static String meeting(String s) {
+
+
+        String[] array = s.split(";");
+        for (int i = 0; i < array.length; i++) {
+            String[] names = array[i].split(":");
+            String a = names[0];
+            names[0] = names[1].toUpperCase();
+            names[1] = a.toUpperCase();
+            array[i] = String.join(", ", names);
+        }
+        Arrays.sort(array);
+        return "(" + String.join(")(", array) + ")";
+
+
+    }
+
+
 
 
 
