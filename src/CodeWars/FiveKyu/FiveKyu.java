@@ -673,6 +673,46 @@ public class FiveKyu {
 
 
 
+    // even fusc fun
+    private static Map<Integer, Integer> memo = new HashMap<>();
+
+    public static int fusc(int n) {
+        if (n == 1) return 1;
+
+        if (memo.containsKey(n)) {
+            return memo.get(n);
+        }
+
+        int result;
+
+        if (n % 2 == 0) {
+            result = fusc(n / 2);
+        } else {
+            result = fusc(n / 2) + fusc(n / 2 + 1);
+        }
+
+
+        memo.put(n, result);
+        return result;
+
+
+    }
+
+
+    public static int closestEvenFusc(int n) {
+
+        int m = n;
+
+        while (true) {
+            if (fusc(m) % 2 == 0) {
+                return m;
+            }
+            m++;
+        }
+
+
+
+    }
 
 
 
