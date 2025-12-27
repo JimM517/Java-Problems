@@ -1346,6 +1346,28 @@ public class SevenKyu {
 
 
 
+    // even numbers in an array
+    public static int[] evenNumbers(int[] arr, int n) {
+
+        List<Integer> evens = new ArrayList<>();
+        for (int x : arr) {
+            if (x % 2 == 0) {
+                evens.add(x);
+            }
+        }
+
+
+        int[] result = new int[n];
+        int k = evens.size() - n;
+        for (int i = 0; i < n; i++) {
+            result[i] = evens.get(k + i);
+        }
+
+
+        return result;
+
+
+    }
 
 
 
