@@ -1061,7 +1061,16 @@ public class EightKyu {
 
 
 
+// USD => CNY
+    public static String usdcny(int usd) {
 
+        double cnyCon = usd * 6.75;
+        String result = String.format("%.2f", cnyCon);
+
+        return result + " Chinese Yuan";
+
+
+    }
 
 
 
