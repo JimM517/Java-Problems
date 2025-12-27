@@ -719,8 +719,28 @@ public class FiveKyu {
 
 
 
+    // going to zero or to infinity?
+    public static double going(int n) {
+
+        double sum = 1.0;
+        double term = 1.0;
+
+        for (int i = n; i > 1; i--) {
+            term /= i;
+            sum += term;
+        }
+        return sum;
+    }
 
 
+//    public static double factorial(int n) {
+//
+//        if (n == 1) {
+//            return 1;
+//        }
+//
+//        return n * factorial(n - 1);
+//    }
 
 
 
