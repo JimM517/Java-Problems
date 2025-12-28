@@ -977,6 +977,31 @@ class Result {
     }
 
 
+    // 1351. count negative numbers in a sorted matrix
+    public int countNegatives(int[][] grid) {
+
+        int m = grid.length;
+        int n = grid[0].length;
+
+        int l = m - 1;
+        int r = 0;
+        int count = 0;
+        while (l >= 0 && r < n) {
+
+            int current = grid[l][r];
+
+            if (current >= 0) {
+                r++;
+            } else {
+                count += (n - r);
+                l--;
+            }
+
+
+        }
+        return count;
+
+    }
 
 
 
