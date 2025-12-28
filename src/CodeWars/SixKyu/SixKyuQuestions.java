@@ -1920,6 +1920,11 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // a disguised sequence(1)
+    public static BigInteger fcn(int n) {
+
+        return BigInteger.valueOf(2).pow(n);
+    }
 
 
 
