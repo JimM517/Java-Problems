@@ -1394,7 +1394,27 @@ public class SevenKyu {
 
 
 
+// convert string to camel case
+    public static String toCamelCase(String s) {
 
+
+        String[] arr = s.split("[-_]");
+        StringBuilder sb = new StringBuilder();
+        sb.append(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+
+            char first = Character.toUpperCase(arr[i].charAt(0));
+            String sub = arr[i].substring(1);
+
+            sb.append(first).append(sub);
+
+
+
+        }
+
+        return sb.toString();
+
+    }
 
 
 
