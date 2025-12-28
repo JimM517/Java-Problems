@@ -1373,7 +1373,24 @@ public class SevenKyu {
 
 
 
+// sum of odd cubed numbers
+    public static int cubeOdd(int[] arr) {
 
+        int sum = 0;
+
+        for (int x : arr) {
+            int cube = x * x * x;
+            if (cube % 2 != 0) {
+                sum += cube;
+            }
+        }
+
+
+        return sum;
+
+
+
+    }
 
 
 
