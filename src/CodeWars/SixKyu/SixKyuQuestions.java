@@ -1932,7 +1932,29 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+// find the unique number
+    public static double findUniq(double[] arr) {
 
+        double result = 0.0;
+
+        Map<Double, Integer> map = new HashMap<>();
+        for (double x : arr) {
+            map.put(x, map.getOrDefault(x, 0) + 1);
+        }
+
+        for (Map.Entry<Double, Integer> x : map.entrySet()) {
+
+            if (x.getValue() == 1) {
+                result = x.getKey();
+            }
+
+
+
+
+        }
+        return result;
+
+    }
 
 
 
