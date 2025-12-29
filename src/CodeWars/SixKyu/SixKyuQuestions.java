@@ -1959,6 +1959,17 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // banker's plan
+    public static boolean fortune(int f0, double p, int c0, int n, double i) {
+
+        p = p/100;
+        i = i/100;
+        for (int j = 1 ; j < n; j++){
+            f0 = (int) (f0 + p * f0 - c0);
+            c0 = (int) (c0 + c0*i);
+        }
+        return f0 >= 0;
+    }
 
 
 
