@@ -1450,7 +1450,24 @@ public class SevenKyu {
 
 
 
+    // pony express
+    public static int riders(final int[] stations) {
 
+        int riders = 1;
+        int sum = 0;
+
+        for (int distance : stations) {
+            if (sum + distance > 100) {
+                riders++;
+                sum = distance;
+            } else {
+                sum += distance;
+            }
+        }
+
+        return riders;
+
+    }
 
 
 
