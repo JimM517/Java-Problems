@@ -1419,6 +1419,35 @@ public class SevenKyu {
 
 
 
+    // rotate for max
+    public static long maxRot(long n) {
+
+        String s = Long.toString(n);
+        long max = n;
+
+        for (int i = 0; i < s.length() - 1; i++) {
+
+            String fixed = s.substring(0, i);
+            String rotate = s.substring(i);
+
+            rotate = rotate.substring(1) + rotate.charAt(0);
+
+            s = fixed + rotate;
+
+            long current = Long.parseLong(s);
+            if (current > max) {
+                max = current;
+            }
+
+
+        }
+
+        return max;
+
+
+
+    }
+
 
 
 
