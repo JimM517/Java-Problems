@@ -1974,6 +1974,20 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // numericals of a string
+    public static String numericals(String s) {
+
+        Map<Character, Integer> map = new HashMap<>();
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            int seen = map.getOrDefault(c, 0) + 1;
+            map.put(c, seen);
+            sb.append(seen);
+        }
+
+        return sb.toString();
+
+    }
 
 
 
