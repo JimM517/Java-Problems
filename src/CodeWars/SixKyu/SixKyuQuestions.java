@@ -2057,6 +2057,41 @@ public static boolean isValid(String braces) {
 
 
 
+// octo coder: the typing octopus
+public static String octopus(String idea) {
+
+    if (idea == null || idea.matches("^ *$")) {
+        return "";
+    }
+
+    char[] chars = idea.toCharArray();
+    StringBuilder result = new StringBuilder();
+    HashMap<Character, Integer> used = new HashMap<>();
+
+    for (int i = 0; i < chars.length; i++) {
+        // clear char store
+        if (i % 8 == 0 && i != 0) {
+            used.clear();
+        }
+
+        char lower = Character.toLowerCase(chars[i]);
+
+        if (!used.containsKey(lower)) {
+            result.append(chars[i]);
+            used.put(lower, 1);
+        } else if (Character.isDigit(lower) && used.get(chars[i]) < 2) {
+            result.append(chars[i]);
+            used.put(lower, used.get(lower) + 1);
+        } else {
+            result.append("*");
+            used.put(lower, used.get(lower) + 1);
+        }
+
+    }
+    return result.toString();
+
+}
+
 
 
 
