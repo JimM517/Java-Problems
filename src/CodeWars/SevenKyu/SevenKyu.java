@@ -1496,7 +1496,11 @@ public class SevenKyu {
 
 
 
+// round up to the next multiple of 5
+public static int roundToNext5(int number) {
 
+    return (int) (Math.ceil(number / 5.0) * 5);
+}
 
 
 
