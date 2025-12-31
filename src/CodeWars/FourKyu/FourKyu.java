@@ -143,6 +143,39 @@ public class FourKyu {
 
 
 
+    // sum strings as numbers
+    public static String sumStrings(String a, String b) {
+
+
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+
+        int carry = 0;
+
+        StringBuilder sb = new StringBuilder();
+
+        while (i >= 0 || j >= 0 || carry > 0) {
+
+            int da = (i >= 0) ? a.charAt(i--) - '0' : 0;
+            int db = (j >= 0) ? b.charAt(j--) - '0' : 0;
+
+            int sum = da + db + carry;
+            sb.append(sum % 10);
+            carry = sum / 10;
+
+        }
+
+
+        while (sb.length() > 1 && sb.charAt(sb.length() - 1) == '0') {
+            sb.deleteCharAt(sb.length() - 1);
+        }
+
+
+        return sb.reverse().toString();
+
+
+
+    }
 
 
 
