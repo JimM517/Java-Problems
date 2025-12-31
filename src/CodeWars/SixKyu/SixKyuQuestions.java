@@ -1992,6 +1992,35 @@ public static BigInteger binomial(int n, int k) {
 
 
 
+    // autodigigrams I
+    public static boolean validate(int base, int width, int[] list) {
+
+
+        int[] counts = new int[base];
+
+
+        for (int num : list) {
+            String s = Integer.toString(num, base).toUpperCase();
+
+            while (s.length() < width) {
+                s = "0" + s;
+            }
+
+            for (char c : s.toCharArray()) {
+                int digit = Character.digit(c, base);
+                counts[digit]++;
+            }
+        }
+
+
+        for (int d = 0; d < base; d++) {
+            if (counts[d] != list[d]) {
+                return false;
+            }
+        }
+        return true;
+
+    }
 
 
 
