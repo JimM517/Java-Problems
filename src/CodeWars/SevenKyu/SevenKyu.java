@@ -1471,6 +1471,26 @@ public class SevenKyu {
 
 
 
+    // valid parentheses
+    public static boolean validParentheses(String parenStr) {
+
+        Stack<Character> stack = new Stack<>();
+        for (char c : parenStr.toCharArray()) {
+            if (c == '(') {
+                stack.push(c);
+            } else if (c == ')') {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                char top = stack.pop();
+                if (c == ')' && top != '(') {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
 
 
 
