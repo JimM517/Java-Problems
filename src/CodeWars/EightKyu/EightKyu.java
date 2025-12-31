@@ -1076,7 +1076,23 @@ public class EightKyu {
 
 
 
+// determine offspring sex based on genes XX and XY chromosomes
+    public static String chromosomeCheck(String sperm) {
 
+        if (sperm.equals("XX")) {
+            return "Congratulations! You're going to have a daughter.";
+        }
+
+        if (sperm.equals("XY")) {
+            return "Congratulations! You're going to have a son.";
+        }
+
+
+
+        return "";
+
+
+    }
 
 
 
