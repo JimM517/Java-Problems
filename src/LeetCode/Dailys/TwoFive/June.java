@@ -1,4 +1,4 @@
-package LeetCode.Dailys;
+package LeetCode.Dailys.TwoFive;
 
 import java.util.*;
 
