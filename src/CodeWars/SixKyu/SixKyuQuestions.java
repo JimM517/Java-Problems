@@ -2095,7 +2095,23 @@ public static String octopus(String idea) {
 
 
 
+// which are in?
+    public static String[] inArray(String[] array1, String[] array2) {
 
+        Set<String> set = new HashSet<>();
+
+        for (String s1 : array1) {
+            for (String s2 : array2) {
+                if (s2.contains(s1)) {
+                    set.add(s1);
+                    break;
+                }
+            }
+        }
+        List<String> list = new ArrayList<>(set);
+        Collections.sort(list);
+        return list.toArray(new String[0]);
+    }
 
 
 
