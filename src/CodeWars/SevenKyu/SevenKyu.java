@@ -1509,7 +1509,30 @@ public static int roundToNext5(int number) {
 
 
 
+// sum of array singles
+    public static int repeats(int[] arr) {
 
+        int sum = 0;
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int x : arr) {
+            map.put(x, map.getOrDefault(x, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> key : map.entrySet()) {
+
+            int value = key.getValue();
+
+            if (value == 1) {
+                sum += key.getKey();
+            }
+
+        }
+
+
+        return sum;
+
+    }
 
 
 
