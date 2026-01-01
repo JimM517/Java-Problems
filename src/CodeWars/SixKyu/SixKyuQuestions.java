@@ -2118,6 +2118,24 @@ public static String octopus(String idea) {
 
 
 
+    // split strings
+    public static String[] solution(String s) {
+
+        List<String> list = new ArrayList<>();
+
+        for (int i = 0; i < s.length(); i += 2) {
+
+            if (i + 1 < s.length()) {
+                list.add(s.substring(i, i + 2));
+            } else {
+                list.add(s.charAt(i) + "_");
+            }
+
+
+        }
+        return list.toArray(new String[0]);
+    }
+
 
 
 
