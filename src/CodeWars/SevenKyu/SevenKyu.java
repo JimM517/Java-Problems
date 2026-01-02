@@ -1537,6 +1537,18 @@ public static int roundToNext5(int number) {
 
 
 
+    // steps
+    public static int step(int x, int y) {
+
+       if (x == y) return 0;
+
+       return (int) Math.ceil(2 * Math.sqrt(y - x) - 1);
+
+
+
+
+
+    }
 
 
 
