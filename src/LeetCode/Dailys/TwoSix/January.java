@@ -1,5 +1,8 @@
 package LeetCode.Dailys.TwoSix;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class January {
 
 
@@ -25,6 +28,32 @@ public class January {
 
 
 
+
+
+    // 961. N-repeated element in size 2N array
+    public int repeatedNTimes(int[] nums) {
+
+        int len = nums.length;
+
+        Map<Integer, Integer> count = new HashMap<>();
+
+        for (int num : nums) {
+            count.put(num, count.getOrDefault(num, 0) + 1);
+        }
+        int key = 0;
+        for (Map.Entry<Integer, Integer> map : count.entrySet()) {
+
+            int val = map.getValue();
+            if (len == (2 * val) && count.size() == val + 1) {
+                key = map.getKey();
+            }
+
+
+        }
+        return key;
+
+
+    }
 
 
 
