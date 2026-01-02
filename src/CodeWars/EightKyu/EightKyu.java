@@ -1098,6 +1098,14 @@ public class EightKyu {
 
 
 
+    // FIXME: replace all dots
+    public static String replaceDots(final String str) {
+
+
+        return str.replaceAll("\\.", "-");
+
+
+    }
 
 
 
