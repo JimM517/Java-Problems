@@ -1578,6 +1578,27 @@ public static int roundToNext5(int number) {
 
 
 
+    // dont give me five!
+    public static int dontGiveMeFive(int start, int end) {
+
+
+        int nonFives = 0;
+
+        for (int i = start; i <= end; i++) {
+            String fiveStr = Integer.toString(i);
+            if (!fiveStr.contains("5")) {
+                nonFives++;
+            }
+
+        }
+
+        return nonFives;
+
+
+
+    }
+
+
 
 
 
