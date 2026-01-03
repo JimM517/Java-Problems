@@ -1553,6 +1553,27 @@ public static int roundToNext5(int number) {
 
 
 
+    // number of people in the bus
+    public static int countPassengers(ArrayList<int[]> stops) {
+
+        int total = 0;
+
+        for (int[] x : stops) {
+
+            int beginners = x[0];
+            total += beginners;
+
+
+        }
+
+        for (int[] j : stops) {
+            int end = j[1];
+            total -= end;
+        }
+
+        return total;
+
+    }
 
 
 
