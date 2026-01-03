@@ -1111,6 +1111,29 @@ public class EightKyu {
 
 
 
+    // transportation on vacation
+    public static int rentalCarCost(int d) {
+
+        int total = 0;
+        for (int i = 0; i < d; i++) {
+            total += 40;
+        }
+
+
+        if (d >= 3 && d < 7) {
+            total -= 20;
+        } else if (d >= 7) {
+            total -= 50;
+        }
+
+        if (d <= 2) {
+            return total;
+        }
+
+
+
+        return total;
+    }
 
 
 
