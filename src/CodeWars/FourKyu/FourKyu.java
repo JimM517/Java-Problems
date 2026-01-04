@@ -1,9 +1,8 @@
 package CodeWars.FourKyu;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FourKyu {
 
@@ -180,6 +179,28 @@ public class FourKyu {
 
 
 
+    // most frequently used words in a text
+    public static List<String> top3(String s) {
+
+        Map<String, Integer> count = new HashMap<>();
+
+        Pattern pattern = Pattern.compile("[a-zA-Z']*[a-zA-Z][a-zA-Z']*");
+        Matcher matcher = pattern.matcher(s.toLowerCase());
+
+        while (matcher.find()) {
+            String word = matcher.group();
+            count.put(word, count.getOrDefault(word, 0) + 1);
+        }
+
+        PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
+        pq.addAll(count.entrySet());
+
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < 3 && !pq.isEmpty(); i++) {
+            result.add(pq.poll().getKey());
+        }
+        return result;
+    }
 
 
 
