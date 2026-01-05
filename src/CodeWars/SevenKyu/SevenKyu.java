@@ -1600,6 +1600,35 @@ public static int roundToNext5(int number) {
 
 
 
+    // 2D Vector Mapping
+    public static double[] mapVector(double[] vector, double[] circle1, double[] circle2) {
+
+        double vx = vector[0];
+        double vy = vector[1];
+
+        double c1x = circle1[0];
+        double c1y = circle1[1];
+        double r1 = circle1[2];
+
+        double c2x = circle2[0];
+        double c2y = circle2[1];
+        double r2 = circle2[2];
+
+        double dx = vx - c1x;
+        double dy = vy - c1y;
+
+        double scale = r2 / r1;
+
+        double newX = c2x + dx * scale;
+        double newY = c2y + dy * scale;
+
+        newX = Math.round(newX * 100.0) / 100.0;
+        newY = Math.round(newY * 100.0) / 100.0;
+
+        return new double[] { newX, newY};
+
+    }
+
 
 
 
