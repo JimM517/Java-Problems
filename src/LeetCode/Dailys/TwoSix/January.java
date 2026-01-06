@@ -1,7 +1,9 @@
 package LeetCode.Dailys.TwoSix;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 public class January {
 
@@ -143,7 +145,54 @@ public class January {
 
 
 
+// 1161. maximum level sum of a binary tree
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(){};
+        TreeNode(int val) { this.val = val};
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+}
 
+public int maxLevelSum(TreeNode root) {
+
+    int maxSum = Integer.MIN_VALUE;
+    int answer = 0;
+    int level = 0;
+
+    Queue<TreeNode> q = new LinkedList<>();
+    q.offer(root);
+
+    while (!q.isEmpty()) {
+        level++;
+        int sumAtCurrentLevel = 0;
+
+        for (int sz = q.size(); sz > 0; sz--) {
+            TreeNode node = q.poll();
+            sumAtCurrentLevel += node.val;
+
+            if (node.left != null) {
+                q.offer(node.left);
+            }
+            if (node.right != null) {
+                q.offer(node.right);
+            }
+        }
+        if (maxSum < sumAtCurrentLevel) {
+            maxSum = sumAtCurrentLevel;
+            answer = level;
+        }
+    }
+
+        return answer;
+
+
+}
 
 
 
