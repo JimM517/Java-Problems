@@ -197,6 +197,35 @@ public int maxLevelSum(TreeNode root) {
 
 
 
+// 1339. maximum product of splitted binary tree
+    private long total = 0;
+    private long best = 0;
+    private static final int MOD = 1_000_000_007;
+
+    public long sum(TreeNode node) {
+        if (node == null) return 0;
+        return node.val + sum(node.left) + sum(node.right);
+    }
+
+    public long dfs(TreeNode node) {
+        if (node == null) return 0;
+        long s = node.val + dfs(node.left) + dfs(node.right);
+        best = Math.max(best, s * (total - s));
+        return s;
+    }
+
+    public int maxProduct(TreeNode root) {
+
+        total = sum(root);
+        dfs(root);
+
+        return (int) (best % MOD);
+
+
+
+    }
+
+
 
 
 
