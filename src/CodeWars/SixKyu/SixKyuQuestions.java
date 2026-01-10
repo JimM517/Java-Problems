@@ -1,6 +1,7 @@
 package CodeWars.SixKyu;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.function.LongBinaryOperator;
 
@@ -2201,6 +2202,23 @@ public static String octopus(String idea) {
     }
 
 
+
+    // determine the date by the number
+    public static String getDay(int day, boolean isLeap) {
+
+        int year = isLeap ? 2000 : 2001;
+
+        LocalDate date = LocalDate.ofYearDay(year, day);
+
+        String month = date.getMonth().toString().toLowerCase();
+        String upper = month.substring(0, 1).toUpperCase();
+        String res = upper + month.substring(1);
+
+        return res + ", " + date.getDayOfMonth();
+
+
+
+    }
 
 
 
