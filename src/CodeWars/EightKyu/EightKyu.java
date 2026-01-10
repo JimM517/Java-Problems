@@ -1178,6 +1178,22 @@ public class EightKyu {
 
 
 
+    // find multiples of a number
+    public static int[] find(int base, int limit) {
+
+
+        List<Integer> res = new ArrayList<>();
+
+        for (int i = base; i <= limit; i++) {
+            if (i % base == 0) {
+                res.add(i);
+            }
+        }
+
+        return res.stream().mapToInt(i -> i).toArray();
+
+
+    }
 
 
 
