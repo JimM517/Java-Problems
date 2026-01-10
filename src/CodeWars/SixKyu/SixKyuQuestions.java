@@ -2166,6 +2166,40 @@ public static String octopus(String idea) {
 
 
 
+    // give me a diamond
+    public static String print(int n) {
+
+        if (n <= 0 || n % 2 == 0) {
+            return null;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        int mid = n / 2;
+
+        // Top half (including middle)
+        for (int i = 0; i <= mid; i++) {
+            int spaces = mid - i;
+            int stars = 2 * i + 1;
+
+            sb.append(" ".repeat(spaces));
+            sb.append("*".repeat(stars));
+            sb.append("\n");
+        }
+
+        // Bottom half
+        for (int i = mid - 1; i >= 0; i--) {
+            int spaces = mid - i;
+            int stars = 2 * i + 1;
+
+            sb.append(" ".repeat(spaces));
+            sb.append("*".repeat(stars));
+            sb.append("\n");
+        }
+
+        return sb.toString();
+
+    }
+
 
 
 
