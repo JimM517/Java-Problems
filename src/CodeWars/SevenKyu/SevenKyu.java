@@ -1631,6 +1631,30 @@ public static int roundToNext5(int number) {
 
 
 
+    // largest 5 digit number in a series
+    public static int solve(final String digits) {
+
+        int largest = 0;
+        int limit = 5;
+
+        for (int i = 0; i <= digits.length() - limit; i++) {
+
+            String chunk = digits.substring(i, i + limit);
+
+            int value = Integer.parseInt(chunk);
+
+            if (value > largest) {
+                largest = value;
+            }
+
+        }
+
+        return largest;
+
+
+
+
+    }
 
 
 
