@@ -1659,6 +1659,24 @@ public static int roundToNext5(int number) {
 
 
 
+    // all inclusive
+    public static boolean containsAllRots(String strng, List<String> arr) {
+
+        if (strng.isEmpty()) return true;
+
+        int len = strng.length();
+        String doubled = strng + strng;
+
+        for (int i = 0; i < len; i++) {
+            String rotation = doubled.substring(i, i + len);
+            if (!arr.contains(rotation)) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
 
 
 
