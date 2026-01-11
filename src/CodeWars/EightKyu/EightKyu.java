@@ -1200,6 +1200,29 @@ public class EightKyu {
 
 
 
+    // reversed words
+    public static String reverseWords(String str) {
+
+        String[] reversed = str.split(" ");
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = reversed.length - 1; i >= 0; i--) {
+
+            sb.append(reversed[i]);
+
+            if (i > 0) {
+                sb.append(" ");
+            }
+
+
+
+        }
+
+        return sb.toString();
+
+    }
+
 
 
 
