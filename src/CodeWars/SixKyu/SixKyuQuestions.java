@@ -2224,6 +2224,30 @@ public static String octopus(String idea) {
 
 
 
+    // does my number look big in this?
+    public static boolean isNarcissistic(int number) {
+
+        String val = String.valueOf(number);
+
+        int total = 0;
+        int pow = val.length();
+
+        for (int i = 0; i < val.length(); i++)  {
+
+            int digit = Character.getNumericValue(val.charAt(i));
+
+            total += (int) Math.pow(digit, pow);
+
+
+
+
+        }
+
+        return total == number;
+
+
+    }
+
 
 
 
