@@ -1683,6 +1683,12 @@ public static int roundToNext5(int number) {
 
 
 
+    // largest pair sum in array
+    public static int largestPairSum(int[] numbers) {
+        Arrays.sort(numbers);
+
+        return numbers[numbers.length - 1] + numbers[numbers.length - 2];
+    }
 
 
 
