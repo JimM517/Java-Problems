@@ -25,10 +25,6 @@ public class January {
     }
 
 
-
-
-
-
     // 961. N-repeated element in size 2N array
     public int repeatedNTimes(int[] nums) {
 
@@ -55,10 +51,6 @@ public class January {
     }
 
 
-
-
-
-
     // 1411. number of ways to paint a N X 3 grid
     public int numOfWays(int n) {
         final int MOD = 1_000_000_007;
@@ -73,10 +65,6 @@ public class January {
 
         return (int) ((A + B) % MOD);
     }
-
-
-
-
 
 
     // 1390. four divisors
@@ -113,8 +101,6 @@ public class January {
     }
 
 
-
-
     // 1975. maximum matrix sum
     public long maxMatrixSum(int[][] matrix) {
 
@@ -140,61 +126,67 @@ public class January {
     }
 
 
-
-
-// 1161. maximum level sum of a binary tree
+    // 1161. maximum level sum of a binary tree
     public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(){};
-        TreeNode(int val) { this.val = val; };
+
+        TreeNode() {
+        }
+
+        ;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        ;
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
         }
-}
-
-public int maxLevelSum(TreeNode root) {
-
-    int maxSum = Integer.MIN_VALUE;
-    int answer = 0;
-    int level = 0;
-
-    Queue<TreeNode> q = new LinkedList<>();
-    q.offer(root);
-
-    while (!q.isEmpty()) {
-        level++;
-        int sumAtCurrentLevel = 0;
-
-        for (int sz = q.size(); sz > 0; sz--) {
-            TreeNode node = q.poll();
-            sumAtCurrentLevel += node.val;
-
-            if (node.left != null) {
-                q.offer(node.left);
-            }
-            if (node.right != null) {
-                q.offer(node.right);
-            }
-        }
-        if (maxSum < sumAtCurrentLevel) {
-            maxSum = sumAtCurrentLevel;
-            answer = level;
-        }
     }
+
+    public int maxLevelSum(TreeNode root) {
+
+        int maxSum = Integer.MIN_VALUE;
+        int answer = 0;
+        int level = 0;
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+
+        while (!q.isEmpty()) {
+            level++;
+            int sumAtCurrentLevel = 0;
+
+            for (int sz = q.size(); sz > 0; sz--) {
+                TreeNode node = q.poll();
+                sumAtCurrentLevel += node.val;
+
+                if (node.left != null) {
+                    q.offer(node.left);
+                }
+                if (node.right != null) {
+                    q.offer(node.right);
+                }
+            }
+            if (maxSum < sumAtCurrentLevel) {
+                maxSum = sumAtCurrentLevel;
+                answer = level;
+            }
+        }
 
         return answer;
 
 
-}
+    }
 
 
-
-
-// 1339. maximum product of splitted binary tree
+    // 1339. maximum product of splitted binary tree
     private long total = 0;
     private long best = 0;
     private static final int MOD = 1_000_000_007;
@@ -219,13 +211,7 @@ public int maxLevelSum(TreeNode root) {
         return (int) (best % MOD);
 
 
-
     }
-
-
-
-
-
 
 
     // 1458. max dot product of two subsequences
@@ -234,18 +220,18 @@ public int maxLevelSum(TreeNode root) {
         int n = nums1.length;
         int m = nums2.length;
 
-        int NEG = (int)-1e9;
+        int NEG = (int) -1e9;
 
         int[][] dp = new int[n + 1][m + 1];
 
-        for(int i=0;i<=n;i++)
-            for(int j=0;j<=m;j++)
+        for (int i = 0; i <= n; i++)
+            for (int j = 0; j <= m; j++)
                 dp[i][j] = NEG;
 
-        for(int i=1;i<=n;i++){
-            for(int j=1;j<=m;j++){
-                int take = nums1[i-1]*nums2[j-1] + Math.max(0, dp[i-1][j-1]);
-                dp[i][j] = Math.max(take, Math.max(dp[i-1][j], dp[i][j-1]));
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                int take = nums1[i - 1] * nums2[j - 1] + Math.max(0, dp[i - 1][j - 1]);
+                dp[i][j] = Math.max(take, Math.max(dp[i - 1][j], dp[i][j - 1]));
             }
         }
 
@@ -256,81 +242,73 @@ public int maxLevelSum(TreeNode root) {
 
 
     // 865 smallest subtree with all deepest nodes
-        Map<TreeNode, Integer> depth;
-        int max_depth;
-        public TreeNode subtreeWithAllDeepest(TreeNode root) {
-            depth = new HashMap();
-            depth.put(null, -1);
-            dfs(root, null);
-            max_depth = -1;
-            for (Integer d: depth.values())
-                max_depth = Math.max(max_depth, d);
+    Map<TreeNode, Integer> depth;
+    int max_depth;
 
-            return answer(root);
+    public TreeNode subtreeWithAllDeepest(TreeNode root) {
+        depth = new HashMap();
+        depth.put(null, -1);
+        dfs(root, null);
+        max_depth = -1;
+        for (Integer d : depth.values())
+            max_depth = Math.max(max_depth, d);
+
+        return answer(root);
+    }
+
+    public void dfs(TreeNode node, TreeNode parent) {
+        if (node != null) {
+            depth.put(node, depth.get(parent) + 1);
+            dfs(node.left, node);
+            dfs(node.right, node);
         }
+    }
 
-        public void dfs(TreeNode node, TreeNode parent) {
-            if (node != null) {
-                depth.put(node, depth.get(parent) + 1);
-                dfs(node.left, node);
-                dfs(node.right, node);
-            }
-        }
-
-        public TreeNode answer(TreeNode node) {
-            if (node == null || depth.get(node) == max_depth)
-                return node;
-            TreeNode L = answer(node.left),
-                    R = answer(node.right);
-            if (L != null && R != null) return node;
-            if (L != null) return L;
-            if (R != null) return R;
-            return null;
-        }
+    public TreeNode answer(TreeNode node) {
+        if (node == null || depth.get(node) == max_depth)
+            return node;
+        TreeNode L = answer(node.left),
+                R = answer(node.right);
+        if (L != null && R != null) return node;
+        if (L != null) return L;
+        if (R != null) return R;
+        return null;
+    }
 
 
-
-
-
-
-
-
-        // 712. minimum ASCII delete sum for two strings
+    // 712. minimum ASCII delete sum for two strings
     public int minimumDeleteSum(String s1, String s2) {
 
-            int m = s1.length();
-            int n = s2.length();
+        int m = s1.length();
+        int n = s2.length();
 
-            int[][] dp = new int[m + 1][n + 1];
+        int[][] dp = new int[m + 1][n + 1];
 
-            for (int i = m - 1; i >= 0; i--) {
-                for (int j = n - 1; j >= 0; j--) {
-                    if (s1.charAt(i) == s2.charAt(j)) {
-                        dp[i][j] = s1.charAt(i) + dp[i + 1][j + 1];
-                    } else {
-                        dp[i][j] = Math.max(dp[i + 1][j], dp[i][j + 1]);
-                    }
+        for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                if (s1.charAt(i) == s2.charAt(j)) {
+                    dp[i][j] = s1.charAt(i) + dp[i + 1][j + 1];
+                } else {
+                    dp[i][j] = Math.max(dp[i + 1][j], dp[i][j + 1]);
                 }
             }
+        }
 
-            int total = 0;
-            for (char c : s1.toCharArray()) total += c;
-            for (char c : s2.toCharArray()) total += c;
+        int total = 0;
+        for (char c : s1.toCharArray()) total += c;
+        for (char c : s2.toCharArray()) total += c;
 
-            return total - 2 * dp[0][0];
-
+        return total - 2 * dp[0][0];
 
 
     }
 
 
-
-
-
-
-
 // maximal rectangle
-    /** TODO: REVIEW THIS SOLUTION **/
+
+    /**
+     * TODO: REVIEW THIS SOLUTION
+     **/
     public int maximalRectangle(char[][] matrix) {
 
         int m = matrix.length;
@@ -354,37 +332,30 @@ public int maxLevelSum(TreeNode root) {
         return answer;
 
 
-
     }
 
 
     public static int area(int[] heights) {
 
-            int n = heights.length;
-            int maxArea = 0;
+        int n = heights.length;
+        int maxArea = 0;
 
-            Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
 
-            for (int i = 0; i <= n; i++) {
-                int h = (i == n) ? 0 : heights[i];
-                while (!stack.isEmpty() && h < heights[stack.peek()]) {
-                    int height = heights[stack.pop()];
-                    int width = stack.isEmpty() ? i : i - stack.peek() - 1;
-                    maxArea = Math.max(maxArea, height * width);
-                }
-                stack.push(i);
+        for (int i = 0; i <= n; i++) {
+            int h = (i == n) ? 0 : heights[i];
+            while (!stack.isEmpty() && h < heights[stack.peek()]) {
+                int height = heights[stack.pop()];
+                int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+                maxArea = Math.max(maxArea, height * width);
             }
+            stack.push(i);
+        }
 
-            return maxArea;
+        return maxArea;
 
 
     }
-
-
-
-
-
-
 
 
     // 1266. minimum time visiting all points
@@ -406,19 +377,10 @@ public int maxLevelSum(TreeNode root) {
         }
 
 
-
-
         return answer;
 
 
-
-
     }
-
-
-
-
-
 
 
     // 3453. separate squares I
@@ -464,9 +426,132 @@ public int maxLevelSum(TreeNode root) {
     }
 
 
+    // 3454. separate squares II
+    class SegmentTree {
+
+        private int[] count;
+        private int[] covered;
+        private int[] xs;
+        private int n;
+
+        public SegmentTree(int[] xs_) {
+            xs = xs_;
+            n = xs.length - 1;
+            count = new int[4 * n];
+            covered = new int[4 * n];
+        }
+
+        private void modify(
+                int qleft,
+                int qright,
+                int qval,
+                int left,
+                int right,
+                int pos
+        ) {
+            if (xs[right + 1] <= qleft || xs[left] >= qright) {
+                return;
+            }
+            if (qleft <= xs[left] && xs[right + 1] <= qright) {
+                count[pos] += qval;
+            } else {
+                int mid = (left + right) / 2;
+                modify(qleft, qright, qval, left, mid, pos * 2 + 1);
+                modify(qleft, qright, qval, mid + 1, right, pos * 2 + 2);
+            }
+
+            if (count[pos] > 0) {
+                covered[pos] = xs[right + 1] - xs[left];
+            } else {
+                if (left == right) {
+                    covered[pos] = 0;
+                } else {
+                    covered[pos] = covered[pos * 2 + 1] + covered[pos * 2 + 2];
+                }
+            }
+        }
+
+        public void update(int qleft, int qright, int qval) {
+            modify(qleft, qright, qval, 0, n - 1, 0);
+        }
+
+        public int query() {
+            return covered[0];
+        }
+    }
 
 
+    public double separateSquares2(int[][] squares) {
+        // save events: (y-coordinate, type, left boundary, right boundary)
+        List<int[]> events = new ArrayList<>();
+        Set<Integer> xsSet = new TreeSet<>();
 
+        for (int[] sq : squares) {
+            int x = sq[0];
+            int y = sq[1];
+            int l = sq[2];
+            int xr = x + l;
+            events.add(new int[]{y, 1, x, xr});
+            events.add(new int[]{y + l, -1, x, xr});
+            xsSet.add(x);
+            xsSet.add(xr);
+        }
+
+        // sort events by y-coordinate
+        events.sort((a, b) -> Integer.compare(a[0], b[0]));
+        // discrete coordinates
+        int[] xs = xsSet.stream().mapToInt(i -> i).toArray();
+        // initialize the segment tree
+        SegmentTree segTree = new SegmentTree(xs);
+
+        List<Long> psum = new ArrayList<>();
+        List<Integer> widths = new ArrayList<>();
+        Long totalArea = 0L;
+        int prev = events.get(0)[0];
+
+        // scan: calculate total area and record intermediate states
+        for (int[] event : events) {
+            int y = event[0];
+            int delta = event[1];
+            int xl = event[2];
+            int xr = event[3];
+            int len = segTree.query();
+            totalArea += (long) len * (y - prev);
+            segTree.update(xl, xr, delta);
+            // record prefix sums and widths
+            psum.add(totalArea);
+            widths.add(segTree.query());
+            prev = y;
+        }
+
+        // calculate the target area (half rounded up)
+        long target = (long) (totalArea + 1) / 2;
+        // binary search
+        int i = binarySearch(psum, target);
+        double area = psum.get(i);
+        // get the corresponding area, width, and height
+        int width = widths.get(i);
+        int height = events.get(i)[0];
+
+        return height + (totalArea - area * 2) / (width * 2.0);
+    }
+
+    private int binarySearch(List<Long> list, long target) {
+        int left = 0;
+        int right = list.size() - 1;
+        int result = 0;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (list.get(mid) < target) {
+                result = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return result;
+    }
 
 
 
