@@ -305,7 +305,52 @@ public class FourKyu {
 
 
 
+    // String -> x-iterations -> String
+    /** doesn't work yet **/
+    public static String stringFunc(String s, long x) {
 
+            int n = s.length();
+            char[] result = new char[n];
+
+            boolean[] visited = new boolean[n];
+
+            for (int i = 0; i < n; i++) {
+                if (visited[i]) continue;
+
+                int current = i;
+                StringBuilder cycle = new StringBuilder();
+
+                while (!visited[current]) {
+                    visited[current] = true;
+                    cycle.append(s.charAt(current));
+                    current = permute(current, n);
+                }
+
+                int len = cycle.length();
+                int shift = (int) (x % len);
+
+                current = i;
+                for (int j = 0; j < len; j++) {
+                    result[current] = cycle.charAt((j + shift) % len);
+                    current = permute(current, n);
+                }
+
+
+            }
+
+            return new String(result);
+
+    }
+
+
+
+    public static int permute(int i, int n) {
+
+        return (i % 2 == 0) ? i / 2 : n - 1 - i / 2;
+
+
+
+    }
 
 
 
