@@ -243,8 +243,63 @@ public class FourKyu {
 
 
 
+    // matrix determinant
+    public static int determinant(int[][] matrix) {
+
+        int n = matrix.length;
+
+        if (n == 1) {
+            return matrix[0][0];
+        }
+
+        if (n == 2) {
+            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+        }
+
+        int det = 0;
+
+        for (int col = 0; col < n; col++) {
+            int[][] minor = buildMinor(matrix, 0, col);
+            int sign = (col % 2 == 0) ? 1 : -1;
+
+            det += sign * matrix[0][col] * determinant(minor);
+        }
+
+        return det;
+
+    }
 
 
+    private static int[][] buildMinor(int[][] matrix, int rowToRemove, int colToRemove) {
+
+        int n = matrix.length;
+        int[][] minor = new int[n - 1][n - 1];
+
+        int r = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (i == rowToRemove) continue;
+
+            int c = 0;
+            for (int j = 0; j < n; j++) {
+                if (j == colToRemove) continue;
+
+
+                minor[r][c] = matrix[i][j];
+
+                c++;
+
+            }
+            r++;
+
+        }
+
+
+
+        return minor;
+
+
+    }
 
 
 
