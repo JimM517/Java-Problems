@@ -873,6 +873,32 @@ public class FiveKyu {
 
 
 
+// merged string checker
+    public static boolean isMerge(String s, String part1, String part2) {
+
+        if (s.length() != part1.length() + part2.length()) return false;
+
+        boolean[][] dp = new boolean[part1.length() + 1][part2.length() + 1];
+        dp[0][0] = true;
+
+        for (int i = 0; i <= part1.length(); i++) {
+            for (int j = 0; j <= part2.length(); j++) {
+                int k = i + j - 1;
+                if (i > 0 && dp[i - 1][j] && part1.charAt(i - 1) == s.charAt(k)) {
+                    dp[i][j] = true;
+                }
+                if (j > 0 && dp[i][j - 1] && part2.charAt(j - 1) == s.charAt(k)) {
+                    dp[i][j] = true;
+                }
+            }
+        }
+
+        return dp[part1.length()][part2.length()];
+    }
+
+
+
+
 
 
 
