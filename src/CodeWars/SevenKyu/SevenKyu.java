@@ -1726,7 +1726,40 @@ public static int roundToNext5(int number) {
 
 
 
+    // alternate capitalization
+    public static String[] capitalize(String s) {
 
+
+
+        StringBuilder even = new StringBuilder();
+        StringBuilder odd = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+
+
+            if (i % 2 == 0) {
+                char current = Character.toUpperCase(s.charAt(i));
+                even.append(current);
+            } else {
+                even.append(s.charAt(i));
+            }
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (i % 2 == 1) {
+                char current = Character.toUpperCase(s.charAt(i));
+                odd.append(current);
+            } else {
+                odd.append(s.charAt(i));
+            }
+        }
+
+
+
+        return new String[]{ even.toString(), odd.toString() };
+
+
+    }
 
 
 
