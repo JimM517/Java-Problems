@@ -1226,6 +1226,14 @@ public class EightKyu {
 
 
 
+    // exclusive "or" (xor) logical operator
+    public static boolean xor(boolean a, boolean b) {
+
+
+        return a ^ b;
+
+
+    }
 
 
 
