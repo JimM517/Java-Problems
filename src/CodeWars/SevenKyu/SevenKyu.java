@@ -1781,6 +1781,61 @@ public static int roundToNext5(int number) {
 
 
 
+    // compoundArray
+    public static int[] compoundArray(int[] a, int[] b) {
+
+        int m = a.length + b.length;
+        int[] result = new int[m];
+
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < a.length && j < b.length) {
+
+            result[k++] = a[i++];
+            result[k++] = b[j++];
+
+
+        }
+
+
+        while (i < a.length) {
+            result[k++] = a[i++];
+        }
+
+        while (j < b.length) {
+            result[k++] = b[j++];
+        }
+
+        return result;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
