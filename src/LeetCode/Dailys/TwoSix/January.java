@@ -834,7 +834,42 @@ public class January {
 
 
 
+// 3507. minimum pair removal to sort array I
+    public int minimumPairRemoval(int[] nums) {
 
+
+        List<Integer> temp = new ArrayList<>();
+        for (int x : nums) {
+            temp.add(x);
+        }
+
+        int count = 0;
+
+        while (temp.size() > 1) {
+            boolean isAscending = true;
+            int minSum = Integer.MAX_VALUE;
+            int targetIndex = -1;
+
+            for (int i = 0; i < temp.size() - 1; i++) {
+                int sum = temp.get(i) + temp.get(i + 1);
+                if (temp.get(i) > temp.get(i + 1)) {
+                    isAscending = false;
+                }
+                if (sum < minSum) {
+                    minSum = sum;
+                    targetIndex = i;
+                }
+            }
+            if (isAscending) {
+                break;
+            }
+            count++;
+            temp.set(targetIndex, minSum);
+            temp.remove(targetIndex + 1);
+        }
+
+        return count;
+    }
 
 
 
