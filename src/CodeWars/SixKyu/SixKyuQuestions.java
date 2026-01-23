@@ -2252,6 +2252,50 @@ public static String octopus(String idea) {
 
 
 
+    // make the deadfish swim
+    public static int[] parse(String data) {
+
+
+        List<Integer> temp = new ArrayList<>();
+
+        int deadFish = 0;
+
+        for (int i = 0; i < data.length(); i++) {
+
+            char curr = data.charAt(i);
+
+            if (curr == 'i') {
+                deadFish++;
+            }
+            if (curr == 'd') {
+                deadFish--;
+            }
+            if (curr == 's') {
+                deadFish = (deadFish * deadFish);
+            }
+            if (curr == 'o') {
+                temp.add(deadFish);
+            }
+
+        }
+
+
+        int[] result = new int[temp.size()];
+        for (int i = 0; i < temp.size(); i++) {
+            result[i] = temp.get(i);
+        }
+
+
+
+
+        return result;
+
+
+
+    }
+
+
+
 
 
 
