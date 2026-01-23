@@ -1765,7 +1765,15 @@ public static int roundToNext5(int number) {
 
 
 
+    // two oldest ages
+    public static int[] twoOldestAges(int[] ages) {
 
+
+        Arrays.sort(ages);
+
+        return new int[]{ ages[ages.length - 2], ages[ages.length - 1] };
+
+    }
 
 
 
