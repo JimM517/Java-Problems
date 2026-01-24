@@ -1867,6 +1867,185 @@ public static int roundToNext5(int number) {
 
 
 
+    // maximum multiple
+    public static int maxMultiple(int divisor, int bound) {
+
+        int multiple = 0;
+
+        for (int i = 0; i <= bound; i++) {
+            int current = 0;
+            if (i % divisor == 0) {
+                current = i;
+            }
+
+            multiple = Math.max(multiple, current);
+
+
+
+        }
+
+
+        return multiple;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
