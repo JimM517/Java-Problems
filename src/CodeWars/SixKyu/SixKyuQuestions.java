@@ -2315,7 +2315,8 @@ public static String octopus(String idea) {
             if (c == ',' || c == '.' || c == '!' || c == '?') {
                 sb.append(c);
             } else {
-                sb.append(Helper.NATO.get(Character.toUpperCase(c)));
+                // helper function was built in library
+                // sb.append(Helper.NATO.get(Character.toUpperCase(c)));
             }
             sb.append(" ");
         }
