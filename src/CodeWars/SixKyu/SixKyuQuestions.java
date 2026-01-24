@@ -2298,6 +2298,30 @@ public static String octopus(String idea) {
 
 
 
+    // if you can read this....
+    public static String toNATO (String string) {
+// You can use Helper.NATO, of type: Map<Character, String>
+// usage: Helper.NATO.get('A') returns "Alfa", etc.
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+
+            if (c == ' ') {
+                continue;
+            }
+
+            if (c == ',' || c == '.' || c == '!' || c == '?') {
+                sb.append(c);
+            } else {
+                sb.append(Helper.NATO.get(Character.toUpperCase(c)));
+            }
+            sb.append(" ");
+        }
+        return sb.toString().trim();
+
+    }
 
 
 
