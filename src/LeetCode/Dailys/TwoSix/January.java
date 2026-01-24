@@ -996,6 +996,36 @@ class Node {
 
 
 
+    // 1877. minimize maximum pair sum in array
+    public int minPairSum(int[] nums) {
+
+          Arrays.sort(nums);
+
+          int i = 0;
+          int j = nums.length - 1;
+
+          List<Integer> temp = new ArrayList<>();
+
+          while (i < j) {
+
+
+              int sum = nums[i] + nums[j];
+
+              temp.add(sum);
+
+              i++;
+              j--;
+
+          }
+
+
+          Collections.sort(temp);
+
+            return temp.getLast();
+
+
+    }
+
 
 
 
