@@ -1847,6 +1847,17 @@ public static int roundToNext5(int number) {
 
 
 
+// min percentage of visitors that ate all foods
+    public static int minimumPercentage(int[] foods) {
+        int sum = 0;
+        for (int x : foods) {
+            sum += x;
+        }
+        int n = foods.length;
+        int result = sum - (n - 1) * 100;
+
+        return Math.max(0, result);
+    }
 
 
 
