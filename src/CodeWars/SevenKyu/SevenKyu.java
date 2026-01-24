@@ -1832,7 +1832,14 @@ public static int roundToNext5(int number) {
 
 
 
+// number of decimal digits
+    public static int Digits(long n) {
 
+        String res = String.valueOf(n);
+
+        return res.length();
+
+    }
 
 
 
