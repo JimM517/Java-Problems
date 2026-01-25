@@ -1912,6 +1912,32 @@ public static int roundToNext5(int number) {
 
 
 
+    // linked lists - push & build one two three
+//    class Node {
+//        int data;
+//        Node next;
+//
+//        Node(int data) {
+//            this.data = data;
+//            this.next = null;
+//        }
+//
+//        // Push a new node onto the front of the list
+//        public static Node push(Node head, int data) {
+//            Node newNode = new Node(data);
+//            newNode.next = head;
+//            return newNode;
+//        }
+//
+//        // Build 1 -> 2 -> 3 -> null using push
+//        public static Node buildOneTwoThree() {
+//            Node head = null;
+//            head = push(head, 3);
+//            head = push(head, 2);
+//            head = push(head, 1);
+//            return head;
+//        }
+//    }
 
 
 
