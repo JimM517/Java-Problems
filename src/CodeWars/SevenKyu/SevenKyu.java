@@ -1942,7 +1942,7 @@ public static int roundToNext5(int number) {
 
 
 
-// decending order
+// descending order
     public static int sortDesc(final int num) {
 
         char[] digits = String.valueOf(num).toCharArray();

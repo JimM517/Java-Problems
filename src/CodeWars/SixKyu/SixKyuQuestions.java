@@ -2327,6 +2327,63 @@ public static String octopus(String idea) {
 
 
 
+    // compare powers
+    public static int comparePowers(int[] number1, int[] number2) {
+
+        double left = number1[1] * Math.log(number1[0]);
+        double right = number2[1] * Math.log(number2[0]);
+
+        if (left > right) return -1;
+        if (left < right) return 1;
+
+        return 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
