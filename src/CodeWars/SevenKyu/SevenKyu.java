@@ -1894,6 +1894,19 @@ public static int roundToNext5(int number) {
 
 
 
+    // sum of cubes
+    public static long sumCubes(long n) {
+
+        long result = 0;
+
+        for (int i = 1; i <= n; i++) {
+            result += ((long) i * i * i);
+        }
+
+        return result;
+
+
+    }
 
 
 
