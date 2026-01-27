@@ -1271,6 +1271,23 @@ public class EightKyu {
 
 
 
+    // how many stairs will Suzuki climb in 20 years?
+    public static long stairsIn20(int[][] stairs) {
+
+
+
+        long result = 0;
+
+        for (int i = 0; i < stairs.length; i++) {
+            for (int j = 0; j < stairs[0].length; j++) {
+                result += stairs[i][j];
+            }
+        }
+
+
+        return result * 20;
+    }
+
 
 
 
