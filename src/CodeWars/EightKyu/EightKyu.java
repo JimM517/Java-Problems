@@ -1291,6 +1291,23 @@ public class EightKyu {
 
 
 
+    // expressions matter
+    public static int expressionsMatter(int a, int b, int c) {
+
+        List<Integer> ls = new ArrayList<>();
+        ls.add(a * b * c);
+        ls.add(a + b + c);
+        ls.add(a * b + c);
+        ls.add(a * (b + c));
+        ls.add(a + b * c);
+        ls.add((a + b) * c);
+        ls.add(a * (b + c));
+
+        return ls.stream().max(Comparator.comparing(Integer::intValue)).get();
+
+
+
+    }
 
 
 
