@@ -900,6 +900,17 @@ public class FiveKyu {
 
 
 
+    // josephus survivor
+    public static int josephusSurvivor(final int n, final int k) {
+
+        int survivor = 0;
+
+        for (int i = 2; i <= n; i++) {
+            survivor = (survivor + k) % i;
+        }
+        return survivor + 1;
+    }
+
 
 
 
