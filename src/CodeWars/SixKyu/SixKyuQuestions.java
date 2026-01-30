@@ -2347,7 +2347,44 @@ public static String octopus(String idea) {
 
 
 
+// buying a car
+    public static int[] nbMonths(int startPriceOld, int startPriceNew, int savingperMonth, double percentLossByMonth) {
 
+
+        if (startPriceOld >= startPriceNew) {
+            return new int[]{ 0, startPriceOld - startPriceNew };
+        }
+
+        int months = 0;
+        double oldPrice = startPriceOld;
+        double newPrice = startPriceNew;
+        double savings = 0;
+        double loss = percentLossByMonth;
+
+        while (oldPrice + savings < newPrice) {
+            months++;
+
+
+            if (months % 2 == 0) {
+                loss += 0.5;
+            }
+
+
+            oldPrice *= (1 - loss / 100);
+            newPrice *= (1 - loss / 100);
+            savings += savingperMonth;
+
+        }
+
+
+
+        int extra = (int) Math.round(oldPrice + savings - newPrice);
+        return new int[]{ months, extra };
+
+
+
+
+    }
 
 
 
