@@ -1960,7 +1960,35 @@ public static int roundToNext5(int number) {
 
 
 
+    // clean up after your dog
+    public static String crap(char[][] garden, int bags, int cap) {
 
+        int total = 0;
+
+        for (int i = 0; i < garden.length; i++) {
+            for (int j = 0; j < garden[0].length; j++) {
+
+                if (garden[i][j] == 'D') {
+                    return "Dog!!";
+                }
+
+                if (garden[i][j] == '@') {
+                    total++;
+                }
+
+
+            }
+        }
+
+        if (bags * cap >= total) {
+            return "Clean";
+        } else {
+            return "Cr@p";
+        }
+
+
+
+    }
 
 
 
