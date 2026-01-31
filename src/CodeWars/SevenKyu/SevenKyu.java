@@ -2018,6 +2018,30 @@ public static int roundToNext5(int number) {
 
 
 
+    // check whether a number is valid in a given numeral system
+    public static boolean validateBase(String num, int base) {
+
+        for (int i = 0; i < num.length(); i++) {
+            char c = num.charAt(i);
+            int value;
+
+            if (Character.isDigit(c)) {
+                value = c - '0';
+            } else if (c >= 'A' && c <= 'Z') {
+                value = c - 'A' + 10;
+            } else {
+                return false;
+            }
+
+            if (value >= base) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 
 
 
