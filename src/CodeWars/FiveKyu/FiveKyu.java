@@ -920,10 +920,77 @@ public class FiveKyu {
 
 
 
+    // the hunger games - zoo disaster
+    public static String[] whoEatsWho(final String zooInput) {
 
+        Map<String, Set<String>> eats = buildEatsMap();
 
+        List<String> zoo = new ArrayList<>(List.of(zooInput.split(",")));
 
+        List<String> log = new ArrayList<>();
+        log.add(zooInput);
 
+        boolean ateSomething = true;
+
+        while (ateSomething) {
+            ateSomething = false;
+
+            for (int i = 0; i < zoo.size(); i++) {
+                String animal = zoo.get(i);
+
+                if (!eats.containsKey(animal)) continue;
+
+                // LEFT first
+                if (i > 0 && canEat(animal, zoo.get(i - 1), eats)) {
+                    String prey = zoo.remove(i - 1);
+                    log.add(animal + " eats " + prey);
+                    ateSomething = true;
+                    break;
+                }
+
+                // RIGHT
+                if (i < zoo.size() - 1 && canEat(animal, zoo.get(i + 1), eats)) {
+                    String prey = zoo.remove(i + 1);
+                    log.add(animal + " eats " + prey);
+                    ateSomething = true;
+                    break;
+                }
+            }
+        }
+
+        log.add(String.join(",", zoo));
+
+        // ✅ Convert List<String> → String[]
+        return log.toArray(new String[0]);
+    }
+
+    private static boolean canEat(String predator, String prey,
+                                  Map<String, Set<String>> eats) {
+        return eats.containsKey(predator) && eats.get(predator).contains(prey);
+    }
+
+    private static Map<String, Set<String>> buildEatsMap() {
+        Map<String, Set<String>> eats = new HashMap<>();
+
+        eats.put("antelope", Set.of("grass"));
+        eats.put("big-fish", Set.of("little-fish"));
+        eats.put("bug", Set.of("leaves"));
+
+        eats.put("bear", Set.of(
+                "big-fish", "bug", "chicken", "cow", "leaves", "sheep"
+        ));
+
+        eats.put("chicken", Set.of("bug"));
+        eats.put("cow", Set.of("grass"));
+
+        eats.put("fox", Set.of("chicken", "sheep"));
+        eats.put("giraffe", Set.of("leaves"));
+        eats.put("lion", Set.of("antelope", "cow"));
+        eats.put("panda", Set.of("leaves"));
+        eats.put("sheep", Set.of("grass"));
+
+        return eats;
+    }
 
 
 
