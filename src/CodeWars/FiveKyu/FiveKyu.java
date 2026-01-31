@@ -3,8 +3,29 @@ package CodeWars.FiveKyu;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FiveKyu {
+
+
+    public static void main(String[] args) {
+
+        String input =
+                "*********\n" +
+                        "*       *\n" +
+                        "*       *\n" +
+                        "*********\n";
+
+
+
+
+        findEndPoints(input);
+
+    }
+
+
+
+
 
 
 
@@ -997,6 +1018,30 @@ public class FiveKyu {
 
 
 
+    // line safari - find the end points
+    // TODO review this one!
+    private static final int[][] MOVES = {{1,0}, {1,1}, {1,-1}, {0,1}, {-1,0}, {-1,-1}, {-1,1}, {0,-1}};
+
+    public static String findEndPoints(String s) {
+
+        char[][] arr = Stream.of(s.split("\n")).map(r->r.toCharArray()).toArray(char[][]::new);
+
+        for(int i=0;i<arr.length;i++) for(int j=0;j<arr[0].length;j++)
+            if(arr[i][j]=='*' && someAsymetric(i,j,arr))
+                arr[i][j]='X';
+
+        return Stream.of(arr).map(String::new).collect(Collectors.joining("\n"))+"\n";
+    }
+
+    private static boolean someAsymetric(int x, int y, char[][] arr){
+        return Stream.of(MOVES).anyMatch( m ->  isOutOrSpace(arr, x-m[0],   y-m[1])
+                && !isOutOrSpace(arr, x+m[0],   y+m[1])
+                && !isOutOrSpace(arr, x+2*m[0], y+2*m[1]) );
+    }
+
+    private static boolean isOutOrSpace(char[][] arr, int i, int j){
+        return i<0 || j<0 || arr.length<=i || arr[i].length<=j ||  arr[i][j]==' ';
+    }
 
 
 
