@@ -1992,6 +1992,26 @@ public static int roundToNext5(int number) {
 
 
 
+    // digital cypher
+    public static int[] encode(String message, int key) {
+
+       char[] chars = message.toCharArray();
+       char[] keyDigits = String.valueOf(key).toCharArray();
+
+       int[] result = new int[chars.length];
+
+       for (int i = 0; i < chars.length; i++) {
+           int letterValue = chars[i] - 'a' + 1;
+           int keyValue = keyDigits[i % keyDigits.length] - '0';
+
+           result[i] = letterValue + keyValue;
+       }
+
+        return result;
+
+
+
+    }
 
 
 
