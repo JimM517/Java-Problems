@@ -2046,7 +2046,22 @@ public static int roundToNext5(int number) {
 
 
 
+// find sum of the roots of a quadratic equation
+    public static OptionalDouble roots(double a, double b, double c) {
 
+        double discriminant = b * b - 4 * a * c;
+
+        if (discriminant < 0) {
+            return OptionalDouble.empty();
+        }
+
+        double sumOfRoots = -b / a;
+
+        double rounded = Math.round(sumOfRoots * 100.0) / 100.0;
+
+        return OptionalDouble.of(rounded);
+
+    }
 
 
 
