@@ -2130,6 +2130,16 @@ public static int roundToNext5(int number) {
 
 
 
+    // are these numbers in order?
+    public static boolean isAscOrder(int[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+       return true;
+    }
 
 
 
