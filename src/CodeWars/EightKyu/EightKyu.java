@@ -1315,7 +1315,15 @@ public class EightKyu {
 
 
 
+// L1: Set alarm
+    public static boolean setAlarm(boolean employed, boolean vacation) {
 
+
+        return employed && !vacation;
+
+
+
+    }
 
 
 
