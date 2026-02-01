@@ -9,9 +9,12 @@ public class SevenKyu {
     public static void main(String[] args) {
 
 
-        System.out.println(generateShape(3));
+        // System.out.println(generateShape(3));
 
-
+        int mod = 16 % 10;
+        int div = 16 / 10;
+        System.out.println(mod);
+        System.out.println(div);
     }
 
 
@@ -2096,6 +2099,32 @@ public static int roundToNext5(int number) {
 
 
 
+
+    // 16+18=24
+    public static int add(int num1, int num2) {
+
+        int result = 0;
+        int place = 1;
+
+        while (num1 > 0 || num2 > 0) {
+
+            int d1 = num1 % 10;
+            int d2 = num2 % 10;
+
+            int sum = d1 + d2;
+
+            result += sum * place;
+
+
+            place *= (sum >= 10) ? 100 : 10;
+
+            num1 /= 10;
+            num2 /= 10;
+
+        }
+        return result;
+
+    }
 
 
 
