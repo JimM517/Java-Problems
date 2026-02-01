@@ -1049,11 +1049,38 @@ public class FiveKyu {
 
 
 
+    // simple fun #273: powerset
+    public static int[][] power(int[] nums) {
+
+        List<List<Integer>> result = new ArrayList<>();
+        dfs(nums, 0, new ArrayList<>(), result);
+
+        int[][] output = new int[result.size()][];
+        for (int i = 0; i < result.size(); i++) {
+            output[i] = result.get(i).stream().mapToInt(Integer::intValue).toArray();
+        }
+
+
+        return output;
+
+    }
 
 
 
+    public static void dfs(int[] nums, int index, List<Integer> current, List<List<Integer>> result) {
 
+        if (index == nums.length) {
+            result.add(new ArrayList<>(current));
+            return;
+        }
 
+        dfs(nums, index + 1, current, result);
+
+        current.add(nums[index]);
+        dfs(nums, index + 1, current, result);
+        current.remove(current.size() - 1);
+
+    }
 
 
 
