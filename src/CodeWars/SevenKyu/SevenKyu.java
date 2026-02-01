@@ -2067,6 +2067,33 @@ public static int roundToNext5(int number) {
 
 
 
+    // jumping number (special numbers series #4)
+    public static String jumpingNumber(int number) {
+
+
+        String val = String.valueOf(number);
+
+        if (val.length() == 1) {
+            return "Jumping!!";
+
+        }
+
+        for (int i = 0; i < val.length() - 1; i++) {
+            int curr = val.charAt(i) - '0';
+            int next = val.charAt(i + 1) - '0';
+
+            if (Math.abs(curr - next) != 1) {
+                return "Not!!";
+            }
+
+        }
+
+
+        return "Jumping!!";
+
+    }
+
+
 
 
 
