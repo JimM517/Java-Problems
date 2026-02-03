@@ -1354,7 +1354,13 @@ public class EightKyu {
 
 
 
+    // string cleaning
+    public static String stringClean(final String text) {
 
+
+        return text.replaceAll("\\d+", "");
+
+    }
 
 
 
