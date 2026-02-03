@@ -1329,6 +1329,28 @@ public class EightKyu {
 
 
 
+    // find maximum and minimum values of a list
+    public static int min(int[] list) {
+
+
+        int min = Integer.MAX_VALUE;
+        for (int num : list) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        return min;
+    }
+
+    public static int max(int[] list) {
+        int max = Integer.MIN_VALUE;
+        for (int num : list) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
 
 
 
