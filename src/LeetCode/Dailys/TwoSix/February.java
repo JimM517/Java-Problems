@@ -1,5 +1,6 @@
 package LeetCode.Dailys.TwoSix;
 
+import java.util.Arrays;
 import java.util.TreeMap;
 
 public class February {
@@ -244,6 +245,27 @@ public long maxSumTrionic(int[] nums) {
     }
 
 
+
+
+    // 3634. minimum removals to balance array
+    public int minRemoval(int[] nums, int k) {
+
+        int n = nums.length;
+        Arrays.sort(nums);
+
+        int answer = n;
+        int right = 0;
+
+        for (int left = 0; left < n; left++) {
+            while (right < n && nums[right] <= (long) nums[left] * k) {
+                right++;
+            }
+            answer = Math.min(answer, n - (right - left));
+        }
+
+
+        return answer;
+    }
 
 
 
