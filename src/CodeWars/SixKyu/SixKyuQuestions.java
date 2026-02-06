@@ -2410,7 +2410,45 @@ public static String octopus(String idea) {
 
 
 
+// salesman's travel
+    public static String travel(String r, String zipcode) {
 
+       if (r == null || r.isEmpty()) {
+           return zipcode + ":/";
+       }
+
+       String[] addresses = r.split(",");
+       StringBuilder streets = new StringBuilder();
+       StringBuilder numbers = new StringBuilder();
+
+       for (String address : addresses) {
+
+           address = address.trim();
+
+           if (address.endsWith(zipcode)) {
+               String[] parts = address.split(" ");
+
+               String houseNumber = parts[0];
+
+               StringBuilder streetTown = new StringBuilder();
+               for (int i = 1; i < parts.length - 2; i++) {
+                   streetTown.append(parts[i]).append(" ");
+               }
+               if (streets.length() > 0) {
+                   streets.append(",");
+                   numbers.append(",");
+               }
+
+               streets.append(streetTown.toString().trim());
+               numbers.append(houseNumber);
+
+           }
+
+
+       }
+        return zipcode + ":" + streets + "/" + numbers;
+
+    }
 
 
 
