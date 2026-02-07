@@ -1368,6 +1368,17 @@ public class EightKyu {
 
 
 
+    // short long short
+    public static String shortLongShort(String a, String b) {
+        int n = a.length();
+        int m = b.length();
+
+        if (n > m) {
+            return b + a + b;
+        }
+
+        return a + b + a;
+    }
 
 
 
