@@ -2258,7 +2258,23 @@ public static int roundToNext5(int number) {
 
 
 
+// loop detector
+    public static boolean hasLoop(int[] arr) {
 
+        if (arr.length == 0) return false;
+
+        Set<Integer> visited = new HashSet<>();
+        int index = 0;
+
+        while (index >= 0 && index < arr.length) {
+            if (visited.contains(index)) {
+                return true;
+            }
+            visited.add(index);
+            index = arr[index];
+        }
+        return false;
+    }
 
 
 
