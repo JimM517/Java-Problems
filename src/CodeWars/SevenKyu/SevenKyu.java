@@ -2165,7 +2165,23 @@ public static int roundToNext5(int number) {
 
 
 
+// cat and mouse - easy version
+    public static String catMouse(String x) {
 
+        int catIndex = x.indexOf("C");
+        int mouseIndex = x.indexOf("m");
+
+
+        int diff = mouseIndex - (catIndex + 1);
+
+        if (diff > 3) {
+            return "Escaped!";
+        }
+
+        return "Caught!";
+
+
+    }
 
 
 
