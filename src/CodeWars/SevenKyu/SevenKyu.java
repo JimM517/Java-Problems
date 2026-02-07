@@ -2146,6 +2146,21 @@ public static int roundToNext5(int number) {
 
 
 
+    // count the combinations
+    public static int numCombo(int[] xs, int n) {
+        int totalSum = 0;
+        for (int x : xs) {
+            totalSum += x;
+        }
+
+        int count = 0;
+        for (int i = 0; i < xs.length; i++) {
+            if (totalSum - xs[i] == n) {
+                count++;
+            }
+        }
+        return count;
+    }
 
 
 
