@@ -2215,6 +2215,44 @@ public static int roundToNext5(int number) {
 
 
 
+    // survive the attack
+    public static boolean block(int[] attackers, int[] defenders) {
+
+        int attackSurvivors = 0;
+        int defendSurvivors = 0;
+
+        int attackPower = 0;
+        int defendPower = 0;
+
+        for (int a : attackers) attackPower += a;
+        for (int b : defenders) defendPower += b;
+
+        int fights = Math.min(attackers.length, defenders.length);
+
+        for (int i = 0; i < fights; i++) {
+            if (attackers[i] > defenders[i]) {
+                attackSurvivors++;
+            } else if (defenders[i] > attackers[i]) {
+                defendSurvivors++;
+            }
+        }
+
+        if (attackers.length > defenders.length) {
+            attackSurvivors += attackers.length - defenders.length;
+        } else if (defenders.length > attackers.length) {
+            defendSurvivors += defenders.length - attackers.length;
+        }
+
+        if (defendSurvivors > attackSurvivors) return true;
+        if (attackSurvivors > defendSurvivors) return false;
+
+        if (defendPower > attackPower) return true;
+        if (attackPower > defendPower) return false;
+
+
+        return true;
+
+    }
 
 
 
