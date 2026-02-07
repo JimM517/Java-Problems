@@ -2186,6 +2186,15 @@ public static int roundToNext5(int number) {
 
 
 
+    // remove BMW
+    public static String removeBMW(Object input) {
+
+        if (!(input instanceof String)) {
+            throw new IllegalArgumentException("This program only works for text.");
+        }
+        return ((String) input).replaceAll("[BMWbmw]", "");
+
+    }
 
 
 
