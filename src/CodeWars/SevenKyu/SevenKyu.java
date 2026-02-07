@@ -2200,6 +2200,18 @@ public static int roundToNext5(int number) {
 
 
 
+    // hide password from jdbc url
+    public static String hidePasswordFromConnection(String urlString) {
+
+        StringBuilder ans = new StringBuilder(urlString);
+        for (int i = ans.indexOf("password")+9; i < urlString.length() && ans.charAt(i) != '&'; i++){
+            ans.setCharAt(i, '*');
+        }
+        return ans.toString();
+
+
+
+    }
 
 
 
