@@ -1,6 +1,7 @@
 package LeetCode.Dailys.TwoSix;
 
 import java.util.Arrays;
+import java.util.Stack;
 import java.util.TreeMap;
 
 public class February {
@@ -271,7 +272,23 @@ public long maxSumTrionic(int[] nums) {
 
 
 
+// minimum deletions to make string balanced
+    public int minimumDeletions(String s) {
 
+        int n = s.length();
+        Stack<Character> characterStack = new Stack<>();
+        int deleteCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (!characterStack.isEmpty() && characterStack.peek() == 'b' && s.charAt(i) == 'a') {
+                characterStack.pop();
+                deleteCount++;
+            } else {
+                characterStack.push(s.charAt(i));
+            }
+        }
+        return deleteCount;
+    }
 
 
 
