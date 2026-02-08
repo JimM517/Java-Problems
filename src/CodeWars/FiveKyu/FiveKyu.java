@@ -1086,9 +1086,26 @@ public class FiveKyu {
 
 
 
+    // perimeter of squares in a rectangle
+    public static BigInteger perimeter(BigInteger n) {
+
+        BigInteger fib = fibonacciSquares(n.add(BigInteger.valueOf(3)));
+       return fib.subtract(BigInteger.ONE).multiply(BigInteger.valueOf(4));
+    }
 
 
 
+    public static BigInteger fibonacciSquares(BigInteger n) {
+        BigInteger a = BigInteger.ZERO;
+        BigInteger b = BigInteger.ONE;
+
+        for (BigInteger i = BigInteger.ZERO; i.compareTo(n) < 0; i = i.add(BigInteger.ONE)) {
+            BigInteger temp = a.add(b);
+            a = b;
+            b = temp;
+        }
+        return a;
+    }
 
 
 
