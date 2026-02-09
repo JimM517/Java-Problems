@@ -1,8 +1,6 @@
 package LeetCode.Dailys.TwoSix;
 
-import java.util.Arrays;
-import java.util.Stack;
-import java.util.TreeMap;
+import java.util.*;
 
 public class February {
 
@@ -342,7 +340,28 @@ public int checkHeight(TreeNode node) {
 
 
 
+// 1382. balance a binary search tree
+    private List<TreeNode> sortedList = new ArrayList<>();
+    public TreeNode balanceBST(TreeNode root) {
+        inorderTrav(root);
+        return sortATtoBST(0, sortedList.size() - 1);
+    }
 
+    public void inorderTrav(TreeNode root) {
+        if (root == null) return;
+        inorderTrav(root.left);
+        sortedList.add(root);
+        inorderTrav(root.right);
+    }
+
+    public TreeNode sortATtoBST(int start, int end) {
+        if (start > end) return null;
+        int mid = (start + end) / 2;
+        TreeNode root = sortedList.get(mid);
+        root.left = sortATtoBST(start, mid - 1);
+        root.right = sortATtoBST(mid + 1, end);
+        return root;
+    }
 
 
 
