@@ -2304,6 +2304,32 @@ public static int roundToNext5(int number) {
 
 
 
+    // fix string case
+    public static String fixStringCase(final String str) {
+
+        int upper = 0;
+        int lower = 0;
+
+        for (char c : str.toCharArray()) {
+
+            if (Character.isUpperCase(c)) {
+                upper++;
+            } else {
+                lower++;
+            }
+        }
+
+
+        if (upper > lower) {
+            return str.toUpperCase();
+        } else if (lower > upper) {
+            return str.toLowerCase();
+        }
+
+        return str.toLowerCase();
+
+    }
+
 
 
 
