@@ -1110,6 +1110,44 @@ public class FiveKyu {
 
 
 
+//  rockin robin
+    public class RockingRobin implements Iterator<Integer> {
+        private Queue<Iterator<Integer>> rockin;
+        public RockingRobin(Collection<Iterator<Integer>> collections) {
+            // TODO: Implement Me!
+            this.rockin = new ArrayDeque<>();
+
+            for (Iterator<Integer> it : collections) {
+                if (it.hasNext()) {
+                    rockin.add(it);
+                }
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            return !rockin.isEmpty();
+        }
+
+        @Override
+        public Integer next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+
+
+            Iterator<Integer> current = rockin.poll();
+            Integer value = current.next();
+
+            if (current.hasNext()) {
+                rockin.add(current);
+            }
+            return value;
+        }
+    }
+
+
+
 
 
 
