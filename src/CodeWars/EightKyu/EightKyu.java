@@ -1406,6 +1406,26 @@ public class EightKyu {
 
 
 
+    // difference of volumes of cuboids
+    public static int findDifference(final int[] firstCuboid, final int[] secondCuboid) {
+
+            int vol1 = 1;
+            int vol2 = 1;
+
+            for (int i : firstCuboid) {
+                vol1 *= i;
+            }
+
+            for (int i : secondCuboid) {
+                vol2 *= i;
+            }
+
+
+
+            return Math.abs(vol1 - vol2);
+
+
+    }
 
 
 
