@@ -2455,7 +2455,24 @@ public static String octopus(String idea) {
 
 
 
+    // reverse a process
+    public static String decode(String r) {
 
+        String res = "";
+        int num = Integer.parseInt(r.replaceAll("[^0-9+]", ""));
+        if (num % 2 == 0 || num % 13 == 0) return "Impossible to decode";
+        r = r.replaceAll("[0-9+]", "");
+
+        for (int i = 0; i <r.length() ; i++) {
+            for (int j = 0; j <= 25; j++){
+                if (j * num % 26 == (int)r.charAt(i)-(int)'a'){
+                    res += (char)(j + (int)'a');
+                    break;
+                }
+            }
+        }
+        return res;
+    }
 
 
 
