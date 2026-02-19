@@ -585,6 +585,21 @@ public int checkHeight(TreeNode node) {
 
 
 
+    // 693. binary number with alternating bits
+    public boolean hasAlternatingbits(int n) {
+
+
+        String str = Integer.toBinaryString(n);
+
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == str.charAt(i + 1)) {
+                return false;
+            }
+        }
+        return true;
+
+
+    }
 
 
 
