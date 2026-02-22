@@ -2482,6 +2482,27 @@ public static String octopus(String idea) {
 
 
 
+    // sum of parts
+    public static int[] sumParts(int[] ls) {
+
+        int[] result = new int[ls.length + 1];
+
+
+        int total = 0;
+        for (int i : ls) {
+            total += i;
+        }
+        result[0] = total;
+
+        for (int i = 0; i < ls.length; i++) {
+            total -= ls[i];
+            result[i + 1] = total;
+        }
+
+        return result;
+
+    }
+
 
 
 
