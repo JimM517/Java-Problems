@@ -1432,6 +1432,32 @@ public class EightKyu {
 
 
 
+    // sort and star
+    public static String twoSort(String[] s) {
+
+        Arrays.sort(s);
+        String firstVal = s[0];
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < firstVal.length(); i++) {
+            sb.append(firstVal.charAt(i));
+
+            if (i < firstVal.length() - 1) {
+                sb.append("***");
+            }
+
+        }
+
+
+
+        return sb.toString();
+
+
+
+
+    }
+
+
 
 
 
