@@ -1151,10 +1151,22 @@ public class FiveKyu {
 
 
 
+// count ip addresses
+    public static long ipsBetween(String start, String end) {
+        return ipToLong(end) - ipToLong(start);
+
+    }
 
 
+    private static long ipToLong(String ip) {
+        String[] parts = ip.split("\\.");
+        long result = 0;
 
-
+        for (String part : parts) {
+            result = result * 256 + Integer.parseInt(part);
+        }
+        return result;
+    }
 
 
 
