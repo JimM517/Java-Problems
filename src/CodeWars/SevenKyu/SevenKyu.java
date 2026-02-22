@@ -2358,7 +2358,53 @@ public static int roundToNext5(int number) {
 
 
 
+// alphabet war
+    public static String alphabetWar(String fight) {
 
+
+        Map<Character, Integer> left = new HashMap<>(){{
+           put('w', 4);
+           put('p', 3);
+           put('b', 2);
+           put('s', 1);
+        }};
+
+        Map<Character, Integer> right = new HashMap<>(){{
+           put('m', 4);
+           put('q', 3);
+           put('d', 2);
+           put('z', 1);
+        }};
+
+        int leftScore = 0;
+        int rightScore = 0;
+
+        for (int i = 0; i < fight.length(); i++) {
+            if (left.containsKey(fight.charAt(i))) {
+                leftScore += left.get(fight.charAt(i));
+            } else if (right.containsKey(fight.charAt(i))) {
+                rightScore += right.get(fight.charAt(i));
+            } else {
+                continue;
+            }
+        }
+
+
+
+        if (leftScore > rightScore) {
+            return "Left side wins!";
+        } else if (rightScore > leftScore) {
+            return "Right side wins!";
+        } else {
+            return "Let's fight again!";
+        }
+
+
+
+
+
+
+    }
 
 
 
