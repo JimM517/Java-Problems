@@ -2507,7 +2507,46 @@ public static String octopus(String idea) {
 
 
 
+    // not prime numbers
+    public static List<Integer> notPrimes(int a, int b) {
 
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = a; i < b; i++) {
+            if (isPrimeHelper(i)) continue;
+
+            int num = i;
+            boolean valid = true;
+
+            while (num > 0) {
+                int digit = num % 10;
+                if (digit != 2 && digit != 3 && digit != 5 && digit != 7) {
+                    valid = false;
+                    break;
+                }
+                num /= 10;
+            }
+            if (valid) {
+                result.add(i);
+            }
+
+
+        }
+        return result;
+    }
+
+
+
+    public static boolean isPrimeHelper(int num) {
+        if (num <= 1) return false;
+        if (num == 2) return true;
+        if (num % 2 == 0) return false;
+
+        for (int i = 3; i * i <= num; i += 2) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
 
 
 
