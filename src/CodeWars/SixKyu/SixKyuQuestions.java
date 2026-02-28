@@ -2555,6 +2555,41 @@ public static String octopus(String idea) {
 
 
 
+    // minimum value
+    public static double minimumValue(final String equation) {
+
+
+        String eq = equation.replace(" ", "");
+        String[] sides = eq.split("=");
+        String left = sides[0];
+        double n = Double.parseDouble(sides[1]);
+
+        double sumOfSquares = 0;
+        String[] terms = left.split("(?=[+-])");
+
+        for (String term : terms) {
+
+            String coeffStr = term.replaceAll("[a-zA-Z]", "");
+
+
+            if (coeffStr.equals("") || coeffStr.equals("+")) {
+                coeffStr = "1";
+            } else if (coeffStr.equals("-")) {
+                coeffStr = "-1";
+            }
+
+            double coeff = Double.parseDouble(coeffStr);
+            sumOfSquares += coeff * coeff;
+        }
+
+        return (n * n) / sumOfSquares;
+
+
+
+    }
+
+
+
 
 
 
