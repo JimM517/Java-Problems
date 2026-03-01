@@ -1171,9 +1171,52 @@ public class FiveKyu {
 
 
 
+    // tic-tac-toe checker
+    public static int isSolved(int[][] board) {
+
+        if (boardChecker(board, 1)) {
+            return 1;
+        }
+
+        if (boardChecker(board, 2)) {
+            return 2;
+        }
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == 0) {
+                    return -1;
+                }
+            }
+        }
+        return 0;
+    }
 
 
+    public static boolean boardChecker(int[][] board, int positon) {
 
+        for (int i = 0; i < 3; i++) {
+            if (board[i][0] == positon && board[i][1] == positon && board[i][2] == positon) {
+                return true;
+            }
+        }
+
+        for (int j = 0; j < 3; j++) {
+            if (board[0][j] == positon && board[1][j] == positon && board[2][j] == positon) {
+                return true;
+            }
+        }
+
+        if (board[0][0] == positon && board[1][1] == positon && board[2][2] == positon) {
+            return true;
+        }
+
+        if (board[0][2] == positon && board[1][1] == positon && board[2][0] == positon) {
+            return true;
+        }
+
+        return false;
+    }
 
 
 
