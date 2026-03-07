@@ -2413,6 +2413,27 @@ public static int roundToNext5(int number) {
 
 
 
+    // sum of powers of 2
+    public static int[] powers(int n) {
+
+
+        List<Integer> nums = new ArrayList<>();
+        int power = 1;
+
+        while (n > 0) {
+            if ((n & 1) == 1) {
+                nums.add(power);
+            }
+            power *= 2;
+            n >>= 1;
+        }
+
+        int[] result = new int[nums.size()];
+        for (int i = 0; i < nums.size(); i++) {
+            result[i] = nums.get(i);
+        }
+        return result;
+    }
 
 
 
