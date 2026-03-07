@@ -2591,6 +2591,61 @@ public static String octopus(String idea) {
 
 
 
+    // even fibonacci sum
+    public static long fibonacci(long max) {
+
+       long sum = 0;
+
+       long a = 0;
+       long b = 1;
+
+       while (a < max) {
+           if (a % 2 == 0) {
+               sum += a;
+           }
+           long next = a + b;
+           a = b;
+           b = next;
+       }
+        return sum;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
