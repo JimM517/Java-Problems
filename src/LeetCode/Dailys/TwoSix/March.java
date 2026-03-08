@@ -212,6 +212,15 @@ public class March {
 
 
 
+    // 1980. find unique binary string
+    public String findDifferentBinaryString(String[] nums) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < nums.length; i++) {
+            Character current = nums[i].charAt(i);
+            sb.append(current == '0' ? '1' : '0');
+        }
+        return sb.toString();
+    }
 
 
 
