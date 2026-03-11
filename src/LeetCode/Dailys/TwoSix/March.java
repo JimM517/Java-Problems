@@ -315,6 +315,30 @@ public class March {
 
 
 
+    // 1009. complement of base 10 integer
+    public int bitwiseComplement(int n) {
+
+        String str = Integer.toBinaryString(n);
+
+        String res = "";
+
+        for (char c : str.toCharArray()) {
+            if (c == '1') {
+                res += "0";
+            }
+            else {
+                res += "1";
+            }
+        }
+
+        return Integer.parseInt(res, 2);
+
+
+    }
+
+
+
+
 
 
 
