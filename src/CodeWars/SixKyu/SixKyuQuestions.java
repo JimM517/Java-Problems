@@ -2614,6 +2614,37 @@ public static String octopus(String idea) {
 
 
 
+    // seperate the wheat from the chaff
+    public static long[] wheatFromChaff(long[] values) {
+
+        long[] result = values.clone();
+
+        int i = 0;
+        int j = values.length - 1;
+
+        while (i < j) {
+
+            if (result[i] < 0) {
+                i++;
+                continue;
+            }
+            if (result[j] > 0) {
+                j--;
+                continue;
+            }
+
+            long temp = result[i];
+            result[i] = result[j];
+            result[j] = temp;
+
+            i++;
+            j--;
+
+        }
+
+        return result;
+    }
+
 
 
 
