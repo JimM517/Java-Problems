@@ -2,6 +2,7 @@ package CodeWars.FiveKyu;
 
 import java.math.BigInteger;
 import java.util.*;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -1221,6 +1222,17 @@ public class FiveKyu {
 
 
 
+    // Lazy looper
+    public static Supplier<Character> makeLooper(String str) {
+
+        final int[] index = {0};
+        return () -> {
+            char c = str.charAt(index[0]);
+            index[0] = (index[0] + 1) % str.length();
+            return c;
+        };
+
+    }
 
 
 
