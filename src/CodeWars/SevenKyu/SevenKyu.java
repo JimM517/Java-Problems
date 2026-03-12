@@ -2440,7 +2440,22 @@ public static int roundToNext5(int number) {
 
 
 
+    // stalin sort
+    public static void stalinSort(List<Integer> arr) {
 
+        int i = 0;
+        while (i < arr.size() - 1) {
+
+            if (arr.get(i + 1) >= arr.get(i)) {
+                i++;
+            } else {
+                arr.remove(i + 1);
+            }
+
+        }
+
+
+    }
 
 
 
