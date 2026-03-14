@@ -2,6 +2,7 @@ package LeetCode.Dailys.TwoSix;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class March {
@@ -456,7 +457,33 @@ public class March {
 
 
 
+        // 1415. the k-th lexicograpical string of all happy strings of length n
+    List<String> happyStrings = new ArrayList<>();
+    public String getHappyString(int n, int k) {
+            String currentString = "";
 
+            generateHappyString(n, currentString);
+
+            if (happyStrings.size() < k) {
+                return "";
+            }
+            Collections.sort(happyStrings);
+
+            return happyStrings.get(k - 1);
+    }
+
+    public void generateHappyString(int n, String currentString) {
+        if (currentString.length() == n) {
+            happyStrings.add(currentString);
+            return;
+        }
+        for (char curr = 'a'; curr <= 'c'; curr++) {
+            if (currentString.length() > 0 && currentString.charAt(currentString.length() - 1) == curr) {
+                continue;
+            }
+            generateHappyString(n, currentString + curr);
+        }
+    }
 
 
 
