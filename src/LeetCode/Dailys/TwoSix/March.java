@@ -491,7 +491,7 @@ public class March {
 
 
 
-// 2839. check is strings can be made equal with operations
+// 2839. check if strings can be made equal with operations
     public boolean canBeEqual(String s1, String s2) {
 
         char[] even1 = {s1.charAt(0), s1.charAt(2)}, even2 = {s2.charAt(0), s2.charAt(2)};
