@@ -35,5 +35,40 @@ public class May {
 
 
 
+// rotate string
+public static boolean rotateString(String s, String goal) {
+
+    if (s.length() != goal.length()) {
+        return false;
+    }
+
+    String combined = s + s;
+
+    return combined.contains(goal);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
