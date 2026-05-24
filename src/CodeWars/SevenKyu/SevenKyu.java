@@ -2460,6 +2460,24 @@ public static int roundToNext5(int number) {
 
 
 
+    // exes and ohs
+    public static boolean getXO(String str) {
+
+        int xCount = 0;
+        int oCount = 0;
+        for (char c : str.toLowerCase().toCharArray()) {
+            if (c == 'x') {
+                xCount++;
+            }
+            if (c == 'o') {
+                oCount++;
+            }
+        }
+
+        return xCount == oCount;
+
+    }
+
 
 
 
