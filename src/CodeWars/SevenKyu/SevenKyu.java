@@ -2500,7 +2500,20 @@ public static int roundToNext5(int number) {
 
 
 
+    // even times last
+    public static int evenLast(int[] numbers) {
 
+        if (numbers.length == 0) return 0;
+
+        int total = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (i % 2 == 0) {
+                total += numbers[i];
+            }
+        }
+
+        return total * numbers[numbers.length - 1];
+    }
 
 
 
