@@ -2482,7 +2482,21 @@ public static int roundToNext5(int number) {
 
 
 
+    // word values
+    public static int[] nameValue(String[] arr) {
 
+        int[]  result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            int total = 0;
+            for (char c : arr[i].toCharArray()) {
+                if (c != ' ') {
+                    total += c - 'a' + 1;
+                }
+            }
+            result[i] = total * (i + 1);
+        }
+        return result;
+    }
 
 
 
