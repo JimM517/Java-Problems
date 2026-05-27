@@ -2652,6 +2652,31 @@ public static String octopus(String idea) {
 
 
 
+    // arrh, grabscrab!
+    public static List<String> grabscrab(String s, List<String> words) {
+
+        List<String> result = new ArrayList<>();
+
+        char[] target = s.toCharArray();
+        Arrays.sort(target);
+
+        for (String word : words) {
+
+            if (word.length() != s.length()) {
+                continue;
+            }
+
+            char[] chars = word.toCharArray();
+            Arrays.sort(chars);
+
+            if (Arrays.equals(target, chars)) {
+                result.add(word);
+            }
+        }
+
+        return result;
+    }
+
 
 
 
