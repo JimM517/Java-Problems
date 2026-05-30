@@ -1,7 +1,9 @@
 package CodeWars;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Duplicates {
 
@@ -114,7 +116,23 @@ public class Duplicates {
 
 
 
+    // detect pangram
+    public boolean check(String sentence) {
 
+        Set<Character> characterSet = new HashSet<>();
+
+        for (char x : sentence.toLowerCase().toCharArray()) {
+            if (x >= 'a' && x <= 'z') {
+                characterSet.add(x);
+            }
+        }
+
+        return characterSet.size() == 26;
+
+
+
+
+    }
 
 
 
