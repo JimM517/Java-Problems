@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Duplicates {
 
-
+    /** duplicates for all levels **/
 
 
     // two sum
@@ -64,7 +64,22 @@ public class Duplicates {
 
 
 
+    // find the odd int
+    public static int findIt(int[] a) {
 
+        Map<Integer, Integer> intCount = new HashMap<>();
+        for (int i : a) {
+            intCount.put(i, intCount.getOrDefault(i, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> x : intCount.entrySet()) {
+            if (x.getValue() % 2 != 0) {
+                return x.getKey();
+            }
+        }
+        return -1;
+
+    }
 
 
 
