@@ -39,6 +39,25 @@ public class Duplicates {
 
 
 
+    // sqaure every digit
+    public int squareDigits(int n) {
+
+        String strN = Integer.toString(n);
+
+        String result = "";
+
+        for (int i = 0; i < strN.length(); i++) {
+
+            int digit = Character.getNumericValue(strN.charAt(i));
+
+            result += (digit * digit);
+
+
+        }
+
+        return Integer.parseInt(result);
+
+    }
 
 
 
