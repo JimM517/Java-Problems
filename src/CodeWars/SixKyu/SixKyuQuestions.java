@@ -2680,6 +2680,24 @@ public static String octopus(String idea) {
 
 
 
+    // merged string checker
+    public static boolean isMerge(String s, String part1, String part2) {
+
+        if (s.isEmpty()) {
+            return part1.isEmpty() && part2.isEmpty();
+        }
+
+        boolean merged = false;
+        if (!part1.isEmpty() && s.charAt(0) == part1.charAt(0)) {
+            merged |= isMerge(s.substring(1), part1.substring(1), part2);
+        }
+        if (!part2.isEmpty() && s.charAt(0) == part2.charAt(0)) {
+            merged |= isMerge(s.substring(1), part1, part2.substring(1));
+        }
+        return  merged;
+
+    }
+
 
 
 
