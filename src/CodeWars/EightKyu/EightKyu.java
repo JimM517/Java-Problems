@@ -1472,6 +1472,44 @@ public class EightKyu {
 
 
 
+    // sum mixed array
+    public static int sum(List<?> mixed) {
+
+        int total = 0;
+
+        for (Object obj : mixed) {
+            if (obj instanceof Integer) {
+                total += (Integer) obj;
+            } else if (obj instanceof String) {
+                total += Integer.parseInt((String) obj);
+            }
+        }
+
+        return total;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
