@@ -1494,10 +1494,50 @@ public class EightKyu {
 
 
 
+    // merge sorted array
+    public static int[] mergeArrays(int[] first, int[] second) {
 
+        int[] temp = new int[first.length + second.length];
 
+        int i = 0;
+        int j = 0;
+        int k = 0;
 
+        while (i < first.length && j < second.length) {
 
+            int value;
+
+            if (first[i] < second[j]) {
+                value = first[i++];
+            } else if (first[i] > second[j]) {
+                value = second[j++];
+            } else {
+                value = first[i];
+                i++;
+                j++;
+            }
+
+            if (k == 0 || temp[k - 1] != value) {
+                temp[k++] = value;
+            }
+        }
+
+        while (i < first.length) {
+            if (k == 0 || temp[k - 1] != first[i]) {
+                temp[k++] = first[i];
+            }
+            i++;
+        }
+
+        while (j < second.length) {
+            if (k == 0 || temp[k - 1] != second[j]) {
+                temp[k++] = second[j];
+            }
+            j++;
+        }
+
+        return Arrays.copyOf(temp, k);
+    }
 
 
 
