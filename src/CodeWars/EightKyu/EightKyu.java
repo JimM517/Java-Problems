@@ -1542,6 +1542,15 @@ public class EightKyu {
 
 
 
+    // remove first and last characters
+    public static String remove(String str) {
+
+        return str.substring(1, str.length() - 1);
+
+
+
+
+    }
 
 
 
