@@ -1556,7 +1556,27 @@ public class EightKyu {
 
 
 
+    // total amount of points
+    public static int points(String[] games) {
 
+        int result = 0;
+
+        for (int i = 0; i < games.length; i++) {
+            String[] current = games[i].split(":");
+
+            int x = Integer.parseInt(current[0]);
+            int y = Integer.parseInt(current[1]);
+
+            if (x > y) {
+                result += 3;
+            } else if (x == y) {
+                result += 1;
+            }
+        }
+
+        return result;
+
+    }
 
 
 
