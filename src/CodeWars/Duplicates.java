@@ -181,6 +181,24 @@ public class Duplicates {
 
 
 
+    // reversed words
+    public static String reverseWords(String str) {
+
+        StringBuilder sb = new StringBuilder();
+        String[] strSplit = str.split(" ");
+        for (int i = strSplit.length - 1; i >= 0; i--) {
+            sb.append(strSplit[i]);
+
+            if (i != 0) {
+                sb.append(" ");
+            }
+
+        }
+
+
+        return sb.toString();
+
+    }
 
 
 
