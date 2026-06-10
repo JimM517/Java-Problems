@@ -1581,6 +1581,17 @@ public class EightKyu {
 
 
 
+    // be concise IV - index of an element in an array
+    public static String kata(String[] a, String s) {
+
+
+        int i = java.util.List.of(a).indexOf(s);
+        return i < 0 ? "Not found" : i + "";
+
+
+
+
+    }
 
 
 
