@@ -1,9 +1,6 @@
 package CodeWars;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Duplicates {
 
@@ -203,7 +200,18 @@ public class Duplicates {
 
 
 
+ // descending order
+    public static int sortDesc(final int num) {
 
+        char[] digits = String.valueOf(num).toCharArray();
+
+        Arrays.sort(digits);
+        StringBuilder sb = new StringBuilder(new String(digits));
+        sb.reverse();
+
+
+        return Integer.parseInt(sb.toString());
+    }
 
 
 
