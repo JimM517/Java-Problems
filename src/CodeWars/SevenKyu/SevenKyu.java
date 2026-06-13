@@ -2570,7 +2570,26 @@ public static int roundToNext5(int number) {
 
 
 
+    // how many unique consonants?
+    public static int countConsonants(final String str) {
 
+        Set<Character> consonants = new HashSet<>();
+
+        String vowels = "aeiou";
+
+        for (char ch : str.toLowerCase().toCharArray()) {
+
+            if (Character.isLetter(ch) && !vowels.contains(String.valueOf(ch))) {
+                consonants.add(ch);
+            }
+
+        }
+
+        return consonants.size();
+
+
+
+    }
 
 
 
