@@ -2544,6 +2544,26 @@ public static int roundToNext5(int number) {
 
 
 
+ // sum array with different bases
+
+    public class BasedNumbers {
+        public String number;
+        public int base;
+    }
+
+    public static long sumItUp(BasedNumbers[] numbersWithBases) {
+
+
+            int sum = 0;
+
+            for (BasedNumbers n : numbersWithBases) {
+                sum += Integer.parseInt(n.number, n.base);
+            }
+
+        return sum;
+
+
+    }
 
 
 
