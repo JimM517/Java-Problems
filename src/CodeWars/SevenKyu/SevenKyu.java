@@ -2619,7 +2619,27 @@ public static int roundToNext5(int number) {
 
 
 
+    // adaptive security system
+    public static int breachAttempts(int[] hackers, int securityLevel, int increase) {
 
+        int total = 0;
+        for (int i = 0; i < hackers.length; i++) {
+
+            if (hackers[i] > securityLevel) {
+                total++;
+            } else  {
+                securityLevel += increase;
+            }
+
+
+
+        }
+
+        return total;
+
+
+
+    }
 
 
 
