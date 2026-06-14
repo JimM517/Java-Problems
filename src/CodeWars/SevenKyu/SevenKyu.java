@@ -2596,7 +2596,26 @@ public static int roundToNext5(int number) {
 
 
 
+    // a snail enters a bar!
+    public static boolean canSnailReachEnd(double length, double speed, double lengthIncreases) {
 
+        double position = 0;
+
+        for (int i = 0; i < 525600; i++) {
+
+            position += speed;
+            length += lengthIncreases;
+
+            if (position >= length) {
+                return true;
+            }
+
+        }
+
+        return false;
+
+
+    }
 
 
 
