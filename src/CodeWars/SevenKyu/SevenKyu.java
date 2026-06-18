@@ -2644,6 +2644,31 @@ public static int roundToNext5(int number) {
 
 
 
+    // find count of most frequent item in an array
+    public static int mostFrequentItemCount(int[] collection) {
+
+        if (collection.length == 0) {
+            return 0;
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int x : collection) {
+            map.put(x, map.getOrDefault(x, 0) + 1);
+        }
+
+        int max = Integer.MIN_VALUE;
+        for (Map.Entry<Integer, Integer> item : map.entrySet()) {
+
+            int currentVal = item.getValue();
+            max = Math.max(max, currentVal);
+
+
+
+        }
+
+        return max;
+
+    }
 
 
 
