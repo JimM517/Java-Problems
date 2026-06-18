@@ -2671,6 +2671,27 @@ public static int roundToNext5(int number) {
     }
 
 
+    // the office 1 - outed
+    public static String outed(Map<String, Integer> meet, String boss) {
+
+        int total = 0;
+        int people = meet.size();
+
+        for (String person : meet.keySet()) {
+            int score = meet.get(person);
+
+            if (person.equals(boss)) {
+                score *= 2; // boss counts double
+            }
+
+            total += score;
+        }
+
+        double happiness = (double) total / people;
+
+        return happiness <= 5 ? "Get Out Now!" : "Nice Work Champ!";
+    }
+
 
 
 
