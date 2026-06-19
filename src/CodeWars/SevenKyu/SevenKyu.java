@@ -2707,7 +2707,29 @@ public static int roundToNext5(int number) {
     }
 
 
+    // most digits
+    public static int findLongest(int[] numbers) {
 
+        int most = Integer.MIN_VALUE;
+        int greatestDigits = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            String current = String.valueOf(numbers[i]);
+
+            int len = current.length();
+
+            if (len > most) {
+                most = len;
+                greatestDigits = Integer.parseInt(current);
+            }
+
+
+
+        }
+
+        return greatestDigits;
+
+
+    }
 
 
 
