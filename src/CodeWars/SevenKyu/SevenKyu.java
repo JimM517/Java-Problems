@@ -2752,7 +2752,18 @@ public static int roundToNext5(int number) {
 
 
 
+    // get the middle character
+    public static String getMiddle(String word) {
 
+        int len = word.length();
+
+        if (len % 2 == 0) {
+            return word.substring(len / 2 - 1, len / 2 + 1);
+        }
+
+        return word.substring(len / 2, len / 2 + 1);
+
+    }
 
 
 
