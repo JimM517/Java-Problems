@@ -2807,6 +2807,24 @@ public static int roundToNext5(int number) {
 
 
 
+    // exclamation mark series 6: remove n exclamation marks in the sentence from left to right
+        public static String remove(String s, int n) {
+
+            int removed = 0;
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < s.length(); i++) {
+                char current = s.charAt(i);
+                if (current == '!' && removed < n) {
+                    removed++;
+                    continue;
+                }
+                sb.append(current);
+            }
+
+            return sb.toString();
+
+    }
 
 
 
