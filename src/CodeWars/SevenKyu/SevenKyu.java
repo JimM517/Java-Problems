@@ -2769,7 +2769,40 @@ public static int roundToNext5(int number) {
 
 
 
+    // parts of a list
+    // find every possible split point in the array
+    public static String[][] partList(String[] arr) {
+        String[][] result = new String[arr.length - 1][2];
 
+        for (int i = 1; i < arr.length; i++) {
+
+            StringBuilder left = new StringBuilder();
+            StringBuilder right = new StringBuilder();
+
+            for (int j = 0; j < i; j++) {
+                left.append(arr[j]);
+
+                if (j < i - 1) {
+                    left.append(" ");
+                }
+            }
+
+            for (int j = i; j < arr.length; j++) {
+                right.append(arr[j]);
+
+                if (j < arr.length - 1) {
+                    right.append(" ");
+                }
+            }
+
+            result[i - 1][0] = left.toString();
+            result[i - 1][1] = right.toString();
+        }
+
+        return result;
+
+
+    }
 
 
 
