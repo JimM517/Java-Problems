@@ -2733,6 +2733,47 @@ public static int roundToNext5(int number) {
 
 
 
+    // deordorant evaporator
+    public static int evaporator(double content, double evap_per_day, double threshold) {
+
+        int totalDays = 0;
+        double thresholdAmount = content * (threshold / 100);
+
+        while (content >= thresholdAmount) {
+            content -= content * (evap_per_day / 100);
+            totalDays++;
+        }
+
+        return totalDays;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
