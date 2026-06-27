@@ -1237,9 +1237,44 @@ public class FiveKyu {
 
 
 
+    // best travel
+    public static Integer chooseBestSum(int t, int k, List<Integer> ls) {
+
+        int result = -1;
+        for (int i = 0; i < ls.size(); i++) {
+            if (ls.get(i) <= t) {
+                if (k == 1) {
+                    result = Math.max(result, ls.get(i));
+                } else {
+                    Integer temp = chooseBestSum(t - ls.get(i), k - 1, ls.subList(i + 1, ls.size()));
+                    if (temp != null) {
+                        result = Math.max(result, ls.get(i) + temp);
+                    }
+                }
+            }
+        }
+        if (result < 0) return null;
+        return result;
+    }
 
 
 
+//    // backtrack cities
+//    public static int backtrack(int t, int k, List<Integer> ls, int start, int count, int sum) {
+//
+//        if (count == k) {
+//            return sum <= t ? sum : -1;
+//        }
+//
+//        int best = -1;
+//
+//        for (int i = start; i < ls.size(); i++) {
+//            int result = backtrack(t, k, ls, i + 1, count + 1, sum + ls.get(i));
+//
+//            best = Math.max(best, sum);
+//        }
+//        return best;
+//    }
 
 
 
