@@ -1596,6 +1596,26 @@ public class EightKyu {
 
 
 
+    // is there a vowel in there?
+    public static List<Object> isVow(List<Integer> a) {
+
+        List<Object> result = new ArrayList<>();
+
+        for (int code : a) {
+            char c = (char) code;
+
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                result.add(String.valueOf(c));
+            } else {
+                result.add(code);
+            }
+
+
+        }
+
+        return result;
+
+    }
 
 
 
