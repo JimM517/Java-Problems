@@ -1,5 +1,7 @@
 package CodeWars.EightKyu;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 public class EightKyu {
@@ -1619,6 +1621,15 @@ public class EightKyu {
 
 
 
+
+    // formatting decimal places
+    public static double twoDecimalPlaces(double number) {
+
+        BigDecimal bd = new BigDecimal(String.valueOf(number));
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+
+    }
 
 
 
