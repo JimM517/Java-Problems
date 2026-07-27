@@ -2829,6 +2829,20 @@ public static int roundToNext5(int number) {
 
 
 
+    // sum of triangular numbers
+    public static int sumTriangularNumbers(int n) {
+
+        if (n < 0) {
+            return 0;
+        }
+
+
+        return n * (n + 1) * (n + 2) / 6;
+
+
+
+    }
+
 
 
 
