@@ -2702,7 +2702,29 @@ public static String octopus(String idea) {
 
 
 
+    // dashatize it
+    public static String dashatize(int num) {
 
+        String numStr = String.valueOf(Math.abs(num));
+        StringBuilder sb = new StringBuilder();
+
+        for (char ch : numStr.toCharArray()) {
+            int digit = Character.getNumericValue(ch);
+
+            if (digit % 2 == 1) {
+                sb.append('-').append(ch).append('-');
+            } else {
+                sb.append(ch);
+            }
+        }
+
+        return sb.toString()
+                .replaceAll("-+", "-")
+                .replaceAll("^-|-$", "");
+
+
+
+    }
 
 
 
