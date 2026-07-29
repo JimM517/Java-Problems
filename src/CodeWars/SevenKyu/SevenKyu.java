@@ -2873,7 +2873,22 @@ public static int roundToNext5(int number) {
 
 
 
+ // tidy number series
+    public static boolean tidyNumber(int number) {
 
+        String num = String.valueOf(number);
+
+        for (int i = 0; i < num.length() - 1; i++) {
+            int current = Integer.parseInt(String.valueOf(num.charAt(i)));
+            int next = Integer.parseInt(String.valueOf(num.charAt(i + 1)));
+            if (current > next) {
+                return false;
+            }
+
+        }
+
+        return true;
+    }
 
 
 
