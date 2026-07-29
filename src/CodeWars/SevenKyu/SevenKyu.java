@@ -2892,6 +2892,31 @@ public static int roundToNext5(int number) {
 
 
 
+    // basic calculator
+    public static Double calculate(double a, String operator, double b) {
+
+        switch (operator) {
+
+            case "+":
+                return a + b;
+
+            case "-":
+                return a - b;
+
+            case "*":
+                return a * b;
+
+            case "/":
+                if (b == 0) {
+                    return null;
+                }
+                return a / b;
+
+            default:
+                return null;
+        }
+    }
+
 
 
 
