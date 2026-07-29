@@ -2846,6 +2846,46 @@ public static int roundToNext5(int number) {
 
 
 
+    // alphabet symmetry
+    public static int[] solve(String[] arr) {
+
+       int[] result = new int[arr.length];
+
+       for (int i = 0; i < arr.length; i++) {
+           int correctPosition = 0;
+
+           for (int j = 0; j < arr[i].length(); j++) {
+               char current = Character.toLowerCase(arr[i].charAt(j));
+
+               int alphabetPos = current - 'a' + 1;
+
+               if (alphabetPos == j + 1) {
+                   correctPosition++;
+               }
+           }
+           result[i] = correctPosition;
+       }
+
+       return result;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
