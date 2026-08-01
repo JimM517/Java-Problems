@@ -2,6 +2,7 @@ package CodeWars.SevenKyu;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.IntUnaryOperator;
 
 public class SevenKyu {
 
@@ -3032,6 +3033,18 @@ public static int roundToNext5(int number) {
 
 
 
+    // function addition
+    public static IntUnaryOperator add(int n) {
+
+        return new IntUnaryOperator() {
+            @Override
+            public int applyAsInt(int x) {
+                return x + n;
+            }
+        };
+
+
+    }
 
 
 
