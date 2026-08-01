@@ -1652,6 +1652,40 @@ public class EightKyu {
     }
 
 
+    // is it a number?
+    public boolean isDigit(String s) {
+
+        try {
+            Double.parseDouble(s.trim());
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
