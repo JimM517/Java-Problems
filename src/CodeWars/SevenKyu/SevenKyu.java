@@ -2972,6 +2972,21 @@ public static int roundToNext5(int number) {
 
 
 
+    // factorial
+    public static int factorial2(int n) {
+
+        if (n < 0 || n > 12) {
+            throw new IllegalArgumentException();
+        }
+
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        return n * factorial2(n - 1);
+
+
+    }
 
 
 
