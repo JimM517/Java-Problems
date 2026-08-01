@@ -2992,6 +2992,42 @@ public static int roundToNext5(int number) {
 
 
 
+    // building blocks
+    public class Block {
+
+
+        int width;
+        int length;
+        int height;
+
+        public Block(int[] values) {
+            this.width = values[0];
+            this.length = values[1];
+            this.height = values[2];
+        }
+
+
+        public int getWidth() {
+            return this.width;
+        }
+
+        public int getLength() {
+            return this.length;
+        }
+
+        public int getHeight() {
+            return this.height;
+        }
+
+        public int getVolume() {
+            return this.width * this.length * this.height;
+        }
+
+        public int getSurfaceArea() {
+            return 2 * (this.width * this.length + this.width * this.height + this.length * this.height);
+        }
+
+    }
 
 
 
