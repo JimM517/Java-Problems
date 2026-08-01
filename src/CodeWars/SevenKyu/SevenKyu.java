@@ -2919,6 +2919,23 @@ public static int roundToNext5(int number) {
 
 
 
+    // automorphic number (special numbers series #6)
+    public static String autoMorphic(int number) {
+
+        long squared = (long) number * number;
+
+        String strNum = String.valueOf(number);
+        String strSquared = String.valueOf(squared);
+
+        if (strSquared.endsWith(strNum)) {
+            return "Automorphic";
+        }
+
+        return "Not!!";
+
+    }
+
+
 
 
 
