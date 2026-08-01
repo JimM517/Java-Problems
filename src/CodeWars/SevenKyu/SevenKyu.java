@@ -2938,6 +2938,57 @@ public static int roundToNext5(int number) {
 
 
 
+    // sort out the men from boys
+    public static int[] menFromBoys(final int[] values) {
+
+        List<Integer> even = new ArrayList<>();
+        List<Integer> odd = new ArrayList<>();
+
+        for (int x : values) {
+            if (x % 2 == 0) {
+                if (!even.contains(x)) {
+                    even.add(x);
+                }
+            } else {
+                if (!odd.contains(x)) {
+                    odd.add(x);
+                }
+            }
+        }
+
+        Collections.sort(even);
+        Collections.sort(odd, Collections.reverseOrder());
+
+        int[] result = new int[even.size() + odd.size()];
+        int k = 0;
+        for (int i = 0; i < even.size(); i++) {
+            result[k++] = even.get(i);
+        }
+        for (int j = 0; j < odd.size(); j++) {
+            result[k++] = odd.get(j);
+        }
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
