@@ -3049,7 +3049,31 @@ public static int roundToNext5(int number) {
 
 
 
+    // digits explosion
+    public static String explode(String digits) {
 
+
+        StringBuilder sb = new StringBuilder();
+
+        char[] dig = digits.toCharArray();
+
+        for (int i = 0; i < dig.length; i++) {
+
+            int current = Character.getNumericValue(dig[i]);
+
+            for (int j = 0; j < current; j++) {
+                sb.append(dig[i]);
+            }
+
+
+
+        }
+
+        return sb.toString();
+
+
+
+    }
 
 
 
