@@ -3078,6 +3078,30 @@ public static int roundToNext5(int number) {
 
 
 
+    // simple string characters
+    public static int[] simpString(String word)
+    {
+        int upperCount = 0;
+        int lowerCount = 0;
+        int nums = 0;
+        int specials = 0;
+
+        char[] chars = word.toCharArray();
+
+        for (char x : chars) {
+
+            if (Character.isUpperCase(x)) {
+                upperCount++;
+            } else if (Character.isLowerCase(x)) {
+                lowerCount++;
+            } else if (Character.isDigit(x)) {
+                nums++;
+            } else {
+                specials++;
+            }
+        }
+        return new int[]{upperCount, lowerCount, nums, specials};
+    }
 
 
 
